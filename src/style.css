@@ -1,0 +1,202 @@
+/*
+    General Styles
+*/
+body {
+    /*background-color: rgba(1, 1, 41, 0.654);*/
+    background-image: url("../images/stars.jpg");
+    color: rgb(201, 234, 255);
+    font-family: Monospace;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.setHeader {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    margin: 1rem 1rem 4rem;
+}
+
+#focused {
+    font-size: 6rem;
+    line-height: 9rem;
+    font-family: Arial;
+}
+
+.cardWrapper {
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+    width: 12rem;
+    padding: 0.2rem 0.2rem 0.1rem 0.5rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.9rem;
+}
+
+/*
+    MainMenu component styles
+*/
+#mainMenu {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+#mainMenu h1 {
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 0.5rem;
+    font-variant: small-caps;
+}
+
+#mainMenu button {
+    width: 10rem;
+    padding: 0.75rem;
+    font-family: Monospace;
+    font-size: 1.75rem;
+    margin: 1.2rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: rgba(204, 238, 255, 0.518);
+}
+
+#mainMenu button:hover {
+    color: rgb(201, 234, 255);
+    background-color: rgba(0, 0, 0, 0.269);
+}
+
+/*
+    PathMenu component styles
+*/
+#pathMenu {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+#pathMenu h1 {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 1.5rem;
+    font-variant: small-caps;
+}
+
+#pathMenu button {
+    width: 15rem;
+    margin: 4.2rem;
+    padding: 3rem;
+    font-family: Monospace;
+    font-size: 2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgba(204, 238, 255, 0.518);
+}
+
+#pathMenu button:hover {
+    color: rgb(201, 234, 255);
+    background-color: rgba(0, 0, 0, 0.269);
+}
+
+
+/*
+    MathPath component styles
+*/
+#mathPath {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mathWrapper {
+    border: 0.1rem solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(52, 8, 8, 0.9);
+    padding: 5rem 10rem;
+    border-radius: 1rem;
+}
+
+/* Used for inline question paragraph and answer input box*/
+#mathQABundle {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+#mathQ {
+    font-size: 5rem;
+    color: rgb(201, 234, 255);
+    background-color: rgba(0, 0, 0, 0.269);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+#mathAns {
+    font-family: monospace;
+    font-size: 4.2rem;
+    text-align: center;
+    width: 12rem;
+    margin: 4rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.709);
+}
+
+/*
+    LitPath component styles
+*/
+#litPath {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#litWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.1rem solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(26, 45, 79, 0.95);
+    padding: 5rem 10rem;
+    border-radius: 1rem;
+}
+
+#litQ {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#litAns {
+    font-family: Arial;
+    font-size: 3rem;
+    width: 10rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(249, 247, 247, 0.715);
+    padding: 0.3rem;
+}
+
+/*
+    Footbox component styles
+*/
+
+#footBox {
+    margin: 6rem 0 0;
+}
+
+.box {
+    margin: 0 0.8rem;
+    padding: 1rem;
+    border: 0.3rem solid black;
+}
