@@ -1,9 +1,14 @@
 export default function Footbox({ correct }) {
-  const footbox = Array(20)
-    .fill()
-    .map((_, i) => <span key={i} className="box"></span>);
+  const footbox = Array(20).fill();
 
-  return <div id="footBox">{footbox}</div>;
+  for (let i = 0; i < 20; i++) {
+    if (i < correct) {
+      footbox[i] = <span key={i} className="filledFootbox"></span>;
+    } else {
+      footbox[i] = <span key={i} className="emptyFootbox"></span>;
+    }
+  }
+  return <div id="footbox">{footbox}</div>;
 }
 
 // How this works:

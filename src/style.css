@@ -2,7 +2,6 @@
     General Styles
 */
 body {
-    /*background-color: rgba(1, 1, 41, 0.654);*/
     background-image: url("../images/stars.jpg");
     color: rgb(201, 234, 255);
     font-family: Monospace;
@@ -12,6 +11,12 @@ button:hover {
     cursor: pointer;
 }
 
+/* Page header during problem set components */
+.pageHeader {
+    display: flex;
+}
+
+/* Problem set wrapper header */
 .setHeader {
     text-align: center;
     font-size: 1.5rem;
@@ -19,6 +24,43 @@ button:hover {
     font-weight: 400;
     margin: 1rem 1rem 4rem;
 }
+
+/* Rocket emoji home redirect */
+.rocketBig {
+    text-decoration: none;
+    margin: 0.5rem 2rem;
+    padding: 0.5rem;
+    font-size: 5rem;
+    opacity: 75%;
+}
+
+.rocketBig:hover {
+    cursor: pointer;
+    animation: wiggle 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+.rocketSmall {
+
+}
+
 
 #focused {
     font-size: 6rem;
@@ -48,7 +90,7 @@ h2 {
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 10rem;
+    margin-top: 12%;
     display: flex;
     justify-content: center;
 }
@@ -80,7 +122,7 @@ h2 {
     PathMenu component styles
 */
 #pathMenu {
-    margin-top: 10rem;
+    margin-top: 12%;
     display: flex;
     justify-content: center;
 }
@@ -117,11 +159,12 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 11rem;
 }
 
 #mathWrapper {
-    border: 0.1rem solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(52, 8, 8, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(52, 8, 8, 0.95);
     padding: 5rem 10rem;
     border-radius: 1rem;
 }
@@ -135,7 +178,7 @@ h2 {
 
 #mathQ {
     font-size: 5rem;
-    color: rgb(201, 234, 255);
+    color: rgba(255, 255, 255, .9);
     background-color: rgba(0, 0, 0, 0.269);
     padding: 1rem;
     border-radius: 0.5rem;
@@ -146,9 +189,9 @@ h2 {
     font-size: 4.2rem;
     text-align: center;
     width: 12rem;
-    margin: 4rem 1rem;
+    margin: 5rem 1rem;
     border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.709);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /*
@@ -158,13 +201,14 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 11rem;
 }
 
 #litWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.1rem solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     background-color: rgba(26, 45, 79, 0.95);
     padding: 5rem 10rem;
     border-radius: 1rem;
@@ -185,18 +229,26 @@ h2 {
     border-radius: 0.5rem;
     background-color: rgba(249, 247, 247, 0.715);
     padding: 0.3rem;
+    margin: 0 0 1rem;
 }
 
 /*
     Footbox component styles
 */
 
-#footBox {
+#footbox {
     margin: 6rem 0 0;
 }
 
-.box {
+.emptyFootbox {
     margin: 0 0.8rem;
     padding: 1rem;
-    border: 0.3rem solid black;
+    border: 3px solid black;
+}
+
+.filledFootbox {
+    margin: 0 0.8rem;
+    padding: 1.1rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.7);
 }

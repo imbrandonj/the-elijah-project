@@ -1,8 +1,12 @@
-import { handleEnterKeyPress, checkAnswer, randomNum } from "./util";
+import RocketHeader from "./RocketHeader";
 import Footbox from "./Footbox";
+import answerEvent from "./answerEvent";
+import { randomNum } from "./util";
 import { useState } from "react";
 
 export default function MathPath() {
+  const [question, setQuestion] = useState(0); // problem question
+  const [answer, setAnswer] = useState(0); // the answer to the question (state)
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
   const [problemSet, setProblemSet] = useState(0); // question problem set
 
@@ -12,19 +16,20 @@ export default function MathPath() {
     answer: "",
   };
 
-  // Generate problem depending on problem set
+  // generate problem depending on problem set
   if (problemSet == 0) {
-    // Generate random problem number
+    // generate random problem number
     let problemNum = randomNum(mathProblems.length);
 
-    // Set question and answer
+    // set question and answer
     problem.question = Object.values(mathProblems[problemNum])[0];
     problem.answer = Object.keys(mathProblems[problemNum])[0];
   }
 
+  console.log(`Answer on page render: ${problem.answer}`);
   return (
     <div>
-      <h2>The Elijah Project</h2>
+      <RocketHeader />
       <div id="mathPath">
         <div id="mathWrapper">
           <header className="setHeader">Math: {setHeader[0]}</header>
@@ -33,18 +38,27 @@ export default function MathPath() {
             <input
               id="mathAns"
               type="text"
-              onKeyDown={(event) =>
-                // see util.js for handleKeyPress function
-                handleEnterKeyPress(
-                  event, // enter keydown event
-                  problem.answer, // the correct answer
-                  correctTally, // problem set correct tally state
-                  setCorrectTally, // to set total correct tally state
-                  problemSet, // current problem set state
-                  setProblemSet // to increment the problem set if correct >= 20
-                )
-              }
-            ></input>
+              onKeyDown={(event) => {
+                // listen for enter keydown
+                if (event.key === "Enter") {
+                  // set the value of the user's answer
+                  let inputValue = event.target.value;
+
+                  event.target.value = ""; // clears the input box
+
+                  // module answerEvent.js
+                  answerEvent(
+                    event, // enter keydown event
+                    inputValue, // the user's given answer
+                    problem.answer, // the correct answer
+                    correctTally, // total correct tally (state)
+                    setCorrectTally, // to set total correct tally (state)
+                    problemSet, // current problem set (state)
+                    setProblemSet // to increment the problem set (state) if correct >= 20
+                  );
+                }
+              }}
+            />
           </div>
           <Footbox correct={correctTally} />
         </div>

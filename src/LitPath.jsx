@@ -1,11 +1,15 @@
+import RocketHeader from "./RocketHeader";
 import Footbox from "./Footbox";
-import { handleEnterKeyPress, checkAnswer, randomNum } from "./util";
+import answerEvent from "./answerEvent";
+import { randomNum } from "./util";
+
 import { useState } from "react";
 
 export default function LitPath() {
+  const [question, setQuestion] = useState(0); // problem question
+  const [answer, setAnswer] = useState(0); // the answer to the question (state)
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const [problemSet, setProblemSet] = useState(0); // problem set
-  const [inputValue, setInputValue] = useState(""); // user input values
 
   // Problem object sets question & answer depending on the state (the problemSet)
   let problem = {
@@ -30,7 +34,7 @@ export default function LitPath() {
   if (problemSet <= 3) {
     return (
       <div>
-        <h2>The Elijah Project</h2>
+        <RocketHeader />
 
         <div id="litPath">
           <div id="litWrapper">
@@ -45,24 +49,35 @@ export default function LitPath() {
             <input
               id="litAns"
               type="text"
-              value={inputValue}
-              // Set state to represent user input:
-              onChange={(event) => setInputValue(event.target.value)}
-              onKeyDown={(event) =>
-                // see util.js for handleKeyPress function
-                handleEnterKeyPress(
-                  event, // enter keydown event
-                  inputValue,
-                  setInputValue,
-                  problem.answer, // the correct answer
-                  correctTally, // total correct tally state
-                  setCorrectTally, // to set total correct tally state
-                  problemSet, // current problem set state
-                  setProblemSet // to increment the problem set if correct >= 20
-                )
-              }
+              onKeyDown={(event) => {
+                // listen for enter keydown
+                if (event.key === "Enter") {
+                  // set the value of the user's answer
+                  let inputValue = event.target.value;
+
+                  // first 2 problem sets are case insensitive
+                  if (problemSet === 0) {
+                    inputValue = inputValue.toUpperCase();
+                  } else if (problemSet === 1) {
+                    inputValue = inputValue.toLowerCase();
+                  }
+
+                  event.target.value = ""; // clears the input box
+
+                  // module answerEvent.js
+                  answerEvent(
+                    event, // enter keydown event
+                    inputValue, // the user's given answer
+                    problem.answer, // the correct answer
+                    correctTally, // total correct tally (state)
+                    setCorrectTally, // to set total correct tally (state)
+                    problemSet, // current problem set (state)
+                    setProblemSet // to increment the problem set (state) if correct >= 20
+                  );
+                }
+              }}
             />
-            <Footbox />
+            <Footbox correct={correctTally} />
           </div>
         </div>
       </div>
