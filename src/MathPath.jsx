@@ -1,30 +1,16 @@
 import RocketHeader from "./RocketHeader";
 import Footbox from "./Footbox";
+
+import generateProblem from "./mathProblems";
 import answerEvent from "./answerEvent";
-import { randomNum } from "./util";
 import { useState } from "react";
 
 export default function MathPath() {
-  const [question, setQuestion] = useState(0); // problem question
-  const [answer, setAnswer] = useState(0); // the answer to the question (state)
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [problemSet, setProblemSet] = useState(0); // question problem set
+  const [problemSet, setProblemSet] = useState(1); // question problem set
 
-  // Problem object sets question & answer depending on the state (the problemSet)
-  let problem = {
-    question: "",
-    answer: "",
-  };
-
-  // generate problem depending on problem set
-  if (problemSet == 0) {
-    // generate random problem number
-    let problemNum = randomNum(mathProblems.length);
-
-    // set question and answer
-    problem.question = Object.values(mathProblems[problemNum])[0];
-    problem.answer = Object.keys(mathProblems[problemNum])[0];
-  }
+  // problem object sets `question` & `answer` properties depending on the state (the problemSet)
+  let problem = generateProblem(problemSet);
 
   console.log(`Answer on page render: ${problem.answer}`);
   return (
@@ -32,7 +18,9 @@ export default function MathPath() {
       <RocketHeader />
       <div id="mathPath">
         <div id="mathWrapper">
-          <header className="setHeader">Math: {setHeader[0]}</header>
+          <header className="setHeader">
+            Math: {setHeader[problemSet - 1]}
+          </header>
           <div id="mathQABundle">
             <p id="mathQ">{problem.question}</p>
             <input
@@ -42,8 +30,7 @@ export default function MathPath() {
                 // listen for enter keydown
                 if (event.key === "Enter") {
                   // set the value of the user's answer
-                  let inputValue = event.target.value;
-
+                  let inputValue = parseInt(event.target.value); // math answers must be parsed to int
                   event.target.value = ""; // clears the input box
 
                   // module answerEvent.js
@@ -60,30 +47,17 @@ export default function MathPath() {
               }}
             />
           </div>
-          <Footbox correct={correctTally} />
+          <Footbox correct={correctTally} style={"mathFill"} />
         </div>
       </div>
     </div>
   );
 }
 
-const mathProblems = [
-  { 0: "0 + 0 =" },
-  { 1: "1 + 0 =" },
-  { 2: "1 + 1 =" },
-  { 3: "2 + 1 =" },
-  { 4: "2 + 2 =" },
-  { 5: "3 + 2 =" },
-  { 6: "3 + 3 =" },
-  { 7: "4 + 3 =" },
-  { 8: "4 + 4 =" },
-  { 9: "6 + 3 =" },
-  { 10: "5 + 5 =" },
-];
-
+// header descriptions
 const setHeader = [
   "Problem Set 1 - Addition to 10",
-  "Problem Set 2 - Substraction to 10",
-  "Problem Set 3 - Addition to 20",
-  "Problem Set 4 - Subtraction to 20",
+  "Problem Set 2 - Subtraction to 10",
+  "Problem Set 3 - Addition from 10 to 20",
+  "Problem Set 4 - Subtraction from 10 to 20",
 ];

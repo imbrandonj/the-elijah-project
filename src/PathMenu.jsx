@@ -1,19 +1,19 @@
-import MathPath from "./MathPath";
 import LitPath from "./LitPath";
+import MathPath from "./MathPath";
 import LogicPath from "./LogicPath";
-
 import { useState } from "react";
 
 export default function PathMenu() {
   const [pathSelect, setPathSelect] = useState("main");
 
   // Click event to begin Math path:
-  const setPathMath = () => setPathSelect("math");
+  const setPathMath = () => setPathSelect(<MathPath />);
   // Click event to begin Logic path:
-  const setPathLogic = () => setPathSelect("logic");
+  const setPathLogic = () => setPathSelect(<LogicPath />);
   // Click event to begin Literacy path:
-  const setPathLit = () => setPathSelect("lit");
+  const setPathLit = () => setPathSelect(<LitPath />);
 
+  // Initial render without user path selection
   if (pathSelect === "main") {
     return (
       <div id="pathMenu">
@@ -27,11 +27,8 @@ export default function PathMenu() {
         </div>
       </div>
     );
-  } else if (pathSelect === "math") {
-    return <MathPath />;
-  } else if (pathSelect === "logic") {
-    return <LogicPath />;
-  } else if (pathSelect === "lit") {
-    return <LitPath />;
+    // Render after user path selection:
+  } else {
+    return pathSelect; // renders an imported component: MathPath, LogicPath, or LitPath
   }
 }

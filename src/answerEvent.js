@@ -1,7 +1,7 @@
 /*
   answerEvent.js
 
-  A check answer event
+  An answer event module
   This module is used between MathPath, LitPath, and LogicPath components
 
 */

@@ -15,7 +15,7 @@ export default function MainMenu() {
           <h1>The Elijah Project</h1>
           <button onClick={handleClick}>Start</button>
           <button>About</button>
-          <button>History</button>
+          <button>Statistics</button>
         </div>
       </div>
     );

@@ -1,9 +1,9 @@
-export default function Footbox({ correct }) {
+export default function Footbox({ correct, style }) {
   const footbox = Array(20).fill();
 
   for (let i = 0; i < 20; i++) {
     if (i < correct) {
-      footbox[i] = <span key={i} className="filledFootbox"></span>;
+      footbox[i] = <span key={i} className={style}></span>;
     } else {
       footbox[i] = <span key={i} className="emptyFootbox"></span>;
     }

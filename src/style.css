@@ -103,7 +103,7 @@ h2 {
 }
 
 #mainMenu button {
-    width: 10rem;
+    width: 12rem;
     padding: 0.75rem;
     font-family: Monospace;
     font-size: 1.75rem;
@@ -159,12 +159,11 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 11rem;
+    margin: 10rem;
 }
 
 #mathWrapper {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(52, 8, 8, 0.95);
+    background-color: rgba(52, 8, 8, .95);
     padding: 5rem 10rem;
     border-radius: 1rem;
 }
@@ -201,14 +200,13 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 11rem;
+    margin: 10rem;
 }
 
 #litWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
     background-color: rgba(26, 45, 79, 0.95);
     padding: 5rem 10rem;
     border-radius: 1rem;
@@ -246,9 +244,23 @@ h2 {
     border: 3px solid black;
 }
 
-.filledFootbox {
+.mathFill {
+    margin: 0 0.8rem;
+    padding: 1.063rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.litFill {
+    margin: 0 0.8rem;
+    padding: 1.063rem;
+    border: 2px solid black;
+    background-color: rgb(201, 234, 255);
+}
+
+.logicFill {
     margin: 0 0.8rem;
     padding: 1.1rem;
     border: 2px solid black;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgb(201, 234, 255);
 }

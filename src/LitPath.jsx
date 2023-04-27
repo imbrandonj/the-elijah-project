@@ -6,8 +6,6 @@ import { randomNum } from "./util";
 import { useState } from "react";
 
 export default function LitPath() {
-  const [question, setQuestion] = useState(0); // problem question
-  const [answer, setAnswer] = useState(0); // the answer to the question (state)
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const [problemSet, setProblemSet] = useState(0); // problem set
 
@@ -77,7 +75,7 @@ export default function LitPath() {
                 }
               }}
             />
-            <Footbox correct={correctTally} />
+            <Footbox correct={correctTally} style={"litFill"} />
           </div>
         </div>
       </div>
