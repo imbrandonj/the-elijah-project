@@ -1,6 +1,7 @@
 import { randomNum } from "./util";
 
 export default function generateProblem(problemSet) {
+  // math problem set 1
   const mathSet1 = [
     { problem: "0 + 0 =", answer: 0 },
     { problem: "1 + 0 =", answer: 1 },
@@ -31,6 +32,7 @@ export default function generateProblem(problemSet) {
     { problem: "8 + 2 =", answer: 10 },
   ];
 
+  // problem set 2
   const mathSet2 = [
     { problem: "1 - 1 =", answer: 0 },
     { problem: "2 - 1 =", answer: 1 },
@@ -54,13 +56,27 @@ export default function generateProblem(problemSet) {
     { problem: "10 - 5 =", answer: 5 },
   ];
 
+  // problem set 3
+  const mathSet3 = [
+    { problem: "10 + 1 =", answer: 11 },
+    { problem: "10 + 2 =", answer: 12 },
+    { problem: "10 + 3 =", answer: 13 },
+    { problem: "10 + 4 =", answer: 14 },
+    { problem: "10 + 5 =", answer: 15 },
+    { problem: "10 + 6 =", answer: 16 },
+    { problem: "10 + 7 =", answer: 17 },
+    { problem: "10 + 8 =", answer: 18 },
+    { problem: "10 + 9 =", answer: 19 },
+    { problem: "10 + 10 =", answer: 20 },
+  ];
+
   // problem object sets question & answer depending on the state (the problemSet)
   let problem = {
     question: "",
     answer: "",
   };
 
-  // generate problem of mathSet0
+  // generate problem of mathSet1:
   if (problemSet === 1) {
     // generate random problem number
     let problemNum = randomNum(mathSet1.length);
@@ -69,7 +85,7 @@ export default function generateProblem(problemSet) {
     problem.question = Object.values(mathSet1[problemNum])[0];
     problem.answer = Object.values(mathSet1[problemNum])[1];
 
-    // generate problem of mathSet 1
+    // generate problem of mathSet2:
   } else if (problemSet === 2) {
     // generate random problem number
     let problemNum = randomNum(mathSet2.length);
@@ -77,6 +93,15 @@ export default function generateProblem(problemSet) {
     // set question and answer
     problem.question = Object.values(mathSet2[problemNum])[0];
     problem.answer = Object.values(mathSet2[problemNum])[1];
+
+    // generate problem of mathSet3:
+  } else if (problemSet === 3) {
+    // generate random problem number
+    let problemNum = randomNum(mathSet3.length);
+
+    // set question and answer
+    problem.question = Object.values(mathSet3[problemNum])[0];
+    problem.answer = Object.values(mathSet3[problemNum])[1];
   }
-  return problem; // object containing question and answer
+  return problem; // object containing `question` and `answer` properties
 }
