@@ -1,6 +1,9 @@
+// imported components:
 import LitPath from "./LitPath";
 import MathPath from "./MathPath";
 import LogicPath from "./LogicPath";
+
+// imported libraries:
 import { useState } from "react";
 
 export default function PathMenu() {

@@ -1,10 +1,16 @@
+// imported components:
 import RocketHeader from "./RocketHeader";
 import Footbox from "./Footbox";
 
-import generateProblem from "./mathProblems";
-import answerEvent from "./answerEvent";
+// imported modules:
+import generateProblem from "../modules/mathProblems";
+import answerEvent from "../modules/answerEvent";
+
+// imported libraries:
 import { useState } from "react";
 
+/*
+ */
 export default function MathPath() {
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
   const [problemSet, setProblemSet] = useState(1); // question problem set

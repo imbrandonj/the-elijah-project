@@ -1,4 +1,4 @@
-import PathMenu from "./PathMenu";
+import PathMenu from "./PathMenu"; // component
 import { useState } from "react";
 
 export default function MainMenu() {

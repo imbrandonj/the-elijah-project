@@ -1,32 +1,22 @@
+// imported components:
 import RocketHeader from "./RocketHeader";
 import Footbox from "./Footbox";
-import answerEvent from "./answerEvent";
-import { randomNum } from "./util";
 
+// imported modules:
+import answerEvent from "../modules/answerEvent";
+import generateProblem from "../modules/litProblems";
+
+// imported libraries:
 import { useState } from "react";
 
+/*
+ */
 export default function LitPath() {
   const [correctTally, setCorrectTally] = useState(0); // correct tally
-  const [problemSet, setProblemSet] = useState(0); // problem set
+  const [problemSet, setProblemSet] = useState(1); // problem set
 
-  // Problem object sets question & answer depending on the state (the problemSet)
-  let problem = {
-    question: "",
-    answer: "",
-  };
-
-  // Generate problem depending on problem set
-  // For the first 3 problem sets, the answer is the question
-  if (problemSet === 0) {
-    problem.question = upperLetters.charAt(randomNum(upperLetters.length));
-    problem.answer = problem.question;
-  } else if (problemSet === 1) {
-    problem.question = lowerLetters.charAt(randomNum(lowerLetters.length));
-    problem.answer = problem.question;
-  } else if (problemSet === 2) {
-    problem.question = mixLetters.charAt(randomNum(mixLetters.length));
-    problem.answer = problem.question;
-  }
+  // problem object sets `question` & `answer` properties depending on the state (the problemSet)
+  let problem = generateProblem(problemSet);
 
   // Return for the first 3 problem sets
   if (problemSet <= 3) {
@@ -37,7 +27,7 @@ export default function LitPath() {
         <div id="litPath">
           <div id="litWrapper">
             <header className="setHeader">
-              Literacy: {setHeader[problemSet]}
+              Literacy: {setHeader[problemSet + 1]}
             </header>
             <p id="litQ">
               Enter the letter:
@@ -82,11 +72,6 @@ export default function LitPath() {
     );
   }
 }
-
-// Letters used for problem sets 1 - 3
-const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-const mixLetters = upperLetters + lowerLetters;
 
 // Problem set headers
 const setHeader = [
