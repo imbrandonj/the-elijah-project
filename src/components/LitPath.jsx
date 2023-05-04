@@ -1,5 +1,6 @@
 // imported components:
 import RocketHeader from "./RocketHeader";
+import SetHeader from "./SetHeader";
 import Footbox from "./Footbox";
 
 // imported modules:
@@ -7,16 +8,38 @@ import answerEvent from "../modules/answerEvent";
 import generateProblem from "../modules/litProblems";
 
 // imported libraries:
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 /*
+  Literacy Path component
  */
 export default function LitPath() {
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const [problemSet, setProblemSet] = useState(1); // problem set
+  const problemHistory = useRef([]); // to store problem history
+  console.log("Render!");
 
-  // problem object sets `question` & `answer` properties depending on the state (the problemSet)
+  // create a problem history array for each problemSet
+  if (!problemHistory.current[problemSet]) {
+    problemHistory.current[problemSet] = [];
+  }
+
+  // problem sets `question` & `answer` properties depending on the state (the problemSet)
   let problem = generateProblem(problemSet);
+
+  // generate a unique problem object (no repeats per problemSet)
+  while (
+    problemHistory.current[problemSet].some(
+      (history) => history.question === problem.question
+    )
+  ) {
+    problem = generateProblem(problemSet);
+  }
+
+  // add problem to the problem set history
+  problemHistory.current[problemSet].push(problem);
+
+  console.log(problemHistory);
 
   return (
     <div>
@@ -24,22 +47,21 @@ export default function LitPath() {
 
       <div id="litPath">
         <div id="litWrapper">
-          <header className="setHeader">
-            Literacy: {setHeader[problemSet - 1]}
-          </header>
+          <SetHeader subject={"Literacy"} set={problemSet} />
+
           {problemSet <= 3 ? (
             <p id="litQ">
-              <span class="lineHeight4">Enter the letter:</span>
+              <span className="lineHeight4">Enter the letter:</span>
               <br />
               <span id="letterQ">{problem.question}</span>
             </p>
           ) : (
             <p id="litQ4">
-              <span class="lineHeight8">Spell the word:</span>
+              <span className="lineHeight8">Spell the word:</span>
               <br />
-              <span class="medEmoji">{problem.emoji}</span>
+              <span className="medEmoji">{problem.emoji}</span>
               <br />
-              <span class="emojiFont">{problem.question}</span>
+              <span className="emojiFont">{problem.question}</span>
             </p>
           )}
 
@@ -47,11 +69,11 @@ export default function LitPath() {
             id="litAns"
             type="text"
             onKeyDown={(event) => {
+              // set the value of the user's answer
+              let inputValue = event.target.value;
+
               // listen for enter keydown
               if (event.key === "Enter") {
-                // set the value of the user's answer
-                let inputValue = event.target.value;
-
                 // first 2 problem sets are case insensitive
                 if (problemSet === 1) {
                   inputValue = inputValue.toUpperCase();
@@ -63,7 +85,6 @@ export default function LitPath() {
 
                 // module answerEvent.js
                 answerEvent(
-                  event, // enter keydown event
                   inputValue, // the user's given answer
                   problem.answer, // the correct answer
                   correctTally, // total correct tally (state)
@@ -80,11 +101,3 @@ export default function LitPath() {
     </div>
   );
 }
-
-// Problem set headers
-const setHeader = [
-  "Problem Set 1 - Enter the Uppercase Letter",
-  "Problem Set 2 - Type the Lowercase Letter",
-  "Problem Set 3 - Type the Letter (Mixed Case)",
-  "Problem Set 4 - Spelling 3 Letter Words",
-];

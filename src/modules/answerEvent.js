@@ -7,7 +7,6 @@
 */
 
 export default function answerEvent(
-  event, // enter keydown event
   inputValue, // the user's given answer
   answer, // the correct answer
   correctTally, // total correct tally (state)
@@ -18,8 +17,10 @@ export default function answerEvent(
   if (inputValue === answer) {
     console.log("correct");
     setCorrectTally(correctTally + 1); // increment total correct tally (state)
-
-    if (correctTally >= 20) {
+    // note:
+    // correctTally does not increment until page re-render
+    // thus, correctTally must be checked when correctTally == 19 & input is correct
+    if (correctTally >= 19) {
       setProblemSet(problemSet + 1); // 20 correct answers increments to next problem set (state)
       setCorrectTally(0); // reset correct tally (state)
     }
