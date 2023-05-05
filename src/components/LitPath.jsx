@@ -2,12 +2,13 @@
 import RocketHeader from "./RocketHeader";
 import SetHeader from "./SetHeader";
 import Footbox from "./Footbox";
+import Timer from "./Timer";
 
 // imported modules:
 import answerEvent from "../modules/answerEvent";
 import generateProblem from "../modules/litProblems";
 
-// imported libraries:
+// imported hooks:
 import { useState, useRef } from "react";
 
 /*
@@ -27,7 +28,7 @@ export default function LitPath() {
   // problem sets `question` & `answer` properties depending on the state (the problemSet)
   let problem = generateProblem(problemSet);
 
-  // generate a unique problem object (no repeats per problemSet)
+  // generate a unique `problem` object (no repeats per problemSet)
   while (
     problemHistory.current[problemSet].some(
       (history) => history.question === problem.question
@@ -36,11 +37,12 @@ export default function LitPath() {
     problem = generateProblem(problemSet);
   }
 
-  // add problem to the problem set history
+  // add `problem` to the problem set history
   problemHistory.current[problemSet].push(problem);
 
   console.log(problemHistory);
 
+  // return component
   return (
     <div>
       <RocketHeader />
@@ -96,6 +98,7 @@ export default function LitPath() {
             }}
           />
           <Footbox correct={correctTally} style={"litFill"} />
+          <Timer />
         </div>
       </div>
     </div>

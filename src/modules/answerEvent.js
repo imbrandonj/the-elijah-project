@@ -14,6 +14,7 @@ export default function answerEvent(
   problemSet, // current problem set (state)
   setProblemSet // to increment the problem set (state) if correct >= 20
 ) {
+  // correct user input:
   if (inputValue === answer) {
     console.log("correct");
     setCorrectTally(correctTally + 1); // increment total correct tally (state)
@@ -24,7 +25,8 @@ export default function answerEvent(
       setProblemSet(problemSet + 1); // 20 correct answers increments to next problem set (state)
       setCorrectTally(0); // reset correct tally (state)
     }
-  } else {
+  } // incorrect user input:
+  else {
     console.log("try again");
     console.log(`Correct answer: ${answer}`);
     console.log(`Your given answer (inputValue): ${inputValue}`);

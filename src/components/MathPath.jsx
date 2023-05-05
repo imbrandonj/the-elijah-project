@@ -2,12 +2,13 @@
 import RocketHeader from "./RocketHeader";
 import SetHeader from "./SetHeader";
 import Footbox from "./Footbox";
+import Timer from "./Timer";
 
 // imported modules:
 import generateProblem from "../modules/mathProblems";
 import answerEvent from "../modules/answerEvent";
 
-// imported libraries:
+// imported hooks:
 import { useState, useRef } from "react";
 
 /*
@@ -27,7 +28,7 @@ export default function MathPath() {
   // problem sets `question` & `answer` properties depending on the state (the problemSet)
   let problem = generateProblem(problemSet);
 
-  // generate a unique problem object (no repeats per problemSet)
+  // generate a unique `problem` object (no repeats per problemSet)
   while (
     problemHistory.current[problemSet].some(
       (history) => history.question === problem.question
@@ -36,12 +37,14 @@ export default function MathPath() {
     problem = generateProblem(problemSet);
   }
 
-  // add problem to the problem set history
+  // add `problem` to the problem set history
   problemHistory.current[problemSet].push(problem);
 
   console.log(problemHistory);
 
   console.log(`Answer on page render: ${problem.answer}`);
+
+  // return component
   return (
     <div>
       <RocketHeader />
@@ -76,6 +79,7 @@ export default function MathPath() {
             />
           </div>
           <Footbox correct={correctTally} style={"mathFill"} />
+          <Timer />
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ export default function SetHeader({ subject, set }) {
     "Problem Set 4 - Subtraction from 10 to 20",
   ];
 
+  // match `subject` argument with it's problem set
   let headerText =
     subject === "Literacy" ? litHeader[set - 1] : mathHeader[set - 1];
 

@@ -16,13 +16,13 @@ button:hover {
     display: flex;
 }
 
-/* Problem set wrapper header */
+/* SetHeader component */
 .setHeader {
     text-align: center;
     font-size: 1.5rem;
     font-style: italic;
     font-weight: 400;
-    margin: 1rem 1rem 3rem;
+    margin: 5rem 1rem 3rem;
 }
 
 /* Rocket emoji home redirect */
@@ -160,12 +160,12 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 8.4rem;
+    margin: 4rem 0 0;
 }
 
 #mathWrapper {
     background-color: rgba(52, 8, 8, .95);
-    padding: 5rem 10rem;
+    padding: 0 10rem;
     border-radius: 1rem;
 }
 
@@ -201,7 +201,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 8.4rem;
+    margin: 4rem 0 0;
 }
 
 #litWrapper {
@@ -209,7 +209,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     background-color: rgba(26, 45, 79, 0.95);
-    padding: 5rem 10rem;
+    padding: 0 10rem;
     border-radius: 1rem;
 }
 
@@ -260,7 +260,7 @@ h2 {
 */
 
 #footbox {
-    margin: 6rem 0 0;
+    margin: 8rem 0 2rem;
 }
 
 .emptyFootbox {
@@ -288,4 +288,27 @@ h2 {
     padding: 1.1rem;
     border: 2px solid black;
     background-color: rgb(201, 234, 255);
+}
+
+/*
+    Timer component styles
+*/
+
+#timerWrapper {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#timer{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.269);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#mathWrapper > #timerWrapper > #timer {
+    color: rgba(255, 255, 255, .9);
 }

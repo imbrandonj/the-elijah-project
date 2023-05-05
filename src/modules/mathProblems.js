@@ -143,7 +143,7 @@ export default function generateProblem(problemSet) {
     // generate random problem number
     let problemNum = randomNum(mathSet1.length);
 
-    // set question and answer
+    // set `question` and `answer`
     problem.question = Object.values(mathSet1[problemNum])[0];
     problem.answer = Object.values(mathSet1[problemNum])[1];
 
@@ -152,7 +152,7 @@ export default function generateProblem(problemSet) {
     // generate random problem number
     let problemNum = randomNum(mathSet2.length);
 
-    // set question and answer
+    // set `question` and `answer`
     problem.question = Object.values(mathSet2[problemNum])[0];
     problem.answer = Object.values(mathSet2[problemNum])[1];
 
@@ -161,7 +161,7 @@ export default function generateProblem(problemSet) {
     // generate random problem number
     let problemNum = randomNum(mathSet3.length);
 
-    // set question and answer
+    // set `question` and `answer`
     problem.question = Object.values(mathSet3[problemNum])[0];
     problem.answer = Object.values(mathSet3[problemNum])[1];
   }
