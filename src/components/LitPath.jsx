@@ -6,7 +6,7 @@ import Timer from "./Timer";
 
 // imported modules:
 import answerEvent from "../modules/answerEvent";
-import generateProblem from "../modules/litProblems";
+import generateProblem from "../modules/generateProblem";
 
 // imported hooks:
 import { useState, useRef } from "react";
@@ -20,27 +20,8 @@ export default function LitPath() {
   const problemHistory = useRef([]); // to store problem history
   console.log("Render!");
 
-  // create a problem history array for each problemSet
-  if (!problemHistory.current[problemSet]) {
-    problemHistory.current[problemSet] = [];
-  }
-
-  // problem sets `question` & `answer` properties depending on the state (the problemSet)
-  let problem = generateProblem(problemSet);
-
-  // generate a unique `problem` object (no repeats per problemSet)
-  while (
-    problemHistory.current[problemSet].some(
-      (history) => history.question === problem.question
-    )
-  ) {
-    problem = generateProblem(problemSet);
-  }
-
-  // add `problem` to the problem set history
-  problemHistory.current[problemSet].push(problem);
-
-  console.log(problemHistory);
+  // `problem` object sets `question` & `answer` properties depending on the subject ("lit") & state (the problemSet)
+  let problem = generateProblem("lit", problemSet, problemHistory); // generate a unique problem
 
   // return component
   return (
