@@ -91,7 +91,7 @@ h2 {
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 12%;
+    margin-top: 20rem;
     display: flex;
     justify-content: center;
 }
@@ -123,7 +123,7 @@ h2 {
     PathMenu component styles
 */
 #pathMenu {
-    margin-top: 12%;
+    margin-top: 20rem;
     display: flex;
     justify-content: center;
 }
@@ -152,6 +152,37 @@ h2 {
     background-color: rgba(0, 0, 0, 0.269);
 }
 
+/*
+    PathMenu component styles
+*/
+#setMenu {
+    margin-top: 14rem;
+    display: flex;
+    justify-content: center;
+}
+
+#setMenu h1 {
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+    letter-spacing: 0.5rem;
+    font-variant: small-caps;
+}
+
+#setMenu button {
+    width: 24rem;
+    padding: 0.75rem;
+    font-family: Monospace;
+    font-size: 1.75rem;
+    margin: 1.2rem 8rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: rgba(204, 238, 255, 0.518);
+}
+
+#setMenu button:hover {
+    color: rgb(201, 234, 255);
+    background-color: rgba(0, 0, 0, 0.269);
+}
 
 /*
     MathPath component styles

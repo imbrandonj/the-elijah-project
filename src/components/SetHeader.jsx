@@ -1,19 +1,13 @@
+// imported modules:
+import litProblemSets from "../modules/litProblemSets";
+import mathProblemSets from "../modules/mathProblemSets";
+
 export default function SetHeader({ subject, set }) {
   // literacy problem set headers:
-  const litHeader = [
-    "Problem Set 1 - Enter the Uppercase Letter",
-    "Problem Set 2 - Type the Lowercase Letter",
-    "Problem Set 3 - Type the Letter (Mixed, Case-Sensitive)",
-    "Problem Set 4 - Spelling Short Words (Animals)",
-  ];
+  const litHeader = litProblemSets;
 
   // math problem set headers:
-  const mathHeader = [
-    "Problem Set 1 - Addition to 10",
-    "Problem Set 2 - Subtraction to 10",
-    "Problem Set 3 - Addition from 10 to 20",
-    "Problem Set 4 - Subtraction from 10 to 20",
-  ];
+  const mathHeader = mathProblemSets;
 
   // match `subject` argument with it's problem set
   let headerText =

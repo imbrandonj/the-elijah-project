@@ -1,20 +1,18 @@
 // imported components:
-import LitPath from "./LitPath";
-import MathPath from "./MathPath";
-import LogicPath from "./LogicPath";
+import SetMenu from "./SetMenu";
 
-// imported libraries:
+// imported hooks:
 import { useState } from "react";
 
 export default function PathMenu() {
   const [pathSelect, setPathSelect] = useState("main");
 
   // Click event to begin Math path:
-  const setPathMath = () => setPathSelect(<MathPath />);
+  const setPathMath = () => setPathSelect(<SetMenu subject={"math"} />);
   // Click event to begin Logic path:
-  const setPathLogic = () => setPathSelect(<LogicPath />);
+  const setPathLogic = () => setPathSelect(<SetMenu subject={"logic"} />);
   // Click event to begin Literacy path:
-  const setPathLit = () => setPathSelect(<LitPath />);
+  const setPathLit = () => setPathSelect(<SetMenu subject={"literacy"} />);
 
   // Initial render without user path selection
   if (pathSelect === "main") {
