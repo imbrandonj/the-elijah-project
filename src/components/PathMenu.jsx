@@ -4,17 +4,20 @@ import SetMenu from "./SetMenu";
 // imported hooks:
 import { useState } from "react";
 
+/*
+  Path Menu Component
+*/
 export default function PathMenu() {
   const [pathSelect, setPathSelect] = useState("main");
 
-  // Click event to begin Math path:
+  // click event to begin Math path:
   const setPathMath = () => setPathSelect(<SetMenu subject={"math"} />);
-  // Click event to begin Logic path:
+  // click event to begin Logic path:
   const setPathLogic = () => setPathSelect(<SetMenu subject={"logic"} />);
-  // Click event to begin Literacy path:
+  // click event to begin Literacy path:
   const setPathLit = () => setPathSelect(<SetMenu subject={"literacy"} />);
 
-  // Initial render without user path selection
+  // initial render without user path selection:
   if (pathSelect === "main") {
     return (
       <div id="pathMenu">
@@ -28,8 +31,8 @@ export default function PathMenu() {
         </div>
       </div>
     );
-    // Render after user path selection:
+    // render after user path selection:
   } else {
-    return pathSelect; // renders an imported component: MathPath, LogicPath, or LitPath
+    return pathSelect; // renders SetMenu with `subject` argument
   }
 }

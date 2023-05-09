@@ -15,7 +15,7 @@ export default function SetHeader({ subject, set }) {
 
   return (
     <header className="setHeader">
-      {subject}: {headerText}
+      {subject} {headerText}
     </header>
   );
 }

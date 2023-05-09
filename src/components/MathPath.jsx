@@ -13,10 +13,12 @@ import { useState, useRef } from "react";
 
 /*
   Math Path component
+
+  `set` argument (passed by SetMenu.jsx) indicates which problem set to begin with
  */
-export default function MathPath() {
+export default function MathPath({ set }) {
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [problemSet, setProblemSet] = useState(1); // question problem set
+  const [problemSet, setProblemSet] = useState(set); // question problem set
   const problemHistory = useRef([]); // to store problem history
   console.log("Render!");
 

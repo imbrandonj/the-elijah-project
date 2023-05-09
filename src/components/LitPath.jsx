@@ -13,10 +13,12 @@ import { useState, useRef } from "react";
 
 /*
   Literacy Path component
+
+  `set` argument (passed by SetMenu.jsx) indicates which problem set to begin with
  */
-export default function LitPath() {
+export default function LitPath({ set }) {
   const [correctTally, setCorrectTally] = useState(0); // correct tally
-  const [problemSet, setProblemSet] = useState(1); // problem set
+  const [problemSet, setProblemSet] = useState(set); // problem set
   const problemHistory = useRef([]); // to store problem history
   console.log("Render!");
 
