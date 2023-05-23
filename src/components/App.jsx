@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 
+// imported components:
 import MainMenu from "./MainMenu";
 
 const App = () => {

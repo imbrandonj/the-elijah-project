@@ -70,7 +70,7 @@ export default function generateProblem(problemSet) {
     { problem: "10 - 7 =", answer: 3 },
     { problem: "10 - 8 =", answer: 2 },
     { problem: "10 - 9 =", answer: 1 },
-    { problem: "10 - 0 =", answer: 0 },
+    { problem: "10 - 0 =", answer: 10 },
   ];
 
   // problem set 3

@@ -1,11 +1,19 @@
-import PathMenu from "./PathMenu"; // component
+// imported components:
+import PathMenu from "./PathMenu";
+import About from "./About";
+
+// imported hooks:
 import { useState } from "react";
 
 export default function MainMenu() {
   const [menuSelect, setMenuSelect] = useState("main");
 
-  const handleClick = () => {
+  const start = () => {
     setMenuSelect("start");
+  };
+
+  const about = () => {
+    setMenuSelect("about");
   };
 
   if (menuSelect === "main") {
@@ -13,13 +21,15 @@ export default function MainMenu() {
       <div id="mainMenu">
         <div className="cardWrapper">
           <h1>The Elijah Project</h1>
-          <button onClick={handleClick}>Start</button>
-          <button>About</button>
+          <button onClick={start}>Start</button>
+          <button onClick={about}>About</button>
           <button>Statistics</button>
         </div>
       </div>
     );
   } else if (menuSelect === "start") {
     return <PathMenu />;
+  } else if (menuSelect === "about") {
+    return <About />;
   }
 }

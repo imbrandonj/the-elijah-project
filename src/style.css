@@ -3,8 +3,41 @@
 */
 body {
     background-image: url("../images/stars.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    animation: moveBackground 120s infinite linear;
     color: rgb(201, 234, 255);
     font-family: Monospace;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 50% 50%;
+    }
+    12.5% {
+        background-position: 52% 48%;
+    }
+    25% {
+        background-position: 54% 46%;
+    }
+    37.5% {
+        background-position: 54% 48%;
+    }
+    50% {
+        background-position: 54% 50%;
+    }
+    62.5% {
+        background-position: 52% 52%;
+    }
+    75% {
+        background-position: 50% 54%;
+    }
+    87.5% {
+        background-position: 48% 52%;
+    }
+    100% {
+        background-position: 50% 50%
+    }
 }
 
 button:hover {
@@ -120,6 +153,47 @@ h2 {
     color: rgb(201, 234, 255);
     background-color: rgba(0, 0, 0, 0.269);
 }
+
+/*
+    About component styles
+*/
+#aboutMenu {
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+}
+
+#aboutWrapper {
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#aboutMenu h2 {
+    margin: 1.4rem;
+    font-size: 1.6rem;
+    align-self: flex-start;
+    width: 28rem;
+    letter-spacing: 0.5rem;
+}
+
+#aboutParagraph {
+    margin: 4rem 0 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+#signature {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-family: Arial;
+    margin: 1rem 12rem 0 0;
+    letter-spacing: 0.1rem;
+    text-align: right;
+}
+
+
 
 /*
     PathMenu component styles
