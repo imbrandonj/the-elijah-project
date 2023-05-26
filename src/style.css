@@ -44,11 +44,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* Page header during problem set components */
-.pageHeader {
-    display: flex;
-}
-
 /* SetHeader component */
 .setHeader {
     text-align: center;
@@ -58,41 +53,6 @@ button:hover {
     margin: 5rem 1rem 3rem;
 }
 
-/* Rocket emoji home redirect */
-.rocketBig {
-    text-decoration: none;
-    margin: 0.5rem 2rem;
-    padding: 0.5rem;
-    font-size: 5rem;
-    opacity: 75%;
-}
-
-.rocketBig:hover {
-    cursor: pointer;
-    animation: wiggle 0.5s ease-in-out infinite;
-}
-
-@keyframes wiggle {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(-10deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    75% {
-      transform: rotate(10deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
-  }
-
-.rocketSmall {
-
-}
 
 /* used in MainMenu.jsx & PathMenu.jsx */
 .cardWrapper {
@@ -193,13 +153,29 @@ h2 {
     text-align: right;
 }
 
+#aboutMenu #rocketButton {
+    background-color: rgba(204, 238, 255, 0.6);
+    border: none;
+    width: 10rem;
+    font-family: Monospace;
+    font-size: 2.5rem;
+    border-radius: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+}
+
+#aboutMenu #rocketButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(201, 234, 255);
+}
+
 
 
 /*
     PathMenu component styles
 */
 #pathMenu {
-    margin-top: 20rem;
+    margin-top: 16rem;
     display: flex;
     justify-content: center;
 }
@@ -221,6 +197,16 @@ h2 {
     border-radius: 1rem;
     border: none;
     background-color: rgba(204, 238, 255, 0.518);
+}
+
+/*
+    See Rocket style section for additional info
+*/
+#pathMenu #rocketButton {
+    width: 10rem;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    margin: 4.2rem 4.2rem 0;
 }
 
 #pathMenu button:hover {
@@ -263,7 +249,7 @@ h2 {
     line-height: 2rem;
     letter-spacing: 0.6rem;
     font-variant: small-caps;
-    margin-left: 4rem;
+    margin-left: 8rem;
 }
 
 /* located outside of #setButtonWrapper (sibling) */
@@ -461,3 +447,95 @@ h2 {
 #mathWrapper > #timerWrapper > #timer {
     color: rgba(255, 255, 255, .9);
 }
+
+
+/* Rocket emoji home redirect styles
+    used in:
+    RocketHeader & RocketButton components
+    rocketFooter footer class (pathMenu.jsx) */
+    #rocketHeader, #rocketButton {
+        display: flex;
+    }
+    
+    #rocketButton {
+        font-size: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #rocketButton:hover {
+        animation: bounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-1rem);
+        }
+    }
+
+    #rocketButton:hover .rocketSmall {
+        animation: rocketSmallWiggle 0.8s ease-in-out infinite;
+    }
+
+    .rocketSmall {
+        text-decoration: none;
+        padding: 0.4rem;
+        font-size: 1.8rem;
+        opacity: 75%;
+        transform: rotate(-25deg);
+    }
+
+    @keyframes rocketSmallWiggle {
+        25% {
+            transform: rotate(-40deg)
+        }
+
+        50% {
+            transform: rotate(-55deg);
+        }
+
+        75% {
+            transform: rotate(-40deg);
+        }
+    }
+    
+    .rocketBig {
+        text-decoration: none;
+        margin: 0.5rem 2rem;
+        padding: 0.5rem;
+        font-size: 5rem;
+        opacity: 75%;
+        transform: rotate(-10deg);
+    }
+    
+    .rocketBig:hover {
+        cursor: pointer;
+        animation: rocketBigWiggle 0.8s ease-in-out infinite;
+    }
+
+    @keyframes rocketBigWiggle {
+        0%, 100% {
+            transform: rotate(-10deg);
+        }
+        25% {
+          transform: rotate(-20deg);
+        }
+
+        50% {
+            transform: rotate(-30deg)
+        }
+
+        75% {
+          transform: rotate(-20deg);
+        }
+      }
+
+      .rocketFooter {
+        display: flex;
+        justify-content: right;
+      }
+    

@@ -1,3 +1,6 @@
+// imported components:
+import RocketButton from "./RocketButton";
+
 export default function About() {
   return (
     <div id="aboutMenu">
@@ -22,7 +25,7 @@ export default function About() {
           Something pure, something simple, something creative and free.
           <br />
           <br />
-          Using this app, Elijah now knows his way around a keyboard,
+          Using this app, Elijah now knows his way around a mouse & keyboard.
           <br />
           He can spell simple words, and he can perform basic operations of
           math.
@@ -35,11 +38,12 @@ export default function About() {
           It's as simple as pressing 'Start', choosing a subject path, and
           pressing 'Begin Here'
           <br />
-          Good luck, have fun, and be patient.
+          Good luck, have fun, work together, and be patient.
           <br />
         </p>
         <p id="signature"> -Brandon </p>
       </div>
+      <RocketButton text="Back" position="last" />
     </div>
   );
 }
