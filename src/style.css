@@ -183,7 +183,7 @@ h2 {
 #pathMenu h1 {
     text-align: center;
     font-size: 3.2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     letter-spacing: 1.5rem;
     font-variant: small-caps;
 }
@@ -198,6 +198,11 @@ h2 {
     border: none;
     background-color: rgba(204, 238, 255, 0.518);
 }
+
+#pathFooter {
+    display: flex;
+    justify-content: center;
+  }
 
 /*
     See Rocket style section for additional info
@@ -391,6 +396,31 @@ h2 {
 }
 
 /*
+    Logic component styles
+*/
+#logicPath {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+#logicWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(26, 45, 79, 0.95);
+    padding: 0 10rem;
+    border-radius: 1rem;
+}
+
+svg {
+    height: 12rem;
+    width: 12rem;
+    color: white;
+}
+
+/*
     Footbox component styles
 */
 
@@ -534,8 +564,5 @@ h2 {
         }
       }
 
-      .rocketFooter {
-        display: flex;
-        justify-content: right;
-      }
+
     

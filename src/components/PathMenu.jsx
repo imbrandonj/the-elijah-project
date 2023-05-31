@@ -28,7 +28,7 @@ export default function PathMenu() {
             <button onClick={setPathMath}>Math</button>
             <button onClick={setPathLogic}>Logic</button>
             <button onClick={setPathLit}>Literacy</button>
-            <footer className="rocketFooter">
+            <footer id="pathFooter">
               <RocketButton text="Home" position="first" />
             </footer>
           </div>

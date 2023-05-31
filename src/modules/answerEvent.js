@@ -2,8 +2,11 @@
   answerEvent.js
 
   An answer event module
-  This module is used between MathPath, LitPath, and LogicPath components
+  This module is used between MathPath, LitPath, and LogicPath(ClickObject.jsx) components
 
+  This function checks for correct input
+  Increments the correct tally,
+  If tally is 20 (standard problem set length), increment to the next problem set
 */
 
 export default function answerEvent(

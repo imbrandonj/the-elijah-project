@@ -21,9 +21,11 @@ export default function SetMenu({ subject }) {
   // set `problemSets` to the pertaining imported subject
   let problemSets = subject === "math" ? mathProblemSets : litProblemSets;
 
+  // !add comments explaining this one!
   const handleClick = (setSet) => {
     if (subject === "math") setSetSelect(<MathPath set={setSet} />);
     else if (subject === "literacy") setSetSelect(<LitPath set={setSet} />);
+    else if (subject === "logic") setSetSelect(<LogicPath set={setSet} />);
   };
 
   // create an array of buttons to display each problem set
