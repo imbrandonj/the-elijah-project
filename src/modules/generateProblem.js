@@ -24,8 +24,8 @@ export default function generateProblem(subject, problemSet, problemHistory) {
       ? litProblems(problemSet)
       : subject === "math"
       ? mathProblems(problemSet)
-      : subject === "clickObj"
-      ? clickObjectProblems(problemSet)
+      //: subject === "clickObj"
+      //? clickObjectProblems(problemSet)
       : undefined;
 
   // generate a unique `problem` object (no repeats per `problemSet`)
@@ -40,8 +40,8 @@ export default function generateProblem(subject, problemSet, problemHistory) {
         ? litProblems(problemSet)
         : subject === "math"
         ? mathProblems(problemSet)
-        : subject === "clickObj"
-        ? clickObjectProblems(problemSet)
+        //: subject === "clickObj"
+        //? clickObjectProblems(problemSet)
         : undefined;
   }
 

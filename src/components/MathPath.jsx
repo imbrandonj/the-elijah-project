@@ -15,6 +15,8 @@ import { useState, useRef } from "react";
   Math Path component
 
   `set` argument (passed by SetMenu.jsx) indicates which problem set to begin with
+
+  Problem sets multiples of 3 will render MathOperations component
  */
 export default function MathPath({ set }) {
   const [correctTally, setCorrectTally] = useState(0); // total correct tally

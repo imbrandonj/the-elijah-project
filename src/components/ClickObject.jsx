@@ -3,7 +3,6 @@ import Footbox from "./Footbox.jsx";
 
 // imported modules:
 import { speakText, randomNum } from "../modules/util.js";
-import generateSVG from "../modules/generateSVG.jsx";
 import answerEvent from "../modules/answerEvent.js";
 
 // imported hooks:
@@ -21,9 +20,6 @@ import { useState, useRef } from "react";
 export default function ClickObject({ set, setSet }) {
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const problemHistory = useRef([]); // to store problem history
-
-  let clickObj1 = generateSVG();
-  let clickObj2 = generateSVG();
 
   speakText(clickObj1.props.description);
 

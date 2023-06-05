@@ -2,23 +2,33 @@
   RocketButton component
 
   Displays `text` and Rocket emoji which redirects the user home
-  `position` argument is either "first" or "last"
-  positioning `text` either in front of the rocket or after it
-
-  The positioning of the rocket and how it faces also changes (css)
-  according to the className given
+  `position` argument is in reference to the rocket emoji in relation to `text`
+  either "front", "behind", or "below"
+  `movement` is either "vertical" or "horizontal", in reference to css hover movement
 */
-export default function RocketButton({ text, position }) {
+export default function RocketButton({ text, position, movement }) {
   const redirect = () => {
     location.reload();
   };
 
   // return component
-  return (
-    <button id="rocketButton" onClick={redirect}>
-      {position === "first" ? text : null}
-      <span className="rocketSmall">🚀</span>
-      {position === "last" ? text : null}
-    </button>
-  );
+  if (position === "below" && movement === "horizontal") {
+    return (
+      <button
+        id="rocketButton"
+        className="rocketBelow horizontalBounce"
+        onClick={redirect}
+      >
+        {text}
+        <span className="rocketHorizontal">🚀</span>
+      </button>
+    );
+  } else if (position === "behind" && movement === "vertical") {
+    return (
+      <button id="rocketButton" className="verticalBounce" onClick={redirect}>
+        {text}
+        <span className="rocketVertical">🚀</span>
+      </button>
+    );
+  }
 }

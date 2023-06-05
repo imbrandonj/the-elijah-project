@@ -43,7 +43,7 @@ export default function About() {
         </p>
         <p id="signature"> -Brandon </p>
       </div>
-      <RocketButton text="Back" position="first" />
+      <RocketButton text="Back" position="below" movement="horizontal" />
     </div>
   );
 }

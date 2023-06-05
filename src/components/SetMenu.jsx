@@ -30,7 +30,7 @@ export default function SetMenu({ subject }) {
 
   // create an array of buttons to display each problem set
   const setButtons = problemSets.map((problemSet, index) => (
-    <button onClick={() => handleClick(index + 1)}>{problemSet}</button>
+    <button key={problemSet} onClick={() => handleClick(index + 1)}>{problemSet}</button>
   ));
 
   // initial render without user set selection:
