@@ -15,11 +15,12 @@ export default function answerEvent(
   correctTally, // total correct tally (state)
   setCorrectTally, // to set total correct tally (state)
   problemSet, // current problem set (state)
-  setProblemSet // to increment the problem set (state) if correct >= 20
+  setProblemSet, // to increment the problem set (state) if correct >= 20
+  setLevelEvent // to set a level up event and display `LevelUp` component on rerender
 ) {
   // correct user input:
   if (inputValue === answer) {
-    console.log("correct");
+    console.log('correct');
     setCorrectTally(correctTally + 1); // increment total correct tally (state)
     // note:
     // correctTally does not increment until page re-render
@@ -27,10 +28,13 @@ export default function answerEvent(
     if (correctTally >= 19) {
       setProblemSet(problemSet + 1); // 20 correct answers increments to next problem set (state)
       setCorrectTally(0); // reset correct tally (state)
+      if (problemSet % 3 === 0) {
+        setLevelEvent(true);
+      }
     }
   } // incorrect user input:
   else {
-    console.log("try again");
+    console.log('try again');
     console.log(`Correct answer: ${answer}`);
     console.log(`Your given answer (inputValue): ${inputValue}`);
   }

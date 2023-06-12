@@ -2,7 +2,7 @@
     General Styles
 */
 body {
-    background-image: url("../images/stars.jpg");
+    background-image: url("../public/images/stars.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     animation: moveBackground 120s infinite linear;
