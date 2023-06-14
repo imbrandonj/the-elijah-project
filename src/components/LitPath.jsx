@@ -76,10 +76,10 @@ export default function LitPath({ set }) {
                   inputValue, // the user's given answer
                   problem.answer, // the correct answer
                   correctTally, // total correct tally (state)
-                  setCorrectTally, // to set total correct tally (state)
+                  setCorrectTally, // to set total correct tally (set state)
                   problemSet, // current problem set (state)
                   setProblemSet, // to increment the problem set (state) if correct >= 20
-                  setLevelEvent // to set a level up event and display `LevelUp` component on rerender
+                  setLevelEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                 );
               }
             }}

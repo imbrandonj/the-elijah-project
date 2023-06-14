@@ -10,7 +10,7 @@ import generateProblem from '../modules/generateProblem';
 import answerEvent from '../modules/answerEvent';
 
 // imported hooks:
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 /*
   Math Path component
@@ -26,6 +26,9 @@ export default function MathPath({ set }) {
   const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const problemHistory = useRef([]); // to store problem history
   console.log('Render!');
+  console.log(`levelEvent: ${levelEvent}`);
+  console.log(`problemSet: ${problemSet}`);
+  console.log(`correctTally: ${correctTally}`);
 
   // `problem` object sets `question` & `answer` properties depending on the subject ("math") & state (the problemSet)
   let problem = generateProblem('math', problemSet, problemHistory); // generate a unique problem
@@ -35,7 +38,12 @@ export default function MathPath({ set }) {
     <div>
       <RocketHeader />
       {levelEvent ? (
-        <LevelUp path="math" level={level} setLevel={setLevel} />
+        <LevelUp
+          path="Math"
+          level={level}
+          setLevel={setLevel}
+          setLevelEvent={setLevelEvent}
+        />
       ) : (
         <div id="mathPath">
           <div id="mathWrapper">
@@ -58,10 +66,10 @@ export default function MathPath({ set }) {
                       inputValue, // the user's given answer
                       problem.answer, // the correct answer
                       correctTally, // total correct tally (state)
-                      setCorrectTally, // to set total correct tally (state)
+                      setCorrectTally, // to set total correct tally (set state)
                       problemSet, // current problem set (state)
                       setProblemSet, // to increment the problem set (state) if correct >= 20
-                      setLevelEvent // to set a level up event and display `LevelUp` component on rerender
+                      setLevelEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                     );
                   }
                 }}

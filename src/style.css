@@ -64,16 +64,6 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.95);
 }
 
-/* !! fix this to being specific to it's component !! */
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2.2rem;
-    width: 12rem;
-    padding: 0.2rem 0.2rem 0.1rem 0.5rem;
-    border-radius: 0.5rem;
-    letter-spacing: 0.9rem;
-}
-
 .lineHeight4 {
     line-height: 4rem;
 }
@@ -416,14 +406,31 @@ h2 {
     border-radius: 1rem;
 }
 
-
 /*
-    Sidebar component styles
+    Level Up component styles
 */
-
-#sidebar {
-
+#levelUp {
+    margin-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#levelWrapper {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 0 10rem;
+    border-radius: 1rem;
+}
+
+#levelUp h2 {
+    font-size: 3rem;
+}
+
+#levelUp h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
 
 /*
     Footbox component styles
@@ -492,6 +499,15 @@ h2 {
 
 #rocketHeader, #rocketButton {
     display: flex;
+}
+
+#rocketHeader h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+    width: 12rem;
+    padding: 0.2rem 0.2rem 0.1rem 0.5rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.9rem;
 }
 
 #rocketButton {
