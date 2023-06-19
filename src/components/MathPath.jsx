@@ -20,18 +20,20 @@ import { useState, useRef, useEffect } from 'react';
   Problem sets multiples of 3 will render MathOperations component
  */
 export default function MathPath({ set }) {
+  const problemHistory = useRef([]); // to store problem history
+
+  // state:
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
   const [problemSet, setProblemSet] = useState(set); // question problem set
   const [level, setLevel] = useState(1); // level; increments in `LevelUp` component
   const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
-  const problemHistory = useRef([]); // to store problem history
-  console.log('Render!');
-  console.log(`levelEvent: ${levelEvent}`);
-  console.log(`problemSet: ${problemSet}`);
-  console.log(`correctTally: ${correctTally}`);
 
-  // `problem` object sets `question` & `answer` properties depending on the subject ("math") & state (the problemSet)
-  let problem = generateProblem('math', problemSet, problemHistory); // generate a unique problem
+  console.log('Render!');
+  // console.log(`levelEvent: ${levelEvent}`);
+  // console.log(`problemSet: ${problemSet}`);
+  // console.log(`correctTally: ${correctTally}`);
+
+  const problem = generateProblem('math', problemSet, problemHistory);
 
   // return component
   return (

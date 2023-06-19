@@ -3,6 +3,33 @@ import { randomNum } from './util';
 export default function generateProblem(problemSet) {
   // math problem set 1
   const mathSet1 = [
+    { problem: '🐻 + 🐻🐻 =', answer: 3 },
+    { problem: '🐻🐻 + 🐻🐻🐻 =', answer: 5 },
+    { problem: '🐻🐻🐻 + 🐻🐻🐻🐻 =', answer: 7 },
+    { problem: '🐼 + 🐼 =', answer: 2 },
+    { problem: '🐼🐼 + 🐼🐼 =', answer: 4 },
+    { problem: '🐼🐼🐼 + 🐼🐼🐼 =', answer: 6 },
+    { problem: '🐢 + 🐢 + 🐢 =', answer: 3 },
+    { problem: '🐢 + 🐢🐢 + 🐢 =', answer: 4 },
+    { problem: '🐢 + 🐢🐢🐢 + 🐢 =', answer: 5 },
+    { problem: '🐌 + 🐌 + 🐌 + 🐌 =', answer: 4 },
+    { problem: '🐝🐝 + 🐝🐝 =', answer: 4 },
+    { problem: '🐝🐝🐝🐝 + 🐝🐝🐝 =', answer: 7 },
+    { problem: '🐨🐨🐨 + 🐨🐨🐨 =', answer: 6 },
+    { problem: '🐳  + 🐳  + 🐳 =', answer: 3 },
+    { problem: '🌚 + 🌚 =', answer: 2 },
+    { problem: '🌙 + 🌙 + 🌙 =', answer: 3 },
+    { problem: '🌠🌠🌠 + 🌠🌠🌠 =', answer: 6 },
+    { problem: '🌞🌞🌞🌞 + 🌞 =', answer: 5 },
+    { problem: '🌌 + 🌌🌌 + 🌌 =', answer: 4 },
+    { problem: '🌌 + 🌌🌌🌌 + 🌌 =', answer: 5 },
+    { problem: '🪐🪐 + 🪐🪐 + 🪐', answer: 5 },
+    { problem: '🌝 + 🌝 + 🌝 =', answer: 3 },
+    { problem: '⭐⭐⭐⭐ + ⭐⭐⭐ =', answer: 7 },
+  ];
+
+  // math problem set 2
+  const mathSet2 = [
     { problem: '0 + 0 =', answer: 0 },
     { problem: '1 + 0 =', answer: 1 },
     { problem: '1 + 1 =', answer: 2 },
@@ -32,8 +59,8 @@ export default function generateProblem(problemSet) {
     { problem: '8 + 2 =', answer: 10 },
   ];
 
-  // problem set 2
-  const mathSet2 = [
+  // problem set 3
+  const mathSet3 = [
     { problem: '1 - 0 =', answer: 1 },
     { problem: '1 - 1 =', answer: 0 },
     { problem: '2 - 0 =', answer: 2 },
@@ -73,8 +100,8 @@ export default function generateProblem(problemSet) {
     { problem: '10 - 0 =', answer: 10 },
   ];
 
-  // problem set 3
-  const mathSet3 = [
+  // problem set 4
+  const mathSet4 = [
     { problem: '10 + 1 =', answer: 11 },
     { problem: '10 + 2 =', answer: 12 },
     { problem: '10 + 3 =', answer: 13 },
@@ -132,8 +159,8 @@ export default function generateProblem(problemSet) {
     { problem: '20 + 0 =', answer: 20 },
   ];
 
-  // problem set 4
-  const mathSet4 = [
+  // problem set 5
+  const mathSet5 = [
     { problem: '20 - 0 =', answer: 20 },
     { problem: '20 - 1 =', answer: 19 },
     { problem: '20 - 2 =', answer: 18 },
@@ -170,7 +197,6 @@ export default function generateProblem(problemSet) {
 
   // generate problem of mathSet1:
   if (problemSet === 1) {
-    // generate random problem number
     let problemNum = randomNum(mathSet1.length);
 
     // set `question` and `answer`
@@ -194,12 +220,21 @@ export default function generateProblem(problemSet) {
     // set `question` and `answer`
     problem.question = Object.values(mathSet3[problemNum])[0];
     problem.answer = Object.values(mathSet3[problemNum])[1];
+
+    // generate problem of mathSet4:
   } else if (problemSet === 4) {
+    // generate random problem number
     let problemNum = randomNum(mathSet4.length);
 
     // set `question` and `answer`
     problem.question = Object.values(mathSet4[problemNum])[0];
     problem.answer = Object.values(mathSet4[problemNum])[1];
+  } else if (problemSet === 5) {
+    let problemNum = randomNum(mathSet5.length);
+
+    // set `question` and `answer`
+    problem.question = Object.values(mathSet5[problemNum])[0];
+    problem.answer = Object.values(mathSet5[problemNum])[1];
   }
   return problem; // object containing `question` and `answer` properties
 }
