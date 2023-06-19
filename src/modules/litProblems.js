@@ -1,41 +1,46 @@
-import { randomNum } from "./util";
+import { randomNum } from './util';
 
 export default function generateProblem(problemSet) {
   // letters used for problem sets 1 - 3
-  const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+  const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
   const mixLetters = upperLetters + lowerLetters;
 
   // problem set 4
   const litSet4 = [
-    { animal: "cow", emoji: "🐄" },
-    { animal: "cat", emoji: "🐈" },
-    { animal: "dog", emoji: "🐕" },
-    { animal: "tiger", emoji: "🐅" },
-    { animal: "horse", emoji: "🐎" },
-    { animal: "pig", emoji: "🐖" },
-    { animal: "mouse", emoji: "🐁" },
-    { animal: "duck", emoji: "🦆" },
-    { animal: "owl", emoji: "🦉" },
-    { animal: "frog", emoji: "🐸" },
-    { animal: "snake", emoji: "🐍" },
-    { animal: "shark", emoji: "🦈" },
-    { animal: "snail", emoji: "🐌" },
-    { animal: "spider", emoji: "🕷" },
-    { animal: "bee", emoji: "🐝" },
-    { animal: "sloth", emoji: "🦥" },
-    { animal: "skunk", emoji: "🦨" },
-    { animal: "bear", emoji: "🐻" },
-    { animal: "lion", emoji: "🦁" },
-    { animal: "fox", emoji: "🦊" },
-    { animal: "wolf", emoji: "🐺" },
+    { animal: 'cow', emoji: '🐄' },
+    { animal: 'cat', emoji: '🐈' },
+    { animal: 'dog', emoji: '🐕' },
+    { animal: 'tiger', emoji: '🐅' },
+    { animal: 'horse', emoji: '🐎' },
+    { animal: 'pig', emoji: '🐖' },
+    { animal: 'mouse', emoji: '🐁' },
+    { animal: 'duck', emoji: '🦆' },
+    { animal: 'owl', emoji: '🦉' },
+    { animal: 'frog', emoji: '🐸' },
+    { animal: 'snake', emoji: '🐍' },
+    { animal: 'shark', emoji: '🦈' },
+    { animal: 'snail', emoji: '🐌' },
+    { animal: 'spider', emoji: '🕷️' },
+    { animal: 'bee', emoji: '🐝' },
+    { animal: 'sloth', emoji: '🦥' },
+    { animal: 'skunk', emoji: '🦨' },
+    { animal: 'bear', emoji: '🐻' },
+    { animal: 'lion', emoji: '🦁' },
+    { animal: 'fox', emoji: '🦊' },
+    { animal: 'wolf', emoji: '🐺' },
+    { animal: 'rabbit', emoji: '🐰' },
+    { animal: 'fish', emoji: '🐠' },
+    { animal: 'whale', emoji: '🐳' },
+    { animal: 'shark', emoji: '🦈' },
+    { animal: 'turtle', emoji: '🐢' },
   ];
 
   // problem object sets question & answer depending on the state (the problemSet)
   let problem = {
-    question: "",
-    answer: "",
-    emoji: "", // relevent for problem set 4
+    question: '',
+    answer: '',
+    emoji: '', // relevent for problem set 4
   };
 
   // generate problem depending on problemSet (state)

@@ -1,12 +1,12 @@
 // imported components:
-import RocketHeader from "./RocketHeader";
-import SetHeader from "./SetHeader";
-import ClickObject from "./ClickObject";
-import Footbox from "./Footbox";
-import Timer from "./Timer";
+import RocketHeader from './RocketHeader';
+import SetHeader from './SetHeader';
+import ClickObject from './ClickObject';
+import Footbox from './Footbox';
+import Timer from './Timer';
 
 // imported hooks:
-import { useState, useRef } from "react";
+import { useState, useRef } from 'react';
 
 /*
   Logic Path component
@@ -20,7 +20,7 @@ import { useState, useRef } from "react";
 export default function LogicPath({ set }) {
   const [problemSet, setProblemSet] = useState(set); // question problem set
 
-  console.log("Render!");
+  console.log('Render!');
 
   // return component
   return (
@@ -29,9 +29,15 @@ export default function LogicPath({ set }) {
 
       <div id="logicPath">
         <div id="logicWrapper">
-          <SetHeader subject={"Logic"} set={problemSet} />
+          {/* <SetHeader subject={"Logic"} set={problemSet} />
           <ClickObject set={problemSet} setSet={setProblemSet} />
-          <Timer />
+          <Timer /> */}
+          <h2>Logic Path coming soon.</h2>
+          <p>
+            Math and Literacy paths available
+            <br />
+            Press the rocket to return home
+          </p>
         </div>
       </div>
     </div>

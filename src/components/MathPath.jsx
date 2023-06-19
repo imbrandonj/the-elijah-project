@@ -10,14 +10,16 @@ import generateProblem from '../modules/generateProblem';
 import answerEvent from '../modules/answerEvent';
 
 // imported hooks:
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
 /*
   Math Path component
 
-  `set` argument (passed by SetMenu.jsx) indicates which problem set to begin with
-
-  Problem sets multiples of 3 will render MathOperations component
+  Presents math problems ~
+  • QA bundle displays problem + input box in simple format
+  • After level 1, problem sets multiples of 3 will render MathOperations component
+  • Level up event triggers after every 3rd problem set
+  • `set` prop (passed by SetMenu.jsx) indicates which problem set to begin with
  */
 export default function MathPath({ set }) {
   const problemHistory = useRef([]); // to store problem history
@@ -33,12 +35,14 @@ export default function MathPath({ set }) {
   // console.log(`problemSet: ${problemSet}`);
   // console.log(`correctTally: ${correctTally}`);
 
-  const problem = generateProblem('math', problemSet, problemHistory);
+  // `problem` object sets `question` & `answer` properties depending on the subject ("math") & state (the problemSet)
+  const problem = generateProblem('math', problemSet, problemHistory); // generate a unique problem
 
   // return component
   return (
     <div>
       <RocketHeader />
+
       {levelEvent ? (
         <LevelUp
           path="Math"

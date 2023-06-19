@@ -1,25 +1,26 @@
 // imported components:
-import SetMenu from "./SetMenu";
-import RocketButton from "./RocketButton";
+import SetMenu from './SetMenu';
+import RocketButton from './RocketButton';
+import LogicPath from './LogicPath';
 
 // imported hooks:
-import { useState } from "react";
+import { useState } from 'react';
 
 /*
   Path Menu Component
 */
 export default function PathMenu() {
-  const [pathSelect, setPathSelect] = useState("main");
+  const [pathSelect, setPathSelect] = useState('main');
 
   // click event to begin Math path:
-  const setPathMath = () => setPathSelect(<SetMenu subject={"math"} />);
+  const setPathMath = () => setPathSelect(<SetMenu subject={'math'} />);
   // click event to begin Logic path:
-  const setPathLogic = () => setPathSelect(<SetMenu subject={"logic"} />);
+  const setPathLogic = () => setPathSelect(<LogicPath />);
   // click event to begin Literacy path:
-  const setPathLit = () => setPathSelect(<SetMenu subject={"literacy"} />);
+  const setPathLit = () => setPathSelect(<SetMenu subject={'literacy'} />);
 
   // initial render without user path selection:
-  if (pathSelect === "main") {
+  if (pathSelect === 'main') {
     return (
       <div id="pathMenu">
         <div className="cardWrapper">
