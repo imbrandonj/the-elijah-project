@@ -6,6 +6,8 @@ import LogicPath from './LogicPath';
 // imported hooks:
 import { useState } from 'react';
 
+import '../styles/PathMenu.css'; // component styles
+
 /*
   Path Menu Component
 */
@@ -13,11 +15,11 @@ export default function PathMenu() {
   const [pathSelect, setPathSelect] = useState('main');
 
   // click event to begin Math path:
-  const setPathMath = () => setPathSelect(<SetMenu subject={'math'} />);
+  const setPathMath = () => setPathSelect(<SetMenu path={'math'} />);
   // click event to begin Logic path:
   const setPathLogic = () => setPathSelect(<LogicPath />);
   // click event to begin Literacy path:
-  const setPathLit = () => setPathSelect(<SetMenu subject={'literacy'} />);
+  const setPathLit = () => setPathSelect(<SetMenu path={'literacy'} />);
 
   // initial render without user path selection:
   if (pathSelect === 'main') {

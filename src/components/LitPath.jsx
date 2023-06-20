@@ -9,6 +9,8 @@ import LevelUp from './LevelUp';
 import answerEvent from '../modules/answerEvent';
 import generateProblem from '../modules/generateProblem';
 
+import '../styles/LitPath.css'; // component styles
+
 // imported hooks:
 import { useState, useRef } from 'react';
 
@@ -52,13 +54,13 @@ export default function LitPath({ set }) {
 
             {problemSet <= 3 ? (
               <p id="litQ">
-                <span className="lineHeight4">Enter the letter:</span>
+                <span>Enter the letter:</span>
                 <br />
                 <span id="letterQ">{problem.question}</span>
               </p>
             ) : (
               <p id="litQ4">
-                <span className="lineHeight8">Spell the word:</span>
+                <span id="spell">Spell the word:</span>
                 <br />
                 <span className="medEmoji">{problem.emoji}</span>
                 <br />

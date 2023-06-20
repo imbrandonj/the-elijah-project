@@ -1,36 +1,40 @@
 // imported components:
-import LitPath from "./LitPath";
-import MathPath from "./MathPath";
-import LogicPath from "./LogicPath";
+import LitPath from './LitPath';
+import MathPath from './MathPath';
+import LogicPath from './LogicPath';
 
 // imported modules:
-import litProblemSets from "../modules/litProblemSets";
-import mathProblemSets from "../modules/mathProblemSets";
+import litProblemSets from '../modules/litProblemSets';
+import mathProblemSets from '../modules/mathProblemSets';
+
+import '../styles/SetMenu.css'; // component styles
 
 // imported hooks:
-import { useState } from "react";
+import { useState } from 'react';
 
 /*
   Set Menu component
 
-  `subject` argument (passed by PathMenu.jsx) is either "math", "literacy", or "logic"
+  `path` argument (passed by PathMenu.jsx) is either "math", "literacy", or "logic"
 */
-export default function SetMenu({ subject }) {
+export default function SetMenu({ path }) {
   const [setSelect, setSetSelect] = useState();
 
-  // set `problemSets` to the pertaining imported subject
-  let problemSets = subject === "math" ? mathProblemSets : litProblemSets;
+  // set `problemSets` to the pertaining imported path
+  let problemSets = path === 'math' ? mathProblemSets : litProblemSets;
 
   // !add comments explaining this one!
-  const handleClick = (setSet) => {
-    if (subject === "math") setSetSelect(<MathPath set={setSet} />);
-    else if (subject === "literacy") setSetSelect(<LitPath set={setSet} />);
-    else if (subject === "logic") setSetSelect(<LogicPath set={setSet} />);
+  const handleClick = setSet => {
+    if (path === 'math') setSetSelect(<MathPath set={setSet} />);
+    else if (path === 'literacy') setSetSelect(<LitPath set={setSet} />);
+    else if (path === 'logic') setSetSelect(<LogicPath set={setSet} />);
   };
 
   // create an array of buttons to display each problem set
   const setButtons = problemSets.map((problemSet, index) => (
-    <button key={problemSet} onClick={() => handleClick(index + 1)}>{problemSet}</button>
+    <button key={problemSet} onClick={() => handleClick(index + 1)}>
+      {problemSet}
+    </button>
   ));
 
   // initial render without user set selection:
@@ -38,7 +42,7 @@ export default function SetMenu({ subject }) {
     return (
       <div id="setMenu">
         <div id="setMenuWrapper">
-          <h1>{subject}</h1>
+          <h1>{path}</h1>
           <button id="beginningButton" onClick={() => handleClick(1)}>
             Begin Here
           </button>

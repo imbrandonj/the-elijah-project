@@ -1,0 +1,109 @@
+/*
+    SetMenu component styles
+*/
+
+#setMenu {
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+}
+
+#setMenuWrapper {
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--blackWrap);
+    width: 100rem;
+}
+
+#setMenu h1 {
+    font-size: 4.2rem;
+    letter-spacing: 0.5rem;
+    font-variant: small-caps;
+}
+
+#setMenu h2 {
+    align-self: start;
+    font-size: 2.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.6rem;
+    font-variant: small-caps;
+    margin: 0 0 0.5rem 8.8rem;
+}
+
+/* located outside of #setButtonWrapper (sibling) */
+#beginningButton {
+    padding: 2rem 1rem;
+    font-family: var(--mono);
+    font-size: 1.75rem;
+    margin: 4rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: var(--buttonBlue);
+    width: 16rem;
+}
+
+/* wraps the dynamic problem set button array */
+#setButtonWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 90%;
+}
+
+#setButtonWrapper button {
+    flex-basis: 25%;
+    padding: 0.8rem 0.5rem;
+    font-family: var(--mono);
+    font-size: 1.6rem;
+    margin: 1rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: var(--buttonBlue);
+}
+
+#setButtonWrapper button:hover, #beginningButton:hover {
+    color: var(--lightBlue);
+    background-color: var(--blackWrap);
+}
+
+@media (max-width: 2000px) {
+
+    #setMenu {
+        margin-top: 6rem;
+    }
+    
+    #setMenuWrapper {
+        padding: 5rem 8rem;
+        width: 100rem;
+    }
+    
+    #setMenu h1 {
+        font-size: 3.8rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    #setMenu h2 {
+        font-size: 2.2rem;
+        line-height: 2rem;
+        letter-spacing: 0.6rem;
+        margin: 0 0 0.5rem 8.8rem;
+    }
+    
+    /* located outside of #setButtonWrapper (sibling) */
+    #beginningButton {
+        padding: 2rem 1rem;
+        font-size: 1.6rem;
+        margin: 4rem;
+        width: 14rem;
+    }
+    
+    #setButtonWrapper button {
+        padding: 0.8rem 0.5rem;
+        font-size: 1.45rem;
+        margin: 0.8rem;
+    }
+}

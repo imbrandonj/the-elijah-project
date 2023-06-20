@@ -1,0 +1,116 @@
+/*
+    LitPath component styles
+*/
+
+#litPath {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+#litWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(26, 45, 79, 0.95);
+    padding: 0 10rem;
+    border-radius: 1rem;
+}
+
+#litQ {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 4rem;
+    margin: 4.5rem 0 3rem;
+}
+
+#litAns {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.8rem;
+    width: 15rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(249, 247, 247, 0.715);
+    padding: 0.5rem;
+    margin: 0 0 1rem;
+    letter-spacing: 0.15rem;
+}
+
+#letterQ {
+    font-size: 6rem;
+    line-height: 9rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#litQ4 {
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+#spell {
+    line-height: 6rem;
+}
+
+
+.medEmoji {
+    font-size: 7rem;
+    line-height: 9rem;
+}
+
+.emojiFont {
+    font-size: 3.5rem;
+    letter-spacing: 0.4rem;
+}
+
+@media (max-width: 2000px) {
+    #litPath {
+        margin-top: 2rem;
+    }
+    
+    #litWrapper {
+        padding: 0 9rem;
+    }
+
+    #litQ {
+        font-size: 2.8rem;
+        line-height: 4rem;
+        margin: 3.5rem 0 2rem;
+    }
+    
+    #litAns {
+        font-size: 2.6rem;
+        width: 15rem;
+        margin: 0 0 1rem;
+        letter-spacing: 0.15rem;
+    }
+    
+    #letterQ {
+        font-size: 5rem;
+        line-height: 6rem;
+    }
+    
+    #litQ4 {
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
+    
+    #spell {
+        line-height: 8rem;
+    }
+    
+    .medEmoji {
+        font-size: 5.5rem;
+        line-height: 2.5rem;
+    }
+    
+    .emojiFont {
+        font-size: 3.1rem;
+        letter-spacing: 0.4rem;
+        line-height: 5.5rem;
+    }
+}

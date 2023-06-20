@@ -1,6 +1,8 @@
 // imported modules:
-import litProblemSets from "../modules/litProblemSets";
-import mathProblemSets from "../modules/mathProblemSets";
+import litProblemSets from '../modules/litProblemSets';
+import mathProblemSets from '../modules/mathProblemSets';
+
+import '../styles/SetHeader.css'; // component styles
 
 export default function SetHeader({ subject, set }) {
   // literacy problem set headers:
@@ -11,7 +13,7 @@ export default function SetHeader({ subject, set }) {
 
   // match `subject` argument with it's problem set
   let headerText =
-    subject === "Literacy" ? litHeader[set - 1] : mathHeader[set - 1];
+    subject === 'Literacy' ? litHeader[set - 1] : mathHeader[set - 1];
 
   return (
     <header className="setHeader">

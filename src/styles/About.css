@@ -1,0 +1,82 @@
+/*
+    About component styles
+*/
+
+#aboutMenu {
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+}
+
+#aboutWrapper {
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    background-color: var(--blackWrap);
+}
+
+#aboutMenu h2 {
+    margin: 1.4rem;
+    font-size: 1.6rem;
+    align-self: flex-start;
+    width: 28rem;
+    letter-spacing: 0.5rem;
+}
+
+#aboutParagraph {
+    margin: 4rem 0 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+#signature {
+    font-size: 1.6rem;
+    font-style: italic;
+    font-family: Arial;
+    margin: 1rem 12rem 0 0;
+    letter-spacing: 0.1rem;
+    text-align: right;
+}
+
+#aboutMenu #rocketButton {
+    background-color: var(--buttonBlue);
+    border: none;
+    width: 10rem;
+    font-family: var(--mono);
+    font-size: 2.5rem;
+    border-radius: 0.4rem;
+    margin: 1rem;
+    align-items: center;
+}
+
+#aboutMenu #rocketButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(201, 234, 255);
+}
+
+@media (max-width: 2000px) {
+    #aboutMenu {
+        margin-top: 5rem;
+    }
+    
+    #aboutWrapper {
+        padding: 4.6rem 8rem;
+    }
+    
+    #aboutParagraph {
+        margin: 3.5rem 0 0 1.8rem;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+    
+    #signature {
+        font-size: 1.5rem;
+        margin: 1rem 12rem 0 0;
+        letter-spacing: 0.1rem;
+    }
+    
+    #aboutMenu #rocketButton {
+        font-size: 2.3rem;
+        margin: 1rem;
+    }
+}

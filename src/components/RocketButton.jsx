@@ -1,3 +1,5 @@
+import '../styles/RocketButton.css';
+
 /*
   RocketButton component
 
@@ -12,7 +14,7 @@ export default function RocketButton({ text, position, movement }) {
   };
 
   // return component
-  if (position === "below" && movement === "horizontal") {
+  if (position === 'below' && movement === 'horizontal') {
     return (
       <button
         id="rocketButton"
@@ -23,7 +25,7 @@ export default function RocketButton({ text, position, movement }) {
         <span className="rocketHorizontal">🚀</span>
       </button>
     );
-  } else if (position === "behind" && movement === "vertical") {
+  } else if (position === 'behind' && movement === 'vertical') {
     return (
       <button id="rocketButton" className="verticalBounce" onClick={redirect}>
         {text}

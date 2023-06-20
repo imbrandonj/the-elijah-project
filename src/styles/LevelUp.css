@@ -1,0 +1,70 @@
+/*
+    Level Up component styles
+*/
+
+#levelUp {
+    margin-top: 9rem;
+    display: flex;
+    justify-content: center;
+}
+
+#levelWrapper {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 5rem 12rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#levelUp h2 {
+    font-size: 3rem;
+    margin: 4.2rem;
+}
+
+#levelUp h3 {
+    font-size: 2rem;
+}
+
+#levelUp p {
+    font-size: 1.8rem;
+}
+
+#levelUp button {
+    width: 12rem;
+    padding: 0.75rem;
+    font-family: Monospace;
+    font-size: 1.42rem;
+    margin: 3rem 0 0 0;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: rgba(204, 238, 255, 0.518);
+}
+
+#levelUp button:hover {
+    color: rgb(201, 234, 255);
+    background-color: rgba(0, 0, 0, 0.269);
+}
+
+@media (max-width: 2000px) {
+    #levelUp {
+        margin-top: 5rem;
+    }
+    
+    #levelWrapper {
+        padding: 5rem 12rem;
+    }
+    
+    #levelUp h2 {
+        font-size: 2.5rem;
+        margin: 2rem;
+    }
+    
+    #levelUp h3 {
+        font-size: 2rem;
+    }
+    
+    #levelUp p {
+        font-size: 1.8rem;
+    }
+}

@@ -5,9 +5,18 @@ import About from './About';
 // imported hooks:
 import { useState } from 'react';
 
+import '../styles/MainMenu.css'; // component styles
+
 /*
   MainMenu
 
+  This component is the entry to the application.
+    - If the viewport is ever shrunk, width is checked
+      - If width is inadequate, content will be a notification saying so
+    - This a menu page that has 3 paths:
+      1) start, which calls <PathMenu />
+      2) about, which calls <About />
+      3) profile, which is not yet complete
 */
 export default function MainMenu() {
   const [adequateWidth, setAdequateWidth] = useState(window.innerWidth >= 1100);

@@ -9,6 +9,8 @@ import LevelUp from './LevelUp';
 import generateProblem from '../modules/generateProblem';
 import answerEvent from '../modules/answerEvent';
 
+import '../styles/MathPath.css'; // component styles
+
 // imported hooks:
 import { useState, useRef } from 'react';
 

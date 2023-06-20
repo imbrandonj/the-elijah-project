@@ -1,0 +1,62 @@
+/*
+    PathMenu component styles
+*/
+
+#pathMenu {
+    margin-top: 18rem;
+    display: flex;
+    justify-content: center;
+}
+
+#pathMenu h1 {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 6rem;
+    letter-spacing: 1.5rem;
+    font-variant: small-caps;
+}
+
+#pathMenu button {
+    width: 15rem;
+    margin: 4.2rem;
+    padding: 3rem;
+    font-family: var(--mono);
+    font-size: 2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--buttonBlue);
+}
+
+#pathFooter {
+    display: flex;
+    justify-content: center;
+  }
+
+/*
+    See RocketButton.css for #rocketButton styles
+*/
+#pathMenu #rocketButton {
+    width: 10rem;
+    font-size: 1.7rem;
+    padding: 0.6rem;
+    margin: 4.2rem 4.2rem 0;
+}
+
+#pathMenu button:hover {
+    color: rgb(201, 234, 255);
+    background-color: var(--blackWrap);
+}
+
+@media (max-width: 2000px) {
+
+    #pathMenu {
+        margin-top: 10rem;
+    }
+    
+    #pathMenu button {
+        width: 15rem;
+        margin: 4rem;
+        padding: 2.2rem;
+        font-size: 2rem;
+    }
+}

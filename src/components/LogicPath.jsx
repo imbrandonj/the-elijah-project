@@ -5,6 +5,8 @@ import ClickObject from './ClickObject';
 import Footbox from './Footbox';
 import Timer from './Timer';
 
+import '../styles/LogicPath.css'; // component styles
+
 // imported hooks:
 import { useState, useRef } from 'react';
 

@@ -1,0 +1,33 @@
+/*
+    Timer component styles
+*/
+
+#timerWrapper {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#timer {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: var(--mono);
+    background-color: rgba(0, 0, 0, 0.269);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#mathWrapper > #timerWrapper > #timer {
+    color: rgba(255, 255, 255, .9);
+}
+
+
+@media (max-width: 2000px) {
+    #timerWrapper {
+        margin: 0;
+    }
+
+    #timer {
+        font-size: 2.2rem;
+    }
+}
