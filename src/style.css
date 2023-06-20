@@ -2,7 +2,7 @@
     General Styles
 */
 body {
-    background-image: url("../public/images/stars.avif");
+    background-image: url("../public/images/stars.webp");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     animation: moveBackground 120s infinite linear;
@@ -76,7 +76,7 @@ button:hover {
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 20rem;
+    margin-top: 18rem;
     display: flex;
     justify-content: center;
 }
@@ -104,6 +104,19 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.269);
 }
 
+#narrowScreen {
+    margin-top: 4rem;
+}
+
+#narrowScreen .cardWrapper {
+    padding: 1rem;
+}
+
+#narrowScreen li {
+    font-size: 1rem;
+    padding: 0.4rem 0;
+    font-weight: 600;
+}
 
 /*
     About component styles
@@ -215,11 +228,10 @@ button:hover {
     SetMenu component styles
 */
 #setMenu {
-    margin-top: 16rem;
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
 }
-
 
 #setMenuWrapper {
     padding: 5rem 8rem;

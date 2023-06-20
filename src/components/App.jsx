@@ -1,7 +1,7 @@
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
 
 // imported components:
-import MainMenu from "./MainMenu";
+import MainMenu from './MainMenu';
 
 const App = () => {
   return (
@@ -11,6 +11,6 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(<App />);
