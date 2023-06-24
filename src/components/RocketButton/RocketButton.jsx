@@ -1,4 +1,4 @@
-import '../styles/RocketButton.css';
+import './RocketButton.css';
 
 /*
   RocketButton component

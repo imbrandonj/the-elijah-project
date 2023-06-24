@@ -1,4 +1,4 @@
-import '../styles/Footbox.css'; // component styles
+import './Footbox.css'; // component styles
 
 export default function Footbox({ correct, style }) {
   const footbox = Array(20).fill();

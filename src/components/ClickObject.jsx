@@ -1,5 +1,5 @@
 // imported components:
-import Footbox from "./Footbox.jsx";
+import Footbox from "./Footbox/Footbox.jsx";
 
 // imported modules:
 import { speakText, randomNum } from "../modules/util.js";

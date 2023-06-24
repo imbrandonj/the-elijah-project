@@ -1,4 +1,4 @@
-import '../styles/RocketHeader.css'; // component styles
+import './RocketHeader.css'; // component styles
 
 // displays wiggling Rocket which redirects the user home
 export default function RocketHeader() {

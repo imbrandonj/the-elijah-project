@@ -1,15 +1,15 @@
 // imported components:
-import RocketHeader from './RocketHeader';
-import SetHeader from './SetHeader';
-import Footbox from './Footbox';
-import Timer from './Timer';
-import LevelUp from './LevelUp';
+import RocketHeader from '../RocketHeader/RocketHeader.jsx';
+import SetHeader from '../SetHeader/SetHeader.jsx';
+import Footbox from '../Footbox/Footbox.jsx';
+import Timer from '../Timer/Timer.jsx';
+import LevelUp from '../LevelUp/LevelUp.jsx';
 
 // imported modules:
-import answerEvent from '../modules/answerEvent';
-import generateProblem from '../modules/generateProblem';
+import answerEvent from '../../modules/answerEvent';
+import generateProblem from '../../modules/generateProblem';
 
-import '../styles/LitPath.css'; // component styles
+import './LitPath.css'; // component styles
 
 // imported hooks:
 import { useState, useRef } from 'react';

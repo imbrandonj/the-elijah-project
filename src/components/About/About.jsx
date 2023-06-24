@@ -1,7 +1,7 @@
 // imported components:
-import RocketButton from './RocketButton';
+import RocketButton from '../RocketButton/RocketButton';
 
-import '../styles/About.css'; // component styles
+import './About.css'; // component styles
 
 export default function About() {
   return (

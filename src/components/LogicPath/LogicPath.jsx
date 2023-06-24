@@ -1,11 +1,11 @@
 // imported components:
-import RocketHeader from './RocketHeader';
-import SetHeader from './SetHeader';
-import ClickObject from './ClickObject';
-import Footbox from './Footbox';
-import Timer from './Timer';
+import RocketHeader from '../RocketHeader/RocketHeader';
+import SetHeader from '../SetHeader/SetHeader';
+import ClickObject from '../ClickObject';
+import Footbox from '../Footbox/Footbox';
+import Timer from '../Timer/Timer';
 
-import '../styles/LogicPath.css'; // component styles
+import './LogicPath.css'; // component styles
 
 // imported hooks:
 import { useState, useRef } from 'react';

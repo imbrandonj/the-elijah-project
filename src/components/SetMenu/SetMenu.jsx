@@ -1,13 +1,13 @@
 // imported components:
-import LitPath from './LitPath';
-import MathPath from './MathPath';
-import LogicPath from './LogicPath';
+import LitPath from '../LitPath/LitPath.jsx';
+import MathPath from '../MathPath/MathPath';
+import LogicPath from '../LogicPath/LogicPath.jsx';
 
 // imported modules:
-import litProblemSets from '../modules/litProblemSets';
-import mathProblemSets from '../modules/mathProblemSets';
+import litProblemSets from '../../modules/litProblemSets';
+import mathProblemSets from '../../modules/mathProblemSets';
 
-import '../styles/SetMenu.css'; // component styles
+import './SetMenu.css'; // component styles
 
 // imported hooks:
 import { useState } from 'react';

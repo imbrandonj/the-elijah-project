@@ -1,12 +1,12 @@
 // imported components:
-import SetMenu from './SetMenu';
-import RocketButton from './RocketButton';
-import LogicPath from './LogicPath';
+import SetMenu from '../SetMenu/SetMenu.jsx';
+import RocketButton from '../RocketButton/RocketButton.jsx';
+import LogicPath from '../LogicPath/LogicPath.jsx';
 
 // imported hooks:
 import { useState } from 'react';
 
-import '../styles/PathMenu.css'; // component styles
+import './PathMenu.css'; // component styles
 
 /*
   Path Menu Component

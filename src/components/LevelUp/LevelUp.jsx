@@ -1,4 +1,4 @@
-import '../styles/LevelUp.css'; // component styles
+import './LevelUp.css'; // component styles
 
 export default function LevelUp({
   path, // subject: "Math", "Literacy", or "Logic"

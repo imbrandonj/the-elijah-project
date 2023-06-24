@@ -1,4 +1,4 @@
-import '../styles/Timer.css'; // component styles
+import './Timer.css'; // component styles
 
 // imported hooks:
 import { useState, useEffect } from 'react';

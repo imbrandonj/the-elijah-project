@@ -1,11 +1,11 @@
 // imported components:
-import PathMenu from './PathMenu';
-import About from './About';
+import PathMenu from '../PathMenu/PathMenu.jsx';
+import About from '../About/About.jsx';
 
 // imported hooks:
 import { useState } from 'react';
 
-import '../styles/MainMenu.css'; // component styles
+import './MainMenu.css'; // component styles
 
 /*
   MainMenu
@@ -57,10 +57,10 @@ export default function MainMenu() {
     return (
       <div id="narrowScreen">
         <div className="cardWrapper">
-          <h1>This website is only available in widescreen format.</h1>
+          <h1>This is a web application available in widescreen format.</h1>
           <ul>
-            <li>Maximize the browser if you haven't.</li>
             <li>Visit the site on your desktop or laptop.</li>
+            <li>Maximize the browser if you haven't.</li>
             <li>
               Features of this web application are not intended for mobile
               devices.

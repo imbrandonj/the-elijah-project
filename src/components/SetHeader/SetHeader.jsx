@@ -1,8 +1,8 @@
 // imported modules:
-import litProblemSets from '../modules/litProblemSets';
-import mathProblemSets from '../modules/mathProblemSets';
+import litProblemSets from '../../modules/litProblemSets';
+import mathProblemSets from '../../modules/mathProblemSets';
 
-import '../styles/SetHeader.css'; // component styles
+import './SetHeader.css'; // component styles
 
 export default function SetHeader({ subject, set }) {
   // literacy problem set headers:
