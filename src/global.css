@@ -21,7 +21,8 @@ html {
 }
 
 body {
-    background-image: url("../public/images/stars.webp");
+    background-color: rgba(0, 0, 0, 0.64);
+    background-image: url("../images/stars.webp");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     animation: moveBackground 120s infinite linear;
