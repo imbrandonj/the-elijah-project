@@ -1,11 +1,11 @@
 // imported components:
-import LitPath from '../LitPath/LitPath.jsx';
-import MathPath from '../MathPath/MathPath';
-import LogicPath from '../LogicPath/LogicPath.jsx';
+import LitPath from '@root/views/Literacy/LitPath/LitPath.jsx';
+import MathPath from '@root/views/Math/MathPath/MathPath.jsx';
+import LogicPath from '@root/views/Perspective/LogicPath/LogicPath.jsx';
 
 // imported modules:
-import litProblemSets from '../../modules/litProblemSets';
-import mathProblemSets from '../../modules/mathProblemSets';
+import litProblemSets from '@root/modules/litProblemSets';
+import mathProblemSets from '@root/modules/mathProblemSets';
 
 import './SetMenu.css'; // component styles
 

@@ -1,9 +1,9 @@
 // imported components:
-import RocketHeader from '../RocketHeader/RocketHeader';
-import SetHeader from '../SetHeader/SetHeader';
-import ClickObject from '../ClickObject';
-import Footbox from '../Footbox/Footbox';
-import Timer from '../Timer/Timer';
+import RocketHeader from '@root/components/RocketHeader/RocketHeader';
+import SetHeader from '@root/components/SetHeader/SetHeader';
+import ClickObject from '@root/components/ClickObject';
+import Footbox from '@root/components/Footbox/Footbox';
+import Timer from '@root/components/Timer/Timer';
 
 import './LogicPath.css'; // component styles
 

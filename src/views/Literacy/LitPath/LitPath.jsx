@@ -1,13 +1,13 @@
 // imported components:
-import RocketHeader from '../RocketHeader/RocketHeader.jsx';
-import SetHeader from '../SetHeader/SetHeader.jsx';
-import Footbox from '../Footbox/Footbox.jsx';
-import Timer from '../Timer/Timer.jsx';
-import LevelUp from '../LevelUp/LevelUp.jsx';
+import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
+import SetHeader from '@root/components/SetHeader/SetHeader.jsx';
+import Footbox from '@root/components/Footbox/Footbox.jsx';
+import Timer from '@root/components/Timer/Timer.jsx';
+import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 
 // imported modules:
-import answerEvent from '../../modules/answerEvent';
-import generateProblem from '../../modules/generateProblem';
+import answerEvent from '@root/modules/answerEvent';
+import generateProblem from '@root/modules/generateProblem';
 
 import './LitPath.css'; // component styles
 

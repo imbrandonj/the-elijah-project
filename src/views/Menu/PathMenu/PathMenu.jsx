@@ -1,7 +1,7 @@
 // imported components:
 import SetMenu from '../SetMenu/SetMenu.jsx';
-import RocketButton from '../RocketButton/RocketButton.jsx';
-import LogicPath from '../LogicPath/LogicPath.jsx';
+import LogicPath from '@root/views/Perspective/LogicPath/LogicPath.jsx';
+import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
 // imported hooks:
 import { useState } from 'react';

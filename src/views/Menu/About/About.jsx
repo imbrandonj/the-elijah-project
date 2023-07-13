@@ -1,5 +1,5 @@
 // imported components:
-import RocketButton from '../RocketButton/RocketButton';
+import RocketButton from '@root/components/RocketButton/RocketButton';
 
 import './About.css'; // component styles
 

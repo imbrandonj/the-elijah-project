@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 
 // imported components:
-import MainMenu from './MainMenu/MainMenu.jsx';
+import MainMenu from './views/Menu/MainMenu/MainMenu.jsx';
 
 const App = () => {
   return (
