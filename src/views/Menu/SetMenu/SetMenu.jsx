@@ -17,7 +17,7 @@ import { useState } from 'react';
 
   `path` argument (passed by PathMenu.jsx) is either "math", "literacy", or "logic"
 */
-export default function SetMenu({ path }) {
+export default function SetMenu({ path, setView }) {
   const [setSelect, setSetSelect] = useState();
 
   // set `problemSets` to the pertaining imported path
@@ -25,9 +25,11 @@ export default function SetMenu({ path }) {
 
   // !add comments explaining this one!
   const handleClick = setSet => {
-    if (path === 'math') setSetSelect(<MathPath set={setSet} />);
-    else if (path === 'literacy') setSetSelect(<LitPath set={setSet} />);
-    else if (path === 'logic') setSetSelect(<LogicPath set={setSet} />);
+    if (path === 'math')
+      setSetSelect(<MathPath set={setSet} setView={setView} />);
+    else if (path === 'literacy')
+      setSetSelect(<LitPath set={setSet} setView={setView} />);
+    else if (path === 'logic') setSetSelect(<LogicPath setView={setView} />);
   };
 
   // create an array of buttons to display each problem set

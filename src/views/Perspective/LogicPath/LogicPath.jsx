@@ -7,9 +7,6 @@ import Timer from '@root/components/Timer/Timer';
 
 import './LogicPath.css'; // component styles
 
-// imported hooks:
-import { useState, useRef } from 'react';
-
 /*
   Logic Path component
 
@@ -19,15 +16,13 @@ import { useState, useRef } from 'react';
   LogicPath calls components to display its problem set
   The problem sets can be as simple as clicking an object or as large as a minigame.
 */
-export default function LogicPath({ set }) {
-  const [problemSet, setProblemSet] = useState(set); // question problem set
-
+export default function LogicPath({ setView }) {
   console.log('Render!');
 
   // return component
   return (
     <div>
-      <RocketHeader />
+      <RocketHeader setView={setView} />
 
       <div id="logicPath">
         <div id="logicWrapper">

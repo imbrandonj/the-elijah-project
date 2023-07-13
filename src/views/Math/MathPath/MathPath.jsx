@@ -23,7 +23,7 @@ import { useState, useRef } from 'react';
   • Level up event triggers after every 3rd problem set
   • `set` prop (passed by SetMenu.jsx) indicates which problem set to begin with
  */
-export default function MathPath({ set }) {
+export default function MathPath({ set, setView }) {
   const problemHistory = useRef([]); // to store problem history
 
   // state:
@@ -43,7 +43,7 @@ export default function MathPath({ set }) {
   // return component
   return (
     <div>
-      <RocketHeader />
+      <RocketHeader setView={setView} />
 
       {levelEvent ? (
         <LevelUp

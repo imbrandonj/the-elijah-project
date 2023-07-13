@@ -41,11 +41,11 @@ const App = () => {
         ) : view === 'PathMenu' ? (
           <PathMenu setView={setView} />
         ) : view === 'SetMenuMath' ? (
-          <SetMenu path={'math'} />
+          <SetMenu setView={setView} path={'math'} />
         ) : view === 'SetMenuLogic' ? (
-          <LogicPath />
+          <LogicPath setView={setView} />
         ) : view === 'SetMenuLiteracy' ? (
-          <SetMenu path={'literacy'} />
+          <SetMenu setView={setView} path={'literacy'} />
         ) : null}
       </div>
     );
