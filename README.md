@@ -9,16 +9,16 @@ The Elijah Project is a React SPA educational game.
 - `src` 
   - `app.jsx`
   - `views` 
-    - Dashboard
-    - Literacy
+    - Dashboard/
+    - Literacy/
       - `LitPath.jsx`
-    - Math
+    - Math/
       - `MathPath.jsx`
-    - Menu 
+    - Menu/
       - `About.jsx`
       - `MainMenu.jsx`
-    - Perspective
-      - `LitPath.jsx`
+    - Perspective/
+      - `LogicPath.jsx`
   - `components` 
     - reusable JSX components
   - `modules` 
