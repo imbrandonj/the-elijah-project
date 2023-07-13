@@ -8,9 +8,15 @@ import './RocketButton.css';
   either "front", "behind", or "below"
   `movement` is either "vertical" or "horizontal", in reference to css hover movement
 */
-export default function RocketButton({ text, position, movement }) {
+export default function RocketButton({
+  text,
+  position,
+  movement,
+  setView,
+  view,
+}) {
   const redirect = () => {
-    location.reload();
+    setView(view);
   };
 
   // return component

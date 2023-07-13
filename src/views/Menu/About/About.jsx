@@ -3,7 +3,7 @@ import RocketButton from '@root/components/RocketButton/RocketButton';
 
 import './About.css'; // component styles
 
-export default function About() {
+export default function About({ setView }) {
   return (
     <div id="aboutMenu">
       <div id="aboutWrapper">
@@ -45,7 +45,13 @@ export default function About() {
         </p>
         <p id="signature"> -Brandon </p>
       </div>
-      <RocketButton text="Back" position="below" movement="horizontal" />
+      <RocketButton
+        text="Back"
+        position="below"
+        movement="horizontal"
+        setView={setView}
+        view={'MainMenu'}
+      />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-// imported components:
+// imported views:
 import LitPath from '@root/views/Literacy/LitPath/LitPath.jsx';
 import MathPath from '@root/views/Math/MathPath/MathPath.jsx';
 import LogicPath from '@root/views/Perspective/LogicPath/LogicPath.jsx';
