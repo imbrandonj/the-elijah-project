@@ -1,6 +1,7 @@
 // imported views:
-import MainMenu from './views/Menu/MainMenu/MainMenu.jsx';
+import MainMenu from './views/Menu/MainMenu.jsx';
 import About from './views/Menu/About/About.jsx';
+import Dashboard from './views/Dashboard/Dashboard.jsx';
 import PathMenu from './views/Menu/PathMenu/PathMenu.jsx';
 import SetMenu from './views/Menu/SetMenu/SetMenu.jsx';
 import LogicPath from './views/Perspective/LogicPath/LogicPath.jsx';
@@ -38,6 +39,8 @@ const App = () => {
           <MainMenu setView={setView} />
         ) : view === 'About' ? (
           <About setView={setView} />
+        ) : view === 'Dashboard' ? (
+          <Dashboard setView={setView} />
         ) : view === 'PathMenu' ? (
           <PathMenu setView={setView} />
         ) : view === 'SetMenuMath' ? (

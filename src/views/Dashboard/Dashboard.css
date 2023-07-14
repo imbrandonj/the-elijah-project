@@ -1,0 +1,72 @@
+#Dashboard {
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+}
+
+#dashboardWrap {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#dashSwiper {
+    width: 55rem;
+    margin: 15rem 20rem 10rem;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Dashboard button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22rem;
+    padding: 1rem;
+    font-family: Monospace;
+    font-size: 2rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: var(--buttonBlue);
+}
+
+#Dashboard button:hover {
+    background-color: var(--lightBlue);
+}
+
+#Dashboard button > img {
+    margin-bottom: 1rem;
+}
+
+#Dashboard .Tipbox {
+    background-color: rgba(255, 158, 255, 0.6);
+    border-radius: 0.4rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 3rem;
+}
+
+#Dashboard .Tipbox img {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 2000px) {
+
+    #Dashboard {
+        margin-top: 10rem;
+    }
+
+    #Dashboard button {
+        font-size: 1.5rem;
+    }
+}

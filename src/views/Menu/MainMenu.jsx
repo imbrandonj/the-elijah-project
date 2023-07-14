@@ -1,7 +1,3 @@
-// imported components:
-import PathMenu from '../PathMenu/PathMenu.jsx';
-import About from '../About/About.jsx';
-
 // imported hooks:
 import { useState } from 'react';
 
@@ -17,7 +13,8 @@ import './MainMenu.css'; // component styles
 */
 export default function MainMenu({ setView }) {
   const start = () => {
-    setView('PathMenu');
+    //setView('PathMenu');
+    setView('Dashboard');
   };
 
   const about = () => {
