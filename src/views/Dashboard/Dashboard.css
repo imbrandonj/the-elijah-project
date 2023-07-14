@@ -46,7 +46,7 @@
 }
 
 #Dashboard .Tipbox {
-    background-color: rgba(255, 158, 255, 0.6);
+    background-color: rgba(255, 202, 255, 0.6);
     border-radius: 0.4rem;
     color: black;
     display: flex;
@@ -63,10 +63,14 @@
 @media (max-width: 2000px) {
 
     #Dashboard {
-        margin-top: 10rem;
+        margin-top: 8rem;
     }
 
     #Dashboard button {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
+    }
+
+    #dashSwiper {
+        margin: 12rem 16rem 8rem;
     }
 }

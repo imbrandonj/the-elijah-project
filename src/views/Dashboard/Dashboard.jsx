@@ -28,11 +28,12 @@ export default function Dashboard({ setView }) {
           effect={'coverflow'}
           coverflowEffect={{
             rotate: 50,
-            stretch: 0,
+            stretch: 30,
             depth: 100,
             modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
           }}
+          loop={true}
           centeredSlides={true}
           slidesPerView={2}
           grabCursor={true}
@@ -45,7 +46,7 @@ export default function Dashboard({ setView }) {
           <SwiperSlide>
             <button onClick={redirectBegin}>
               <img src={RocketLaunch} height={160} />
-              Begin Mission
+              Launch Mission
             </button>
           </SwiperSlide>
           <SwiperSlide>
@@ -69,7 +70,7 @@ export default function Dashboard({ setView }) {
         </Swiper>
         <Tipbox
           className="Tipbox"
-          text="Navigate: Use the keyboard arrows or the mouse to click, grab, and pull."
+          text="Navigate: Use the keyboard arrows or use the mouse to click, grab, and pull."
         />
       </div>
     </div>
