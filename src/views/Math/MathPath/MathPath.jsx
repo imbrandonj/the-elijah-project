@@ -23,19 +23,14 @@ import { useState, useRef } from 'react';
   • Level up event triggers after every 3rd problem set
   • `set` prop (passed by SetMenu.jsx) indicates which problem set to begin with
  */
-export default function MathPath({ set, setView }) {
+export default function MathPath({ setView }) {
   const problemHistory = useRef([]); // to store problem history
-
-  // state:
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [problemSet, setProblemSet] = useState(set); // question problem set
+  const [problemSet, setProblemSet] = useState(1); // question problem set
   const [level, setLevel] = useState(1); // level; increments in `LevelUp` component
   const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
 
   console.log('Render!');
-  // console.log(`levelEvent: ${levelEvent}`);
-  // console.log(`problemSet: ${problemSet}`);
-  // console.log(`correctTally: ${correctTally}`);
 
   // `problem` object sets `question` & `answer` properties depending on the subject ("math") & state (the problemSet)
   const problem = generateProblem('math', problemSet, problemHistory); // generate a unique problem

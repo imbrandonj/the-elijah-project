@@ -29,9 +29,9 @@ export default function LogicPath({ setView }) {
           {/* <SetHeader subject={"Logic"} set={problemSet} />
           <ClickObject set={problemSet} setSet={setProblemSet} />
           <Timer /> */}
-          <h2>Logic Path coming soon.</h2>
+          <h2>Perspective coming soon.</h2>
           <p>
-            Math and Literacy paths available
+            Arith and Alpha-Literacy are both available
             <br />
             Press the rocket to return home
           </p>

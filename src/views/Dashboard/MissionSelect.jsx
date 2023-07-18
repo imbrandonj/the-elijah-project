@@ -15,10 +15,15 @@ import RocketHome from '@root/assets/svgs/rocket-home.svg';
 
     This is the carousel that displays after use selects 'Launch Mission'
 */
-export default function MissionSelect({ setDashSelect }) {
+export default function MissionSelect({ setMissionSelect, setDashSelect }) {
+  const alphaSelect = () => setMissionSelect('Alpha-Literacy');
+  const arithSelect = () => setMissionSelect('Arith');
+  const perspectiveSelect = () => setMissionSelect('Perspective');
   const handleReturn = () => setDashSelect('entry');
+
   return (
-    <div>
+    <div id="dashSwiper">
+      <h2>Select a planet for exploration:</h2>
       <Swiper
         effect={'coverflow'}
         coverflowEffect={{
@@ -36,28 +41,34 @@ export default function MissionSelect({ setDashSelect }) {
           enabled: true,
         }}
         modules={[EffectCoverflow, Keyboard]}
-        id="dashSwiper"
       >
         <SwiperSlide>
-          <button id="arith">
-            <img src={Arith} height={160} />
-            Arith
-          </button>
-        </SwiperSlide>
-        <SwiperSlide>
-          <button id="perspective">
-            <img src={Perspective} height={160} />
-            Perspective
-          </button>
-        </SwiperSlide>
-        <SwiperSlide>
-          <button id="alphaliteracy">
+          <button onClick={alphaSelect} className="dashSwiperBtn alphaLitColor">
             <img src={AlphaLiteracy} height={160} />
             Alpha-Literacy
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button onClick={handleReturn}>
+          <button
+            id="arith"
+            onClick={arithSelect}
+            className="dashSwiperBtn arithColor"
+          >
+            <img src={Arith} height={160} />
+            Arith
+          </button>
+        </SwiperSlide>
+        <SwiperSlide>
+          <button
+            onClick={perspectiveSelect}
+            className="dashSwiperBtn perspectiveColor"
+          >
+            <img src={Perspective} height={160} />
+            Perspective
+          </button>
+        </SwiperSlide>
+        <SwiperSlide>
+          <button onClick={handleReturn} className="dashSwiperBtn">
             <img src={RocketHome} height={140} />
             Return to Base
           </button>

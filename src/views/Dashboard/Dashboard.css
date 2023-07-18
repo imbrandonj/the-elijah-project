@@ -1,5 +1,9 @@
+/*
+    Dashboard.jsx view styles  
+*/
+
 #Dashboard {
-    margin-top: 15rem;
+    margin-top: 13rem;
     display: flex;
     justify-content: center;
 }
@@ -10,11 +14,54 @@
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.95);
+    width: 100rem;
 }
 
+/*  
+    General Dashboard view styles
+*/
+
+#Dashboard h1 {
+    align-self: flex-start;
+    margin: 1.5rem 3rem;
+    font-size: 3.2rem;
+    letter-spacing: 0.4rem;
+    font-variant: small-caps;
+    font-weight: 200;
+}
+
+#Dashboard .Tipbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 202, 255, 0.6);
+    border-radius: 0.4rem;
+    color: black;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 3rem;
+}
+
+#Dashboard .Tipbox img {
+    margin-right: 0.5rem;
+}
+
+/*
+    Swiper.js carousel styles
+*/
+
 #dashSwiper {
-    width: 55rem;
-    margin: 15rem 20rem 10rem;
+    width: 60rem;
+    margin: 2rem 20rem 6rem;
+}
+
+#dashSwiper h2 {
+    width: 18rem;
+    height: 14rem;
+    padding: 4rem 0;
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
 }
 
 .swiper-slide {
@@ -24,7 +71,7 @@
     align-items: center;
 }
 
-#Dashboard button {
+.dashSwiperBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,56 +84,107 @@
     background-color: var(--buttonBlue);
 }
 
-#Dashboard button:hover {
+.dashSwiperBtn:hover {
     background-color: var(--lightBlue);
 }
 
-#Dashboard button > img {
+.dashSwiperBtn > img {
     margin-bottom: 1rem;
 }
 
-#Dashboard .Tipbox {
-    background-color: rgba(255, 202, 255, 0.6);
-    border-radius: 0.4rem;
-    color: black;
+/*
+    Planet styles
+*/
+
+.arithColor {
+    background-color: rgba(255, 192, 203, 0.5);
+}
+
+.arithColor:hover {
+    background-color: rgba(31, 49, 34, 0.7);
+    color: rgba(245, 245, 245, 0.8);
+}
+
+.perspectiveColor {
+    background-color: rgb(64, 224, 208, 0.5);
+}
+
+.perspectiveColor:hover {
+    background-color: rgba(67, 38, 38, 0.7);
+    color: rgba(245, 245, 245, 0.8);
+}
+
+.alphaLitColor {
+    background-color: rgba(183, 200, 251, 0.5);
+}
+
+.alphaLitColor:hover {
+    background-color: rgb(11, 23, 57, 0.7);
+    color: rgba(245, 245, 245, 0.8);
+}
+
+/*
+    Mission.jsx view styles
+
+    #mission div is parent of #planetInfo
+    .planet is child of #planetInfo
+*/
+
+#mission {
+    width: 80rem;
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin: 3rem;
+    justify-content: space-evenly;
+    margin: 6rem;
 }
 
-#Dashboard .Tipbox img {
-    margin-right: 0.5rem;
+#mission button {
+    padding: 1rem 2rem;
+    background-color: var(--buttonBlue);
+    font-size: 2rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+    border: none;
+    border-radius: 0.4rem;
 }
 
-#Dashboard #arith {
-    background-color: rgb(250, 235, 215, 0.8);
+#mission button:hover {
+    background-color: var(--lightBlue);
 }
 
-#Dashboard #arith:hover {
-    background-color: rgba(143, 62, 62, 0.75);
-    color: rgba(245, 245, 245, 0.9);
+.planet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: var(--blackWrap);
 }
 
-#Dashboard #perspective {
-    background-color: rgb(64, 224, 208, 0.8);
+.planet h2 {
+    font-size: 2.2rem;
+    font-weight: 200;
+    letter-spacing: 0.15rem;
 }
 
-#Dashboard #perspective:hover {
-    background-color: rgba(67, 38, 38, 0.75);
-    color: rgba(245, 245, 245, 0.9);
+.planet img {
+    margin: 1rem;
 }
 
-#Dashboard #alphaliteracy {
-    background-color: rgba(183, 200, 251, 0.8);
+.planet p {
+    font-size: 1.35rem;
+    width: 20rem;
+    margin: 2rem 3rem;
+    letter-spacing: 0.02rem;
 }
 
-#Dashboard #alphaliteracy:hover {
-    background-color: rgb(11, 23, 57, 0.75);
-    color: rgba(245, 245, 245, 0.9);
-}
 
+/*
+    Media Queries
+*/
 
 @media (max-width: 2000px) {
 
@@ -94,11 +192,23 @@
         margin-top: 8rem;
     }
 
-    #Dashboard button {
-        font-size: 1.55rem;
+    #dashSwiper {
+        width: 60rem;
+        margin: 2rem 16rem 4rem;
     }
 
-    #dashSwiper {
-        margin: 12rem 16rem 8rem;
+    #dashSwiper button {
+        font-size: 1.55rem;
     }
+    
+    #dashSwiper h2 {
+        width: 16rem;
+        height: 12rem;
+        padding: 3.6rem 0;
+        font-size: 1.75rem;
+    }
+
+    .planet > h2 {
+    }
+
 }

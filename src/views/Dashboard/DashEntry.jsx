@@ -22,7 +22,8 @@ export default function DashEntry({ setDashSelect }) {
   const redirectConfig = () => setDashSelect('config');
   const redirectHome = () => setDashSelect('signout');
   return (
-    <div>
+    <div id="dashSwiper">
+      <h2>Select an action:</h2>
       <Swiper
         effect={'coverflow'}
         coverflowEffect={{
@@ -40,28 +41,27 @@ export default function DashEntry({ setDashSelect }) {
           enabled: true,
         }}
         modules={[EffectCoverflow, Keyboard]}
-        id="dashSwiper"
       >
         <SwiperSlide>
-          <button onClick={redirectBegin}>
+          <button onClick={redirectBegin} className="dashSwiperBtn">
             <img src={RocketLaunch} height={160} />
             Launch Mission
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button>
+          <button className="dashSwiperBtn">
             <img src={PlanetFlag} height={160} />
             Player Statistics
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button>
+          <button className="dashSwiperBtn">
             <img src={FloatAstro} height={120} />
             Profile Configuration
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button>
+          <button className="dashSwiperBtn">
             <img src={Stars} height={140} />
             Sign Out
           </button>

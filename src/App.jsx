@@ -2,8 +2,8 @@
 import MainMenu from './views/Menu/MainMenu.jsx';
 import About from './views/Menu/About/About.jsx';
 import Dashboard from './views/Dashboard/Dashboard.jsx';
-import PathMenu from './views/Menu/PathMenu/PathMenu.jsx';
-import SetMenu from './views/Menu/SetMenu/SetMenu.jsx';
+import MathPath from './views/Math/MathPath/MathPath.jsx';
+import LitPath from './views/Literacy/LitPath/LitPath.jsx';
 import LogicPath from './views/Perspective/LogicPath/LogicPath.jsx';
 
 // external imports:
@@ -41,14 +41,12 @@ const App = () => {
           <About setView={setView} />
         ) : view === 'Dashboard' ? (
           <Dashboard setView={setView} />
-        ) : view === 'PathMenu' ? (
-          <PathMenu setView={setView} />
-        ) : view === 'SetMenuMath' ? (
-          <SetMenu setView={setView} path={'math'} />
-        ) : view === 'SetMenuLogic' ? (
+        ) : view === 'Arith' ? (
+          <MathPath setView={setView} />
+        ) : view === 'Perspective' ? (
           <LogicPath setView={setView} />
-        ) : view === 'SetMenuLiteracy' ? (
-          <SetMenu setView={setView} path={'literacy'} />
+        ) : view === 'Alpha-Literacy' ? (
+          <LitPath setView={setView} />
         ) : null}
       </div>
     );

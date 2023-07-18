@@ -21,12 +21,10 @@ import { useState, useRef } from 'react';
   • Level up event triggers after every 3rd problem set
   • `set` prop (passed by SetMenu.jsx) indicates which problem set to begin with
  */
-export default function LitPath({ set, setView }) {
+export default function LitPath({ setView }) {
   const problemHistory = useRef([]); // to store problem history
-
-  // state:
   const [correctTally, setCorrectTally] = useState(0); // correct tally
-  const [problemSet, setProblemSet] = useState(set); // problem set
+  const [problemSet, setProblemSet] = useState(1); // problem set
   const [level, setLevel] = useState(1); // level; increments in `LevelUp` component
   const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
 
