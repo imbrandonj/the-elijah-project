@@ -14,8 +14,12 @@ export default function Mission({
   setDashSelect,
   setMissionSelect,
   setView,
+  setLevel,
 }) {
-  const begin = () => setView(missionSelect);
+  const begin = () => {
+    setLevel(1);
+    setView(missionSelect);
+  };
 
   return (
     <div id="mission">

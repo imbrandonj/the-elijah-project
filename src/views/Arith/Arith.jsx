@@ -1,6 +1,5 @@
 // imported components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
-import SetHeader from '@root/components/SetHeader/SetHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
@@ -9,7 +8,7 @@ import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import generateProblem from '@root/modules/generateProblem';
 import answerEvent from '@root/modules/answerEvent';
 
-import './MathPath.css'; // component styles
+import './Arith.css'; // component styles
 
 // imported hooks:
 import { useState, useRef } from 'react';
@@ -50,8 +49,6 @@ export default function MathPath({ setView }) {
       ) : (
         <div id="mathPath">
           <div id="mathWrapper">
-            <SetHeader subject={'Math'} set={problemSet} />
-
             <div id="mathQABundle">
               <p id="mathQ">{problem.question}</p>
               <input

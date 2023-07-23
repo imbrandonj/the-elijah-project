@@ -2,9 +2,9 @@
 import MainMenu from './views/Menu/MainMenu.jsx';
 import About from './views/Menu/About/About.jsx';
 import Dashboard from './views/Dashboard/Dashboard.jsx';
-import MathPath from './views/Math/MathPath/MathPath.jsx';
-import LitPath from './views/Literacy/LitPath/LitPath.jsx';
-import LogicPath from './views/Perspective/LogicPath/LogicPath.jsx';
+import Arith from './views/Arith/Arith.jsx';
+import AlphaLit from './views/Alpha-Literacy/AlphaLit.jsx';
+import Perspective from './views/Perspective/Perspective.jsx';
 
 // external imports:
 import { createRoot } from 'react-dom/client';
@@ -18,12 +18,16 @@ import { useState } from 'react';
     - If the viewport is ever shrunk, width is checked
       - If width is inadequate, content will be a notification saying so
     
-    - App calls the appropriate view to display,
+    - App calls the appropriate view to display (`view` & `setView` state),
       as this React application is unorthodox and operates more like a game.
-      - Button redirection also utilizes `setView` state versus browser redirect
+      - Button redirection utilizes `setView` state versus url redirect
+
+    - `level` & `setLevel` props are passed to the mission (Arith, AlphaLit, Perspective, etc. )
+        to display the appropriate level from within the component
 */
 const App = () => {
   const [view, setView] = useState('MainMenu');
+  const [level, setLevel] = useState(0);
   const [adequateWidth, setAdequateWidth] = useState(window.innerWidth >= 1100);
 
   const checkViewportWidth = () => {
@@ -34,19 +38,21 @@ const App = () => {
 
   if (adequateWidth) {
     return (
+      /* `setView` prop (state) is passed to give the component the ability to redirect or change the view
+       */
       <div>
         {view === 'MainMenu' ? (
           <MainMenu setView={setView} />
         ) : view === 'About' ? (
           <About setView={setView} />
         ) : view === 'Dashboard' ? (
-          <Dashboard setView={setView} />
+          <Dashboard setView={setView} setLevel={setLevel} />
         ) : view === 'Arith' ? (
-          <MathPath setView={setView} />
+          <Arith setView={setView} />
         ) : view === 'Perspective' ? (
-          <LogicPath setView={setView} />
+          <Perspective setView={setView} />
         ) : view === 'Alpha-Literacy' ? (
-          <LitPath setView={setView} />
+          <AlphaLit level={level} setLevel={setLevel} setView={setView} />
         ) : null}
       </div>
     );

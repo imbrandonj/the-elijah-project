@@ -1,6 +1,7 @@
 // imported components:
+import AlphaLevel1Entry from './levels/AlphaLevel1Entry.jsx';
+import AlphaLevel2Entry from './levels/AlphaLevel2Entry.jsx';
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
-import SetHeader from '@root/components/SetHeader/SetHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
@@ -9,23 +10,23 @@ import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import answerEvent from '@root/modules/answerEvent';
 import generateProblem from '@root/modules/generateProblem';
 
-import './LitPath.css'; // component styles
+import './AlphaLit.css'; // component styles
 
 // imported hooks:
 import { useState, useRef } from 'react';
 
 /*
-  Literacy Path component
+  Alpha-Literacy `view` component
 
-  Presents literacy problems ~
+  Presents alphabetical literacy problems ~
   • Level up event triggers after every 3rd problem set
-  • `set` prop (passed by SetMenu.jsx) indicates which problem set to begin with
+  • `setView` prop (state) is passed to RocketHeader for view redirect
+  • `setLevel` prop (state) is used to set or modify the Alpha-Lit level
  */
-export default function LitPath({ setView }) {
+export default function AlphaLit({ setView, level, setLevel }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const [problemSet, setProblemSet] = useState(1); // problem set
-  const [level, setLevel] = useState(1); // level; increments in `LevelUp` component
   const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
 
   console.log('Render!');
@@ -48,8 +49,6 @@ export default function LitPath({ setView }) {
       ) : (
         <div id="litPath">
           <div id="litWrapper">
-            <SetHeader subject={'Literacy'} set={problemSet} />
-
             {problemSet <= 3 ? (
               <p id="litQ">
                 <span>Enter the letter:</span>

@@ -69,11 +69,11 @@
 
 @media (max-width: 2000px) {
     #litPath {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
     
     #litWrapper {
-        padding: 0 9rem;
+        padding: 1.4rem 8rem;
     }
 
     #litQ {

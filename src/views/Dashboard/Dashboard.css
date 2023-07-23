@@ -189,7 +189,7 @@
 @media (max-width: 2000px) {
 
     #Dashboard {
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 
     #dashSwiper {
@@ -207,8 +207,8 @@
         padding: 3.6rem 0;
         font-size: 1.75rem;
     }
-
-    .planet > h2 {
+    #mission {
+        width: 80rem;
+        margin: 4rem;
     }
-
 }

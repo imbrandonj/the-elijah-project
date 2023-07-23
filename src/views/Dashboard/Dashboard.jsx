@@ -12,7 +12,7 @@ import { useState } from 'react';
   Dashboard.jsx
 
 */
-export default function Dashboard({ setView }) {
+export default function Dashboard({ setView, setLevel }) {
   const [dashSelect, setDashSelect] = useState('entry'); // user selection from DashEntry ('')
   const [missionSelect, setMissionSelect] = useState('');
 
@@ -34,6 +34,7 @@ export default function Dashboard({ setView }) {
               setMissionSelect={setMissionSelect}
               setDashSelect={setDashSelect}
               setView={setView}
+              setLevel={setLevel}
             />
           </div>
         ) : null}
