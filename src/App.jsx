@@ -23,7 +23,9 @@ import { useState } from 'react';
       - Button redirection utilizes `setView` state versus url redirect
 
     - `level` & `setLevel` props are passed to the mission (Arith, AlphaLit, Perspective, etc. )
-        to display the appropriate level from within the component
+        to display the appropriate level from within the `view` component
+    
+    - `setView` prop (state) is passed to give the component the ability to redirect or change the view
 */
 const App = () => {
   const [view, setView] = useState('MainMenu');
@@ -37,9 +39,9 @@ const App = () => {
   window.addEventListener('resize', checkViewportWidth);
 
   if (adequateWidth) {
+    // display view:
+
     return (
-      /* `setView` prop (state) is passed to give the component the ability to redirect or change the view
-       */
       <div>
         {view === 'MainMenu' ? (
           <MainMenu setView={setView} />
@@ -48,7 +50,7 @@ const App = () => {
         ) : view === 'Dashboard' ? (
           <Dashboard setView={setView} setLevel={setLevel} />
         ) : view === 'Arith' ? (
-          <Arith setView={setView} />
+          <Arith level={level} setLevel={setLevel} setView={setView} />
         ) : view === 'Perspective' ? (
           <Perspective setView={setView} />
         ) : view === 'Alpha-Literacy' ? (
@@ -56,6 +58,8 @@ const App = () => {
         ) : null}
       </div>
     );
+
+    // inadequate viewport (shrunken screen)
   } else {
     return (
       <div id="narrowScreen">

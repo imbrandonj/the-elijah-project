@@ -2,10 +2,6 @@
     Footbox component styles
 */
 
-#footbox {
-    margin: 8rem 0 2rem;
-}
-
 .emptyFootbox {
     margin: 0 0.8rem;
     padding: 1rem;

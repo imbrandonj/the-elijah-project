@@ -1,5 +1,12 @@
 import './Footbox.css'; // component styles
 
+/*
+  Footbox.jsx component
+
+  `correct` prop is `correctTally` (state)
+  `style` prop is either `litFill`, `mathFill`, or `logicFill`
+*/
+
 export default function Footbox({ correct, style }) {
   const footbox = Array(20).fill();
 

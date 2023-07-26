@@ -1,6 +1,33 @@
-export default function AlphaLevel1() {
+// imported components:
+import Footbox from '@root/components/Footbox/Footbox.jsx';
+import Timer from '@root/components/Timer/Timer.jsx';
+
+// imported modules:
+import answerEvent from '@root/modules/answerEvent';
+import generateProblem from '@root/modules/generateProblem';
+
+import '../AlphaLit.css';
+
+// imported hooks:
+import { useState, useRef } from 'react';
+
+/*
+  AlphaLevel1 component
+
+  `setLevelEvent` prop (state) is passed from AlphaLit view
+    - if true, renders a <LevelUp /> component to display from AlphaLit view
+*/
+export default function AlphaLevel1({ setLevelEvent }) {
+  const problemHistory = useRef([]); // to store problem history
+  const [correctTally, setCorrectTally] = useState(0); // correct tally
+  const [problemSet, setProblemSet] = useState(1); // problem set
+
+  // `problem` object sets `question` & `answer` properties depending on the subject ("lit") & state (the problemSet)
+  let problem = generateProblem('lit', problemSet, problemHistory); // generate a unique problem
+
+  console.log('what?');
   return (
-    <div>
+    <div id="litWrapper">
       <p id="litQ">
         <span>Enter the letter:</span>
         <br />
@@ -37,6 +64,8 @@ export default function AlphaLevel1() {
           }
         }}
       />
+      <Timer />
+      <Footbox correct={correctTally} style={'litFill'} />
     </div>
   );
 }
