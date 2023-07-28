@@ -1,52 +1,43 @@
-// imported problem modules:
-import litProblems from './litProblems';
-import mathProblems from './mathProblems';
+import { randomNum } from './util';
 
 /*
     generateProblem.js
 
     Takes arguments:
-    path: import a problem from appropriate subject path
-    problemSet: import a problem from appropriate problem set
-    problemHistory: ensure problem is unique without being a repeat
+      `problemSet`: a collection of problems
+      `problemHistory`: a useRef hook to ensure problem is unique without being a repeat
+
+    Returns:
+      A unique `problem` object with 2 properties:
+        `question` and `answer`
 */
-export default function generateProblem(path, problemSet, problemHistory) {
-  // create a problem history array for each `problemSet`
-  // this ensures a unique `problem` without any repeats
-  if (!problemHistory.current[problemSet]) {
-    problemHistory.current[problemSet] = [];
-  }
+export default function generateProblem(problemSet, problemHistory) {
+  console.log('generateProblems render');
+  // select random problem index
+  let problemIndex = randomNum(problemSet.length);
 
-  // obtain a `problem` object for appropriate `path` and `problemSet`
-  // ternary used as `path` can only be "lit", "math", or "logic"
-  let problem =
-    path === 'lit'
-      ? litProblems(problemSet)
-      : path === 'math'
-      ? mathProblems(problemSet)
-      : //: path === "logic"
-        //? logicProblems(problemSet)
-        undefined;
+  // `problem` object sets `question` & `answer` based on `problemIndex` of `problemSet`
+  let problem = {
+    question: Object.values(problemSet[problemIndex])[0],
+    answer: Object.values(problemSet[problemIndex])[1],
+  };
 
-  // generate a unique `problem` object (no repeats per `problemSet`)
+  // generate a unique `problem` object (no repeats)
   while (
-    problemHistory.current[problemSet].some(
+    problemHistory.current.some(
       history => history.question === problem.question
     )
   ) {
-    // generate a new `problem` if repeat:
-    problem =
-      path === 'lit'
-        ? litProblems(problemSet)
-        : path === 'math'
-        ? mathProblems(problemSet)
-        : //: path === "logic"
-          //? logicProblems(problemSet)
-          undefined;
+    // select random problem index
+    problemIndex = randomNum(problemSet.length);
+
+    // set `question` and `answer`
+    problem.question = Object.values(problemSet[problemIndex])[0];
+    problem.answer = Object.values(problemSet[problemIndex])[1];
   }
 
   // add `problem` to the problem set history
-  problemHistory.current[problemSet].push(problem);
+  problemHistory.current.push(problem);
 
   return problem;
 }

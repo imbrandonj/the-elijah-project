@@ -17,7 +17,7 @@ export default function AlphaLevel1Entry({ setLevelEvent }) {
     // display AlphaLevel1Entry explanation
     return (
       <div id="litWrapper">
-        <p>Hello, I am alphaLevel1Entry</p>
+        <h2>Alpha-Literacy Level 1</h2>
         <button onClick={beginButton}>Begin!</button>
       </div>
     );

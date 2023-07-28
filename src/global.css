@@ -32,6 +32,44 @@ body {
     padding: 0;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+#BeginButton {
+    padding: 1rem 2rem;
+    background-color: var(--buttonBlue);
+    font-size: 2rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+#BeginButton:hover {
+    background-color: var(--lightBlue);
+}
+
+/* used in MainMenu.jsx !to be deleted! */
+.cardWrapper {
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+/*
+    Global animations
+*/
+
 @keyframes moveBackground {
     0% {
         background-position: 50% 50%;
@@ -61,30 +99,6 @@ body {
         background-position: 50% 50%
     }
 }
-
-button:hover {
-    cursor: pointer;
-}
-
-h1, h2, h3, h4 {
-    margin: 0;
-    padding: 0;
-}
-
-
-/* used in MainMenu.jsx & PathMenu.jsx */
-.cardWrapper {
-    padding: 5rem 8rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.95);
-}
-
-/*
-    Global animations
-*/
 
 .horizontalBounce:hover {
     animation: horizontalBounce 1.6s ease-in-out infinite;

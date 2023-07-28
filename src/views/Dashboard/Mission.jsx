@@ -50,7 +50,9 @@ export default function Mission({
           </p>
         </div>
       ) : null}
-      <button onClick={begin}>begin here</button>
+      <button id="BeginButton" onClick={begin}>
+        begin here
+      </button>
     </div>
   );
 }

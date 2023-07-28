@@ -27,7 +27,7 @@ export default function Arith({ setView, level, setLevel }) {
   return (
     <div>
       <RocketHeader setView={setView} />
-      <div id="mathPath">
+      <div id="ArithWrap">
         {levelEvent ? (
           <LevelUp
             path="Math"

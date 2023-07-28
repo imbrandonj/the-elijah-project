@@ -3,8 +3,9 @@ import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 
 // imported modules:
-import generateProblem from '@root/modules/generateProblem';
-import answerEvent from '@root/modules/answerEvent';
+import ArithLevel1Probs from './ArithLevel1Probs.js';
+import generateProblem from '@root/modules/generateProblem.js';
+import answerEvent from '@root/modules/answerEvent.js';
 
 import '../Arith.css';
 
@@ -12,7 +13,7 @@ import '../Arith.css';
 import { useState, useRef } from 'react';
 
 /*
-    ArithLevel1 component
+    Arith Level 1 Component
 
     `setLevelEvent` prop (state) is passed from AlphaLit view
       - if true, renders a <LevelUp /> component to display from AlphaLit view
@@ -20,10 +21,11 @@ import { useState, useRef } from 'react';
 export default function ArithLevel1({ setLevelEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [problemSet, setProblemSet] = useState(1); // question problem set
 
-  // `problem` object sets `question` & `answer` properties depending on the subject ("math") & state (the problemSet)
-  const problem = generateProblem('math', problemSet, problemHistory); // generate a unique problem
+  const problemSet = ArithLevel1Probs; // imported problems for this level
+
+  // `problem` is an object with `question` & `answer` properties
+  const problem = generateProblem(problemSet, problemHistory); // generate a unique problem
 
   return (
     <div id="mathWrapper">
@@ -43,10 +45,9 @@ export default function ArithLevel1({ setLevelEvent }) {
               answerEvent(
                 inputValue, // the user's given answer
                 problem.answer, // the correct answer
+                20, // `totalQuestions`
                 correctTally, // total correct tally (state)
                 setCorrectTally, // to set total correct tally (set state)
-                problemSet, // current problem set (state)
-                setProblemSet, // to increment the problem set (state) if correct >= 20
                 setLevelEvent // to set a level up event and display `LevelUp` component on rerender (set state)
               );
             }
