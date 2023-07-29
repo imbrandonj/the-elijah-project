@@ -4,6 +4,7 @@ import RocketButton from '@root/components/RocketButton/RocketButton';
 import './About.css'; // component styles
 
 export default function About({ setView }) {
+  const backBtn = () => setView('MainMenu'); // passed to RocketButton component `onclick` prop
   return (
     <div id="aboutMenu">
       <div id="aboutWrapper">
@@ -49,7 +50,7 @@ export default function About({ setView }) {
         text="Back"
         position="below"
         movement="horizontal"
-        setView={setView}
+        onclick={backBtn}
         view={'MainMenu'}
       />
     </div>
