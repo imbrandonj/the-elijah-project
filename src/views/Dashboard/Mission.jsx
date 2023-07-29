@@ -3,9 +3,6 @@ import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
 import Arith from '@root/assets/svgs/arith.svg';
 import Perspective from '@root/assets/svgs/perspective.svg';
 
-// imported components:
-import TipBox from '@root/components/Tipbox/Tipbox.jsx';
-
 /*
   Display planet selected (`missionSelect` state from MissionSelect.jsx)
 */

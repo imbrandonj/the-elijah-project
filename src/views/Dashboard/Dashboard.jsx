@@ -3,8 +3,10 @@ import DashEntry from './DashEntry.jsx';
 import MissionSelect from './MissionSelect.jsx';
 import Mission from './Mission.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
 import './Dashboard.css';
+import '@root/components/RocketButton/RocketButton.css';
 
 import { useState } from 'react';
 
@@ -16,10 +18,24 @@ export default function Dashboard({ setView, setLevel }) {
   const [dashSelect, setDashSelect] = useState('entry'); // user selection from DashEntry ('')
   const [missionSelect, setMissionSelect] = useState('');
 
+  const rocketClick = () => {
+    setMissionSelect('');
+  };
+
   return (
     <div id="Dashboard">
+      {missionSelect.length > 0 ? (
+        <RocketButton
+          text="go back"
+          position="below"
+          movement="horizontal"
+          onclick={rocketClick}
+        />
+      ) : null}
+
       <div id="dashboardWrap">
         <h1>the Elijah project</h1>
+
         {dashSelect === 'entry' ? (
           <DashEntry setDashSelect={setDashSelect} />
         ) : dashSelect === 'launch' && missionSelect.length === 0 ? (
@@ -38,10 +54,11 @@ export default function Dashboard({ setView, setLevel }) {
             />
           </div>
         ) : null}
+
         {missionSelect.length === 0 ? (
           <Tipbox text="Navigate: Use the keyboard arrows or use the mouse to click, grab, and pull." />
         ) : (
-          <Tipbox text="User Experience: Turn the sound on. Each level begins with an explanation." />
+          <Tipbox text="User Experience: Turn the sound on. Each level begins with an audible explanation." />
         )}
       </div>
     </div>

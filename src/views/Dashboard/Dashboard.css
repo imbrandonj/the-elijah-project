@@ -3,7 +3,7 @@
 */
 
 #Dashboard {
-    margin-top: 13rem;
+    margin-top: 11rem;
     display: flex;
     justify-content: center;
 }
@@ -15,6 +15,24 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.95);
     width: 100rem;
+}
+
+#Dashboard #rocketButton {
+    margin: 2rem 1rem;
+    width: 10rem;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--buttonBlue);
+    border: none;
+    border-radius: 0.4rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    font-size: 2.5rem;
+}
+
+#Dashboard #rocketButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--lightBlue);
 }
 
 /*  
@@ -124,9 +142,6 @@
 
 /*
     Mission.jsx view styles
-
-    #mission div is parent of #planetInfo
-    .planet is child of #planetInfo
 */
 
 #mission {
@@ -191,8 +206,32 @@
         padding: 3.6rem 0;
         font-size: 1.75rem;
     }
+
     #mission {
-        width: 80rem;
-        margin: 4rem;
+        width: 90rem;
+        margin: 3rem;
+    }
+
+    .planet {
+        border-radius: 0.75rem;
+        padding: 0.8rem;
+        margin: 0.8rem;
+    }
+    
+    .planet h2 {
+        font-size: 2.2rem;
+        font-weight: 200;
+        letter-spacing: 0.15rem;
+    }
+    
+    .planet img {
+        margin: 1rem;
+    }
+    
+    .planet p {
+        font-size: 1.35rem;
+        width: 20rem;
+        margin: 2rem 3rem;
+        letter-spacing: 0.02rem;
     }
 }
