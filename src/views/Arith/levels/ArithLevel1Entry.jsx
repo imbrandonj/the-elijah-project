@@ -1,10 +1,9 @@
 // imported components:
 import ArithLevel1 from './ArithLevel1.jsx';
 
-// imported modules:
-import speakText from '@root/modules/speakText.js';
+import { useState } from 'react';
 
-import { useState, useEffect } from 'react';
+import ArithAudio from '@root/assets/mp3/ArithEntry1.mp3';
 
 /*
   Arith Level 1 Entry
@@ -14,40 +13,16 @@ import { useState, useEffect } from 'react';
 */
 export default function ArithLevel1Entry({ setLevelEvent }) {
   const [begin, setBegin] = useState(false);
+  const audio = new Audio(ArithAudio);
 
-  const beginButton = () => setBegin(true);
+  const beginButton = () => {
+    audio.pause();
+    setBegin(true);
+  };
 
-  const text1 =
-    'Welcome to Arith! During your journey, you will become well acquainted with numbers. Along the way, you will count, add, subtract, and implement mathematical operations.';
-
-  const text2 =
-    'Your mastery of the planet Arith shall lead you to great success with arithmetic mathematics. But before we get too far ahead, you must take your first steps. How are you with counting? Can you add and count objects?';
-
-  const text3 =
-    "Prove it! Count and add 20 objects. When you're ready to begin, click the begin button.";
-
-  // const text = 'This is a stupid fucking test here.';
   // landing:
   if (!begin) {
-    const synth = window.speechSynthesis;
-
-    setTimeout(() => {
-      let voices = synth.getVoices();
-      console.log(voices);
-      const msg = new SpeechSynthesisUtterance();
-      if (voices.length > 22) {
-        msg.voice = voices[107];
-      } else {
-        msg.voice = voices[6];
-      }
-      msg.text = text1;
-      synth.speak(msg);
-      msg.text = text2;
-      synth.speak(msg);
-      msg.text = text3;
-      synth.speak(msg);
-    }, 1000);
-
+    audio.play();
     // display Arith explanation:
     return (
       <div id="ArithEntry">

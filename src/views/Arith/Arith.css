@@ -36,12 +36,20 @@
     margin: 4rem;
 }
 
+#ArithLevel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(52, 8, 8, .95);
+    padding: 0 10rem;
+    border-radius: 1rem;
+}
 
 /* Used for inline question paragraph and answer input box*/
 #mathQABundle {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin: 1rem;
 }
 
 #mathQ {
@@ -60,6 +68,20 @@
     margin: 5rem 1rem;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+#ArithWrap #footbox {
+    margin: 5rem;
+}
+
+#ArithWrap .objective {
+    margin: 6rem 0 2rem;
+    padding: 0.2rem 0.4rem;
+    font-weight: 200;
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.269);
+    border-radius: 0.5rem;
 }
 
 

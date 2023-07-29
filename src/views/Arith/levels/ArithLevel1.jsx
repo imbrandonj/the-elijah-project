@@ -28,7 +28,8 @@ export default function ArithLevel1({ setLevelEvent }) {
   const problem = generateProblem(problemSet, problemHistory); // generate a unique problem
 
   return (
-    <div id="mathWrapper">
+    <div id="ArithLevel">
+      <h2 className="objective">Count and add the objects.</h2>
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -54,8 +55,8 @@ export default function ArithLevel1({ setLevelEvent }) {
           }}
         />
       </div>
-      <Timer />
       <Footbox correct={correctTally} style={'mathFill'} />
+      <Timer />
     </div>
   );
 }

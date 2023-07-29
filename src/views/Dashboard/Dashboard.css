@@ -17,24 +17,6 @@
     width: 100rem;
 }
 
-#Dashboard #rocketButton {
-    margin: 2rem 1rem;
-    width: 10rem;
-    align-items: center;
-    padding: 3rem;
-    background-color: var(--buttonBlue);
-    border: none;
-    border-radius: 0.4rem;
-    font-family: var(--mono);
-    font-variant: small-caps;
-    font-size: 2.5rem;
-}
-
-#Dashboard #rocketButton:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--lightBlue);
-}
-
 /*  
     General Dashboard view styles
 */
@@ -61,6 +43,28 @@
 
 #Dashboard .Tipbox img {
     margin-right: 0.5rem;
+}
+
+/*
+    RocketButton component style for Dashboard.jsx view
+*/
+
+#Dashboard #rocketButton {
+    margin: 4rem 0.8rem;
+    width: 10rem;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--buttonBlue);
+    border: none;
+    border-radius: 0.4rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    font-size: 2.5rem;
+}
+
+#Dashboard #rocketButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--lightBlue);
 }
 
 /*
@@ -205,6 +209,12 @@
         height: 12rem;
         padding: 3.6rem 0;
         font-size: 1.75rem;
+    }
+
+    #Dashboard #rocketButton {
+        margin: 4.4rem 0.6rem;
+        width: 8.4rem;
+        font-size: 2.2rem;
     }
 
     #mission {
