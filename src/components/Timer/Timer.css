@@ -16,8 +16,8 @@
     border-radius: 0.5rem;
 }
 
-#mathWrapper > #timerWrapper > #timer {
-    color: rgba(255, 255, 255, .9);
+#ArithLevel > #timerWrapper > #timer {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 

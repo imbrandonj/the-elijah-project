@@ -1,0 +1,11 @@
+.Tipbox {
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    color: black;
+    font-size: 1rem;
+} 
+
+.Tipbox img {
+    margin-right: 0.5rem;
+}

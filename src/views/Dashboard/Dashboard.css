@@ -31,19 +31,10 @@
 }
 
 #Dashboard .Tipbox {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 202, 255, 0.6);
-    border-radius: 0.4rem;
-    color: black;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
     margin: 3rem;
-}
-
-#Dashboard .Tipbox img {
-    margin-right: 0.5rem;
-}
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 202, 255, 0.6);
+} 
 
 /*
     RocketButton component style for Dashboard.jsx view

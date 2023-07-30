@@ -2,6 +2,7 @@
 import Objective from '@root/components/Objective.jsx';
 import Footbox from '@root/components/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
+import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported modules:
 import ArithLevel1Probs from './ArithProblems.js';
@@ -58,6 +59,7 @@ export default function ArithLevel1({ setLevelEvent }) {
       </div>
       <Footbox correct={correctTally} />
       <Timer />
+      <Tipbox text='Tip: Practice saying "plus" where the addition signs are.' />
     </div>
   );
 }

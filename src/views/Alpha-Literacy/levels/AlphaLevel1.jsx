@@ -2,6 +2,7 @@
 import Objective from '@root/components/Objective.jsx';
 import Footbox from '@root/components/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
+import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported modules:
 import { letters } from '../AlphaProblems.js';
@@ -64,6 +65,7 @@ export default function AlphaLevel1({ setLevelEvent }) {
       />
       <Footbox correct={correctTally} />
       <Timer />
+      <Tipbox text="Tip: Your answers are case insensitive. You can type uppercase or lowercase." />
     </div>
   );
 }
