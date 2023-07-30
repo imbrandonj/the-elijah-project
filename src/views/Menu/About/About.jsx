@@ -47,9 +47,9 @@ export default function About({ setView }) {
         <p id="signature"> -Brandon </p>
       </div>
       <RocketButton
-        text="Back"
+        text="back"
         position="below"
-        movement="horizontal"
+        movement="horizontalRight"
         onclick={backBtn}
         view={'MainMenu'}
       />
