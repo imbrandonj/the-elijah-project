@@ -3,22 +3,34 @@ import './RocketButton.css';
 /*
   RocketButton component
 
-  Displays `text` and Rocket emoji which redirects the user home via `view`
-  `position` argument is in reference to the rocket emoji in relation to the `text`
-  either "front", "behind", or "below"
-  `movement` is either "vertical" or "horizontal", in reference to css hover movement
+  Displays `text` and a Rocket emoji which calls the `onclick` prop
+    - `position` prop references where the rocket emoji is in relation to the `text`
+      either "front", "behind", or "below" (front currently not implemented)
+    - `movement` is either "vertical", "horizontalRight", or "horizontalLeft"
+      - this references the direction the Rocket emoji faces and which way it moves on css :hover
 */
 export default function RocketButton({ text, position, movement, onclick }) {
   // return component
-  if (position === 'below' && movement === 'horizontal') {
+  if (position === 'below' && movement === 'horizontalRight') {
     return (
       <button
         id="rocketButton"
-        className="rocketBelow horizontalBounce"
+        className="rocketBelow horizontalBounceRight"
         onClick={onclick}
       >
         {text}
-        <span className="rocketHorizontal">🚀</span>
+        <span className="rocketHorizontalRight">🚀</span>
+      </button>
+    );
+  } else if (position === 'below' && movement === 'horizontalLeft') {
+    return (
+      <button
+        id="rocketButton"
+        className="rocketBelow horizontalBounceLeft"
+        onClick={onclick}
+      >
+        {text}
+        <span className="rocketHorizontalLeft">🚀</span>
       </button>
     );
   } else if (position === 'behind' && movement === 'vertical') {

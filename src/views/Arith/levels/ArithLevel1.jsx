@@ -1,4 +1,5 @@
 // imported components:
+import Objective from '@root/components/Objective.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 
@@ -29,7 +30,7 @@ export default function ArithLevel1({ setLevelEvent }) {
 
   return (
     <div id="ArithLevel">
-      <h2 className="objective">Count and add the objects.</h2>
+      <Objective text="Count and add the objects." />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input

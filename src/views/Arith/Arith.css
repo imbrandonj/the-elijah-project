@@ -76,12 +76,18 @@
 
 #ArithWrap .objective {
     margin: 6rem 0 2rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.4rem 0.8rem;
     font-weight: 200;
     font-size: 2rem;
     letter-spacing: 0.1rem;
     background-color: rgba(0, 0, 0, 0.269);
     border-radius: 0.5rem;
+}
+
+#ArithWrap span {
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.2rem;
 }
 
 

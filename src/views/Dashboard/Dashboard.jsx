@@ -28,7 +28,7 @@ export default function Dashboard({ setView, setLevel }) {
         <RocketButton
           text="go back"
           position="below"
-          movement="horizontal"
+          movement="horizontalLeft"
           onclick={rocketClick}
         />
       ) : null}

@@ -1,7 +1,10 @@
 /*
     RocketButton
     
-    RocketButton.jsx uses animations found here and in global.css (animations section)
+    RocketButton.jsx uses a Rocket Emoji and some text
+    On hover, the Rocket Emoji plays an animation
+
+    The button, on hover, will bounce. This animation is found in `global.css`
 */
 #rocketButton {
     align-items: center;
@@ -12,17 +15,17 @@
     flex-direction: column;
 }
 
-.rocketHorizontal {
+.rocketHorizontalRight {
     transform: rotate(45deg);
     line-height: 5rem;
     font-size: 3rem;
 }
 
-#rocketButton:hover .rocketHorizontal {
-    animation: rocketHorizontalWiggle 0.6s ease-in-out infinite;
+#rocketButton:hover .rocketHorizontalRight {
+    animation: rocketHorizontalWiggleRight 0.6s ease-in-out infinite;
 }
 
-@keyframes rocketHorizontalWiggle {
+@keyframes rocketHorizontalWiggleRight {
     0%, 25%, 100% {
         transform: rotate(45deg);
     }
@@ -33,6 +36,30 @@
 
     75% {
         transform: rotate(52deg);
+    }
+}
+
+.rocketHorizontalLeft {
+    transform: rotate(225deg);
+    line-height: 5rem;
+    font-size: 3rem;
+}
+
+#rocketButton:hover .rocketHorizontalLeft {
+    animation: rocketHorizontalWiggleLeft 0.6s ease-in-out infinite;
+}
+
+@keyframes rocketHorizontalWiggleLeft {
+    0%, 25%, 100% {
+        transform: rotate(225deg);
+    }
+
+    25% {
+        transform: rotate(218deg)
+    }
+
+    75% {
+        transform: rotate(232deg);
     }
 }
 

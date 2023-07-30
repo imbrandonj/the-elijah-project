@@ -100,17 +100,31 @@ h1, h2, h3, h4 {
     }
 }
 
-.horizontalBounce:hover {
-    animation: horizontalBounce 1.6s ease-in-out infinite;
+.horizontalBounceRight:hover {
+    animation: horizontalBounceRight 1.6s ease-in-out infinite;
 }
 
-@keyframes horizontalBounce {
+@keyframes horizontalBounceRight {
     0%, 100% {
         transform: translateX(0);
     }
 
     50% {
         transform: translateX(1rem);
+    }
+}
+
+.horizontalBounceLeft:hover {
+    animation: horizontalBounceLeft 1.6s ease-in-out infinite;
+}
+
+@keyframes horizontalBounceLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-1rem);
     }
 }
 
