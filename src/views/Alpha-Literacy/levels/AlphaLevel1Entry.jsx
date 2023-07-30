@@ -1,4 +1,6 @@
+// imported components:
 import AlphaLevel1 from './AlphaLevel1.jsx';
+import BeginButton from '@root/components/BeginButton.jsx';
 
 import { useState } from 'react';
 
@@ -18,7 +20,7 @@ export default function AlphaLevel1Entry({ setLevelEvent }) {
     return (
       <div id="litWrapper">
         <h2>Alpha-Literacy Level 1</h2>
-        <button onClick={beginButton}>Begin!</button>
+        <BeginButton text={'begin!'} onclick={beginButton} />
       </div>
     );
     // begin button clicked:

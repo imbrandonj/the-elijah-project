@@ -1,3 +1,6 @@
+// imported components:
+import BeginButton from '@root/components/BeginButton';
+
 // imported svgs:
 import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
 import Arith from '@root/assets/svgs/arith.svg';
@@ -47,9 +50,7 @@ export default function Mission({
           </p>
         </div>
       ) : null}
-      <button id="BeginButton" onClick={begin}>
-        begin here
-      </button>
+      <BeginButton text="begin here" onclick={begin} />
     </div>
   );
 }

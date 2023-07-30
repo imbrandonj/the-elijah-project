@@ -30,7 +30,7 @@ export default function ArithLevel1({ setLevelEvent }) {
 
   return (
     <div id="ArithLevel">
-      <Objective text="Count and add the objects." />
+      <Objective text="Count and add the objects" />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input

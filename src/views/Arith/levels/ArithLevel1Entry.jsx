@@ -1,5 +1,6 @@
 // imported components:
 import ArithLevel1 from './ArithLevel1.jsx';
+import BeginButton from '@root/components/BeginButton.jsx';
 
 import { useState } from 'react';
 
@@ -46,9 +47,7 @@ export default function ArithLevel1Entry({ setLevelEvent }) {
           Count and add 20 objects. <br />
           When you're ready to begin, click the begin button.
         </p>
-        <button id="BeginButton" onClick={beginButton}>
-          begin!
-        </button>
+        <BeginButton text={'begin!'} onclick={beginButton} />
       </div>
     );
 
