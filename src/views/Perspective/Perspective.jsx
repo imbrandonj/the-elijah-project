@@ -1,7 +1,5 @@
 // imported components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader';
-import Footbox from '@root/components/Footbox/Footbox';
-import Timer from '@root/components/Timer/Timer';
 
 import './Perspective.css'; // component styles
 

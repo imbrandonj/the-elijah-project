@@ -1,8 +1,10 @@
 // imported components:
-import Footbox from '@root/components/Footbox/Footbox.jsx';
+import Objective from '@root/components/Objective.jsx';
+import Footbox from '@root/components/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 
 // imported modules:
+import { letters } from '../AlphaProblems.js';
 import answerEvent from '@root/modules/answerEvent';
 import generateProblem from '@root/modules/generateProblem';
 
@@ -20,14 +22,15 @@ import { useState, useRef } from 'react';
 export default function AlphaLevel1({ setLevelEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
-  const [problemSet, setProblemSet] = useState(1); // problem set
 
-  // `problem` object sets `question` & `answer` properties depending on the subject ("lit") & state (the problemSet)
-  let problem = generateProblem('lit', problemSet, problemHistory); // generate a unique problem
+  const problemSet = letters.upperLetters; // imported problems for this level
 
-  console.log('what?');
+  // `problem` object sets `question` & `answer` properties
+  const problem = generateProblem(problemSet, problemHistory, false); // generate a unique problem
+
   return (
-    <div id="litWrapper">
+    <div id="litLevel">
+      <Objective text="Type and enter 20 letters" />
       <p id="litQ">
         <span>Enter the letter:</span>
         <br />
@@ -42,12 +45,8 @@ export default function AlphaLevel1({ setLevelEvent }) {
 
           // listen for enter keydown
           if (event.key === 'Enter') {
-            // first 2 problem sets are case insensitive
-            if (problemSet === 1) {
-              inputValue = inputValue.toUpperCase();
-            } else if (problemSet === 2) {
-              inputValue = inputValue.toLowerCase();
-            }
+            // case insensitive
+            inputValue = inputValue.toUpperCase();
 
             event.target.value = ''; // clears the input box
 
@@ -55,17 +54,16 @@ export default function AlphaLevel1({ setLevelEvent }) {
             answerEvent(
               inputValue, // the user's given answer
               problem.answer, // the correct answer
+              20, // `totalQuestions`
               correctTally, // total correct tally (state)
               setCorrectTally, // to set total correct tally (set state)
-              problemSet, // current problem set (state)
-              setProblemSet, // to increment the problem set (state) if correct >= 20
               setLevelEvent // to set a level up event and display `LevelUp` component on rerender (set state)
             );
           }
         }}
       />
+      <Footbox correct={correctTally} />
       <Timer />
-      <Footbox correct={correctTally} style={'litFill'} />
     </div>
   );
 }

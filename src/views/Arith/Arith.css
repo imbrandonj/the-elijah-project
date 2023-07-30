@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(52, 8, 8, .95);
+    background-color: rgba(58, 14, 14, 0.95);
     padding: 0 10rem;
     border-radius: 1rem;
 }
@@ -40,8 +40,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(52, 8, 8, .95);
-    padding: 0 10rem;
+    background-color: rgba(58, 14, 14, 0.95);
+    padding: 2rem 10rem;
     border-radius: 1rem;
 }
 
@@ -71,7 +71,20 @@
 }
 
 #ArithWrap #footbox {
-    margin: 4rem;
+    margin: 6rem 0 4rem;
+}
+
+#ArithWrap .emptyFootbox {
+    margin: 0 0.8rem;
+    padding: 0.4rem 1.4rem;
+    border: 3px solid black;
+}
+
+#ArithWrap .filledFootbox {
+    margin: 0 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 /*
@@ -80,14 +93,15 @@
 #ArithWrap .objective {
     display: flex;
     align-items: center;
-    margin: 6rem 0 2rem;
+    align-self: flex-start;
+    margin: 3rem 0;
     padding: 0.4rem 0.8rem 0;
-    font-weight: 200;
-    font-size: 1.8rem;
-    font-style: italic;
-    letter-spacing: 0.1rem;
     background-color: rgba(0, 0, 0, 0.269);
     border-radius: 0.5rem;
+    font-weight: 200;
+    font-size: 1.6rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
 }
 
 #ArithWrap img {
@@ -97,7 +111,7 @@
 #ArithWrap span {
     margin: 0.5rem;
     padding-bottom: 0.2rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-variant: small-caps;
     letter-spacing: 0.2rem;
 }

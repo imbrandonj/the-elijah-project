@@ -3,7 +3,6 @@
 */
 
 #timerWrapper {
-    margin: 1rem 0;
     display: flex;
     justify-content: center;
 }
@@ -23,10 +22,6 @@
 
 
 @media (max-width: 2000px) {
-    #timerWrapper {
-        margin: 0;
-    }
-
     #timer {
         font-size: 2.2rem;
     }

@@ -1,10 +1,10 @@
 // imported components:
 import Objective from '@root/components/Objective.jsx';
-import Footbox from '@root/components/Footbox/Footbox.jsx';
+import Footbox from '@root/components/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 
 // imported modules:
-import ArithLevel1Probs from './ArithLevel1Probs.js';
+import ArithLevel1Probs from './ArithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import answerEvent from '@root/modules/answerEvent.js';
 
@@ -26,7 +26,7 @@ export default function ArithLevel1({ setLevelEvent }) {
   const problemSet = ArithLevel1Probs; // imported problems for this level
 
   // `problem` is an object with `question` & `answer` properties
-  const problem = generateProblem(problemSet, problemHistory); // generate a unique problem
+  const problem = generateProblem(problemSet, problemHistory, true); // generate a unique problem
 
   return (
     <div id="ArithLevel">
@@ -56,7 +56,7 @@ export default function ArithLevel1({ setLevelEvent }) {
           }}
         />
       </div>
-      <Footbox correct={correctTally} style={'mathFill'} />
+      <Footbox correct={correctTally} />
       <Timer />
     </div>
   );

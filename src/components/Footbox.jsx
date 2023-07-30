@@ -1,18 +1,15 @@
-import './Footbox.css'; // component styles
-
 /*
   Footbox.jsx component
 
   `correct` prop is `correctTally` (state)
-  `style` prop is either `litFill`, `mathFill`, or `logicFill`
 */
 
-export default function Footbox({ correct, style }) {
+export default function Footbox({ correct }) {
   const footbox = Array(20).fill();
 
   for (let i = 0; i < 20; i++) {
     if (i < correct) {
-      footbox[i] = <span key={i} className={style}></span>;
+      footbox[i] = <span key={i} className="filledFootbox"></span>;
     } else {
       footbox[i] = <span key={i} className="emptyFootbox"></span>;
     }
