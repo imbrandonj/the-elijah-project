@@ -1,5 +1,5 @@
 /*
-    MathPath component styles
+    Arith component styles
 */
 
 #ArithWrap {
@@ -17,19 +17,38 @@
     border-radius: 1rem;
 }
 
+#ArithEntry .para-img {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80rem;
+    margin: 5rem 0;
+    padding: 3rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.269);
+    border-radius: 1rem;
+}
+
 #ArithEntry h2 {
-    margin: 4rem;
+    margin-top: 3rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 200;
+    font-variant: small-caps;
 }
 
 #ArithEntry p {
-    width: 80rem;
-    text-align: left;
-    line-height: 2rem;
-    letter-spacing: 0.05rem;
-    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.08rem;
+    font-size: 1.8rem;
+}
+
+#ArithEntry img {
+    background-color: var(--buttonBlue);
+    border-radius: 0.8rem;
+}
+
+#ArithEntry img:hover {
+    background-color: var(--lightBlue);
 }
 
 #ArithEntry button {
@@ -76,13 +95,13 @@
 
 #ArithWrap .emptyFootbox {
     margin: 0 0.8rem;
-    padding: 0.4rem 1.4rem;
+    padding: 1rem 1.3rem;
     border: 3px solid black;
 }
 
 #ArithWrap .filledFootbox {
     margin: 0 0.8rem;
-    padding: 0.5rem 1.5rem;
+    padding: 1.1rem 1.4rem;
     border: 2px solid black;
     background-color: rgba(255, 255, 255, 0.75);
 }
@@ -105,11 +124,11 @@
     color: rgba(255, 255, 255, 0.9);
 }
 
-#ArithWrap img {
+#ArithWrap .objective img {
     margin: 0.5rem 0.5rem 1rem 1rem;
 }
 
-#ArithWrap span {
+#ArithWrap .objective span {
     margin: 0.5rem;
     padding-bottom: 0.2rem;
     font-size: 2rem;
@@ -119,14 +138,13 @@
 
 #ArithWrap .Tipbox {
     margin: 1rem;
-    padding: 0 1rem 0 0;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 2000px) {
 
     #mathPath {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
     
     #mathWrapper {

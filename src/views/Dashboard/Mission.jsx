@@ -1,5 +1,5 @@
 // imported components:
-import BeginButton from '@root/components/BeginButton';
+import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 
 // imported svgs:
 import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';

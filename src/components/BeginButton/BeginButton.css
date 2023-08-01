@@ -1,0 +1,14 @@
+#BeginButton {
+    padding: 1rem 2rem;
+    background-color: var(--buttonBlue);
+    font-size: 2rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+#BeginButton:hover {
+    background-color: var(--lightBlue);
+}

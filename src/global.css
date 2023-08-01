@@ -41,19 +41,12 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
-#BeginButton {
-    padding: 1rem 2rem;
-    background-color: var(--buttonBlue);
-    font-size: 2rem;
-    font-family: var(--mono);
-    font-variant: small-caps;
-    letter-spacing: 0.1rem;
-    border: none;
-    border-radius: 0.4rem;
+.italic {
+    font-style: italic;
 }
 
-#BeginButton:hover {
-    background-color: var(--lightBlue);
+.small-caps {
+    font-variant: small-caps;
 }
 
 /* used in MainMenu.jsx !to be deleted! */

@@ -1,10 +1,12 @@
 // imported components:
 import ArithLevel1 from './ArithLevel1.jsx';
-import BeginButton from '@root/components/BeginButton.jsx';
+import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
+
+// imported assets:
+import ArithAudio from '@root/assets/mp3/ArithEntry1.mp3';
+import operators from '@root/assets/svgs/operators.svg';
 
 import { useState } from 'react';
-
-import ArithAudio from '@root/assets/mp3/ArithEntry1.mp3';
 
 /*
   Arith Level 1 Entry
@@ -28,25 +30,20 @@ export default function ArithLevel1Entry({ setLevelEvent }) {
     return (
       <div id="ArithEntry">
         <h2>Arith Level 1</h2>
-        <p>
-          Welcome to Arith! <br />
-          <br />
-          During your journey, you will become well acquainted with numbers.
-          <br />
-          Along the way, you will count, add, subtract, and implement
-          mathematical operations. <br />
-          Your mastery of the planet Arith shall lead you to great success with
-          arithmetic mathematics. <br />
-          <br />
-          But before we get too far ahead, you must take your first steps.
-          <br />
-          How are you with counting? <br />
-          Can you add and count objects? <br />
-          Prove it! <br />
-          <br />
-          Count and add 20 objects. <br />
-          When you're ready to begin, click the begin button.
-        </p>
+        <div className="para-img">
+          <p>
+            Welcome to Arith! <br />
+            <br />
+            This is a place to build your math skills. <br />
+            Do you know what math is? <br />
+            <br />
+            Let's begin with the easiest math. <br /> <br />
+            Count and add 20 objects. <br />
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+          <img src={operators} height={200} />
+        </div>
         <BeginButton text={'begin!'} onclick={beginButton} />
       </div>
     );
