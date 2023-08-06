@@ -1,8 +1,17 @@
 // imported components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
-import ArithLevel1Entry from './levels/ArithLevel1Entry.jsx';
-import ArithLevel2Entry from './levels/ArithLevel2Entry.jsx';
+import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+
+// imported levels:
+import ArithLevel1 from './levels/ArithLevel1.jsx';
+import ArithLevel2 from './levels/ArithLevel2.jsx';
+
+// imported audio for `LevelEntry` component:
+import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
+
+// imported img for `LevelEntry` component:
+import imgEntry1 from '@root/assets/svgs/operators.svg';
 
 import './Arith.css'; // view & component styles
 
@@ -19,7 +28,8 @@ import { useState } from 'react';
     • `setLevel` prop (state) is used to set or modify the Arith level
 */
 export default function Arith({ setView, level, setLevel }) {
-  const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
+  const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
+  const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
 
   console.log('Render!');
 
@@ -28,17 +38,32 @@ export default function Arith({ setView, level, setLevel }) {
     <div>
       <RocketHeader setView={setView} />
       <div id="ArithWrap">
-        {levelEvent ? (
+        {levelUpEvent ? (
           <LevelUp
             path="Math"
             level={level}
             setLevel={setLevel}
-            setLevelEvent={setLevelEvent}
+            setLevelUpEvent={setLevelUpEvent}
           />
         ) : level === 1 ? (
-          <ArithLevel1Entry setLevelEvent={setLevelEvent} />
+          begin ? (
+            <ArithLevel1 />
+          ) : (
+            <LevelEntry
+              voice={audioEntry1}
+              img={imgEntry1}
+              h2Text="Arith Level 1"
+              text="ArithEntry1"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
         ) : level === 2 ? (
-          <ArithLevel2Entry setLevelEvent={setLevelEvent} />
+          begin ? (
+            <ArithLevel2 />
+          ) : (
+            <LevelEntry setLevelUpEvent={setLevelUpEvent} />
+          )
         ) : null}
       </div>
     </div>

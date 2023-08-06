@@ -8,51 +8,28 @@
     margin-top: 3rem;
 }
 
-#ArithEntry {
+#ArithWrap #LevelEntry {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(58, 14, 14, 0.95);
     padding: 0 10rem;
     border-radius: 1rem;
+    color: rgba(255, 255, 255, .9);
 }
 
-#ArithEntry .para-img {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 80rem;
-    margin: 5rem 0;
-    padding: 3rem 1.5rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 1rem;
-}
 
-#ArithEntry h2 {
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 200;
-    font-variant: small-caps;
-}
-
-#ArithEntry p {
-    line-height: 2.4rem;
-    letter-spacing: 0.08rem;
-    font-size: 1.8rem;
-}
-
-#ArithEntry img {
-    background-color: var(--buttonBlue);
+#ArithWrap #LevelEntry img {
+    background-color: rgba(245, 245, 245, 0.8);
     border-radius: 0.8rem;
 }
 
-#ArithEntry img:hover {
-    background-color: var(--lightBlue);
+#ArithWrap #LevelEntry img:hover {
+    background-color: rgba(255, 255, 255, .9);
 }
 
-#ArithEntry button {
-    margin: 4rem;
+#ArithWrap #LevelEntry #BeginButton:hover {
+    background-color: rgba(255, 255, 255, .9);
 }
 
 #ArithLevel {

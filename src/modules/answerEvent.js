@@ -16,7 +16,7 @@ export default function answerEvent(
   totalQuestions, // question count
   correctTally, // total correct tally (state)
   setCorrectTally, // to set total correct tally (state)
-  setLevelEvent // to set a level up event and display `LevelUp` component on rerender
+  setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender
 ) {
   // correct user input:
   if (inputValue === answer) {
@@ -26,7 +26,7 @@ export default function answerEvent(
     // correctTally does not increment until page re-render
     // thus, correctTally must be checked when correctTally == 19 & input is correct
     if (correctTally === totalQuestions) {
-      setLevelEvent(true);
+      setLevelUpEvent(true);
     }
   } // incorrect user input:
   else {

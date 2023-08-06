@@ -1,8 +1,17 @@
 // imported components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
-import AlphaLevel1Entry from './levels/AlphaLevel1Entry.jsx';
-import AlphaLevel2Entry from './levels/AlphaLevel2Entry.jsx';
+import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+
+// imported levels:
+import AlphaLevel1 from './levels/AlphaLevel1.jsx';
+import AlphaLevel2 from './levels/AlphaLevel2.jsx';
+
+// imported audio for `LevelEntry` component:
+import audioEntry1 from '@root/assets/mp3/AlphaEntry1.mp3';
+
+// imported img for `LevelEntry` component:
+import imgEntry1 from '@root/assets/svgs/astro-usa.svg';
 
 import './AlphaLit.css'; // view & component styles
 
@@ -19,7 +28,8 @@ import { useState } from 'react';
     • `setLevel` prop (state) is used to set or modify the Alpha-Lit level
  */
 export default function AlphaLit({ setView, level, setLevel }) {
-  const [levelEvent, setLevelEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
+  const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
+  const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
 
   console.log('Render!');
 
@@ -28,17 +38,35 @@ export default function AlphaLit({ setView, level, setLevel }) {
     <div>
       <RocketHeader setView={setView} />
       <div id="litPath">
-        {levelEvent ? (
+        {levelUpEvent ? (
           <LevelUp
             path="Literacy"
             level={level}
             setLevel={setLevel}
-            setLevelEvent={setLevelEvent}
+            setLevelUpEvent={setLevelUpEvent}
           />
         ) : level === 1 ? (
-          <AlphaLevel1Entry setLevelEvent={setLevelEvent} />
+          begin ? (
+            <AlphaLevel1 />
+          ) : (
+            <LevelEntry
+              voice={audioEntry1}
+              img={imgEntry1}
+              h2Text="Alpha-Literacy Level 1"
+              text="AlphaEntry1"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
         ) : level === 2 ? (
-          <AlphaLevel2Entry setLevelEvent={setLevelEvent} />
+          begin ? (
+            <AlphaLevel2 />
+          ) : (
+            <LevelEntry
+              h2Text="Alpha-Literacy Level 2"
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
         ) : null}
       </div>
     </div>

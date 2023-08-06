@@ -20,7 +20,7 @@ import { useState, useRef } from 'react';
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
-export default function AlphaLevel1({ setLevelEvent }) {
+export default function AlphaLevel1({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
 
@@ -58,7 +58,7 @@ export default function AlphaLevel1({ setLevelEvent }) {
               20, // `totalQuestions`
               correctTally, // total correct tally (state)
               setCorrectTally, // to set total correct tally (set state)
-              setLevelEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+              setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
             );
           }
         }}

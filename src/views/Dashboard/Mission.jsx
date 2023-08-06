@@ -9,13 +9,7 @@ import Perspective from '@root/assets/svgs/perspective.svg';
 /*
   Display planet selected (`missionSelect` state from MissionSelect.jsx)
 */
-export default function Mission({
-  missionSelect,
-  setDashSelect,
-  setMissionSelect,
-  setView,
-  setLevel,
-}) {
+export default function Mission({ missionSelect, setView, setLevel }) {
   const begin = () => {
     setLevel(1);
     setView(missionSelect);
