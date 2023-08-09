@@ -2,9 +2,10 @@ import './LevelUp.css'; // component styles
 
 export default function LevelUp({
   path, // subject: "Math", "Literacy", or "Logic"
-  level, // level completed
-  setLevel, // increment level
-  setLevelEvent, // reset level event
+  level, // level completed (state)
+  setLevel, // increment level (state)
+  setLevelUpEvent, // reset level event (state)
+  setBegin, // begin level (state)
 }) {
   // time to complete level
   let time = localStorage.getItem('time');
@@ -12,7 +13,8 @@ export default function LevelUp({
   // continue button click event
   const continueEvent = () => {
     setLevel(level + 1);
-    setLevelEvent(false);
+    setLevelUpEvent(false);
+    setBegin(false);
   };
 
   return (

@@ -17,7 +17,49 @@ export default function Text({ text }) {
           Do you know your way around the keyboard yet? <br />
           Don't worry, you'll get plenty of practice. <br /> <br />
           Prepare your fingers! <br />
-          Click the <span className="italic">Begin!</span> button <br />
+          Click the <span className="italic small-caps">
+            Begin!
+          </span> button. <br />
+        </p>
+      );
+    case 'AlphaEntry2':
+      return (
+        <p>
+          Let's continue navigating the keyboard. <br />
+          <br />
+          This time, you'll see 20 lowercase letters.
+          <br />
+          <br />
+          Again, what you'll type is case-insensitive. <br />
+          This means it doesn't matter if you <br /> type lowercase or
+          uppercase.
+          <br />
+          Just match the correct letter and press enter. <br />
+          <br />
+          Are you ready? <br />
+          Click the <span className="italic small-caps">
+            Begin!
+          </span> button <br />
+        </p>
+      );
+
+    case 'AlphaEntry3':
+      return (
+        <p>
+          In the previous levels, <br />
+          You've been able to type and enter <br /> either uppercase or
+          lowercase letters. <br /> <br />
+          This time, your answers are case-sensitive. <br />
+          <br />
+          What this means: <br />
+          If you see an uppercase letter, <br />
+          You must type your answer in uppercase. <br />
+          If you see a lowercase letter, <br />
+          You must type your answer in lowercase. <br />
+          <br />
+          When you're ready, Click the{' '}
+          <span className="italic small-caps">Begin!</span> button <br />
+          To enter 20 case-sensitive letters.
         </p>
       );
     case 'ArithEntry1':

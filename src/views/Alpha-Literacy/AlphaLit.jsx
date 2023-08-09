@@ -44,10 +44,11 @@ export default function AlphaLit({ setView, level, setLevel }) {
             level={level}
             setLevel={setLevel}
             setLevelUpEvent={setLevelUpEvent}
+            setBegin={setBegin}
           />
         ) : level === 1 ? (
           begin ? (
-            <AlphaLevel1 />
+            <AlphaLevel1 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
               voice={audioEntry1}
@@ -60,10 +61,27 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 2 ? (
           begin ? (
-            <AlphaLevel2 />
+            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
+              voice={audioEntry1}
+              img={imgEntry1}
               h2Text="Alpha-Literacy Level 2"
+              text="AlphaEntry2"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 3 ? (
+          begin ? (
+            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
+          ) : (
+            <LevelEntry
+              voice={audioEntry1}
+              img={imgEntry1}
+              h2Text="Alpha-Literacy Level 3"
+              text="AlphaEntry3"
+              setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
           )

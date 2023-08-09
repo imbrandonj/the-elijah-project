@@ -75,24 +75,7 @@
     letter-spacing: 0.4rem;
 }
 
-/*
-    Footbox component styles
-*/
-
-#litLevel #footbox {
-    margin: 6rem 0 4rem;
-}
-
-#litLevel .emptyFootbox {
-    margin: 0 0.8rem;
-    padding: 1rem 1.3rem;
-    border: 3px solid black;
-}
-
 #litLevel .filledFootbox {
-    margin: 0 0.8rem;
-    padding: 1.1rem 1.4rem;
-    border: 2px solid black;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -132,10 +115,10 @@
 
 @media (max-width: 2000px) {
     #litPath {
-        margin-top: 3rem;
+        margin-top: 1.2rem;
     }
     
-    #litWrapper {
+    #litLevel {
         padding: 1.4rem 8rem;
     }
 
@@ -175,5 +158,24 @@
         font-size: 3.1rem;
         letter-spacing: 0.4rem;
         line-height: 5.5rem;
+    }
+
+    #litLevel .objective {
+        margin: 3rem 0;
+        padding: 0.4rem 0.8rem 0;
+        font-size: 1.4rem;
+        letter-spacing: 0.1rem;
+
+    }
+    
+    #litLevel .objective img {
+        margin: 0.5rem 0.5rem 0.8rem;
+    }
+    
+    #litLevel .objective span {
+        margin: 0.5rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
     }
 }

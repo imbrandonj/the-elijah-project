@@ -4,6 +4,8 @@
   `correct` prop is `correctTally` (state)
 */
 
+import './Footbox.css';
+
 export default function Footbox({ correct }) {
   const footbox = Array(20).fill();
 

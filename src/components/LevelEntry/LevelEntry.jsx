@@ -15,8 +15,6 @@ import './LevelEntry.css';
     - `setDashSelect` will bring the user to 'Launch' state
     - `setMissionSelect` will bring the user to 'Alpha-Literacy'
   - `setBegin` prop (state) begins the level, if begin button is clicked
-  - `setLevelEvent` prop (state) is passed from AlphaLit `view`
-    - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
 export default function LevelEntry({
   voice,
@@ -24,9 +22,7 @@ export default function LevelEntry({
   h2Text,
   text,
   setView,
-  view,
   setBegin,
-  setLevelUpEvent,
 }) {
   const audio = new Audio(voice);
 

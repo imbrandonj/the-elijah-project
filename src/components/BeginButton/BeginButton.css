@@ -12,3 +12,10 @@
 #BeginButton:hover {
     background-color: var(--lightBlue);
 }
+
+@media (max-width: 2000px) {
+    #BeginButton {
+        padding: 0.9rem 1.8rem;
+        font-size: 1.8rem;
+    }
+}

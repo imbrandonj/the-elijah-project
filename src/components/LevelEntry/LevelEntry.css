@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 80rem;
-    padding: 4rem 0;
+    width: 90rem;
+    min-height: 40rem;
     background-color: rgba(0, 0, 0, 0.269);
     border-radius: 1rem;
 }
@@ -23,5 +23,33 @@
 }
 
 #LevelEntry button {
-    margin: 4rem;
+    margin: 2rem 0;
+}
+
+
+@media (max-width: 2000px) {
+    #LevelEntry .para-img {
+        width: 75rem;
+        min-height: 30rem;
+    }
+    
+    #LevelEntry h2 {
+        margin: 2rem;
+        font-size: 2.4rem;
+    }
+    
+    #LevelEntry p {
+        line-height: 2.2rem;
+        letter-spacing: 0.07rem;
+        font-size: 1.5rem;
+    }
+
+    #LevelEntry img {
+        height: 12rem;
+    }
+
+    #LevelEntry button {
+        margin: 2rem 0 0;
+    }
+    
 }
