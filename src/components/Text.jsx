@@ -5,8 +5,6 @@
   Most commonly used in LevelEntry.jsx
 */
 export default function Text({ text }) {
-  console.log('test from in text');
-  console.log(text);
   switch (text) {
     case 'AlphaEntry1':
       return (
@@ -25,7 +23,7 @@ export default function Text({ text }) {
     case 'AlphaEntry2':
       return (
         <p>
-          Let's continue navigating the keyboard. <br />
+          Let's continue navigating the alphabet. <br />
           <br />
           This time, you'll see 20 lowercase letters.
           <br />
@@ -34,9 +32,9 @@ export default function Text({ text }) {
           This means it doesn't matter if you <br /> type lowercase or
           uppercase.
           <br />
-          Just match the correct letter and press enter. <br />
+          Just match the letter and press enter. <br />
           <br />
-          Are you ready? <br />
+          Ready? <br />
           Click the <span className="italic small-caps">
             Begin!
           </span> button <br />
@@ -51,15 +49,21 @@ export default function Text({ text }) {
           lowercase letters. <br /> <br />
           This time, your answers are case-sensitive. <br />
           <br />
-          What this means: <br />
           If you see an uppercase letter, <br />
           You must type your answer in uppercase. <br />
           If you see a lowercase letter, <br />
           You must type your answer in lowercase. <br />
           <br />
-          When you're ready, Click the{' '}
+          When you're ready, click the{' '}
           <span className="italic small-caps">Begin!</span> button <br />
           To enter 20 case-sensitive letters.
+        </p>
+      );
+    case 'AlphaEntry4':
+      return (
+        <p>
+          It's time to move on. <br />
+          <br />
         </p>
       );
     case 'ArithEntry1':

@@ -24,8 +24,8 @@ export default function answerEvent(
     setCorrectTally(correctTally + 1); // increment total correct tally (state)
     // note:
     // correctTally does not increment until page re-render
-    // thus, correctTally must be checked when correctTally == 19 & input is correct
-    if (correctTally === totalQuestions) {
+    // thus, correctTally must be checked when correctTally == totalQuestions - 1 & input is correct
+    if (correctTally === totalQuestions - 1) {
       setLevelUpEvent(true);
     }
   } // incorrect user input:

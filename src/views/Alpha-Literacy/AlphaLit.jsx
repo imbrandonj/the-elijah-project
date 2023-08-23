@@ -7,11 +7,14 @@ import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 import AlphaLevel1 from './levels/AlphaLevel1.jsx';
 import AlphaLevel2 from './levels/AlphaLevel2.jsx';
 
+// voice: en-US-Studio-O
 // imported audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/AlphaEntry1.mp3';
+import audioEntry2 from '@root/assets/mp3/AlphaEntry2.mp3';
+import audioEntry3 from '@root/assets/mp3/AlphaEntry3.mp3';
 
 // imported img for `LevelEntry` component:
-import imgEntry1 from '@root/assets/svgs/astro-usa.svg';
+import astroUSA from '@root/assets/svgs/astro-usa.svg';
 
 import './AlphaLit.css'; // view & component styles
 
@@ -52,7 +55,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
           ) : (
             <LevelEntry
               voice={audioEntry1}
-              img={imgEntry1}
+              img={astroUSA}
               h2Text="Alpha-Literacy Level 1"
               text="AlphaEntry1"
               setBegin={setBegin}
@@ -64,8 +67,8 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
-              voice={audioEntry1}
-              img={imgEntry1}
+              voice={audioEntry2}
+              img={astroUSA}
               h2Text="Alpha-Literacy Level 2"
               text="AlphaEntry2"
               setBegin={setBegin}
@@ -77,10 +80,23 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
-              voice={audioEntry1}
-              img={imgEntry1}
+              voice={audioEntry3}
+              img={astroUSA}
               h2Text="Alpha-Literacy Level 3"
               text="AlphaEntry3"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 4 ? (
+          begin ? (
+            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
+          ) : (
+            <LevelEntry
+              voice={audioEntry3}
+              img={astroUSA}
+              h2Text="Alpha-Literacy Level 3"
+              text="AlphaEntry4"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
