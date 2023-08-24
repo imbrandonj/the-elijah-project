@@ -15,16 +15,16 @@ import '../AlphaLit.css';
 import { useState, useRef } from 'react';
 
 /*
-  Alpha Level 2
+  Alpha Level 3
 
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
-export default function AlphaLevel2({ setLevelUpEvent }) {
+export default function AlphaLevel3({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
 
-  const problemSet = letters.lowerLetters; // imported problems for this level
+  const problemSet = letters.mixLetters; // imported problems for this level
 
   // `problem` object sets `question` & `answer` properties
   const problem = generateProblem(problemSet, problemHistory, false); // generate a unique problem
@@ -46,9 +46,6 @@ export default function AlphaLevel2({ setLevelUpEvent }) {
 
           // listen for enter keydown
           if (event.key === 'Enter') {
-            // case insensitive
-            inputValue = inputValue.toLowerCase();
-
             event.target.value = ''; // clears the input box
 
             // module answerEvent.js
@@ -65,7 +62,7 @@ export default function AlphaLevel2({ setLevelUpEvent }) {
       />
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Your answers are case insensitive. You can type uppercase or lowercase." />
+      <Tipbox text="Tip: Your answers are case-sensitive. Use the shift key to capitalize your letters." />
     </div>
   );
 }

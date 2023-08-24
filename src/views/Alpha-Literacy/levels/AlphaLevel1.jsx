@@ -15,7 +15,7 @@ import '../AlphaLit.css';
 import { useState, useRef } from 'react';
 
 /*
-  AlphaLevel1 component
+  Alpha Level 1
 
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view

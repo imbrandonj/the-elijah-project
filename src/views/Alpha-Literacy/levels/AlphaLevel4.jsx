@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported modules:
-import { letters } from '../AlphaProblems.js';
+import { shortAnimals } from '../AlphaProblems.js';
 import answerEvent from '@root/modules/answerEvent';
 import generateProblem from '@root/modules/generateProblem';
 
@@ -15,27 +15,31 @@ import '../AlphaLit.css';
 import { useState, useRef } from 'react';
 
 /*
-  Alpha Level 2
+  Alpha Level 4
 
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
-export default function AlphaLevel2({ setLevelUpEvent }) {
+export default function AlphaLevel4({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
 
-  const problemSet = letters.lowerLetters; // imported problems for this level
+  const problemSet = shortAnimals; // imported problems for this level
 
   // `problem` object sets `question` & `answer` properties
-  const problem = generateProblem(problemSet, problemHistory, false); // generate a unique problem
+  const problem = generateProblem(problemSet, problemHistory, true); // generate a unique problem
 
   return (
     <div id="litLevel">
-      <Objective text="Type and enter 20 letters" />
+      <Objective text="Spell 20 short animal words" />
       <p id="litQ">
-        <span>Enter the letter:</span>
+        <span>Spell:</span>
         <br />
-        <span id="letterQ">{problem.question}</span>
+        <span id="letterQ">
+          {problem.question}
+          <br />
+          {problem.answer}
+        </span>
       </p>
       <input
         id="litAns"
@@ -65,7 +69,7 @@ export default function AlphaLevel2({ setLevelUpEvent }) {
       />
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Your answers are case insensitive. You can type uppercase or lowercase." />
+      <Tipbox text="Tip: Spelling Tip!" />
     </div>
   );
 }

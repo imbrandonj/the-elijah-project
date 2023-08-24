@@ -63,7 +63,17 @@ export default function Text({ text }) {
       return (
         <p>
           It's time to move on. <br />
+          We will now begin spelling. <br />
           <br />
+          Let's begin spelling easy words.
+          <br />
+          We'll start with animals. <br />
+          <br />
+          Spell 20 different animals. <br />
+          As usual, press the <span className="italic small-caps">
+            Begin!
+          </span>{' '}
+          button to start.
         </p>
       );
     case 'ArithEntry1':

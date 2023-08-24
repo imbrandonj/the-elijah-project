@@ -1,5 +1,4 @@
 // Storage of Arith Level 1 Problems
-
 const problemSet = [
   { problem: '🐻 + 🐻🐻 =', answer: 3 },
   { problem: '🐻🐻 + 🐻🐻🐻 =', answer: 5 },

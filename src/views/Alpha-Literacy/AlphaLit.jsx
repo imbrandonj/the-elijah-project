@@ -6,12 +6,15 @@ import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 // imported levels:
 import AlphaLevel1 from './levels/AlphaLevel1.jsx';
 import AlphaLevel2 from './levels/AlphaLevel2.jsx';
+import AlphaLevel3 from './levels/AlphaLevel3.jsx';
+import AlphaLevel4 from './levels/AlphaLevel4.jsx';
 
 // voice: en-US-Studio-O
 // imported audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/AlphaEntry1.mp3';
 import audioEntry2 from '@root/assets/mp3/AlphaEntry2.mp3';
 import audioEntry3 from '@root/assets/mp3/AlphaEntry3.mp3';
+import audioEntry4 from '@root/assets/mp3/AlphaEntry4.mp3';
 
 // imported img for `LevelEntry` component:
 import astroUSA from '@root/assets/svgs/astro-usa.svg';
@@ -77,7 +80,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 3 ? (
           begin ? (
-            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel3 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
               voice={audioEntry3}
@@ -90,12 +93,12 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 4 ? (
           begin ? (
-            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel4 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
-              voice={audioEntry3}
+              voice={audioEntry4}
               img={astroUSA}
-              h2Text="Alpha-Literacy Level 3"
+              h2Text="Alpha-Literacy Level 4"
               text="AlphaEntry4"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
