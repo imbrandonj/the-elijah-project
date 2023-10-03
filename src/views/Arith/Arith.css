@@ -5,43 +5,30 @@
 #ArithWrap {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 #ArithWrap #LevelEntry {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(58, 14, 14, 0.95);
+    background-color:rgba(44, 16, 28, 0.95);
     padding: 2rem 10rem;
     border-radius: 1rem;
-    color: rgba(255, 255, 255, .9);
+    color: rgba(245, 245, 245, 0.9);
 }
 
-
-#ArithWrap #LevelEntry img {
-    background-color: rgba(254, 230, 230, 0.906);
-    border-radius: 0.8rem;
-}
-
-#ArithWrap #LevelEntry img:hover {
-    background-color: rgba(255, 255, 255, .9);
-}
-
-#ArithWrap #LevelEntry #BeginButton:hover {
-    background-color: rgba(255, 255, 255, .9);
-}
 
 #ArithLevel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(58, 14, 14, 0.95);
+    background-color:rgba(44, 16, 28, 0.95);
     padding: 2rem 10rem;
     border-radius: 1rem;
 }
 
-/* Used for inline question paragraph and answer input box*/
+/* Used for inline question paragraph and answer input box */
 #mathQABundle {
     display: flex;
     justify-content: center;

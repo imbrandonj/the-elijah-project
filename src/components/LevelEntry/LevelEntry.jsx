@@ -3,6 +3,9 @@ import AlphaLevel1 from '@root/views/Alpha-Literacy/levels/AlphaLevel1.jsx';
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import Text from '@root/components/Text.jsx';
 
+import arithImg from '@root/assets/svgs/arith.svg';
+import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
+
 import './LevelEntry.css';
 
 /*
@@ -19,6 +22,7 @@ import './LevelEntry.css';
 export default function LevelEntry({
   voice,
   img,
+  planet,
   h2Text,
   text,
   setView,
@@ -36,11 +40,18 @@ export default function LevelEntry({
   //   setView(view);
   // };
 
+  const planetImg =
+    planet === 'Arith' ? arithImg : planet === 'AlphaLit' ? alphaImg : null;
+
+  console.log(planet);
+
   audio.play();
   // display explanation:
   return (
     <div id="LevelEntry">
-      <h2>{h2Text}</h2>
+      <h2>
+        <img src={planetImg} height={80} /> {h2Text}
+      </h2>
       <div className="para-img">
         <Text text={text} />
         <img src={img} height={200} />

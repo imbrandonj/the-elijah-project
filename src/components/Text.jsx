@@ -90,6 +90,22 @@ export default function Text({ text }) {
           start.
         </p>
       );
+    case 'ArithEntry2':
+      return (
+        <p>
+          Good job counting.
+          <br />
+          Did you know that counting is math? <br />
+          <br />
+          When we count objects, we are practicing addition. <br />
+          <br />
+          This time, let's use numbers. <br />
+          Add the numbers together to get your answer. <br />
+          <br />
+          Click the <span className="italic small-caps">begin!</span> button to
+          start.
+        </p>
+      );
     default:
       return null;
   }

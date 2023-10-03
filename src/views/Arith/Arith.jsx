@@ -9,9 +9,10 @@ import ArithLevel2 from './levels/ArithLevel2.jsx';
 
 // imported audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
+import audioEntry2 from '@root/assets/mp3/ArithEntry2.mp3';
 
 // imported img for `LevelEntry` component:
-import imgEntry1 from '@root/assets/svgs/operators.svg';
+import imgEntry1 from '@root/assets/svgs/1234.svg';
 
 import './Arith.css'; // view & component styles
 
@@ -20,6 +21,7 @@ import { useState } from 'react';
 
 /*
   Arith `view` component
+  voice: English (UK) Neil
 
   Presents arithmetic problems ~
     • Level up event triggers after level completion
@@ -40,18 +42,20 @@ export default function Arith({ setView, level, setLevel }) {
       <div id="ArithWrap">
         {levelUpEvent ? (
           <LevelUp
-            path="Math"
+            path="Arith"
             level={level}
             setLevel={setLevel}
             setLevelUpEvent={setLevelUpEvent}
+            setBegin={setBegin}
           />
         ) : level === 1 ? (
           begin ? (
-            <ArithLevel1 />
+            <ArithLevel1 setLevelUpEvent={setLevelUpEvent} />
           ) : (
             <LevelEntry
               voice={audioEntry1}
               img={imgEntry1}
+              planet="Arith"
               h2Text="Arith Level 1"
               text="ArithEntry1"
               setBegin={setBegin}
@@ -60,9 +64,17 @@ export default function Arith({ setView, level, setLevel }) {
           )
         ) : level === 2 ? (
           begin ? (
-            <ArithLevel2 />
+            <ArithLevel2 setLevelUpEvent={setLevelUpEvent} />
           ) : (
-            <LevelEntry setLevelUpEvent={setLevelUpEvent} />
+            <LevelEntry
+              voice={audioEntry2}
+              img={imgEntry1}
+              planet="Arith"
+              h2Text="Arith Level 2"
+              text="ArithEntry2"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
           )
         ) : null}
       </div>

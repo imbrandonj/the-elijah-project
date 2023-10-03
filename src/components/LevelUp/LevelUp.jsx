@@ -1,7 +1,7 @@
 import './LevelUp.css'; // component styles
 
 export default function LevelUp({
-  path, // subject: "Math", "Literacy", or "Logic"
+  path, // subject 'Arith' or 'Alpha-Literacy' or 'Perspective'
   level, // level completed (state)
   setLevel, // increment level (state)
   setLevelUpEvent, // reset level event (state)
@@ -20,7 +20,7 @@ export default function LevelUp({
   return (
     <div id="levelUp">
       <div id="levelWrapper">
-        <h2>{path} path level up!</h2>
+        <h2>{path} level up!</h2>
         <h3>Level {level} complete.</h3>
         <p>Time to complete: {time} seconds.</p>
         <button onClick={continueEvent}>Continue to next level</button>

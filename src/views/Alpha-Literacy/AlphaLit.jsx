@@ -46,7 +46,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
       <div id="litPath">
         {levelUpEvent ? (
           <LevelUp
-            path="Literacy"
+            path="Alpha-Literacy"
             level={level}
             setLevel={setLevel}
             setLevelUpEvent={setLevelUpEvent}
@@ -59,6 +59,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <LevelEntry
               voice={audioEntry1}
               img={astroUSA}
+              planet="AlphaLit"
               h2Text="Alpha-Literacy Level 1"
               text="AlphaEntry1"
               setBegin={setBegin}
@@ -72,6 +73,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <LevelEntry
               voice={audioEntry2}
               img={astroUSA}
+              planet="AlphaLit"
               h2Text="Alpha-Literacy Level 2"
               text="AlphaEntry2"
               setBegin={setBegin}
@@ -85,6 +87,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <LevelEntry
               voice={audioEntry3}
               img={astroUSA}
+              planet="AlphaLit"
               h2Text="Alpha-Literacy Level 3"
               text="AlphaEntry3"
               setBegin={setBegin}
@@ -98,6 +101,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
             <LevelEntry
               voice={audioEntry4}
               img={astroUSA}
+              planet="AlphaLit"
               h2Text="Alpha-Literacy Level 4"
               text="AlphaEntry4"
               setBegin={setBegin}

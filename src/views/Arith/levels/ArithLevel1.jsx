@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported modules:
-import ArithLevel1Probs from './ArithProblems.js';
+import { level1 } from './ArithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import answerEvent from '@root/modules/answerEvent.js';
 
@@ -24,7 +24,7 @@ export default function ArithLevel1({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
-  const problemSet = ArithLevel1Probs; // imported problems for this level
+  const problemSet = level1; // imported problems for this level
 
   // `problem` is an object with `question` & `answer` properties
   const problem = generateProblem(problemSet, problemHistory, true); // generate a unique problem
