@@ -2,7 +2,7 @@
 
 Live: https://elijah-project.vercel.app/
 
-The Elijah Project is a React SPA educational game.
+The Elijah Project is a React SPA educational application.
 
 ## Navigating the Codebase
 
