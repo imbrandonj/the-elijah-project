@@ -1,12 +1,12 @@
-// imported components:
+// imported internal components:
 import Objective from '@root/components/Objective.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
-// imported modules:
+// imported internal modules:
 import { letters } from '../AlphaProblems.js';
-import answerEvent from '@root/modules/answerEvent';
+import tallyUp from '@root/modules/tallyUp.js';
 import generateProblem from '@root/modules/generateProblem';
 
 import '../AlphaLit.css';
@@ -15,7 +15,7 @@ import '../AlphaLit.css';
 import { useState, useRef } from 'react';
 
 /*
-  Alpha Level 3
+  Alpha-Literacy Level 3
 
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
@@ -41,22 +41,23 @@ export default function AlphaLevel3({ setLevelUpEvent }) {
         id="litAns"
         type="text"
         onKeyDown={event => {
-          // set the value of the user's answer
-          let inputValue = event.target.value;
-
           // listen for enter keydown
           if (event.key === 'Enter') {
+            // set the value of the user's answer
+            let inputValue = event.target.value;
+
             event.target.value = ''; // clears the input box
 
-            // module answerEvent.js
-            answerEvent(
-              inputValue, // the user's given answer
-              problem.answer, // the correct answer
-              20, // `totalQuestions`
-              correctTally, // total correct tally (state)
-              setCorrectTally, // to set total correct tally (set state)
-              setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
-            );
+            // correct answer event:
+            if (inputValue === problem.answer) {
+              // module tallyUp.js
+              tallyUp(
+                20, // `totalQuestions`
+                correctTally, // total correct tally (state)
+                setCorrectTally, // to set total correct tally (set state)
+                setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+              );
+            }
           }
         }}
       />

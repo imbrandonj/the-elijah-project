@@ -1,13 +1,13 @@
-// imported components:
+// imported internal components:
 import Objective from '@root/components/Objective.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
-// imported modules:
+// imported internal modules:
 import { level3 } from './ArithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
-import answerEvent from '@root/modules/answerEvent.js';
+import tallyUp from '@root/modules/tallyUp.js';
 
 import '../Arith.css';
 
@@ -39,17 +39,19 @@ export default function ArithLevel3({ setLevelUpEvent }) {
     if (event.key === 'Enter') {
       // set the value of the user's answer
       let inputValue = parseInt(event.target.value); // math answers must be parsed to int
+
       event.target.value = ''; // clears the input box
 
-      // module answerEvent.js
-      answerEvent(
-        inputValue, // the user's given answer
-        problem.answer, // the correct answer
-        20, // `totalQuestions`
-        correctTally, // total correct tally (state)
-        setCorrectTally, // to set total correct tally (set state)
-        setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
-      );
+      // correct answer event:
+      if (inputValue === problem.answer) {
+        // module tallyUp.js
+        tallyUp(
+          20, // `totalQuestions`
+          correctTally, // total correct tally (state)
+          setCorrectTally, // to set total correct tally (set state)
+          setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+        );
+      }
     }
   }
 
