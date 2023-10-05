@@ -5,7 +5,7 @@
 #ArithWrap {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 #ArithWrap #LevelEntry {
@@ -44,11 +44,22 @@
 }
 
 #mathAns {
+    width: 12rem;
+    margin: 5rem 1rem;
     font-family: monospace;
     font-size: 4.2rem;
     text-align: center;
-    width: 12rem;
-    margin: 5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.operandBox {
+    width: 9rem;
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+    font-family: monospace;
+    font-size: 4.2rem;
+    text-align: center;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.7);
 }

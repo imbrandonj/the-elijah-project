@@ -66,4 +66,9 @@ const level2 = [
   { problem: '5 + 5 =', answer: 10 },
 ];
 
-export { level1, level2 };
+const level3 = [
+  { box1: 1, box2: 1, answer: 2 },
+  { box1: 1, box2: 2, answer: 3 },
+];
+
+export { level1, level2, level3 };

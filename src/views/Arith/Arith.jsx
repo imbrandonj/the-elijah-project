@@ -6,6 +6,7 @@ import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 // imported levels:
 import ArithLevel1 from './levels/ArithLevel1.jsx';
 import ArithLevel2 from './levels/ArithLevel2.jsx';
+import ArithLevel3 from './levels/ArithLevel3.jsx';
 
 // imported audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
@@ -72,6 +73,20 @@ export default function Arith({ setView, level, setLevel }) {
               planet="Arith"
               h2Text="Arith Level 2"
               text="ArithEntry2"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 3 ? (
+          begin ? (
+            <ArithLevel3 setLevelUpEvent={setLevelUpEvent} />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={imgEntry1}
+              planet="Arith"
+              h2Text="Arith Level 3"
+              text="ArithEntry3"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
