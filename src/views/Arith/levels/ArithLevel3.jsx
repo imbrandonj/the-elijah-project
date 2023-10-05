@@ -5,9 +5,11 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { level3 } from './ArithProblems.js';
-import generateProblem from '@root/modules/generateProblem.js';
+import { randomNum } from '@root/modules/util.js';
 import tallyUp from '@root/modules/tallyUp.js';
+
+// import add55 from
+// import add22 from
 
 import '../Arith.css';
 
@@ -21,37 +23,60 @@ import { useState, useRef } from 'react';
     Format: a + b = c
     Where the user must input the numbers listed from the given audio
 
-    `setLevelEvent` prop (state) is passed from AlphaLit view
-      - if true, renders a <LevelUp /> component to display from AlphaLit view
+    `setLevelEvent` prop (state) is passed from Arith view
+      - if true, renders a <LevelUp /> component to display from Arith view
 */
 export default function ArithLevel3({ setLevelUpEvent }) {
+  // select 2 random numbers as operands, max = 5
+  const [operand1, setOperand1] = useState(randomNum(5));
+  const [operand2, setOperand2] = useState(randomNum(5));
+  const [sum, setSum] = useState(operand1 + operand2); // sum of the 2 generated operands
+  const [audio, setAudio] = useState('add' + operand1 + operand2); // audio of the operation using the 2 generated operands
+
+  // user provided input:
+  const [userOperand1, setUserOperand1] = useState(''); // default=displays empty input box
+  const [userOperand2, setUserOperand2] = useState(''); // default=displays empty input box
+  const [userSum, setUserSum] = useState(' '); // default=displays empty input box
+
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
-  const problemSet = level3; // imported problems for this level
+  console.log(audio);
 
-  // `problem` is an object with `question` & `answer` properties
-  const problem = generateProblem(problemSet, problemHistory, true); // generate a unique problem
+  console.log(`operand1: ${operand1}`);
+  console.log(`operand2: ${operand2}`);
+  console.log(`sum: ${sum}`);
+  console.log(`userOperand1: ${userOperand1}`);
+  console.log(`userOperand2: ${userOperand2}`);
+  console.log(`userSum: ${userSum}`);
 
-  // math input check, in this level, used 3 times, 1 for each input box
-  function mathInputCheck(event) {
-    // listen for enter keydown
-    if (event.key === 'Enter') {
-      // set the value of the user's answer
-      let inputValue = parseInt(event.target.value); // math answers must be parsed to int
+  let correct = false;
 
-      event.target.value = ''; // clears the input box
+  function answerEvent() {
+    // correct answer event:
+    if (
+      operand1 === userOperand1 &&
+      operand2 === userOperand2 &&
+      sum === userSum
+    ) {
+      console.log(true);
 
-      // correct answer event:
-      if (inputValue === problem.answer) {
-        // module tallyUp.js
-        tallyUp(
-          20, // `totalQuestions`
-          correctTally, // total correct tally (state)
-          setCorrectTally, // to set total correct tally (set state)
-          setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
-        );
-      }
+      setUserOperand1('');
+      setUserOperand2('');
+      setUserSum('');
+      setOperand1(randomNum(5));
+      setOperand2(randomNum(5));
+      setSum(operand1 + operand2);
+
+      // module tallyUp.js
+      tallyUp(
+        20, // `totalQuestions`
+        correctTally, // total correct tally (state)
+        setCorrectTally, // to set total correct tally (set state)
+        setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+      );
+    } else {
+      console.log(false);
     }
   }
 
@@ -62,23 +87,38 @@ export default function ArithLevel3({ setLevelUpEvent }) {
         <p id="mathQ">
           <input
             id="operand1"
-            class="operandBox"
+            className="operandBox"
             type="text"
-            onKeyDown={event => mathInputCheck(event)}
+            value={userOperand1}
+            onChange={event => setUserOperand1(parseInt(event.target.value))}
+            onKeyDown={event => {
+              // listen for enter keydown
+              if (event.key === 'Enter') answerEvent();
+            }}
           />{' '}
           +{' '}
           <input
             id="operand2"
-            class="operandBox"
+            className="operandBox"
             type="text"
-            onKeyDown={event => mathInputCheck(event)}
+            value={userOperand2}
+            onChange={event => setUserOperand2(parseInt(event.target.value))}
+            onKeyDown={event => {
+              // listen for enter keydown
+              if (event.key === 'Enter') answerEvent();
+            }}
           />{' '}
           =
         </p>
         <input
           id="mathAns"
           type="text"
-          onKeyDown={event => mathInputCheck(event)}
+          value={userSum}
+          onChange={event => setUserSum(parseInt(event.target.value))}
+          onKeyDown={event => {
+            // listen for enter keydown
+            if (event.key === 'Enter') answerEvent();
+          }}
         />
       </div>
       <Footbox correct={correctTally} />

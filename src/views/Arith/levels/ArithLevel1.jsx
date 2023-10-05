@@ -17,8 +17,8 @@ import { useState, useRef } from 'react';
 /*
     Arith Level 1 Component
 
-    `setLevelEvent` prop (state) is passed from AlphaLit view
-      - if true, renders a <LevelUp /> component to display from AlphaLit view
+    `setLevelEvent` prop (state) is passed from Arith view
+      - if true, renders a <LevelUp /> component to display from Arith view
 */
 export default function ArithLevel1({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
