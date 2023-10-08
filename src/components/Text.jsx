@@ -115,16 +115,14 @@ export default function Text({ text }) {
           <br />
           <br />
           For level 3:
+          <br /> <span className="indent"> </span>
+          You will be given an audio of a math operation.
+          <br /> <span className="indent"> </span>
+          Your job will be to type the numbers into their boxes,
+          <br /> <span className="indent"> </span>
+          And then come up with the sum of the two numbers.
           <br />
-          <ul>
-            You will be given an audio of a math operation.
-            <br />
-            Your job will be to type the numbers into their boxes,
-            <br />
-            And then come up with the sum of the two numbers.
-            <br />
-            <br />
-          </ul>
+          <br />
           Click the <span className="italic small-caps">begin!</span> button to
           start.
         </p>
