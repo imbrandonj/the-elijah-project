@@ -24,7 +24,7 @@
     flex-direction: column;
     align-items: center;
     background-color:rgba(44, 16, 28, 0.95);
-    padding: 2rem 10rem;
+    padding: 2rem 12rem;
     border-radius: 1rem;
 }
 
@@ -33,6 +33,13 @@
     display: flex;
     justify-content: center;
     margin: 2.6rem 0 1rem;
+}
+
+/* Used for inline question paragraph and answer input box where space is shared with a button (Arith Level 3) */
+#mathQABundle2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 #mathQ {
@@ -62,6 +69,13 @@
     text-align: center;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+.speaker {
+    margin: 2rem 0 0;
+    font-size: 4rem;
+    background-color: rgba(44, 16, 28, 0.95);
+    border: none;
 }
 
 #ArithWrap .filledFootbox {

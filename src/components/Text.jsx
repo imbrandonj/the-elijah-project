@@ -106,6 +106,29 @@ export default function Text({ text }) {
           start.
         </p>
       );
+    case 'ArithEntry3':
+      return (
+        <p>
+          Let's work on typing numbers of an operation.
+          <br />
+          An operation takes input values and gives an output.
+          <br />
+          <br />
+          For level 3:
+          <br />
+          <ul>
+            You will be given an audio of a math operation.
+            <br />
+            Your job will be to type the numbers into their boxes,
+            <br />
+            And then come up with the sum of the two numbers.
+            <br />
+            <br />
+          </ul>
+          Click the <span className="italic small-caps">begin!</span> button to
+          start.
+        </p>
+      );
     default:
       return null;
   }

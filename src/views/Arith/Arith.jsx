@@ -1,4 +1,4 @@
-// imported components:
+// imported internal components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
@@ -8,7 +8,7 @@ import ArithLevel1 from './levels/ArithLevel1.jsx';
 import ArithLevel2 from './levels/ArithLevel2.jsx';
 import ArithLevel3 from './levels/ArithLevel3.jsx';
 
-// imported audio for `LevelEntry` component:
+// imported mp3 audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
 import audioEntry2 from '@root/assets/mp3/ArithEntry2.mp3';
 

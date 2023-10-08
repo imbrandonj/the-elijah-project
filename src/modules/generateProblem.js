@@ -35,7 +35,7 @@ export default function generateProblem(problemSet, problemHistory, object) {
 // `problemSet`: a collection of problems
 // `object` prop: boolean ~ is `problemSet` an array of key: value objects?
 const setProblem = (problemSet, object) => {
-  let problemIndex = randomNum(problemSet.length); // select random problem index
+  let problemIndex = randomNum(problemSet.length - 1); // select random problem index
   let problem; // an object containing `question` and `answer` properties
 
   if (object) {

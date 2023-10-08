@@ -1,5 +1,4 @@
 // imported components:
-import AlphaLevel1 from '@root/views/Alpha-Literacy/levels/AlphaLevel1.jsx';
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import Text from '@root/components/Text.jsx';
 
