@@ -18,7 +18,6 @@ import imgEntry1 from '@root/assets/svgs/1234.svg';
 
 import './Arith.css'; // view & component styles
 
-// imported hooks:
 import { useState } from 'react';
 
 /*

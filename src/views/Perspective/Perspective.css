@@ -1,29 +1,35 @@
 /*
-    Logic component styles
+    Perspective view styles
 */
 
-#logicPath {
+#PerspWrap {
     display: flex;
     justify-content: center;
-    margin-top: 12rem;
+    margin-top: 2rem;
 }
 
-#logicWrapper {
-    background-color: rgba(17, 29, 2, 0.95);
-    color: white;
-    padding: 10rem;
+#PerspWrap #LevelEntry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(91, 149, 143, 0.95);
+    padding: 2rem 10rem;
     border-radius: 1rem;
+    color: white;
 }
 
-#logicPath h2 {
-    font-size: 2.2rem;
-    margin: 3rem;
+#PerspWrap #LevelEntry h2 {
+    color: black;
 }
 
-#logicPath p {
-    font-size: 1.4rem;
-    text-align: center;
-    line-height: 2rem;
+
+#PerspLevel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(91, 149, 143, 0.95);
+    padding: 2rem 12rem;
+    border-radius: 1rem;
 }
 
 @media (max-width: 2000px) {

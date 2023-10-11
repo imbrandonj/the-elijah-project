@@ -52,7 +52,7 @@ const App = () => {
         ) : view === 'Arith' ? (
           <Arith level={level} setLevel={setLevel} setView={setView} />
         ) : view === 'Perspective' ? (
-          <Perspective setView={setView} />
+          <Perspective level={level} setLevel={setLevel} setView={setView} />
         ) : view === 'Alpha-Literacy' ? (
           <AlphaLit level={level} setLevel={setLevel} setView={setView} />
         ) : null}

@@ -127,6 +127,18 @@ export default function Text({ text }) {
           start.
         </p>
       );
+    case 'PerspEntry1':
+      return (
+        <p>
+          Test
+          <br />
+          Testing Persp Testttt
+          <br />
+          <br />
+          Click the <span className="italic small-caps">begin!</span> button to
+          start.
+        </p>
+      );
     default:
       return null;
   }

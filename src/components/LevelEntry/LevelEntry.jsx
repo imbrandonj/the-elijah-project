@@ -4,6 +4,7 @@ import Text from '@root/components/Text.jsx';
 
 import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
+import perspImg from '@root/assets/svgs/perspective.svg';
 
 import './LevelEntry.css';
 
@@ -39,8 +40,15 @@ export default function LevelEntry({
   //   setView(view);
   // };
 
+  // planet display in h2:
   const planetImg =
-    planet === 'Arith' ? arithImg : planet === 'AlphaLit' ? alphaImg : null;
+    planet === 'Arith'
+      ? arithImg
+      : planet === 'AlphaLit'
+      ? alphaImg
+      : planet === 'Persp'
+      ? perspImg
+      : null;
 
   console.log(planet);
 

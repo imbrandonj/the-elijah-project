@@ -1,29 +1,58 @@
 // imported components:
 import RocketHeader from '@root/components/RocketHeader/RocketHeader';
+import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
+import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+
+// imported levels:
+import PerspLevel1 from './levels/PerspLevel1.jsx';
+
+// imported img for `LevelEntry` component:
+import imgEntry1 from '@root/assets/svgs/shapes.svg';
 
 import './Perspective.css'; // component styles
 
+import { useState } from 'react';
+
 /*
-  Perspective
+  Perspective `view` component
 
 */
-export default function LogicPath({ setView }) {
+export default function Perspective({ setView, level, setLevel }) {
+  const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
+  const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
   console.log('Render!');
+
+  let audioEntry1 = null;
 
   // return component
   return (
     <div>
       <RocketHeader setView={setView} />
 
-      <div id="logicPath">
-        <div id="logicWrapper">
-          <h2>Perspective coming soon.</h2>
-          <p>
-            Arith and Alpha-Literacy are both available
-            <br />
-            Press the rocket to return home
-          </p>
-        </div>
+      <div id="PerspWrap">
+        {levelUpEvent ? (
+          <LevelUp
+            path="Persp"
+            level={level}
+            setLevel={setLevel}
+            setLevelUpEvent={setLevelUpEvent}
+            setBegin={setBegin}
+          />
+        ) : level === 1 ? (
+          begin ? (
+            <PerspLevel1 setLevelUpEvent={setLevelUpEvent} />
+          ) : (
+            <LevelEntry
+              voice={audioEntry1}
+              img={imgEntry1}
+              planet="Persp"
+              h2Text="Perspective Level 1"
+              text="PerspEntry1"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : null}
       </div>
     </div>
   );
