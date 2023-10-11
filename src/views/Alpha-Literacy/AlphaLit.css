@@ -30,7 +30,6 @@
 #litQ {
     font-size: 3rem;
     text-align: center;
-    line-height: 4rem;
     margin: 4.5rem 0 3rem;
 }
 
@@ -47,10 +46,24 @@
     color: rgb(0, 0, 0);
 }
 
-#letterQ {
+.letterQ {
     font-size: 6rem;
     line-height: 9rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.emojiQ {
+    font-size: 8rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.15rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wordQ {
+    font-size: 4rem;
+    line-height: 3rem;
+    letter-spacing: 0.15rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #litQ4 {

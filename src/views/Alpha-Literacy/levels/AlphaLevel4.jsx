@@ -33,13 +33,10 @@ export default function AlphaLevel4({ setLevelUpEvent }) {
     <div id="litLevel">
       <Objective text="Spell 20 short animal words" />
       <p id="litQ">
-        <span>Spell:</span>
+        <span className="emojiQ">{problem.question}</span>
         <br />
-        <span id="letterQ">
-          {problem.question}
-          <br />
-          {problem.answer}
-        </span>
+        <br />
+        <span className="wordQ">{problem.answer}</span>
       </p>
       <input
         id="litAns"

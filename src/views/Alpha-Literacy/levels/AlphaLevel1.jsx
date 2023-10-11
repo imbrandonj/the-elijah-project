@@ -33,9 +33,9 @@ export default function AlphaLevel1({ setLevelUpEvent }) {
     <div id="litLevel">
       <Objective text="Type and enter 20 letters" />
       <p id="litQ">
-        <span>Enter the letter:</span>
+        Enter the letter:
         <br />
-        <span id="letterQ">{problem.question}</span>
+        <span className="letterQ">{problem.question}</span>
       </p>
       <input
         id="litAns"
