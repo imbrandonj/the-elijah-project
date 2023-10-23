@@ -121,16 +121,25 @@
 }
 
 #ArithWrap #score {
-    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 200;
     letter-spacing: 0.1rem;
     background-color: rgba(0, 0, 0, 0.269);
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
+}
+
+#ArithWrap #score img {
+    margin: 0.5rem 1.5rem 0.5rem 1rem;
 }
 
 #ArithWrap #score span {
+    margin: 0 1rem;
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
+    font-weight: 600;
 }
 
 #ArithWrap .Tipbox {
