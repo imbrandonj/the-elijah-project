@@ -1,5 +1,5 @@
 // imported internal components:
-import Objective from '@root/components/Objective.jsx';
+import LevelHeader from '@root/components/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
@@ -23,15 +23,18 @@ import { useState, useRef } from 'react';
 export default function ArithLevel2({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
+  const [userScore, setUserScore] = useState(0);
 
   const problemSet = level2; // imported problems for this level
 
   // `problem` is an object with `question` & `answer` properties
-  const problem = generateProblem(problemSet, problemHistory, true); // generate a unique problem
+  const [problem, setProblem] = useState(
+    () => generateProblem(problemSet, problemHistory, true) // generate a unique problem
+  );
 
   return (
     <div id="ArithLevel">
-      <Objective text="Add the two numbers together." />
+      <LevelHeader text="Add the two numbers together." score={userScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -54,6 +57,13 @@ export default function ArithLevel2({ setLevelUpEvent }) {
                   setCorrectTally, // to set total correct tally (set state)
                   setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                 );
+
+                setUserScore(userScore + 10);
+
+                // generate a new problem after processing the current one
+                setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
+              } else if (userScore >= 5) {
+                setUserScore(userScore - 5);
               }
             }
           }}

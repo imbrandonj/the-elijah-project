@@ -1,5 +1,5 @@
 // imported internal components:
-import Objective from '@root/components/Objective.jsx';
+import LevelHeader from '@root/components/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
@@ -23,15 +23,18 @@ import { useState, useRef } from 'react';
 export default function AlphaLevel3({ setLevelUpEvent }) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
+  const [userScore, setUserScore] = useState(0);
 
   const problemSet = letters.mixLetters; // imported problems for this level
 
   // `problem` object sets `question` & `answer` properties
-  const problem = generateProblem(problemSet, problemHistory, false); // generate a unique problem
+  const [problem, setProblem] = useState(
+    () => generateProblem(problemSet, problemHistory, false) // generate a unique problem
+  );
 
   return (
     <div id="litLevel">
-      <Objective text="Type and enter 20 letters" />
+      <LevelHeader text="Type and enter 20 letters" score={userScore} />
       <p id="litQ">
         Enter the letter:
         <br />
@@ -57,6 +60,13 @@ export default function AlphaLevel3({ setLevelUpEvent }) {
                 setCorrectTally, // to set total correct tally (set state)
                 setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
               );
+
+              setUserScore(userScore + 10);
+
+              // generate a new problem after processing the current one
+              setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
+            } else if (userScore >= 5) {
+              setUserScore(userScore - 5);
             }
           }
         }}

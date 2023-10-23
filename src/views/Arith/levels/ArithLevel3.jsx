@@ -1,5 +1,5 @@
 // imported internal components:
-import Objective from '@root/components/Objective.jsx';
+import LevelHeader from '@root/components/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
@@ -67,6 +67,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
   const [operand1, setOperand1] = useState(randomNum(5));
   const [operand2, setOperand2] = useState(randomNum(5));
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
+  const [userScore, setUserScore] = useState(0);
   // user provided input:
   const [userOperand1, setUserOperand1] = useState(''); // default=displays empty input box
   const [userOperand2, setUserOperand2] = useState(''); // default=displays empty input box
@@ -185,9 +186,12 @@ export default function ArithLevel3({ setLevelUpEvent }) {
       break;
   }
 
+  // audio plays on component render
+  // and operand1 input box becomes focus
   useEffect(() => {
     const mp3 = new Audio(audio);
     mp3.play(); // play on problem load
+    document.getElementById('operand1').focus();
   }, [correctTally]);
 
   const playButton = () => {
@@ -219,14 +223,24 @@ export default function ArithLevel3({ setLevelUpEvent }) {
         setCorrectTally, // to set total correct tally (set state)
         setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
       );
+
+      setUserScore(userScore + 10);
+
+      // reset the incorrect numbers, keep the correct ones:
     } else {
+      if (operand1 != userOperand1) setUserOperand1('');
+      if (operand2 != userOperand2) setUserOperand2('');
+      if (sum != userSum) setUserSum(' ');
       console.log(false);
     }
   }
 
   return (
     <div id="ArithLevel">
-      <Objective text="Listen to the operation and type the numbers in their appropriate boxes." />
+      <LevelHeader
+        text="Listen to the operation and type the numbers in their appropriate boxes."
+        score={userScore}
+      />
       <button className="speaker" onClick={playButton}>
         🔊
       </button>
@@ -279,7 +293,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Click the speaker to hear the operation. Press enter after you've typed each number within its box." />
+      <Tipbox text="Tip: Click the speaker to hear the operation. Press enter to submit the operation." />
     </div>
   );
 }
