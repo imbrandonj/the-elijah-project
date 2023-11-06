@@ -62,12 +62,17 @@ import { useState, useEffect } from 'react';
     `setLevelEvent` prop (state) is passed from Arith view
       - if true, renders a <LevelUp /> component to display from Arith view
 */
-export default function ArithLevel3({ setLevelUpEvent }) {
+export default function ArithLevel3({
+  setLevelUpEvent,
+  levelScore,
+  setLevelScore,
+}) {
   // select 2 random numbers as operands, max = 5
   const [operand1, setOperand1] = useState(randomNum(5));
   const [operand2, setOperand2] = useState(randomNum(5));
+
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [userScore, setUserScore] = useState(0);
+
   // user provided input:
   const [userOperand1, setUserOperand1] = useState(''); // default=displays empty input box
   const [userOperand2, setUserOperand2] = useState(''); // default=displays empty input box
@@ -224,7 +229,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
         setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
       );
 
-      setUserScore(userScore + 10);
+      setLevelScore(levelScore + 10);
 
       // reset the incorrect numbers, keep the correct ones:
     } else {
@@ -239,7 +244,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
     <div id="ArithLevel">
       <LevelHeader
         text="Listen to the operation and type the numbers in their appropriate boxes."
-        score={userScore}
+        score={levelScore}
       />
       <button className="speaker" onClick={playButton}>
         🔊

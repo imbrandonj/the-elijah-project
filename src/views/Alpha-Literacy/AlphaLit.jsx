@@ -36,6 +36,7 @@ import { useState } from 'react';
 export default function AlphaLit({ setView, level, setLevel }) {
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
+  const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp
 
   console.log('Render!');
 
@@ -46,15 +47,21 @@ export default function AlphaLit({ setView, level, setLevel }) {
       <div id="litPath">
         {levelUpEvent ? (
           <LevelUp
-            path="Alpha-Literacy"
+            path="AlphaLit"
             level={level}
             setLevel={setLevel}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
             setLevelUpEvent={setLevelUpEvent}
             setBegin={setBegin}
           />
         ) : level === 1 ? (
           begin ? (
-            <AlphaLevel1 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel1
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry1}
@@ -68,7 +75,11 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 2 ? (
           begin ? (
-            <AlphaLevel2 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel2
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry2}
@@ -82,7 +93,11 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 3 ? (
           begin ? (
-            <AlphaLevel3 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel3
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry3}
@@ -96,7 +111,11 @@ export default function AlphaLit({ setView, level, setLevel }) {
           )
         ) : level === 4 ? (
           begin ? (
-            <AlphaLevel4 setLevelUpEvent={setLevelUpEvent} />
+            <AlphaLevel4
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry4}

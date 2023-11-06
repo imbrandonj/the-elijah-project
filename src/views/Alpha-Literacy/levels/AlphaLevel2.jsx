@@ -20,10 +20,13 @@ import { useState, useRef } from 'react';
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
-export default function AlphaLevel2({ setLevelUpEvent }) {
+export default function AlphaLevel2({
+  setLevelUpEvent,
+  levelScore,
+  setLevelScore,
+}) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
-  const [userScore, setUserScore] = useState(0);
 
   const problemSet = letters.lowerLetters; // imported problems for this level
 
@@ -34,7 +37,7 @@ export default function AlphaLevel2({ setLevelUpEvent }) {
 
   return (
     <div id="litLevel">
-      <LevelHeader text="Type and enter 20 letters" score={userScore} />
+      <LevelHeader text="Type and enter 20 letters" score={levelScore} />
       <p id="litQ">
         Enter the letter:
         <br />
@@ -61,12 +64,12 @@ export default function AlphaLevel2({ setLevelUpEvent }) {
                 setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
               );
 
-              setUserScore(userScore + 10);
+              setLevelScore(levelScore + 10);
 
               // generate a new problem after processing the current one
               setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
-            } else if (userScore >= 5) {
-              setUserScore(userScore - 5);
+            } else if (levelScore >= 5) {
+              setLevelScore(levelScore - 5);
             }
           }
         }}

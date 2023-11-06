@@ -20,10 +20,13 @@ import { useState, useEffect, useRef } from 'react';
     `setLevelEvent` prop (state) is passed from Arith view
       - if true, renders a <LevelUp /> component to display from Arith view
 */
-export default function ArithLevel1({ setLevelUpEvent }) {
+export default function ArithLevel1({
+  setLevelUpEvent,
+  levelScore,
+  setLevelScore,
+}) {
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
-  const [userScore, setUserScore] = useState(0);
 
   const problemSet = level1; // imported problems for this level
 
@@ -39,7 +42,7 @@ export default function ArithLevel1({ setLevelUpEvent }) {
 
   return (
     <div id="ArithLevel">
-      <LevelHeader text="Count and add the objects" score={userScore} />
+      <LevelHeader text="Count and add the objects" score={levelScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -63,12 +66,12 @@ export default function ArithLevel1({ setLevelUpEvent }) {
                   setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                 );
 
-                setUserScore(userScore + 10);
+                setLevelScore(levelScore + 10);
 
                 // generate a new problem after processing the current one
                 setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
-              } else if (userScore >= 5) {
-                setUserScore(userScore - 5);
+              } else if (levelScore >= 5) {
+                setLevelScore(levelScore - 5);
               }
             }
           }}

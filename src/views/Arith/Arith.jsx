@@ -34,6 +34,7 @@ import { useState } from 'react';
 export default function Arith({ setView, level, setLevel }) {
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
+  const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp
 
   console.log('Render!');
 
@@ -47,12 +48,18 @@ export default function Arith({ setView, level, setLevel }) {
             path="Arith"
             level={level}
             setLevel={setLevel}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
             setLevelUpEvent={setLevelUpEvent}
             setBegin={setBegin}
           />
         ) : level === 1 ? (
           begin ? (
-            <ArithLevel1 setLevelUpEvent={setLevelUpEvent} />
+            <ArithLevel1
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry1}
@@ -66,7 +73,11 @@ export default function Arith({ setView, level, setLevel }) {
           )
         ) : level === 2 ? (
           begin ? (
-            <ArithLevel2 setLevelUpEvent={setLevelUpEvent} />
+            <ArithLevel2
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry2}
@@ -80,7 +91,11 @@ export default function Arith({ setView, level, setLevel }) {
           )
         ) : level === 3 ? (
           begin ? (
-            <ArithLevel3 setLevelUpEvent={setLevelUpEvent} />
+            <ArithLevel3
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry3}
@@ -94,7 +109,11 @@ export default function Arith({ setView, level, setLevel }) {
           )
         ) : level === 4 ? (
           begin ? (
-            <ArithLevel4 setLevelUpEvent={setLevelUpEvent} />
+            <ArithLevel4
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={null}
