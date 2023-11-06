@@ -12,7 +12,7 @@ import tallyUp from '@root/modules/tallyUp.js';
 import '../Arith.css';
 
 // imported hooks:
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 /*
     Arith Level 1 Component
@@ -31,6 +31,11 @@ export default function ArithLevel1({ setLevelUpEvent }) {
   const [problem, setProblem] = useState(
     () => generateProblem(problemSet, problemHistory, true) // generate a unique problem
   );
+
+  // focuses on input box with each render
+  useEffect(() => {
+    document.getElementById('mathAns').focus();
+  }, []);
 
   return (
     <div id="ArithLevel">

@@ -39,6 +39,7 @@ const level1 = [
   { problem: '🤖🤖🤖 + 🤖 =', answer: 4 },
 ];
 
+// addition 0-5 + 0-5
 const level2 = [
   { problem: '0 + 0 =', answer: 0 },
   { problem: '1 + 0 =', answer: 1 },
@@ -71,4 +72,35 @@ const level3 = [
   { box1: 1, box2: 2, answer: 3 },
 ];
 
-export { level1, level2, level3 };
+// addition problems 0-5 + 0-5 + 0-5
+const level4 = [
+  { problem: '0 + 0 + 0 =', answer: 0 },
+  { problem: '1 + 0 + 0 =', answer: 1 },
+  { problem: '0 + 1 + 1 =', answer: 2 },
+  { problem: '1 + 1 + 1 =', answer: 3 },
+  { problem: '2 + 0 + 1 =', answer: 3 },
+  { problem: '2 + 1 + 1 =', answer: 4 },
+  { problem: '3 + 0 + 1 =', answer: 4 },
+  { problem: '1 + 3 + 0 =', answer: 4 },
+  { problem: '2 + 2 + 1 =', answer: 5 },
+  { problem: '3 + 1 + 1 =', answer: 5 },
+  { problem: '4 + 1 + 0 =', answer: 5 },
+  { problem: '3 + 2 + 1 =', answer: 6 },
+  { problem: '2 + 2 + 2 =', answer: 6 },
+  { problem: '2 + 3 + 1 =', answer: 6 },
+  { problem: '3 + 3 + 1 =', answer: 7 },
+  { problem: '5 + 1 + 1 =', answer: 7 },
+  { problem: '3 + 3 + 2 =', answer: 8 },
+  { problem: '4 + 2 + 2 =', answer: 8 },
+  { problem: '1 + 5 + 2 =', answer: 8 },
+  { problem: '3 + 3 + 3 =', answer: 9 },
+  { problem: '5 + 2 + 2 =', answer: 9 },
+  { problem: '4 + 3 + 3 =', answer: 10 },
+  { problem: '2 + 5 + 3 =', answer: 10 },
+  { problem: '3 + 5 + 2 =', answer: 10 },
+  { problem: '4 + 4 + 2 =', answer: 10 },
+  { problem: '4 + 5 + 1 =', answer: 10 },
+  { problem: '5 + 5 + 0 =', answer: 10 },
+];
+
+export { level1, level2, level3, level4 };

@@ -127,6 +127,16 @@ export default function Text({ text }) {
           start.
         </p>
       );
+    case 'ArithEntry4':
+      return (
+        <p>
+          Here are are!
+          <br />
+          Arith Level 4
+          <br />
+          <br />
+        </p>
+      );
     case 'PerspEntry1':
       return (
         <p>

@@ -71,7 +71,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
   // user provided input:
   const [userOperand1, setUserOperand1] = useState(''); // default=displays empty input box
   const [userOperand2, setUserOperand2] = useState(''); // default=displays empty input box
-  const [userSum, setUserSum] = useState(' '); // default=displays empty input box
+  const [userSum, setUserSum] = useState(''); // default=displays empty input box
 
   const sum = operand1 + operand2;
   let audio = 'add' + operand1 + operand2;
@@ -187,7 +187,7 @@ export default function ArithLevel3({ setLevelUpEvent }) {
   }
 
   // audio plays on component render
-  // and operand1 input box becomes focus
+  // and `operand1` input box becomes focus
   useEffect(() => {
     const mp3 = new Audio(audio);
     mp3.play(); // play on problem load
