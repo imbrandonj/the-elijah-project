@@ -3,31 +3,43 @@
 */
 
 #levelUp {
-    margin-top: 9rem;
-    display: flex;
-    justify-content: center;
+    margin-top: 3rem;
+    width: 75%;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 1rem;
 }
 
-#levelWrapper {
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 5rem 12rem;
-    border-radius: 1rem;
+#levelUpWrapper {
+    padding: 8rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #levelUp h2 {
-    font-size: 3rem;
-    margin: 4.2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    font-size: 4rem;
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
 }
 
 #levelUp h3 {
-    font-size: 2rem;
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
 }
 
-#levelUp p {
-    font-size: 1.8rem;
+
+#levelUp ul {
+    margin: 6rem 0 3rem;
+    text-align: center;
+    list-style: none;
+    font-size: 2.2rem;
+}
+
+#levelUp ul li {
+    margin: 1rem;
 }
 
 #levelUp button {
@@ -35,7 +47,6 @@
     padding: 0.75rem;
     font-family: Monospace;
     font-size: 1.42rem;
-    margin: 3rem 0 0 0;
     border-radius: 0.4rem;
     border: none;
     background-color: rgba(204, 238, 255, 0.518);
@@ -46,25 +57,67 @@
     background-color: rgba(0, 0, 0, 0.269);
 }
 
+span {
+    font-size: 2.6rem;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+.score img {
+    margin-bottom: 1.8rem;
+    height: 6.3rem;
+}
+
 @media (max-width: 2000px) {
     #levelUp {
-        margin-top: 5rem;
+        margin-top: 1rem;
     }
     
-    #levelWrapper {
-        padding: 5rem 12rem;
+    #levelUpWrapper {
+        padding: 4rem 0;
     }
     
     #levelUp h2 {
-        font-size: 2.5rem;
-        margin: 2rem;
+        font-size: 3.2rem;
+        gap: 2.4rem;
     }
     
     #levelUp h3 {
+        font-size: 2.2rem;
+        letter-spacing: 0.25rem;
+    }
+
+    #levelUp ul {
         font-size: 2rem;
+        margin: 4rem;
     }
     
-    #levelUp p {
-        font-size: 1.8rem;
+    #levelUp ul li {
+        margin: 0.8rem;
     }
+
+    span {
+        font-size: 2.4rem;
+    }
+    
+    .score {
+        gap: 1rem;
+        padding: 0.5rem;
+        font-size: 2.6rem;
+    }
+    
+    .score img {
+        margin-bottom: 1rem;
+    }
+    
 }

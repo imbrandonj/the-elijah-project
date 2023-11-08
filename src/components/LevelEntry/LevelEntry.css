@@ -33,7 +33,7 @@
 
 @media (max-width: 2000px) {
     #LevelEntry .para-img {
-        width: 75rem;
+        width: 80rem;
         min-height: 30rem;
     }
     
@@ -46,10 +46,6 @@
         line-height: 2.2rem;
         letter-spacing: 0.07rem;
         font-size: 1.5rem;
-    }
-
-    #LevelEntry img {
-        height: 12rem;
     }
 
     #LevelEntry button {

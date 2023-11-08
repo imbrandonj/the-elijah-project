@@ -42,7 +42,7 @@ export default function ArithLevel4({
 
   return (
     <div id="ArithLevel">
-      <LevelHeader text="Add the two numbers together." score={userScore} />
+      <LevelHeader text="Add the two numbers together." score={levelScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
