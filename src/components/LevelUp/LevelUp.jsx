@@ -46,35 +46,77 @@ export default function LevelUp({
     setBegin(false);
   };
 
+  // retry button click event
+  const retry = () => {
+    setLevelScore(0);
+    setLevel(level);
+    setLevelUpEvent(false);
+    setBegin(false);
+  };
+
   const timeBonus = 300 - time;
   const playerScore = levelScore + timeBonus;
 
-  return (
-    <div id="levelUp">
-      <div id="levelUpWrapper">
-        <h2>
-          {path} level up
-          <img src={planetImg} height={80} />
-        </h2>
-        <ul>
+  // every 5 levels are challenge levels with a minScore of 400
+  let minScore = level % 5 === 0 ? 400 : 0;
+
+  if (playerScore >= minScore) {
+    return (
+      <div id="levelUp">
+        <div id="levelUpWrapper">
+          <h2>
+            {path} level up
+            <img src={planetImg} height={88} />
+          </h2>
           <h3>Level {level} Completed</h3>
-          <li>
-            Level Score: <span>{levelScore}</span>
-          </li>
-          <li>
-            Time to Complete: <span>{time}</span> seconds
-          </li>
-          <li>
-            Time Bonus: <span>{timeBonus}</span>
-          </li>
-          <li className="score">
-            {' '}
-            <img src={astroFlag} height={90} />
-            Score Total: {playerScore}
-          </li>
-        </ul>
-        <button onClick={continueEvent}>Continue to next level</button>
+          <ul>
+            <li>
+              Level Score: <span>{levelScore}</span>
+            </li>
+            <li>
+              Time to Complete: <span>{time}</span> seconds
+            </li>
+            <li>
+              Time Bonus: <span>{timeBonus}</span>
+            </li>
+            <li className="score">
+              {' '}
+              <img src={astroFlag} height={90} />
+              Score Total: {playerScore}
+            </li>
+          </ul>
+          <button onClick={continueEvent}>Continue to next level</button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div id="levelUp">
+        <div id="levelUpWrapper">
+          <h2 className="red">Challenge Failed.</h2>
+          <h3>Level {level} Incomplete</h3>
+          <ul>
+            <li>
+              Level Score: <span>{levelScore}</span>
+            </li>
+            <li>
+              Time to Complete: <span>{time}</span> seconds
+            </li>
+            <li>
+              Time Bonus: <span>{timeBonus}</span>
+            </li>
+            <li className="score">
+              {' '}
+              <img src={astroFlag} height={90} />
+              Score Total: {playerScore}
+            </li>
+            <li>
+              Score Needed: <span>400</span>
+            </li>
+          </ul>
+          <button onClick={retry}>Retry</button>
+        </div>
+      </div>
+    );
+  }
 }

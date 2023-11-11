@@ -3,36 +3,38 @@
 */
 
 #levelUp {
-    margin-top: 3rem;
-    width: 75%;
+    margin-top: 2rem;
+    width: 72%;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
 }
 
 #levelUpWrapper {
-    padding: 8rem 0;
+    padding: 6rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #levelUp h2 {
+    margin: 1rem;
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     font-size: 4rem;
     font-variant: small-caps;
     letter-spacing: 0.1rem;
 }
 
 #levelUp h3 {
+    margin: 1rem;
     font-size: 3rem;
     letter-spacing: 0.25rem;
 }
 
 
 #levelUp ul {
-    margin: 6rem 0 3rem;
+    margin: 3.5rem 0;
     text-align: center;
     list-style: none;
     font-size: 2.2rem;
@@ -44,6 +46,7 @@
 
 #levelUp button {
     width: 12rem;
+    min-height: 4.2rem;
     padding: 0.75rem;
     font-family: Monospace;
     font-size: 1.42rem;
@@ -76,6 +79,10 @@ span {
 .score img {
     margin-bottom: 1.8rem;
     height: 6.3rem;
+}
+
+.red {
+    color: rgb(119, 47, 47);
 }
 
 @media (max-width: 2000px) {

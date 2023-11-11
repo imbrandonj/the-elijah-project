@@ -45,18 +45,18 @@ export default function Text({ text }) {
       return (
         <p>
           In the previous levels, <br />
-          You've been able to type and enter <br /> either uppercase or
+          you've been able to type and enter <br /> either uppercase or
           lowercase letters. <br /> <br />
           This time, your answers are case-sensitive. <br />
           <br />
           If you see an uppercase letter, <br />
-          You must type your answer in uppercase. <br />
+          you must type your answer in uppercase. <br />
           If you see a lowercase letter, <br />
-          You must type your answer in lowercase. <br />
+          you must type your answer in lowercase. <br />
           <br />
           When you're ready, click the{' '}
           <span className="italic small-caps">Begin!</span> button <br />
-          To enter 20 case-sensitive letters.
+          to enter 20 case-sensitive letters.
         </p>
       );
     case 'AlphaEntry4':
@@ -74,6 +74,28 @@ export default function Text({ text }) {
             Begin!
           </span>{' '}
           button to start.
+        </p>
+      );
+    case 'AlphaEntry5':
+      return (
+        <p>
+          Welcome to level 5,
+          <br />
+          your first challenge level for planet Alpha-Literacy.
+          <br />
+          <br />
+          For this challenge, you will have to type 20 letters
+          <br />
+          and obtain a minimum score of{' '}
+          <i>
+            <b>400</b>
+          </i>
+          .
+          <br />
+          <br />
+          When you're ready, click the{' '}
+          <span className="italic small-caps">Begin!</span> button <br />
+          to begin the challenge.
         </p>
       );
     case 'ArithEntry1':

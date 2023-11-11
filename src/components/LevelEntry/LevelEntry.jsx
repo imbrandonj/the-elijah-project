@@ -57,7 +57,7 @@ export default function LevelEntry({
   return (
     <div id="LevelEntry">
       <h2>
-        <img src={planetImg} height={80} /> {h2Text}
+        <img src={planetImg} height={88} /> {h2Text}
       </h2>
       <div className="para-img">
         <Text text={text} />

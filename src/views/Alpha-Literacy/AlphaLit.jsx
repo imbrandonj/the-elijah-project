@@ -8,6 +8,7 @@ import AlphaLevel1 from './levels/AlphaLevel1.jsx';
 import AlphaLevel2 from './levels/AlphaLevel2.jsx';
 import AlphaLevel3 from './levels/AlphaLevel3.jsx';
 import AlphaLevel4 from './levels/AlphaLevel4.jsx';
+import AlphaLevel5 from './levels/AlphaLevel5.jsx';
 
 // voice: en-US-Studio-O
 // imported audio for `LevelEntry` component:
@@ -123,6 +124,24 @@ export default function AlphaLit({ setView, level, setLevel }) {
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 4"
               text="AlphaEntry4"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 5 ? (
+          begin ? (
+            <AlphaLevel5
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 5"
+              text="AlphaEntry5"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
