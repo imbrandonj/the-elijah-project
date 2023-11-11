@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { level1 } from './ArithProblems.js';
+import { level2 } from './ArithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import tallyUp from '@root/modules/tallyUp.js';
 
@@ -15,12 +15,12 @@ import '../Arith.css';
 import { useState, useEffect, useRef } from 'react';
 
 /*
-    Arith Level 1 Component
+    Arith Level 5 Component
 
     `setLevelEvent` prop (state) is passed from Arith view
       - if true, renders a <LevelUp /> component to display from Arith view
 */
-export default function ArithLevel1({
+export default function ArithLevel5({
   setLevelUpEvent,
   levelScore,
   setLevelScore,
@@ -28,7 +28,7 @@ export default function ArithLevel1({
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
-  const problemSet = level1; // imported problems for this level
+  const problemSet = level2; // imported problems for this level
 
   // `problem` is an object with `question` & `answer` properties
   const [problem, setProblem] = useState(
@@ -42,7 +42,7 @@ export default function ArithLevel1({
 
   return (
     <div id="ArithLevel">
-      <LevelHeader text="Count and add the objects" score={levelScore} />
+      <LevelHeader text="Complete the challenge!" score={levelScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -79,7 +79,7 @@ export default function ArithLevel1({
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text='Tip: Practice saying "plus" where the addition signs are.' />
+      <Tipbox text="Tip: Try not to make any errors; each error entered subtracts 10 points from your score." />
     </div>
   );
 }

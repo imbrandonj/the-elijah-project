@@ -42,7 +42,7 @@ export default function ArithLevel2({
 
   return (
     <div id="ArithLevel">
-      <LevelHeader text="Add the two numbers together." score={userScore} />
+      <LevelHeader text="Add the two numbers together." score={levelScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -66,12 +66,12 @@ export default function ArithLevel2({
                   setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                 );
 
-                setLevelScore(levelScore + 10);
+                setLevelScore(levelScore + 20);
 
                 // generate a new problem after processing the current one
                 setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
-              } else if (levelScore >= 5) {
-                setUserScore(levelScore - 5);
+              } else if (levelScore >= 10) {
+                setLevelScore(levelScore - 10);
               }
             }
           }}

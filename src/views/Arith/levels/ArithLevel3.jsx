@@ -194,6 +194,7 @@ export default function ArithLevel3({
   // audio plays on component render
   // and `operand1` input box becomes focus
   useEffect(() => {
+    console.log(audio);
     const mp3 = new Audio(audio);
     mp3.play(); // play on problem load
     document.getElementById('operand1').focus();
@@ -229,7 +230,7 @@ export default function ArithLevel3({
         setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
       );
 
-      setLevelScore(levelScore + 10);
+      setLevelScore(levelScore + 20);
 
       // reset the incorrect numbers, keep the correct ones:
     } else {

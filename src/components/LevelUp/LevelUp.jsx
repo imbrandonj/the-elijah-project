@@ -57,8 +57,8 @@ export default function LevelUp({
   const timeBonus = 300 - time;
   const playerScore = levelScore + timeBonus;
 
-  // every 5 levels are challenge levels with a minScore of 400
-  let minScore = level % 5 === 0 ? 400 : 0;
+  // every 5 levels are challenge levels with a minScore of 600
+  let minScore = level % 5 === 0 ? 600 : 0;
 
   if (playerScore >= minScore) {
     return (
@@ -111,7 +111,7 @@ export default function LevelUp({
               Score Total: {playerScore}
             </li>
             <li>
-              Score Needed: <span>400</span>
+              Score Needed: <span>{minScore}</span>
             </li>
           </ul>
           <button onClick={retry}>Retry</button>

@@ -68,12 +68,12 @@ export default function AlphaLevel4({
                 setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
               );
 
-              setLevelScore(levelScore + 10);
+              setLevelScore(levelScore + 20);
 
               // generate a new problem after processing the current one
               setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
-            } else if (levelScore >= 5) {
-              setLevelScore(levelScore - 5);
+            } else if (levelScore >= 10) {
+              setLevelScore(levelScore - 10);
             }
           }
         }}

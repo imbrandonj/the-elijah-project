@@ -86,11 +86,7 @@ export default function Text({ text }) {
           <br />
           For this challenge, you will have to type 20 letters
           <br />
-          and obtain a minimum score of{' '}
-          <i>
-            <b>400</b>
-          </i>
-          .
+          and obtain a minimum score of <span className="minScore">600</span>.
           <br />
           <br />
           When you're ready, click the{' '}
@@ -157,6 +153,27 @@ export default function Text({ text }) {
           Arith Level 4
           <br />
           <br />
+        </p>
+      );
+    case 'ArithEntry5':
+      return (
+        <p>
+          Arith Level 5 is a challenge level.
+          <br />
+          <br />
+          To complete this challenge,
+          <br />
+          you must achieve a minimum score of{' '}
+          <span className="minScore">600</span>.
+          <br />
+          <br />
+          Your objective is to complete
+          <br />
+          20 basic addition problems.
+          <br />
+          <br />
+          Click the <span className="italic small-caps">begin!</span> button to
+          start.
         </p>
       );
     case 'PerspEntry1':

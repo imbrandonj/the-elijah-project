@@ -42,7 +42,7 @@ export default function ArithLevel4({
 
   return (
     <div id="ArithLevel">
-      <LevelHeader text="Add the two numbers together." score={levelScore} />
+      <LevelHeader text="Add the three numbers together." score={levelScore} />
       <div id="mathQABundle">
         <p id="mathQ">{problem.question}</p>
         <input
@@ -66,12 +66,12 @@ export default function ArithLevel4({
                   setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
                 );
 
-                setLevelScore(levelScore + 10);
+                setLevelScore(levelScore + 20);
 
                 // generate a new problem after processing the current one
                 setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
-              } else if (levelScore >= 5) {
-                setLevelScore(levelScore - 5);
+              } else if (levelScore >= 10) {
+                setLevelScore(levelScore - 10);
               }
             }
           }}
@@ -79,7 +79,7 @@ export default function ArithLevel4({
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Use your left hand fingers to count the left number and right hand fingers to count the right number." />
+      <Tipbox text="Tip: None of the sums exceed 10. You can continue to count with your fingers." />
     </div>
   );
 }
