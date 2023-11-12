@@ -73,7 +73,7 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.speaker {
+#ArithWrap .speaker {
     margin: 2rem 0 0;
     font-size: 4rem;
     background-color: rgba(44, 16, 28, 0.95);

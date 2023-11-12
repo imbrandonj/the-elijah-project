@@ -20,6 +20,8 @@ import { useState } from 'react';
 export default function Perspective({ setView, level, setLevel }) {
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
+  const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp
+
   console.log('Render!');
 
   let audioEntry1 = null;
@@ -35,12 +37,18 @@ export default function Perspective({ setView, level, setLevel }) {
             path="Persp"
             level={level}
             setLevel={setLevel}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
             setLevelUpEvent={setLevelUpEvent}
             setBegin={setBegin}
           />
         ) : level === 1 ? (
           begin ? (
-            <PerspLevel1 setLevelUpEvent={setLevelUpEvent} />
+            <PerspLevel1
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
           ) : (
             <LevelEntry
               voice={audioEntry1}

@@ -4,7 +4,8 @@
 
 #PerspWrap {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
 }
 
@@ -12,8 +13,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    padding: 2rem;
     background-color: rgba(91, 149, 143, 0.95);
-    padding: 2rem 10rem;
     border-radius: 1rem;
     color: white;
 }
@@ -27,9 +29,85 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    padding: 2rem;
     background-color: rgba(91, 149, 143, 0.95);
-    padding: 2rem 12rem;
     border-radius: 1rem;
+}
+
+#PerspLevel #LevelHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 3rem;
+}
+
+
+#PerspLevel .objective {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem 0;
+    font-weight: 200;
+    font-size: 1.6rem;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.269);
+    border-radius: 0.5rem;
+    color: black;
+}
+
+#PerspLevel .objective img {
+    margin: 0.5rem 0.5rem 1rem 1rem;
+}
+
+#PerspLevel .objective span {
+    margin: 0.5rem;
+    padding-bottom: 0.2rem;
+    font-size: 2rem;
+    font-variant: small-caps;
+    letter-spacing: 0.2rem;
+}
+
+#PerspLevel #score {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.269);
+    color: black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#PerspLevel #score img {
+    margin: 0.5rem 1.5rem 0.5rem 1rem;
+}
+
+#PerspLevel #score span {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+}
+
+#PerspLevel #timer {
+    color: black;
+}
+
+#PerspLevel .Tipbox {
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, 0.269);
+}
+
+#PerspLevel .speaker {
+    margin: 2rem 0 0;
+    padding: 0.5rem 1rem;
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0.269);
+    border-radius: 0.5rem;
+    border: none;
 }
 
 @media (max-width: 2000px) {
