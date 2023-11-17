@@ -111,7 +111,7 @@
 #litLevel .objective {
     display: flex;
     align-items: center;
-    padding: 0.4rem 0.8rem 0;
+    padding: 0.4rem 1.2rem 0 0.6rem;
     font-weight: 200;
     font-size: 1.6rem;
     font-style: italic;
@@ -126,8 +126,8 @@
 
 #litLevel .objective span {
     margin: 0.5rem;
-    padding-bottom: 0.2rem;
-    font-size: 2rem;
+    padding-bottom: 0.3rem;
+    font-size: 2.2rem;
     font-variant: small-caps;
     letter-spacing: 0.2rem;
 }

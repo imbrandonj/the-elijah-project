@@ -13,6 +13,10 @@ import '../Perspective.css';
 // imported hooks:
 import { useState, useEffect, useRef } from 'react';
 
+// imported svgs:
+import blueTriangle from '@root/assets/svgs/blueTriangle.svg';
+import greenTriangle from '@root/assets/svgs/greenTriangle.svg';
+
 /*
   Perspective Level 1
 
@@ -49,9 +53,23 @@ export default function PerspLevel1({
         text="Click on the shape given by the audio"
         score={levelScore}
       />
-      <button className="speaker" onClick={playButton}>
-        🔊
-      </button>
+      <div className="shapeOverlay">
+        <button className="speaker" onClick={playButton}>
+          🔊
+        </button>
+        <div className="leftRight">
+          <img
+            src={greenTriangle}
+            onClick={() => console.log('test')}
+            height={200}
+          />
+          <img
+            src={blueTriangle}
+            onClick={() => console.log('test')}
+            height={200}
+          />
+        </div>
+      </div>
       <Footbox correct={correctTally} />
       <Timer />
       <Tipbox text="Tip: Click the speaker to hear the audio again." />

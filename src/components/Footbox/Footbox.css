@@ -1,7 +1,3 @@
-#footbox {
-    margin: 6rem 0 4rem;
-}
-
 #footbox .emptyFootbox {
     margin: 0 0.8rem;
     padding: 0.3rem 1.3rem;
@@ -14,11 +10,19 @@
     border: 2px solid black;
 }
 
+#litLevel > #footbox {
+    margin: 4rem 0 2rem;
+}
+
+#ArithLevel > #footbox {
+    margin: 2rem 0;
+}
+
+#PerspLevel > #footbox {
+    margin: 3rem 0 2rem;
+}
+
 @media (max-width: 2000px) {
-    #footbox {
-        margin: 4.4rem 0 2.2rem;
-    }
-    
     #footbox .emptyFootbox {
         margin: 0 0.8rem;
         padding: 0.2rem 1.1rem;

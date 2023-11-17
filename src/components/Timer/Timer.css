@@ -11,13 +11,17 @@
     text-align: center;
     font-size: 2.5rem;
     font-family: var(--mono);
-    background-color: rgba(0, 0, 0, 0.269);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
 }
 
 #ArithLevel > #timerWrapper > #timer {
     color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.269);
+}
+
+#litLevel > #timerWrapper > #timer {
+    background-color: rgba(0, 0, 0, 0.269);
 }
 
 

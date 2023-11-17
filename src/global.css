@@ -41,6 +41,10 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
+/*
+    Global Classes:
+*/
+
 .italic {
     font-style: italic;
 }
@@ -63,8 +67,9 @@ h1, h2, h3, h4 {
     background-color: rgba(0, 0, 0, 0.95);
 }
 
+
 /*
-    Global animations
+    Global animations:
 */
 
 @keyframes moveBackground {

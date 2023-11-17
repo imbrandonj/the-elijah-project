@@ -39,7 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    width: 98%;
     margin: 3rem;
 }
 
@@ -47,14 +47,14 @@
 #PerspLevel .objective {
     display: flex;
     align-items: center;
-    padding: 0.4rem 0.8rem 0;
+    padding: 0.4rem 1.2rem 0 0.6rem;
     font-weight: 200;
     font-size: 1.6rem;
     font-style: italic;
     letter-spacing: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.269);
     border-radius: 0.5rem;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.269);
+    color: var(--buttonBlue);
 }
 
 #PerspLevel .objective img {
@@ -63,8 +63,8 @@
 
 #PerspLevel .objective span {
     margin: 0.5rem;
-    padding-bottom: 0.2rem;
-    font-size: 2rem;
+    padding-bottom: 0.3rem;
+    font-size: 2.2rem;
     font-variant: small-caps;
     letter-spacing: 0.2rem;
 }
@@ -76,7 +76,7 @@
     font-weight: 200;
     letter-spacing: 0.1rem;
     background-color: rgba(0, 0, 0, 0.269);
-    color: black;
+    color: var(--lightBlue);
     border-radius: 0.5rem;
     padding: 0.5rem;
 }
@@ -92,23 +92,47 @@
     font-weight: 600;
 }
 
+#PerspLevel .shapeOverlay {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 2.5rem 0 5rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0.5rem;
+}
+
+#PerspLevel .shapeOverlay img:hover {
+    cursor: pointer;
+}
+
+#PerspLevel .speaker {
+    margin-bottom: 2.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+#PerspLevel .leftRight {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#PerspLevel .filledFootbox {
+    background-color: rgb(166, 222, 194);
+}
+
 #PerspLevel #timer {
-    color: black;
+    color: var(--buttonBlue);
+    background-color: rgba(0, 0, 0, 0.269);
 }
 
 #PerspLevel .Tipbox {
     margin: 1rem;
-    background-color: rgba(0, 0, 0, 0.269);
+    background-color: rgb(166, 222, 194);
 }
 
-#PerspLevel .speaker {
-    margin: 2rem 0 0;
-    padding: 0.5rem 1rem;
-    font-size: 4rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 0.5rem;
-    border: none;
-}
 
 @media (max-width: 2000px) {
     #logicPath {
