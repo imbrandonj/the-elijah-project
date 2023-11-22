@@ -103,4 +103,28 @@ const level4 = [
   { problem: '5 + 5 + 0 =', answer: 10 },
 ];
 
-export { level1, level2, level3, level4 };
+const level6 = [
+  { problem: '0 - 0 =', answer: 0 },
+  { problem: '1 - 0 =', answer: 1 },
+  { problem: '1 - 1 =', answer: 0 },
+  { problem: '2 - 0 =', answer: 2 },
+  { problem: '2 - 1 =', answer: 1 },
+  { problem: '2 - 2 =', answer: 0 },
+  { problem: '3 - 0 =', answer: 3 },
+  { problem: '3 - 1 =', answer: 2 },
+  { problem: '3 - 2 =', answer: 1 },
+  { problem: '3 - 3 =', answer: 0 },
+  { problem: '4 - 0 =', answer: 4 },
+  { problem: '4 - 1 =', answer: 3 },
+  { problem: '4 - 2 =', answer: 2 },
+  { problem: '4 - 3 =', answer: 1 },
+  { problem: '4 - 4 =', answer: 0 },
+  { problem: '5 - 0 =', answer: 5 },
+  { problem: '5 - 1 =', answer: 4 },
+  { problem: '5 - 2 =', answer: 3 },
+  { problem: '5 - 3 =', answer: 2 },
+  { problem: '5 - 4 =', answer: 1 },
+  { problem: '5 - 5 =', answer: 0 },
+];
+
+export { level1, level2, level3, level4, level6 };

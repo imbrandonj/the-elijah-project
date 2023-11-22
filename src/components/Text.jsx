@@ -176,6 +176,16 @@ export default function Text({ text }) {
           start.
         </p>
       );
+    case 'ArithEntry6':
+      return (
+        <p>
+          Let's begin subtraction.
+          <br />
+          <br />
+          Click the <span className="italic small-caps">begin!</span> button to
+          start.
+        </p>
+      );
     case 'PerspEntry1':
       return (
         <p>
