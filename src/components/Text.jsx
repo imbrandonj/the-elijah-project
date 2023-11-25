@@ -1,63 +1,61 @@
+import Typing from './Typing.jsx';
+
 /*
   Text.jsx component
 
   This component displays a formatted text which matches its prop `text`
   Most commonly used in LevelEntry.jsx
+
+  It then calls `Typing.jsx` to display the text with a typing effect
 */
 export default function Text({ text }) {
   switch (text) {
     case 'AlphaEntry1':
       return (
-        <p>
-          Welcome to planet Alpha-Literacy. <br />
-          <br />
-          Here, you will navigate the English alphabet. <br />
-          Do you know your way around the keyboard yet? <br />
-          Don't worry, you'll get plenty of practice. <br /> <br />
-          Prepare your fingers! <br />
-          Click the <span className="italic small-caps">
-            Begin!
-          </span> button. <br />
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Welcome to planet Alpha-Literacy./ / Here, you will navigate the English alphabet. / Do you know your way around the keyboard yet? / Don't worry, you'll get plenty of practice./ / Prepare your fingers! /"
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">Begin!</span> button.{' '}
+            <br />
+          </p>
+        </div>
       );
     case 'AlphaEntry2':
       return (
-        <p>
-          Let's continue navigating the alphabet. <br />
-          <br />
-          This time, you'll see 20 lowercase letters.
-          <br />
-          <br />
-          Again, what you'll type is case-insensitive. <br />
-          This means it doesn't matter if you <br /> type lowercase or
-          uppercase.
-          <br />
-          Just match the letter and press enter. <br />
-          <br />
-          Ready? <br />
-          Click the <span className="italic small-caps">
-            Begin!
-          </span> button <br />
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Let's continue navigating the alphabet. / / This time, you'll see 20 lowercase letters. / / Again, what you'll type is case-insensitive. / This means it doesn't matter if you / type lowercase or uppercase. / Just match the letter and press enter. / / Ready? /"
+            }
+            rate={48}
+          />
+          <p>
+            Click the <span className="italic small-caps">Begin!</span> button{' '}
+            <br />
+          </p>
+        </div>
       );
 
     case 'AlphaEntry3':
       return (
-        <p>
-          In the previous levels, <br />
-          you've been able to type and enter <br /> either uppercase or
-          lowercase letters. <br /> <br />
-          This time, your answers are case-sensitive. <br />
-          <br />
-          If you see an uppercase letter, <br />
-          you must type your answer in uppercase. <br />
-          If you see a lowercase letter, <br />
-          you must type your answer in lowercase. <br />
-          <br />
-          When you're ready, click the{' '}
-          <span className="italic small-caps">Begin!</span> button <br />
-          to enter 20 case-sensitive letters.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "In the previous levels, / you've been able to type and enter / either uppercase or lowercase letters. / / This time, your answers are case-sensitive. / / If you see an uppercase letter, / you must type your answer in uppercase. / If you see a lowercase letter, / you must type your answer in lowercase. /"
+            }
+            rate={50}
+          />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button to enter 20
+            case-sensitive letters.
+          </p>
+        </div>
       );
     case 'AlphaEntry4':
       return (
