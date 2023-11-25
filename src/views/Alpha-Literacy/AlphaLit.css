@@ -10,13 +10,7 @@
 }
 
 #litPath #LevelEntry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    padding: 2rem;
     background-color: rgba(26, 45, 79, 0.95);
-    border-radius: 1rem;
 }
 
 #litLevel {
@@ -29,10 +23,13 @@
     border-radius: 1rem;
 }
 
-#litQ {
-    font-size: 3rem;
+#litProb {
     text-align: center;
-    margin: 4.5rem 0 3rem;
+    margin: 2rem;
+}
+
+#litProb p {
+    font-size: 3rem;
 }
 
 #litAns {
@@ -70,13 +67,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#litQ4 {
-    font-size: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    margin: 3rem 0 2rem 0;
-}
-
 #spell {
     line-height: 6rem;
 }
@@ -96,63 +86,6 @@
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-/*
-    `Objective` component styles inside Alpha-Literacy
-*/
-#litLevel #LevelHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin: 3rem;
-}
-
-
-#litLevel .objective {
-    display: flex;
-    align-items: center;
-    padding: 0.4rem 1.2rem 0 0.6rem;
-    font-weight: 200;
-    font-size: 1.6rem;
-    font-style: italic;
-    letter-spacing: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 0.5rem;
-}
-
-#litLevel .objective img {
-    margin: 0.5rem 0.5rem 1rem 1rem;
-}
-
-#litLevel .objective span {
-    margin: 0.5rem;
-    padding-bottom: 0.3rem;
-    font-size: 2.2rem;
-    font-variant: small-caps;
-    letter-spacing: 0.2rem;
-}
-
-#litLevel #score {
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 200;
-    letter-spacing: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-}
-
-#litLevel #score img {
-    margin: 0.5rem 1.5rem 0.5rem 1rem;
-}
-
-#litLevel #score span {
-    margin: 0 1rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-}
 
 #litLevel .Tipbox {
     margin: 1rem;
@@ -161,22 +94,20 @@
 
 @media (max-width: 2000px) {
     #litPath {
-        margin-top: 1.2rem;
-    }
-
-    #litPath #LevelEntry {
-        width: 88%;
+        margin-top: 1rem;
     }
     
     #litLevel {
-        padding: 1.4rem;
+        padding: 1rem 0;
         width: 88%;
     }
 
-    #litQ {
-        font-size: 2.8rem;
-        line-height: 4rem;
-        margin: 3.5rem 0 2rem;
+    #litProb {
+        margin: 0rem;
+    }
+
+    #litProb p {
+        font-size: 2.25rem;
     }
     
     #litAns {
@@ -186,14 +117,18 @@
         letter-spacing: 0.15rem;
     }
     
-    #letterQ {
+    .letterQ {
         font-size: 5rem;
-        line-height: 6rem;
+        line-height: 8rem;
     }
     
-    #litQ4 {
-        font-size: 2rem;
-        margin: 2rem 0;
+    .emojiQ {
+        font-size: 6rem;
+        line-height: 2rem;
+    }
+
+    .wordQ {
+        font-size: 3rem;
     }
     
     #spell {

@@ -9,16 +9,9 @@
 }
 
 #ArithWrap #LevelEntry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
     background-color:rgba(44, 16, 28, 0.95);
-    padding: 2rem;
-    border-radius: 1rem;
     color: rgba(245, 245, 245, 0.9);
 }
-
 
 #ArithLevel {
     display: flex;
@@ -26,7 +19,7 @@
     align-items: center;
     width: 80%;
     background-color:rgba(44, 16, 28, 0.95);
-    padding: 2rem;
+    padding: 4rem 0;
     border-radius: 1rem;
 }
 
@@ -34,7 +27,7 @@
 #mathQABundle {
     display: flex;
     justify-content: center;
-    margin: 2.6rem 0 1rem;
+    margin: 2rem 0;
 }
 
 /* Used for inline question paragraph and answer input box where space is shared with a button (Arith Level 3) */
@@ -48,7 +41,7 @@
     font-size: 5rem;
     color: rgba(255, 255, 255, .9);
     background-color: rgba(0, 0, 0, 0.269);
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 0.5rem;
 }
 
@@ -84,63 +77,6 @@
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-/*
-    Objective component styles inside Arith
-*/
-
-#ArithWrap #LevelHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin: 3rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-#ArithWrap .objective {
-    display: flex;
-    align-items: center;
-    padding: 0.4rem 1.2rem 0 0.6rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 0.5rem;
-    font-weight: 200;
-    font-size: 1.6rem;
-    font-style: italic;
-    letter-spacing: 0.1rem;
-}
-
-#ArithWrap .objective img {
-    margin: 0.5rem 0.5rem 1rem 1rem;
-}
-
-#ArithWrap .objective span {
-    margin: 0.5rem;
-    padding-bottom: 0.3rem;
-    font-size: 2.2rem;
-    font-variant: small-caps;
-    letter-spacing: 0.2rem;
-}
-
-#ArithWrap #score {
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 200;
-    letter-spacing: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-}
-
-#ArithWrap #score img {
-    margin: 0.5rem 1.5rem 0.5rem 1rem;
-}
-
-#ArithWrap #score span {
-    margin: 0 1rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-}
 
 #ArithWrap .Tipbox {
     margin: 1rem;
@@ -150,27 +86,25 @@
 @media (max-width: 2000px) {
 
     #ArithWrap {
-        margin-top: 1.2rem;
+        margin-top: 1rem;
     }
     
     #ArithLevel {
-        padding: 0 9rem;
         width: 90%;
+        padding: 1rem 0;
     }
     
     /* Used for inline question paragraph and answer input box*/
     #mathQABundle {
-        margin-top: 3.4rem;
+        margin: 1rem 0;
     }
     
     #mathQ {
-        font-size: 5rem;
-        padding: 1rem;
+        font-size: 4.5rem;
     }
     
     #mathAns {
         font-size: 4.2rem;
-        width: 12rem;
-        margin: 5rem 1rem;
+        width: 10rem;
     }
 }

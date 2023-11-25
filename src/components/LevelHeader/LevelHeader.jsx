@@ -1,5 +1,8 @@
-import Objective from './Objective';
-import Score from './Score';
+import Objective from './Objective.jsx';
+import Score from './Score.jsx';
+
+import './LevelHeader.css';
+
 export default function LevelHeader({ text, score }) {
   return (
     <div id="LevelHeader">

@@ -1,5 +1,5 @@
 // imported internal components:
-import LevelHeader from '@root/components/LevelHeader.jsx';
+import LevelHeader from '@root/components/LevelHeader/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';

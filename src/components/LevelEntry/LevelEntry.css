@@ -1,10 +1,19 @@
+#LevelEntry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 #LevelEntry .para-img {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 80%;
     min-height: 40rem;
-    padding: 0 4rem;
+    padding: 0 2rem;
     gap: 8rem;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 2rem 9rem;
@@ -28,6 +37,7 @@
     font-size: 2rem;
 }
 
+
 #LevelEntry button {
     margin: 2rem 0;
 }
@@ -47,13 +57,17 @@
     
     #LevelEntry h2 {
         margin: 2rem;
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
     
     #LevelEntry p {
         line-height: 2.2rem;
-        letter-spacing: 0.07rem;
+        letter-spacing: 0.1rem;
         font-size: 1.5rem;
+    }
+
+    #LevelEntry span {
+        font-size: 2rem;
     }
 
     #LevelEntry button {

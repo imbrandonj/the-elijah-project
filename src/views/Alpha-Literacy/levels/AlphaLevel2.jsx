@@ -1,5 +1,5 @@
 // imported internal components:
-import LevelHeader from '@root/components/LevelHeader.jsx';
+import LevelHeader from '@root/components/LevelHeader/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
@@ -38,42 +38,44 @@ export default function AlphaLevel2({
   return (
     <div id="litLevel">
       <LevelHeader text="Type and enter 20 letters" score={levelScore} />
-      <p id="litQ">
-        Enter the letter:
-        <br />
-        <span className="letterQ">{problem.question}</span>
-      </p>
-      <input
-        id="litAns"
-        type="text"
-        onKeyDown={event => {
-          // listen for enter keydown
-          if (event.key === 'Enter') {
-            // set the value of the user's answer, case insensitive
-            let inputValue = event.target.value.toLowerCase();
+      <div id="litProb">
+        <p>
+          Enter the letter:
+          <br />
+          <span className="letterQ">{problem.question}</span>
+        </p>
+        <input
+          id="litAns"
+          type="text"
+          onKeyDown={event => {
+            // listen for enter keydown
+            if (event.key === 'Enter') {
+              // set the value of the user's answer, case insensitive
+              let inputValue = event.target.value.toLowerCase();
 
-            event.target.value = ''; // clears the input box
+              event.target.value = ''; // clears the input box
 
-            // correct answer event:
-            if (inputValue === problem.answer) {
-              // module tallyUp.js
-              tallyUp(
-                20, // `totalQuestions`
-                correctTally, // total correct tally (state)
-                setCorrectTally, // to set total correct tally (set state)
-                setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
-              );
+              // correct answer event:
+              if (inputValue === problem.answer) {
+                // module tallyUp.js
+                tallyUp(
+                  20, // `totalQuestions`
+                  correctTally, // total correct tally (state)
+                  setCorrectTally, // to set total correct tally (set state)
+                  setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+                );
 
-              setLevelScore(levelScore + 20);
+                setLevelScore(levelScore + 20);
 
-              // generate a new problem after processing the current one
-              setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
-            } else if (levelScore >= 10) {
-              setLevelScore(levelScore - 10);
+                // generate a new problem after processing the current one
+                setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
+              } else if (levelScore >= 10) {
+                setLevelScore(levelScore - 10);
+              }
             }
-          }
-        }}
-      />
+          }}
+        />
+      </div>
       <Footbox correct={correctTally} />
       <Timer />
       <Tipbox text="Tip: Your answers are case insensitive. You can type uppercase or lowercase." />
