@@ -12,7 +12,7 @@ import generateProblem from '@root/modules/generateProblem';
 import '../AlphaLit.css';
 
 // imported hooks:
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 /*
   Alpha-Literacy Level 3
@@ -34,6 +34,11 @@ export default function AlphaLevel3({
   const [problem, setProblem] = useState(
     () => generateProblem(problemSet, problemHistory, false) // generate a unique problem
   );
+
+  // focuses on input box with each render
+  useEffect(() => {
+    document.getElementById('litAns').focus();
+  }, []);
 
   return (
     <div id="litLevel">
