@@ -14,21 +14,11 @@
     font-variant: small-caps;
 }
 
-#mainMenu button {
-    width: 12rem;
-    padding: 0.75rem;
-    font-family: Monospace;
-    font-size: 1.75rem;
+#mainMenu .redirect-button {
     margin: 1.2rem;
-    border-radius: 0.4rem;
-    border: none;
-    background-color: var(--buttonBlue);
+    font-size: 1.8rem;
 }
 
-#mainMenu button:hover {
-    color: rgb(201, 234, 255);
-    background-color: rgba(0, 0, 0, 0.269);
-}
 
 /*
     Narrow Screen viewport event
@@ -62,9 +52,7 @@
         letter-spacing: 0.5rem;
     }
 
-    #mainMenu button {
-        width: 11rem;
-        padding: 0.75rem;
+    #mainMenu .redirect-button {
         font-size: 1.7rem;
     }
 }

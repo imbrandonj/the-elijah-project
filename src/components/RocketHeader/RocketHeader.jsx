@@ -11,7 +11,12 @@ export default function RocketHeader({ setView }) {
   return (
     <header id="rocketHeader">
       <h1>the ELIJAH PROJECT</h1>
-      <span className="rocketBig" onClick={redirect}>
+      <span
+        className="rocketBig"
+        onClick={() =>
+          (window.location.href = 'https://elijah-project.vercel.app')
+        }
+      >
         🚀
       </span>
     </header>
