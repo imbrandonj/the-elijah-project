@@ -48,7 +48,7 @@ export default function Text({ text }) {
             words={
               "In the previous levels, / you've been able to type and enter / either uppercase or lowercase letters. / / This time, your answers are case-sensitive. / / If you see an uppercase letter, / you must type your answer in uppercase. / If you see a lowercase letter, / you must type your answer in lowercase. /"
             }
-            rate={50}
+            rate={49}
           />
           <p>
             When you're ready, click the{' '}

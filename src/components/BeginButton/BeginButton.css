@@ -1,4 +1,4 @@
-#BeginButton {
+.begin-button {
     padding: 1rem 2rem;
     background-color: var(--buttonBlue);
     font-size: 2rem;
@@ -9,12 +9,12 @@
     border-radius: 0.4rem;
 }
 
-#BeginButton:hover {
+.begin-button:hover {
     background-color: var(--lightBlue);
 }
 
 @media (max-width: 2000px) {
-    #BeginButton {
+    .begin-button {
         padding: 0.9rem 1.8rem;
         font-size: 1.8rem;
     }

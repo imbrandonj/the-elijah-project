@@ -2,7 +2,7 @@ import './BeginButton.css';
 
 export default function BeginButton({ text, onclick }) {
   return (
-    <button id="BeginButton" onClick={onclick}>
+    <button className="begin-button" onClick={onclick}>
       {text}
     </button>
   );

@@ -1,5 +1,7 @@
 import './LevelUp.css'; // component styles
 
+import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
+
 // planet images for display:
 import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
@@ -85,7 +87,10 @@ export default function LevelUp({
               Score Total: {playerScore}
             </li>
           </ul>
-          <button onClick={continueEvent}>Continue to next level</button>
+          <RedirectButton
+            onclick={continueEvent}
+            text={'Continue to next level'}
+          />
         </div>
       </div>
     );
