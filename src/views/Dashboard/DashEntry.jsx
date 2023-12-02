@@ -20,7 +20,8 @@ export default function DashEntry({ setDashSelect }) {
   const redirectBegin = () => setDashSelect('launch');
   const redirectStats = () => setDashSelect('stats');
   const redirectConfig = () => setDashSelect('config');
-  const redirectHome = () => setDashSelect('signout');
+  const redirectHome = () =>
+    (window.location.href = 'https://elijah-project.vercel.app');
   return (
     <div id="dashSwiper">
       <h2>Select an action:</h2>
@@ -61,7 +62,7 @@ export default function DashEntry({ setDashSelect }) {
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button className="dashSwiperBtn">
+          <button className="dashSwiperBtn" onClick={redirectHome}>
             <img src={Stars} height={140} />
             Sign Out
           </button>

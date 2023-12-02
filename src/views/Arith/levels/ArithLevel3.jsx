@@ -243,10 +243,7 @@ export default function ArithLevel3({
 
   return (
     <div id="ArithLevel">
-      <LevelHeader
-        text="Listen to the operation and type the numbers in their appropriate boxes."
-        score={levelScore}
-      />
+      <LevelHeader text="Type numbers of an operation." score={levelScore} />
       <button className="speaker" onClick={playButton}>
         🔊
       </button>
