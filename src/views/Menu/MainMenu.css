@@ -7,6 +7,15 @@
     justify-content: center;
 } 
 
+.menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 8rem;
+    border-radius: 1rem;
+    background-color: var(--blackWrap);
+}
+
 #mainMenu h1 {
     font-size: 3.2rem;
     margin-bottom: 4rem;

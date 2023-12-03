@@ -37,7 +37,7 @@ export default function MainMenu({ setView }) {
 
   return (
     <div id="mainMenu">
-      <div className="cardWrapper">
+      <div className="menu-wrapper">
         <h1>The Elijah Project</h1>
         <RedirectButton onclick={start} text={'Start'} />
         <RedirectButton onclick={about} text={'About'} />

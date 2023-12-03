@@ -1,23 +1,23 @@
 /*
-    Level Up component styles
+    Planet Complete component styles
 */
 
 #planetComplete {
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
     width: 72%;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
     padding: 6rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #planetComplete h2 {
-    margin: 1rem 0 3rem;
     display: flex;
     align-items: center;
     gap: 3rem;
+    margin: 1rem 0 3rem;
     font-size: 4rem;
     font-variant: small-caps;
     letter-spacing: 0.1rem;
@@ -42,6 +42,24 @@
 
 
 @media (max-width: 2000px) {
-
+    #planetComplete {
+        margin-top: 1rem;
+        width: 80%;
+        padding: 4rem 0;
+    }
     
+    #planetComplete h2 {
+        gap: 2.5rem;
+        font-size: 3.5rem;
+    }
+    
+    #planetComplete p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    #planetComplete textarea {
+        font-size: 1.5rem;
+        letter-spacing: 0.075rem;
+    }
 }

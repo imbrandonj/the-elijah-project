@@ -3,82 +3,62 @@
 */
 
 #aboutMenu {
-    margin-top: 15rem;
+    margin-top: 9rem;
     display: flex;
     justify-content: center;
 }
 
 #aboutWrapper {
-    padding: 5rem 8rem;
+    padding: 4rem 10rem;
     border-radius: 1rem;
     background-color: var(--blackWrap);
 }
 
 #aboutMenu h2 {
-    margin: 1.4rem;
-    font-size: 1.6rem;
     align-self: flex-start;
-    width: 28rem;
+    width: 45%;
+    margin: 3rem 0rem;
+    font-size: 2rem;
     letter-spacing: 0.5rem;
 }
 
 #aboutParagraph {
-    margin: 4rem 0 0 2rem;
-    font-size: 1.5rem;
-    line-height: 1.8rem;
+    font-size: 1.75rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.05rem;
     text-align: left;
 }
 
-#signature {
-    font-size: 1.6rem;
+.signature {
+    text-align: right;
+    margin-right: 5rem;
+    font-size: 2rem;
     font-style: italic;
     font-family: Arial;
-    margin: 1rem 12rem 0 0;
-    letter-spacing: 0.1rem;
-    text-align: right;
-}
-
-#aboutMenu #rocketButton {
-    width: 10rem;
-    margin: 1rem;
-    align-items: center;
-    background-color: var(--buttonBlue);
-    border: none;
-    border-radius: 0.4rem;
-    font-family: var(--mono);
-    font-size: 2.5rem;
-    font-variant: small-caps;
-    letter-spacing: 0.1rem;
-}
-
-#aboutMenu #rocketButton:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(201, 234, 255);
+    letter-spacing: 0.15rem;
 }
 
 @media (max-width: 2000px) {
     #aboutMenu {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
     
     #aboutWrapper {
-        padding: 4.6rem 8rem;
+        padding: 3rem 9rem;
+    }
+
+    #aboutMenu h2 {
+        font-size: 1.75rem;
+        letter-spacing: 0.5rem;
     }
     
     #aboutParagraph {
-        margin: 3.5rem 0 0 1.8rem;
-        font-size: 1.4rem;
-        line-height: 1.7rem;
-    }
-    
-    #signature {
         font-size: 1.5rem;
-        margin: 1rem 12rem 0 0;
-        letter-spacing: 0.1rem;
+        line-height: 1.75rem;
     }
     
-    #aboutMenu #rocketButton {
-        font-size: 2.3rem;
-        margin: 1rem;
+    .signature {
+        font-size: 1.75rem;
     }
+
 }

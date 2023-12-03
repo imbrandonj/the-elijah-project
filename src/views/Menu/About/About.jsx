@@ -44,7 +44,7 @@ export default function About({ setView }) {
           Good luck, have fun, work together, and be patient.
           <br />
         </p>
-        <p id="signature"> -Brandon </p>
+        <p className="signature"> - Brandon </p>
       </div>
       <RocketButton
         text="back"

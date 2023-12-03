@@ -61,7 +61,6 @@ export default function Perspective({ setView, level, setLevel }) {
             />
           ) : (
             <LevelEntry
-              voice={null}
               img={imgEntry1}
               planet="Persp"
               h2Text="Perspective Level 1"

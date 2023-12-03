@@ -63,17 +63,6 @@ h1, h2, h3, h4 {
     gap: 10rem;
 }
 
-/* used in MainMenu.jsx !to be deleted! */
-.cardWrapper {
-    padding: 5rem 8rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.95);
-}
-
-
 /*
     Global animations:
 */
