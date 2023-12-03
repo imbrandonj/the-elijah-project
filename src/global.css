@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--blackWrap);
     background-image: url("../images/stars.webp");
     background-repeat: no-repeat;
     background-position: 50% 50%;

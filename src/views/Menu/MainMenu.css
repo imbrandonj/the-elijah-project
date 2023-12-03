@@ -41,6 +41,8 @@
 }
 
 #narrowScreen .cardWrapper {
+    background-color: var(--blackWrap);
+    margin: 1rem;
     padding: 1rem;
 }
 
