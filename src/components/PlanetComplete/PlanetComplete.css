@@ -1,0 +1,47 @@
+/*
+    Level Up component styles
+*/
+
+#planetComplete {
+    margin-top: 2rem;
+    width: 72%;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 1rem;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#planetComplete h2 {
+    margin: 1rem 0 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 4rem;
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+}
+
+#planetComplete p {
+    margin: 2rem;
+    font-size: 1.75rem;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+#planetComplete textarea {
+    width: 42%;
+    height: 14rem;
+    padding: 1.5rem 1rem;
+    font-size: 1.75rem;
+    letter-spacing: 0.075rem;
+    resize: none;
+    border-radius: 0.5rem;
+}
+
+
+@media (max-width: 2000px) {
+
+    
+}

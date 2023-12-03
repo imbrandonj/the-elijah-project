@@ -57,6 +57,12 @@ h1, h2, h3, h4 {
     margin-left: 2rem;
 }
 
+.flex-row-10 {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
 /* used in MainMenu.jsx !to be deleted! */
 .cardWrapper {
     padding: 5rem 8rem;

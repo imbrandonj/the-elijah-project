@@ -2,6 +2,7 @@
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
 
 // imported levels:
 import ArithLevel1 from './levels/ArithLevel1.jsx';
@@ -163,7 +164,9 @@ export default function Arith({ setView, level, setLevel }) {
               setLevelUpEvent={setLevelUpEvent}
             />
           )
-        ) : null}
+        ) : (
+          <PlanetComplete path={'Arith'} />
+        )}
       </div>
     </div>
   );

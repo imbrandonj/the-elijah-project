@@ -2,6 +2,7 @@
 import RocketHeader from '@root/components/RocketHeader/RocketHeader';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 
 // imported levels:
@@ -69,7 +70,9 @@ export default function Perspective({ setView, level, setLevel }) {
               setLevelUpEvent={setLevelUpEvent}
             />
           )
-        ) : null}
+        ) : (
+          <PlanetComplete path={'Persp'} />
+        )}
       </div>
 
       {showPopup && (
