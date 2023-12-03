@@ -2,6 +2,7 @@
 import RocketHeader from '@root/components/RocketHeader/RocketHeader';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
+import Popup from '@root/components/Popup/Popup.jsx';
 
 // imported levels:
 import PerspLevel1 from './levels/PerspLevel1.jsx';
@@ -21,6 +22,14 @@ export default function Perspective({ setView, level, setLevel }) {
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
   const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp
+
+  // temporary pop up message:
+  const [showPopup, setShowPopup] = useState(true);
+
+  const closePopup = () => {
+    // passed to the Popup component
+    setShowPopup(false);
+  };
 
   console.log('Render!');
 
@@ -51,7 +60,7 @@ export default function Perspective({ setView, level, setLevel }) {
             />
           ) : (
             <LevelEntry
-              voice={audioEntry1}
+              voice={null}
               img={imgEntry1}
               planet="Persp"
               h2Text="Perspective Level 1"
@@ -62,6 +71,17 @@ export default function Perspective({ setView, level, setLevel }) {
           )
         ) : null}
       </div>
+
+      {showPopup && (
+        <Popup
+          closePopup={closePopup}
+          para1={
+            'Perspective is the newest planet added. It is very much under construction. Feel free to take a look though. :)'
+          }
+          para2={null}
+          buttonText={'continue to planet Perspective'}
+        />
+      )}
     </div>
   );
 }

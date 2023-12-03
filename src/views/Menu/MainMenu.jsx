@@ -42,9 +42,6 @@ export default function MainMenu({ setView }) {
         <RedirectButton onclick={start} text={'Start'} />
         <RedirectButton onclick={about} text={'About'} />
         <RedirectButton onclick={null} text={'Profile'} />
-        {/* <button onClick={start}>Start</button>
-        <button onClick={about}>About</button>
-        <button>Profile</button> */}
       </div>
 
       {showPopup && (
