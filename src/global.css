@@ -5,8 +5,8 @@
 /* Variables */
 :root {
     --mono: Monospace;
-    --lightBlue: rgb(201, 234, 255);
     --blackWrap: rgba(0, 0, 0, 0.95);
+    --lightBlue: rgb(201, 234, 255);
     --buttonBlue: rgba(204, 238, 255, 0.6);
 }
 
