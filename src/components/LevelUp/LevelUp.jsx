@@ -119,7 +119,7 @@ export default function LevelUp({
               Score Needed: <span>{minScore}</span>
             </li>
           </ul>
-          <button onClick={retry}>Retry</button>
+          <RedirectButton onclick={retry} text={'Retry'} />
         </div>
       </div>
     );
