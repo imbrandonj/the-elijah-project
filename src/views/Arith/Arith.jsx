@@ -16,6 +16,9 @@ import ArithLevel6 from './levels/ArithLevel6.jsx';
 import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
 import audioEntry2 from '@root/assets/mp3/ArithEntry2.mp3';
 import audioEntry3 from '@root/assets/mp3/ArithEntry3.mp3';
+import audioEntry4 from '@root/assets/mp3/ArithEntry4.mp3';
+import audioEntry5 from '@root/assets/mp3/ArithEntry5.mp3';
+import audioEntry6 from '@root/assets/mp3/ArithEntry6.mp3';
 
 // imported img for `LevelEntry` component:
 import imgEntry1 from '@root/assets/svgs/1234.svg';
@@ -119,7 +122,7 @@ export default function Arith({ setView, level, setLevel }) {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry4}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 4"
@@ -137,7 +140,7 @@ export default function Arith({ setView, level, setLevel }) {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry5}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 5"
@@ -155,7 +158,7 @@ export default function Arith({ setView, level, setLevel }) {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry6}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 6"

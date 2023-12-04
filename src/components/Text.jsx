@@ -59,130 +59,125 @@ export default function Text({ text }) {
       );
     case 'AlphaEntry4':
       return (
-        <p>
-          It's time to move on. <br />
-          We will now begin spelling. <br />
-          <br />
-          Let's begin spelling easy words.
-          <br />
-          We'll start with animals. <br />
-          <br />
-          Spell 20 different animals. <br />
-          As usual, press the <span className="italic small-caps">
-            Begin!
-          </span>{' '}
-          button to start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "It's time to move on. / We will now begin spelling. / / Let's begin spelling easy words. / We'll start with animals. / / Spell 20 different animals. / "
+            }
+            rate={50}
+          />
+          <p>
+            As usual, press the{' '}
+            <span className="italic small-caps">Begin!</span> button to start.
+          </p>
+        </div>
       );
     case 'AlphaEntry5':
       return (
-        <p>
-          Welcome to level 5,
-          <br />
-          your first challenge level for planet Alpha-Literacy.
-          <br />
-          <br />
-          For this challenge, you will have to type 20 letters
-          <br />
-          and obtain a minimum score of <span className="minScore">600</span>.
-          <br />
-          <br />
-          When you're ready, click the{' '}
-          <span className="italic small-caps">Begin!</span> button <br />
-          to begin the challenge.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "You've arrived at level 5.// This is your first challenge level/ for planet Alpha-Literacy. / / For this challenge,/ you will have to type 20 letters / and obtain a minimum score of 600. // Try not to make a mistake / or you'll lose points. /"
+            }
+            rate={50}
+          />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to begin the challenge.
+          </p>
+        </div>
       );
     case 'ArithEntry1':
       return (
-        <p>
-          Welcome to Arith! <br />
-          <br />
-          This is a place to build your math skills. <br />
-          Do you know what math is? <br />
-          <br />
-          Let's begin with the easiest math. <br /> <br />
-          Count and add 20 objects. <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Welcome to Arith! / This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add 20 objects."
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     case 'ArithEntry2':
       return (
-        <p>
-          Good job counting.
-          <br />
-          Did you know that counting is math? <br />
-          <br />
-          When we count objects, we are practicing addition. <br />
-          <br />
-          This time, let's use numbers. <br />
-          Add the numbers together to get your answer. <br />
-          <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Good job counting. / Did you know that counting is math? / / When we count objects, we are practicing addition. / / This time, let's use numbers. / Add the numbers together to get your answer. /"
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     case 'ArithEntry3':
       return (
-        <p>
-          Let's work on typing numbers of an operation.
-          <br />
-          An operation takes input values and gives an output.
-          <br />
-          <br />
-          For level 3:
-          <br /> <span className="indent"> </span>
-          You will be given an audio of a math operation.
-          <br /> <span className="indent"> </span>
-          Your job will be to type the numbers into their boxes,
-          <br /> <span className="indent"> </span>
-          And then come up with the sum of the two numbers.
-          <br />
-          <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Let's work on typing numbers of an operation. // I will tell you what numbers to type. // Your job is to place the numbers into / the correct boxes and then solve the problem! /"
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     case 'ArithEntry4':
       return (
-        <p>
-          Here are are!
-          <br />
-          Arith Level 4
-          <br />
-          <br />
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "It's time for you to add / three numbers together at a time. // Notice that when you are adding three numbers, there are 2 + signs. // These are called addition operators. /"
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     case 'ArithEntry5':
       return (
-        <p>
-          Arith Level 5 is a challenge level.
-          <br />
-          <br />
-          To complete this challenge,
-          <br />
-          you must achieve a minimum score of{' '}
-          <span className="minScore">600</span>.
-          <br />
-          <br />
-          Your objective is to complete
-          <br />
-          20 basic addition problems.
-          <br />
-          <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              'Arith Level 5 is a challenge level. // To complete this challenge, you must achieve a minimum score of 600. // Your objective is to complete 20 / basic addition problems.'
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            <br />
+            to start the challenge.
+          </p>
+        </div>
       );
     case 'ArithEntry6':
       return (
-        <p>
-          Let's begin subtraction.
-          <br />
-          <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Welcome to Arith Exercise Set 2. // Let's begin working on subtraction. // Subtraction is when you take away one number or amount from another number. // When you see a - sign, / then you know you are subtracting."
+            }
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     case 'PerspEntry1':
       return (
