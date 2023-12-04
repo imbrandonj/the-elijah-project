@@ -10,8 +10,8 @@ import { useState } from 'react';
   MainMenu
   
     - This a menu page that has 3 paths:
-      1) start, which calls <PathMenu />
-      2) about, which calls <About />
+      1) start, which calls <Dashboard /> view
+      2) about, which calls <About /> view
       3) profile, which is not yet complete
 */
 export default function MainMenu({ setView }) {

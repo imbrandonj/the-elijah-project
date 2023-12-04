@@ -32,6 +32,20 @@ const App = () => {
   const [level, setLevel] = useState(0);
   const [adequateWidth, setAdequateWidth] = useState(window.innerWidth >= 1100);
 
+  // list of views in The Elijah Project:
+  const views = {
+    MainMenu: <MainMenu setView={setView} />,
+    About: <About setView={setView} />,
+    Dashboard: <Dashboard setView={setView} setLevel={setLevel} />,
+    Arith: <Arith level={level} setLevel={setLevel} setView={setView} />,
+    Perspective: (
+      <Perspective level={level} setLevel={setLevel} setView={setView} />
+    ),
+    'Alpha-Literacy': (
+      <AlphaLit level={level} setLevel={setLevel} setView={setView} />
+    ),
+  };
+
   const checkViewportWidth = () => {
     setAdequateWidth(window.innerWidth >= 1100);
   };
@@ -40,27 +54,9 @@ const App = () => {
 
   if (adequateWidth) {
     // display view:
-
-    return (
-      <div>
-        {view === 'MainMenu' ? (
-          <MainMenu setView={setView} />
-        ) : view === 'About' ? (
-          <About setView={setView} />
-        ) : view === 'Dashboard' ? (
-          <Dashboard setView={setView} setLevel={setLevel} />
-        ) : view === 'Arith' ? (
-          <Arith level={level} setLevel={setLevel} setView={setView} />
-        ) : view === 'Perspective' ? (
-          <Perspective level={level} setLevel={setLevel} setView={setView} />
-        ) : view === 'Alpha-Literacy' ? (
-          <AlphaLit level={level} setLevel={setLevel} setView={setView} />
-        ) : null}
-      </div>
-    );
-
-    // inadequate viewport (shrunken screen)
+    return <div>{views[view]}</div>;
   } else {
+    // inadequate viewport (shrunken screen):
     return (
       <div id="narrowScreen">
         <div className="cardWrapper">
