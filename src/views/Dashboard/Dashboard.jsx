@@ -1,6 +1,6 @@
 // imported components:
 import DashEntry from './DashEntry.jsx';
-import MissionSelect from './MissionSelect.jsx';
+import SelectMission from './SelectMission.jsx';
 import Mission from './Mission.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
@@ -39,7 +39,7 @@ export default function Dashboard({ setView, setLevel }) {
         {dashSelect === 'entry' ? (
           <DashEntry setDashSelect={setDashSelect} />
         ) : dashSelect === 'launch' && missionSelect.length === 0 ? (
-          <MissionSelect
+          <SelectMission
             setMissionSelect={setMissionSelect}
             setDashSelect={setDashSelect}
           />

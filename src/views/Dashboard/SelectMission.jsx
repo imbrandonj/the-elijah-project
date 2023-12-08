@@ -11,11 +11,18 @@ import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
 import RocketHome from '@root/assets/svgs/rocket-home.svg';
 
 /*
-   DashEntry.jsx
+   SelectMission.jsx
 
-    This is the carousel that displays after use selects 'Launch Mission'
+    This is the carousel menu that displays after user selects 'Launch Mission'
+
+    `setMissionSelect` is passed by Dashboard.jsx
+      When the user selects an item on the carousel, it updates `missionSelect` state
+
+    `setDashSelect`, is also created in and passed by Dashboard.jsx
+      This prop is only used when the user selects 'Return to Base'
+
 */
-export default function MissionSelect({ setMissionSelect, setDashSelect }) {
+export default function SelectMission({ setMissionSelect, setDashSelect }) {
   const alphaSelect = () => setMissionSelect('Alpha-Literacy');
   const arithSelect = () => setMissionSelect('Arith');
   const perspectiveSelect = () => setMissionSelect('Perspective');
