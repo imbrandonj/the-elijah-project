@@ -9,6 +9,7 @@
     --blackOverlay: rgba(0, 0, 0, 0.5);
     --lightBlue: rgb(201, 234, 255);
     --buttonBlue: rgba(204, 238, 255, 0.6);
+    --popupGreen: rgb(76, 136, 113);
 }
 
 /* border box model: https://css-tricks.com/box-sizing/ */

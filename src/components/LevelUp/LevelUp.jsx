@@ -7,11 +7,12 @@ import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 // imported modules:
 import { storeLevel } from '@root/modules/levelManager.js';
 
-// planet images for display:
+// imported imgs:
 import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
 import perspImg from '@root/assets/svgs/perspective.svg';
 import astroFlag from '@root/assets/svgs/astro-flag2.svg';
+import objective from '@root/assets/svgs/objective.svg';
 
 export default function LevelUp({
   planet, // 'Arith' or 'Alpha-Literacy' or 'Perspective'
@@ -103,8 +104,8 @@ export default function LevelUp({
               </li>
               <li className="score">
                 {' '}
-                <img src={astroFlag} height={90} />
-                Score Total: {playerScore}
+                <img src={astroFlag} height={95} />
+                Score Total: <span className="green">{playerScore}</span>
               </li>
             </ul>
             <RedirectButton
@@ -133,12 +134,9 @@ export default function LevelUp({
               Time Bonus: <span>{timeBonus}</span>
             </li>
             <li className="score">
-              {' '}
-              <img src={astroFlag} height={90} />
-              Score Total: {playerScore}
-            </li>
-            <li>
-              Score Needed: <span>{minScore}</span>
+              <img src={objective} height={60} />
+              Score Total: <span className="red">{playerScore}</span>, Score
+              Needed: <span className="green">{minScore}</span>
             </li>
           </ul>
           <RedirectButton onclick={retry} text={'Retry'} />

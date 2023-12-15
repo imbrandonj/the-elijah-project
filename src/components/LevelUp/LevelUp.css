@@ -46,32 +46,36 @@
 
 span {
     font-size: 2.6rem;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.1rem;
     font-weight: bold;
 }
 
 .score {
     display: flex;
     align-items: center;
-    gap: 1.3rem;
-    padding: 0.5rem;
+    gap: 1.75rem;
+    padding: 3rem 0 0;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.05rem;
 }
 
-.score img {
-    margin-bottom: 1.8rem;
-    height: 6.3rem;
+.score span {
+    font-size: 3.3rem;
+    letter-spacing: 0.15rem;
 }
 
 .red {
     color: rgb(119, 47, 47);
 }
 
+.green {
+    color: var(--popupGreen);
+}
+
 @media (max-width: 2000px) {
     #levelUp {
-        margin-top: 1rem;
+        margin-top: 0rem;
     }
     
     #levelUpWrapper {
@@ -90,7 +94,7 @@ span {
 
     #levelUp ul {
         font-size: 2rem;
-        margin: 4rem;
+        margin: 2.5rem;
     }
     
     #levelUp ul li {
@@ -102,15 +106,17 @@ span {
     }
     
     .score {
-        gap: 1rem;
-        padding: 0.5rem;
+        gap: 1.5rem;
+        padding: 2rem 0 0;
         font-size: 2.6rem;
     }
-    
+
     .score img {
-        margin-bottom: 1rem;
+        height: 1.75em;
     }
 
-
+    .score span {
+        font-size: 2.6rem;
+    }
     
 }

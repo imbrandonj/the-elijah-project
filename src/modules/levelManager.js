@@ -6,7 +6,7 @@ function getLevels(planet) {
     /* redundant as far as I know -> localStorage.setItem(planet, JSON.stringify({}));  */
     return 0;
   } else {
-    console.log(levels);
+    return levels;
   }
 }
 
