@@ -50,7 +50,7 @@ export default function AlphaLit({ setView, level, setLevel }) {
       <div id="litPath">
         {levelUpEvent ? (
           <LevelUp
-            path="AlphaLit"
+            planet="AlphaLit"
             level={level}
             setLevel={setLevel}
             levelScore={levelScore}

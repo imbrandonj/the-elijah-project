@@ -1,6 +1,11 @@
 import './LevelUp.css'; // component styles
 
+// imported components:
+import SetComplete from '@root/components/SetComplete/SetComplete.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
+
+// imported modules:
+import { storeLevel } from '@root/modules/levelManager.js';
 
 // planet images for display:
 import arithImg from '@root/assets/svgs/arith.svg';
@@ -9,7 +14,7 @@ import perspImg from '@root/assets/svgs/perspective.svg';
 import astroFlag from '@root/assets/svgs/astro-flag2.svg';
 
 export default function LevelUp({
-  path, // subject 'Arith' or 'Alpha-Literacy' or 'Perspective'
+  planet, // 'Arith' or 'Alpha-Literacy' or 'Perspective'
   level, // level completed (state)
   levelScore, // score obtained during level (state)
   setLevelScore, // to reset score after level completion (state)
@@ -22,26 +27,26 @@ export default function LevelUp({
 
   // planet display in h2:
   const planetImg =
-    path === 'Arith'
+    planet === 'Arith'
       ? arithImg
-      : path === 'AlphaLit'
+      : planet === 'AlphaLit'
       ? alphaImg
-      : path === 'Persp'
+      : planet === 'Persp'
       ? perspImg
       : null;
 
   // reformat text for display
-  path =
-    path === 'Arith'
+  planet =
+    planet === 'Arith'
       ? 'Arith'
-      : path === 'AlphaLit'
+      : planet === 'AlphaLit'
       ? 'Alpha-Literacy'
-      : path === 'Persp'
+      : planet === 'Persp'
       ? 'Perspective'
       : null;
 
   // continue button click event
-  const continueEvent = () => {
+  const newLevel = () => {
     setLevelScore(0);
     setLevel(level + 1);
     setLevelUpEvent(false);
@@ -56,45 +61,62 @@ export default function LevelUp({
     setBegin(false);
   };
 
+  // calculate score:
   const timeBonus = 300 - time;
   const playerScore = levelScore + timeBonus;
+
+  // set score in local storage:
+  storeLevel(planet, level, playerScore);
 
   // every 5 levels are challenge levels with a minScore of 600
   let minScore = level % 5 === 0 ? 600 : 0;
 
+  // level completed:
   if (playerScore >= minScore) {
-    return (
-      <div id="levelUp">
-        <div id="levelUpWrapper">
-          <h2>
-            {path} level up
-            <img src={planetImg} height={88} />
-          </h2>
-          <h3>Level {level} Completed</h3>
-          <ul>
-            <li>
-              Level Score: <span>{levelScore}</span>
-            </li>
-            <li>
-              Time to Complete: <span>{time}</span> seconds
-            </li>
-            <li>
-              Time Bonus: <span>{timeBonus}</span>
-            </li>
-            <li className="score">
-              {' '}
-              <img src={astroFlag} height={90} />
-              Score Total: {playerScore}
-            </li>
-          </ul>
-          <RedirectButton
-            onclick={continueEvent}
-            text={'Continue to next level'}
-          />
+    if (level % 5 === 0)
+      return (
+        <SetComplete
+          level={level}
+          newLevel={newLevel}
+          planet={planet}
+          planetImg={planetImg}
+        />
+      );
+    else {
+      return (
+        <div id="levelUp">
+          <div id="levelUpWrapper">
+            <h2>
+              {planet} level up
+              <img src={planetImg} height={88} />
+            </h2>
+            <h3>Level {level} Completed</h3>
+            <ul>
+              <li>
+                Level Score: <span>{levelScore}</span>
+              </li>
+              <li>
+                Time to Complete: <span>{time}</span> seconds
+              </li>
+              <li>
+                Time Bonus: <span>{timeBonus}</span>
+              </li>
+              <li className="score">
+                {' '}
+                <img src={astroFlag} height={90} />
+                Score Total: {playerScore}
+              </li>
+            </ul>
+            <RedirectButton
+              onclick={newLevel}
+              text={'Continue to next level'}
+            />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   } else {
+    // level failed:
     return (
       <div id="levelUp">
         <div id="levelUpWrapper">

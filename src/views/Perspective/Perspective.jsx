@@ -44,7 +44,7 @@ export default function Perspective({ setView, level, setLevel }) {
       <div id="PerspWrap">
         {levelUpEvent ? (
           <LevelUp
-            path="Persp"
+            planet="Persp"
             level={level}
             setLevel={setLevel}
             levelScore={levelScore}

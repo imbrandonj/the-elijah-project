@@ -51,7 +51,7 @@ export default function Arith({ setView, level, setLevel }) {
       <div id="ArithWrap">
         {levelUpEvent ? (
           <LevelUp
-            path="Arith"
+            planet="Arith"
             level={level}
             setLevel={setLevel}
             levelScore={levelScore}

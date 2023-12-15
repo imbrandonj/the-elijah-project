@@ -1,18 +1,30 @@
 // imported components:
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 
+// imported modules:
+import { getLevels } from '@root/modules/levelManager.js';
+
+import { useEffect } from 'react';
+
 // imported svgs:
 import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
 import Arith from '@root/assets/svgs/arith.svg';
 import Perspective from '@root/assets/svgs/perspective.svg';
 
 /*
+  Mission.jsx
+
   Display planet selected (`missionSelect` state from MissionSelect.jsx)
 */
 export default function Mission({ missionSelect, setView, setLevel }) {
-  const begin = () => {
-    setLevel(1);
-    setView(missionSelect);
+  useEffect(() => {
+    getLevels(missionSelect); // get completed levels for the selected planet
+  }, []);
+
+  // Begin Level:
+  const begin = level => {
+    setLevel(level);
+    setView(missionSelect); // sets view to planet selected
   };
 
   return (
@@ -44,7 +56,7 @@ export default function Mission({ missionSelect, setView, setLevel }) {
           </p>
         </div>
       ) : null}
-      <BeginButton text="begin here" onclick={begin} />
+      <BeginButton text="begin here" onclick={() => begin(1)} />
     </div>
   );
 }

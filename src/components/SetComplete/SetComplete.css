@@ -1,0 +1,79 @@
+#setComplete {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    padding: 2rem;
+    background-color: rgb(76, 136, 113);
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+#setComplete .setWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#setComplete h2 {
+    margin: 2rem;
+    font-size: 4rem;
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+}
+
+#setComplete h3 {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    padding-left: 0.5rem;
+    gap: 1rem;
+    color: var(--buttonBlue);
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+    background-color: var(--blackOverlay);
+    border-radius: 0.25rem 4rem 4rem 0.25rem;
+}
+
+
+#setComplete button {
+    margin-top: 2rem;
+    width: 22%;
+    padding: 1rem;
+    font-size: 2.2rem;
+    font-family: var(--mono);
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+    color: var(--buttonBlue);
+    background-color: var(--blackOverlay);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+#setComplete button:hover {
+    /* background-color: rgba(240, 248, 255, 0.379); */
+    background-color: var(--buttonBlue);
+    color: black;
+}
+
+@media (max-width: 2000px) {
+
+    #setComplete {
+    width: 60%;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    }
+
+    #setComplete button {
+    margin-top: 2rem;
+    width: 22%;
+    padding: 1rem;
+    font-size: 2rem;
+    }
+}
