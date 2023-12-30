@@ -1,4 +1,5 @@
 // imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 
 // imported modules:
@@ -16,7 +17,9 @@ import Perspective from '@root/assets/svgs/perspective.svg';
 
   Display planet selected (`missionSelect` state from MissionSelect.jsx)
 */
-export default function Mission({ missionSelect, setView, setLevel }) {
+export default function Mission({ missionSelect }) {
+  const { setView, setLevel } = useView();
+
   useEffect(() => {
     getLevels(missionSelect); // get completed levels for the selected planet
   }, []);

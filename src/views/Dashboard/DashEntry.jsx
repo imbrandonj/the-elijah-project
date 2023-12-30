@@ -4,6 +4,8 @@ import { EffectCoverflow, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
+import { useView } from '@root/components/ViewContext.jsx'; // global state
+
 // imported svgs:
 import RocketLaunch from '@root/assets/svgs/rocket-launch.svg';
 import PlanetFlag from '@root/assets/svgs/planet-flag.svg';
@@ -17,11 +19,12 @@ import Stars from '@root/assets/svgs/stars.svg';
     `setDashSelect` prop contains user selection ('launch', 'stats', 'config', 'signout')
 */
 export default function DashEntry({ setDashSelect }) {
+  const { setView } = useView();
+
   const redirectBegin = () => setDashSelect('launch');
   const redirectStats = () => setDashSelect('stats');
   const redirectConfig = () => setDashSelect('config');
-  const redirectHome = () =>
-    (window.location.href = 'https://elijah-project.vercel.app');
+  const redirectHome = () => setView('MainMenu');
   return (
     <div id="dashSwiper">
       <h2>Select an action:</h2>

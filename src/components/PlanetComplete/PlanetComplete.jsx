@@ -1,5 +1,7 @@
 import './PlanetComplete.css'; // component styles
 
+// imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
 // planet images for display:
@@ -11,6 +13,8 @@ import RocketHome from '@root/assets/svgs/rocket-home.svg';
 export default function PlanetComplete({
   path, // subject 'Arith' or 'Alpha-Literacy' or 'Perspective'
 }) {
+  const { setView } = useView();
+
   // planet display in h2:
   const planetImg =
     path === 'Arith'
@@ -32,7 +36,7 @@ export default function PlanetComplete({
       : null;
 
   const handleReturn = () => {
-    window.location.href = 'https://elijah-project.vercel.app';
+    setView('Dashboard');
   };
 
   return (

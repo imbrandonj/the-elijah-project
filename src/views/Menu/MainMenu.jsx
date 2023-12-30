@@ -18,7 +18,7 @@ import { useState } from 'react';
 /*
   MainMenu.jsx
 
-    - MainMenu is the initial view which is displayed
+    - MainMenu is the initial view displayed
       -MainMenu controls all view displays via the useContext global state
   
     - This menu page that has 3 paths:
