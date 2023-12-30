@@ -1,4 +1,5 @@
 // imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
@@ -36,7 +37,8 @@ import { useState } from 'react';
     • `level` prop (state) is used to display the Alpha-Lit level
     • `setLevel` prop (state) is used to set or modify the Alpha-Lit level
  */
-export default function AlphaLit({ setView, level, setLevel }) {
+export default function AlphaLit() {
+  const { setView, level, setLevel } = useView();
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
   const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp
@@ -46,13 +48,11 @@ export default function AlphaLit({ setView, level, setLevel }) {
   // return component
   return (
     <div>
-      <RocketHeader setView={setView} />
+      <RocketHeader />
       <div id="litPath">
         {levelUpEvent ? (
           <LevelUp
             planet="AlphaLit"
-            level={level}
-            setLevel={setLevel}
             levelScore={levelScore}
             setLevelScore={setLevelScore}
             setLevelUpEvent={setLevelUpEvent}

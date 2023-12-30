@@ -1,4 +1,5 @@
 // imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import DashEntry from './DashEntry.jsx';
 import SelectMission from './SelectMission.jsx';
 import Mission from './Mission.jsx';
@@ -14,7 +15,8 @@ import { useState } from 'react';
   Dashboard.jsx
 
 */
-export default function Dashboard({ setView, setLevel }) {
+export default function Dashboard() {
+  const { setView, setLevel } = useView();
   const [dashSelect, setDashSelect] = useState('entry'); // user selection from DashEntry ('')
   const [missionSelect, setMissionSelect] = useState('');
 

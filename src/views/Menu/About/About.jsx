@@ -1,10 +1,13 @@
 // imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton';
 
 import './About.css'; // component styles
 
-export default function About({ setView }) {
+export default function About() {
+  const { setView } = useView();
   const backBtn = () => setView('MainMenu'); // passed to RocketButton component `onclick` prop
+
   return (
     <div id="aboutMenu">
       <div id="aboutWrapper">

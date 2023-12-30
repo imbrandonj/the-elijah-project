@@ -1,6 +1,7 @@
 import './LevelUp.css'; // component styles
 
 // imported components:
+import { useView } from '@root/components/ViewContext.jsx';
 import SetComplete from '@root/components/SetComplete/SetComplete.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
@@ -16,13 +17,13 @@ import objective from '@root/assets/svgs/objective.svg';
 
 export default function LevelUp({
   planet, // 'Arith' or 'Alpha-Literacy' or 'Perspective'
-  level, // level completed (state)
   levelScore, // score obtained during level (state)
   setLevelScore, // to reset score after level completion (state)
-  setLevel, // increment level (state)
   setLevelUpEvent, // reset level event (state)
   setBegin, // begin level (state)
 }) {
+  const { level, setLevel } = useView();
+
   // time to complete level
   let time = localStorage.getItem('time');
 
