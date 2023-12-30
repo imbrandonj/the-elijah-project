@@ -1,4 +1,8 @@
-// Storage of Arith Level 1 Problems
+/*
+  ArithProblems.js
+
+  This file contains all of the problems for planet Arith
+*/
 const level1 = [
   { problem: '🐻 + 🐻🐻 =', answer: 3 },
   { problem: '🐻🐻 + 🐻🐻🐻 =', answer: 5 },
@@ -67,6 +71,7 @@ const level2 = [
   { problem: '5 + 5 =', answer: 10 },
 ];
 
+// not currently implemented, located on ArithLevel3
 const level3 = [
   { box1: 1, box2: 1, answer: 2 },
   { box1: 1, box2: 2, answer: 3 },
@@ -103,6 +108,7 @@ const level4 = [
   { problem: '5 + 5 + 0 =', answer: 10 },
 ];
 
+// subtraction problems 0-5 - 0-5
 const level6 = [
   { problem: '0 - 0 =', answer: 0 },
   { problem: '1 - 0 =', answer: 1 },
@@ -127,4 +133,53 @@ const level6 = [
   { problem: '5 - 5 =', answer: 0 },
 ];
 
-export { level1, level2, level3, level4, level6 };
+// subtraction problems 6-10 - 0-10
+const level7 = [
+  { problem: '10 - 0 =', answer: 10 },
+  { problem: '10 - 1 =', answer: 9 },
+  { problem: '10 - 2 =', answer: 8 },
+  { problem: '10 - 3 =', answer: 7 },
+  { problem: '10 - 4 =', answer: 6 },
+  { problem: '10 - 5 =', answer: 5 },
+  { problem: '10 - 6 =', answer: 4 },
+  { problem: '10 - 7 =', answer: 3 },
+  { problem: '10 - 8 =', answer: 2 },
+  { problem: '10 - 9 =', answer: 1 },
+  { problem: '10 - 10 =', answer: 0 },
+  { problem: '9 - 0 =', answer: 9 },
+  { problem: '9 - 1 =', answer: 8 },
+  { problem: '9 - 2 =', answer: 7 },
+  { problem: '9 - 3 =', answer: 6 },
+  { problem: '9 - 4 =', answer: 5 },
+  { problem: '9 - 5 =', answer: 4 },
+  { problem: '9 - 6 =', answer: 3 },
+  { problem: '9 - 7 =', answer: 2 },
+  { problem: '9 - 8 =', answer: 1 },
+  { problem: '9 - 9 =', answer: 0 },
+  { problem: '8 - 0 =', answer: 8 },
+  { problem: '8 - 1 =', answer: 7 },
+  { problem: '8 - 2 =', answer: 6 },
+  { problem: '8 - 3 =', answer: 5 },
+  { problem: '8 - 4 =', answer: 4 },
+  { problem: '8 - 5 =', answer: 3 },
+  { problem: '8 - 6 =', answer: 2 },
+  { problem: '8 - 7 =', answer: 1 },
+  { problem: '8 - 8 =', answer: 0 },
+  { problem: '7 - 0 =', answer: 7 },
+  { problem: '7 - 1 =', answer: 6 },
+  { problem: '7 - 2 =', answer: 5 },
+  { problem: '7 - 3 =', answer: 4 },
+  { problem: '7 - 4 =', answer: 3 },
+  { problem: '7 - 5 =', answer: 2 },
+  { problem: '7 - 6 =', answer: 1 },
+  { problem: '7 - 7 =', answer: 0 },
+  { problem: '6 - 0 =', answer: 6 },
+  { problem: '6 - 1 =', answer: 5 },
+  { problem: '6 - 2 =', answer: 4 },
+  { problem: '6 - 3 =', answer: 3 },
+  { problem: '6 - 4 =', answer: 2 },
+  { problem: '6 - 5 =', answer: 1 },
+  { problem: '6 - 6 =', answer: 0 },
+];
+
+export { level1, level2, level3, level4, level6, level7 };
