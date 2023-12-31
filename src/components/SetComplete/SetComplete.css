@@ -3,27 +3,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 55%;
+    width: 60%;
     padding: 2rem;
-    background-color: rgb(76, 136, 113);
+    background-color: rgb(76, 136, 113, .95);
     border: 1px solid black;
     border-radius: 0.5rem;
     color: black;
     font-size: 2rem;
     line-height: 3rem;
-}
-
-#setComplete .setWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#setComplete h2 {
-    margin: 2rem;
-    font-size: 4rem;
-    font-variant: small-caps;
-    letter-spacing: 0.1rem;
 }
 
 #setComplete h3 {
@@ -41,10 +28,50 @@
     border-radius: 0.25rem 4rem 4rem 0.25rem;
 }
 
+#setComplete .setWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+}
 
-#setComplete button {
-    margin-top: 2rem;
-    width: 22%;
+#setComplete h2 {
+    margin: 2rem;
+    font-size: 4rem;
+    font-variant: small-caps;
+    letter-spacing: 0.1rem;
+}
+
+
+#setComplete ul {
+    margin: 3rem;
+}
+
+#setComplete li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+    margin: 1rem;
+    height: 2em;
+    list-style: none;
+    font-size: 2.2rem;
+}
+
+#setComplete li span {
+    font-size: 2.6rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+
+.btnRowBundle {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnRowBundle button {
+    margin: 1rem;
+    flex-basis: 20%;
     padding: 1rem;
     font-size: 2.2rem;
     font-family: var(--mono);
@@ -54,6 +81,14 @@
     background-color: var(--blackOverlay);
     border: none;
     border-radius: 0.25rem;
+}
+
+.erase {
+    color: rgb(210, 122, 122);
+}
+
+.parent:hover .erase {
+    color:rgb(143, 6, 6);
 }
 
 #setComplete button:hover {

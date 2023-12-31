@@ -81,6 +81,7 @@ export default function LevelUp({
         <SetComplete
           level={level}
           newLevel={newLevel}
+          levelScore={playerScore}
           planet={planet}
           planetImg={planetImg}
         />

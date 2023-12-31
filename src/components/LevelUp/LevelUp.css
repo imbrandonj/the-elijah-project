@@ -44,7 +44,7 @@
     margin: 1rem;
 }
 
-span {
+#levelUp li span {
     font-size: 2.6rem;
     letter-spacing: 0.1rem;
     font-weight: bold;
@@ -101,7 +101,7 @@ span {
         margin: 0.8rem;
     }
 
-    span {
+    #levelUp li span {
         font-size: 2.4rem;
     }
     
