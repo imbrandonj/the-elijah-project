@@ -25,7 +25,6 @@ export default function LevelEntry({
   planet,
   h2Text,
   text,
-  setView,
   setBegin,
 }) {
   const audio = new Audio(voice);

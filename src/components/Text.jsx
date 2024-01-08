@@ -88,6 +88,22 @@ export default function Text({ text }) {
           </p>
         </div>
       );
+    case 'AlphaEntry6':
+      return (
+        <div id="typing">
+          <Typing
+            words={
+              "Let's continue spelling words.// As we continue spelling, each level will have different words to spell.// This level will focus on people and body parts.// "
+            }
+            rate={50}
+          />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to start.
+          </p>
+        </div>
+      );
     case 'ArithEntry1':
       return (
         <div id="typing">
