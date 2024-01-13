@@ -14,6 +14,7 @@ import ArithLevel5 from './levels/ArithLevel5.jsx';
 import ArithLevel6 from './levels/ArithLevel6.jsx';
 import ArithLevel7 from './levels/ArithLevel7.jsx';
 
+// voice: English (UK) Neil
 // imported mp3 audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/ArithEntry1.mp3';
 import audioEntry2 from '@root/assets/mp3/ArithEntry2.mp3';
@@ -31,16 +32,15 @@ import { useState } from 'react';
 
 /*
   Arith `view` component
-  voice: English (UK) Neil
 
   Presents arithmetic problems ~
-    • Level up event triggers after level completion
-    • `setView` prop (state) is passed to RocketHeader for view redirect
-    • `level` prop (state) is used to display the Arith level
-    • `setLevel` prop (state) is used to set or modify the Arith level
+    • `level` state (context) is used to call the appropriate Arith level component
+    • `levelUpEvent` triggers after level completion
+    • `begin` triggers true inside the LevelEntry component, which begins the level if true
+    • when all levels are finished, the PlanetComplete component is displayed
 */
 export default function Arith() {
-  const { setView, level, setLevel } = useView();
+  const { level } = useView();
   const [levelUpEvent, setLevelUpEvent] = useState(false); // toggle level (bool) to display `LevelUp` component
   const [begin, setBegin] = useState(false); // toggle LevelEntry (false) or the level (true)
   const [levelScore, setLevelScore] = useState(0); // player score used during each level play & LevelUp

@@ -1,6 +1,7 @@
 // imported components:
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import Text from '@root/components/Text.jsx';
+import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
 import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
@@ -11,12 +12,6 @@ import './LevelEntry.css';
 /*
   LevelEntry.jsx
 
-  Props explained:
-  - All Entrys allow a go back to level select
-    - `setView` will put the user back to 'Dashboard' (`view` prop)
-      - Call last because it relies on these props:
-    - `setDashSelect` will bring the user to 'Launch' state
-    - `setMissionSelect` will bring the user to 'Alpha-Literacy'
   - `setBegin` prop (state) begins the level, if begin button is clicked
 */
 export default function LevelEntry({
@@ -33,11 +28,6 @@ export default function LevelEntry({
     audio.pause();
     setBegin(true);
   };
-
-  // const goBack = () => {
-  //   audio.pause();
-  //   setView(view);
-  // };
 
   // planet display in h2:
   const planetImg =
@@ -60,7 +50,7 @@ export default function LevelEntry({
       </h2>
       <div className="para-img">
         <Text text={text} />
-        <img src={img} height={200} />
+        <img src={img} height={250} />
       </div>
       <BeginButton text={'begin!'} onclick={beginButton} />
     </div>

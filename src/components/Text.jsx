@@ -21,7 +21,6 @@ export default function Text({ text }) {
           />
           <p>
             Click the <span className="italic small-caps">Begin!</span> button.{' '}
-            <br />
           </p>
         </div>
       );
@@ -36,7 +35,6 @@ export default function Text({ text }) {
           />
           <p>
             Click the <span className="italic small-caps">Begin!</span> button{' '}
-            <br />
           </p>
         </div>
       );
@@ -109,7 +107,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Welcome to Arith! / This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add 20 objects."
+              "Welcome to Arith! // This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add 20 objects."
             }
             rate={50}
           />

@@ -42,10 +42,7 @@ export default function AlphaLevel4({
 
   return (
     <div id="litLevel">
-      <LevelHeader
-        text="Spell 20 short words about people"
-        score={levelScore}
-      />
+      <LevelHeader text="Spell 20 short words" score={levelScore} />
       <div id="litProb">
         <p>
           <span className="emojiQ">{problem.question}</span>
