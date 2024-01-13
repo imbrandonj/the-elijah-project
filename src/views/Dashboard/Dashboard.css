@@ -3,9 +3,12 @@
 */
 
 #Dashboard {
-    margin-top: 11rem;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #dashboardWrap {
@@ -159,10 +162,6 @@
 */
 
 @media (max-width: 2000px) {
-
-    #Dashboard {
-        margin-top: 4rem;
-    }
 
     #dashSwiper {
         width: 60rem;
