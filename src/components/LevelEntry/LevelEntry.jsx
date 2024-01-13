@@ -1,8 +1,6 @@
 // imported components:
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import Text from '@root/components/Text.jsx';
-import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
-
 import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
 import perspImg from '@root/assets/svgs/perspective.svg';

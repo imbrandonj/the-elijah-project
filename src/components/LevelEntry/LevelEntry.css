@@ -10,9 +10,9 @@
 #LevelEntry .para-img {
     display: flex;
     align-items: center;
-    min-height: 45em;
+    min-height: 51em;
     gap: 10rem;
-    margin: 4rem;
+    margin: 2rem;
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 1rem;
@@ -34,7 +34,7 @@
 
 #typing p {
     text-align: center;
-    line-height: 2.75rem;
+    line-height: 2.5rem;
     letter-spacing: 0.15rem;
     font-size: 2rem;
 }
@@ -69,9 +69,9 @@
     }
 
     #LevelEntry .para-img {
-        min-height: 36em;
+        min-height: 38em;
         gap: 6rem;
-        margin: 1rem;
+        margin: 0.5rem;
     }
 
     #LevelEntry .para-img img {
@@ -84,7 +84,7 @@
     }
 
     #typing p {
-        line-height: 2.2rem;
+        line-height: 2rem;
         letter-spacing: 0.1rem;
         font-size: 1.75rem;
     }
