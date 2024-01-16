@@ -1,4 +1,11 @@
-/* Popup.css */
+/* 
+  Popup.css
+
+    Note: the width property of .popup is decided
+    on the component which calls it
+    i.e., MainMenu calls the PopUp component and
+    inside MainMenu.css, .popup's width is set to 175%
+*/
 
 .popup {
     z-index: 999;
@@ -6,7 +13,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 55%;
+    width: 55%; /* default value, overriden when needed */
     padding: 5rem 7rem;
     background-color: rgb(76, 136, 113);
     border: 1px solid black;
@@ -50,9 +57,7 @@
   }
 
   @media (max-width: 2000px) {
-
     .popup {
-      width: 60%;
       padding: 4rem 6rem;
     }
 

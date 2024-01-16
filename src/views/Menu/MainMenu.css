@@ -2,9 +2,12 @@
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 20rem;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 } 
 
 .menu-wrapper{
@@ -26,6 +29,10 @@
 #mainMenu .redirect-button {
     margin: 1.2rem;
     font-size: 1.8rem;
+}
+
+#mainMenu .popup {
+    width: 175%;
 }
 
 
@@ -54,8 +61,8 @@
 }
 
 @media (max-width: 2000px) {
-    #mainMenu {
-        margin-top: 12rem;
+    #mainMenu .popup {
+        width: 160%;
     }
 
     #mainMenu h1 {

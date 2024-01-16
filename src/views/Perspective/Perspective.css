@@ -24,7 +24,6 @@
     color: black;
 }
 
-
 #PerspLevel {
     display: flex;
     flex-direction: column;
@@ -135,7 +134,5 @@
 
 
 @media (max-width: 2000px) {
-    #logicPath {
-        margin-top: 5rem;
-    }
+
 }
