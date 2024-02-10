@@ -206,6 +206,32 @@ export default function Text({ text }) {
           </p>
         </div>
       );
+    case 'ArithEntry8':
+      return (
+        <div id="typing">
+          <Typing
+            words={'Typing and answering a subtraction operation.'}
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
+    case 'ArithEntry9':
+      return (
+        <div id="typing">
+          <Typing
+            words={'Three numbers in a subtraction operation.'}
+            rate={50}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
     case 'PerspEntry1':
       return (
         <p>

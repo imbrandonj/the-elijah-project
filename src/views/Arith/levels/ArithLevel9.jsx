@@ -5,71 +5,60 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { bodyParts } from '../AlphaProblems.js';
+import { level9 } from './ArithProblems.js';
+import generateProblem from '@root/modules/generateProblem.js';
 import tallyUp from '@root/modules/tallyUp.js';
-import generateProblem from '@root/modules/generateProblem';
 
-import '../AlphaLit.css';
+import '../Arith.css';
 
 // imported hooks:
 import { useState, useEffect, useRef } from 'react';
 
 /*
-  Alpha-Literacy Level 6
+    Arith Level 9 Component
 
-  `setLevelEvent` prop (state) is passed from AlphaLit view
-    - if true, renders a <LevelUp /> component to display from AlphaLit view
+    `setLevelEvent` prop (state) is passed from Arith view
+      - if true, renders a <LevelUp /> component to display from Arith view
 */
-export default function AlphaLevel6({
+export default function ArithLevel9({
   setLevelUpEvent,
   levelScore,
   setLevelScore,
 }) {
   const problemHistory = useRef([]); // to store problem history
-  const [correctTally, setCorrectTally] = useState(0); // correct tally
+  const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
-  const problemSet = bodyParts; // imported problems for this level
+  const problemSet = level9; // imported problems for this level
 
-  // `problem` object sets `question` & `answer` properties
+  // `problem` is an object with `question` & `answer` properties
   const [problem, setProblem] = useState(
     () => generateProblem(problemSet, problemHistory, true) // generate a unique problem
   );
 
   // focuses on input box with each render
   useEffect(() => {
-    document.getElementById('litAns').focus();
+    document.getElementById('mathAns').focus();
   }, []);
 
   return (
-    <div id="litLevel">
-      <LevelHeader
-        text="Spell 20 short words (people / body parts)"
-        score={levelScore}
-      />
-      <div id="litProb">
-        <p>
-          <span className="emojiQ">{problem.question}</span>
-          <br />
-          <br />
-          <span className="wordQ">{problem.answer}</span>
-        </p>
+    <div id="ArithLevel">
+      <LevelHeader text="." score={levelScore} />
+      <div id="mathQABundle">
+        <p id="mathQ">{problem.question}</p>
         <input
-          id="litAns"
+          id="mathAns"
           type="text"
           onKeyDown={event => {
-            // set the value of the user's answer
-            let inputValue = event.target.value;
-
             // listen for enter keydown
             if (event.key === 'Enter') {
-              // case insensitive
-              inputValue = inputValue.toLowerCase();
+              // set the value of the user's answer
+              let inputValue = parseInt(event.target.value); // math answers must be parsed to int
 
               event.target.value = ''; // clears the input box
 
               // correct answer event:
               if (inputValue === problem.answer) {
-                // module answerEvent.js
+                // module tallyUp.js
                 tallyUp(
                   20, // `totalQuestions`
                   correctTally, // total correct tally (state)
@@ -90,7 +79,7 @@ export default function AlphaLevel6({
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Practice speaking each letter as you type them." />
+      <Tipbox text="Tip: The highest number never exceeds 10. You can subtract with your fingers." />
     </div>
   );
 }
