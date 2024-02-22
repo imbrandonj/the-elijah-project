@@ -242,6 +242,16 @@ export default function Text({ text }) {
           </p>
         </div>
       );
+    case 'ArithEntry11':
+      return (
+        <div id="typing">
+          <Typing words={'Begin Exercise Set 3!'} rate={50} />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
     case 'PerspEntry1':
       return (
         <p>
