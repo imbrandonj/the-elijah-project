@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { level2 } from './ArithProblems.js';
+import { level6, level7 } from './ArithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import tallyUp from '@root/modules/tallyUp.js';
 
@@ -15,14 +15,14 @@ import '../Arith.css';
 import { useState, useEffect, useRef } from 'react';
 
 /*
-    Arith Level 5 Component
+    Arith Level 10 Component
 
-    Challenge level, Addition 
+    Challenge level, Subtraction { 6-10 - 0-10 }
 
     `setLevelEvent` prop (state) is passed from Arith view
       - if true, renders a <LevelUp /> component to display from Arith view
 */
-export default function ArithLevel5({
+export default function ArithLevel10({
   setLevelUpEvent,
   levelScore,
   setLevelScore,
@@ -30,7 +30,11 @@ export default function ArithLevel5({
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
-  const problemSet = level2; // imported problems for this level
+  // this challenge level consists of exercise sets level6 & level7
+  let problemSet = level6;
+  for (let problem of level7) {
+    problemSet.push(problem);
+  }
 
   // `problem` is an object with `question` & `answer` properties
   const [problem, setProblem] = useState(
