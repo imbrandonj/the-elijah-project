@@ -5,6 +5,9 @@ const letters = {
   mixLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
 };
 
+// special characters used for level 7
+const specialChars = ',.!@#$%^&*()"<>[]-=+_?\';:';
+
 // short animal words used in level 4
 const shortAnimals = [
   { problem: '🐄', answer: 'cow' },
@@ -89,4 +92,4 @@ const colors = [
   { problem: '🔶', answer: 'orange' },
 ];
 
-export { letters, shortAnimals, bodyParts, colors };
+export { letters, specialChars, shortAnimals, bodyParts, colors };
