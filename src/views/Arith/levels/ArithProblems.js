@@ -253,7 +253,7 @@ const level9 = [
 ];
 
 // addition { 0-20 + 0-20 = 11-20 }
-const level11 = [
+const level12 = [
   { problem: '20 + 0 =', answer: 20 },
   { problem: '19 + 1 =', answer: 20 },
   { problem: '18 + 2 =', answer: 20 },
@@ -403,4 +403,4 @@ const level11 = [
   { problem: '0 + 20 =', answer: 20 },
 ];
 
-export { level1, level2, level3, level4, level6, level7, level9, level11 };
+export { level1, level2, level3, level4, level6, level7, level9, level12 };

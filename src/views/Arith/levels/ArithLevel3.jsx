@@ -18,7 +18,7 @@ import { useState, useEffect } from 'react';
 /*
     Arith Level 3 Component
 
-    This level uses 3 input boxes for a binary operation
+    This level uses 3 input boxes for an operation
     Format: a + b = c
     Where the user must input the numbers listed from the given audio (a, b, c)
     The audio is imported from arithAudio.js
