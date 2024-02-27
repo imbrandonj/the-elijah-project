@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { level11 } from './ArithProblems.js';
+import { level11 } from './arithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import tallyUp from '@root/modules/tallyUp.js';
 
@@ -79,7 +79,7 @@ export default function ArithLevel11({
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Use your left hand fingers to count the left number and right hand fingers to count the right number." />
+      <Tipbox text="Tip: You can still use your fingers to count. 🖐️🖐️ equals 10. Close your fingers, and every finger raised from there is 11-20." />
     </div>
   );
 }

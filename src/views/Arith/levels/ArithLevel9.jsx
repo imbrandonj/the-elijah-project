@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { level9 } from './ArithProblems.js';
+import { level9 } from './arithProblems.js';
 import generateProblem from '@root/modules/generateProblem.js';
 import tallyUp from '@root/modules/tallyUp.js';
 

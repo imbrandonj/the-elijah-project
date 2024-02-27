@@ -1,5 +1,5 @@
 /*
-  ArithProblems.js
+  arithProblems.js
 
   This file contains all of the problems for planet Arith
 */
