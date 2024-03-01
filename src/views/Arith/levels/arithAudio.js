@@ -190,7 +190,6 @@ const audioMap = {
 };
 
 // This function returns the audio needed for the component calling it (duh):
-export function getAudio(operation, operand1, operand2) {
-  const key = `${operation}${operand1}${operand2}`;
-  return audioMap[key];
+export function getAudio(audioStr) {
+  return audioMap[audioStr];
 }

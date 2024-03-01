@@ -44,7 +44,7 @@ export default function ArithLevel8({
 
   const diff = operand1 - operand2;
 
-  let audio = getAudio('sub', operand1, operand2);
+  let audio = getAudio('sub' + operand1 + operand2); // generates an mp3 import
 
   // audio plays on component render
   // and `operand1` input box becomes focus

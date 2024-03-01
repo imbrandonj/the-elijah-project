@@ -37,20 +37,23 @@ export default function ArithLevel11({
   const [operand2, setOperand2] = useState(0); // defaults to 0 before knowing if operation is 'add' or 'sub'
   const [answer, setAnswer] = useState(0); // defaults to 0 before knowing if operation is 'add' or 'sub'
   const [operation, setOperation] = useState(''); // operation is either addition or subtraction
+  const [audio, setAudio] = useState(''); // string to import audio from getAudio(str: audio)
   const [correctTally, setCorrectTally] = useState(0); // total correct tally
 
   // user provided input:
   const [userOperand1, setUserOperand1] = useState(''); // default=displays empty input box
   const [userOperand2, setUserOperand2] = useState(''); // default=displays empty input box
+  const [userOperation, setUserOperation] = useState(''); // default=displays empty input box
   const [userAnswer, setUserAnswer] = useState(''); // default=displays empty input box
 
-  let audio; // global, set in useEffect hook but also called in playButton()
+  console.log(audio, 'from main');
 
   // must determine if the operation is addition or subtraction
   // then set the component state appropriately:
   useEffect(() => {
     const isAddition = Math.random() < 0.5; // boolean logic for 50% chance
-    setOperation(isAddition ? 'add' : 'sub');
+    const operationType = isAddition ? 'add' : 'sub';
+    setOperation(operationType === 'add' ? '+' : '-');
 
     // generate operands based on operation type:
     let num1, num2;
@@ -66,32 +69,21 @@ export default function ArithLevel11({
       setOperand2(num2);
     }
 
+    // set the answer and audio (state)
     setAnswer(isAddition ? num1 + num2 : num1 - num2);
+    setAudio(operationType + num1 + num2); // audio must be saved in state due to the playButton() fn
 
-    // Calculate audio based on operation type and operands
-    audio = getAudio(operation, num1, num2);
-
-    // Play audio and focus the input box
-    const mp3 = new Audio(audio);
+    // retrieve and play audio mp3
+    const mp3 = new Audio(getAudio(operationType + num1 + num2));
     mp3.play();
-    document.getElementById('operand1').focus();
-  }, [correctTally, operation]);
+    console.log(audio, 'from this fn');
 
-  // audio plays on component render
-  // and `operand1` input box becomes focus
-  // useEffect(() => {
-  //   let audio = getAudio(operation, operand1, operand2);
-
-  //   const mp3 = new Audio(audio);
-  //   mp3.play(); // play on problem load
-  //   document.getElementById('operand1').focus();
-  // }, [correctTally]);
+    document.getElementById('operand1').focus(); // focus on the input box
+  }, [correctTally]);
 
   // audio play button:
   const playButton = () => {
-    const mp3 = new Audio(audio);
-    console.log('test from play button');
-    console.log(audio);
+    const mp3 = new Audio(getAudio(audio));
     mp3.play();
   };
 
@@ -101,12 +93,14 @@ export default function ArithLevel11({
     if (
       operand1 === userOperand1 &&
       operand2 === userOperand2 &&
+      operation === userOperation &&
       answer === Number(userAnswer)
     ) {
       console.log(true);
 
       setUserOperand1('');
       setUserOperand2('');
+      setUserOperation('');
       setUserAnswer('');
 
       // module tallyUp.js
@@ -121,8 +115,9 @@ export default function ArithLevel11({
 
       // reset the incorrect numbers, keep the correct ones:
     } else {
-      if (operand1 != userOperand1) setUserOperand1('');
-      if (operand2 != userOperand2) setUserOperand2('');
+      if (operand1 !== userOperand1) setUserOperand1('');
+      if (operand2 !== userOperand2) setUserOperand2('');
+      if (operation !== userOperation) setUserOperation('');
       if (answer != Number(userAnswer)) setUserAnswer(' ');
       console.log(false);
     }
@@ -150,7 +145,18 @@ export default function ArithLevel11({
               if (event.key === 'Enter') answerEvent();
             }}
           />{' '}
-          +{' '}
+          <input
+            id="operationBox"
+            className="operationBox"
+            type="text"
+            value={userOperation}
+            onChange={event => {
+              setUserOperation(event.target.value);
+            }}
+            onKeyDown={event => {
+              if (event.key === 'Enter') answerEvent();
+            }}
+          />{' '}
           <input
             id="operand2"
             className="operandBox"

@@ -43,7 +43,7 @@ export default function ArithLevel3({
   const [userSum, setUserSum] = useState(''); // default=displays empty input box
 
   const sum = operand1 + operand2;
-  let audio = getAudio('add', operand1, operand2);
+  let audio = getAudio('add' + operand1 + operand2); // generates an mp3 import
 
   // audio plays on component render
   // and `operand1` input box becomes focus

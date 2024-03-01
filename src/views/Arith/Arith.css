@@ -55,15 +55,24 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.operandBox {
-    width: 9rem;
-    margin: 0 1rem;
-    padding: 0.5rem 0;
+.operandBox, .operationBox {
     font-family: monospace;
     font-size: 4.2rem;
     text-align: center;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+.operandBox {
+    width: 9rem;
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+}
+
+.operationBox {
+    width: 6rem;
+    margin: 0 0.5rem;
+    padding: 0;
 }
 
 #ArithWrap .speaker {
