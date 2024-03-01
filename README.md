@@ -49,7 +49,7 @@ The Elijah Project is an educational-exercise, single page web application. Made
   - `modules/` 
     - reusable vanilla JS modules
 
-`app.jsx`, the entry to the application, calls the appropriate view via the useState hook.  
+`app.jsx`, the entry to the application, calls the appropriate view via useContext ViewProvider.  
 The view is rendered from `app.jsx`, rather than being rendered from a nested path.
 
 `MainMenu.jsx` is the first application view.  
