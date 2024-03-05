@@ -17,6 +17,8 @@ import ArithLevel8 from './levels/ArithLevel8.jsx';
 import ArithLevel9 from './levels/ArithLevel9.jsx';
 import ArithLevel10 from './levels/ArithLevel10.jsx';
 import ArithLevel11 from './levels/ArithLevel11.jsx';
+import ArithLevel12 from './levels/ArithLevel12.jsx';
+import ArithLevel13 from './levels/ArithLevel13.jsx';
 
 // voice: English (UK) Neil
 // imported mp3 audio for `LevelEntry` component:
@@ -258,6 +260,42 @@ export default function Arith() {
               planet="Arith"
               h2Text="Arith Level 11"
               text="ArithEntry11"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 12 ? (
+          begin ? (
+            <ArithLevel12
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={imgEntry1}
+              planet="Arith"
+              h2Text="Arith Level 12"
+              text="ArithEntry12"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 13 ? (
+          begin ? (
+            <ArithLevel13
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={imgEntry1}
+              planet="Arith"
+              h2Text="Arith Level 13"
+              text="ArithEntry13"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
