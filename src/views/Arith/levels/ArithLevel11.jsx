@@ -7,7 +7,6 @@ import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 // imported internal modules:
 import { getAudio } from './arithAudio.js';
 import { randomNum } from '@root/modules/util.js';
-import speakText from '@root/modules/speakText.js';
 import tallyUp from '@root/modules/tallyUp.js';
 
 import '../Arith.css';

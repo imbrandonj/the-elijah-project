@@ -290,15 +290,18 @@ export default function Text({ text }) {
       );
     case 'PerspEntry1':
       return (
-        <p>
-          Test
-          <br />
-          Testing Persp Testttt
-          <br />
-          <br />
-          Click the <span className="italic small-caps">begin!</span> button to
-          start.
-        </p>
+        <div id="typing">
+          <Typing
+            words={
+              "Hello and welcome to Perspective! // Here, you will practice / your left from right & your up from down. // You'll solve puzzles and mysteries of the universe. // Let's start with shapes – left and right. / I will guide you in telling you which shape to click."
+            }
+            rate={55}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
       );
     default:
       return null;
