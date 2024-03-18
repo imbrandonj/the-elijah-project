@@ -6,17 +6,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0.5%;
 }
 
 #PerspWrap #LevelEntry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    padding: 2rem;
     background-color: rgba(91, 149, 143, 0.95);
-    border-radius: 1rem;
     color: white;
 }
 
@@ -29,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    padding: 2rem;
+    padding: 3rem 0;
     background-color: rgba(91, 149, 143, 0.95);
     border-radius: 1rem;
 }
@@ -42,60 +36,11 @@
     margin: 3rem;
 }
 
-
-#PerspLevel .objective {
-    display: flex;
-    align-items: center;
-    padding: 0.4rem 1.2rem 0 0.6rem;
-    font-weight: 200;
-    font-size: 1.6rem;
-    font-style: italic;
-    letter-spacing: 0.1rem;
-    border-radius: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    color: var(--buttonBlue);
-}
-
-#PerspLevel .objective img {
-    margin: 0.5rem 0.5rem 1rem 1rem;
-}
-
-#PerspLevel .objective span {
-    margin: 0.5rem;
-    padding-bottom: 0.3rem;
-    font-size: 2.2rem;
-    font-variant: small-caps;
-    letter-spacing: 0.2rem;
-}
-
-#PerspLevel #score {
-    display: flex;
-    align-items: center;
-    font-size: 1.6rem;
-    font-weight: 200;
-    letter-spacing: 0.1rem;
-    background-color: rgba(0, 0, 0, 0.269);
-    color: var(--lightBlue);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-}
-
-#PerspLevel #score img {
-    margin: 0.5rem 1.5rem 0.5rem 1rem;
-}
-
-#PerspLevel #score span {
-    margin: 0 1rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
-}
-
 #PerspLevel .shapeOverlay {
     display: flex;
     flex-direction: column;
     width: 80%;
-    padding: 2.5rem 0 5rem;
+    padding: 4rem 0 8rem;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 0.5rem;
 }
@@ -128,11 +73,19 @@
 }
 
 #PerspLevel .Tipbox {
-    margin: 1rem;
+    margin: 0.5rem;
     background-color: rgb(166, 222, 194);
 }
 
 
 @media (max-width: 2000px) {
+    
+    #PerspLevel {
+        width: 90%;
+        padding: 1rem 0;
+    }
 
+    #PerspLevel .shapeOverlay {
+        padding: 3rem 0 6rem;
+    }
 }

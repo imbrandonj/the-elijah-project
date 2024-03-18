@@ -14,8 +14,6 @@ import { randomNum } from './util';
 */
 export default function generateProblem(problemSet, problemHistory, object) {
   let problem = setProblem(problemSet, object); // an object containing `question` and `answer` properties
-  console.log(`question: ${problem.question}`);
-  console.log(`answer: ${problem.answer}`);
 
   // this triggers if there's a repeat question in `problemHistory`
   while (
@@ -30,8 +28,6 @@ export default function generateProblem(problemSet, problemHistory, object) {
   // add `problem` to the problem set history
   problemHistory.current.push(problem);
 
-  console.log(`question: ${problem.question}`);
-  console.log(`answer: ${problem.answer}`);
   return problem;
 }
 

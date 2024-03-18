@@ -79,7 +79,6 @@ export default function LevelUp({
     if (level % 5 === 0)
       return (
         <SetComplete
-          level={level}
           newLevel={newLevel}
           levelScore={playerScore}
           planet={planet}

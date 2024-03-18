@@ -5,7 +5,7 @@
 #ArithWrap {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1%;
 }
 
 #ArithWrap #LevelEntry {
@@ -18,8 +18,8 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    background-color:rgba(44, 16, 28, 0.95);
     padding: 4rem 0;
+    background-color:rgba(44, 16, 28, 0.95);
     border-radius: 1rem;
 }
 
@@ -95,7 +95,7 @@
 @media (max-width: 2000px) {
 
     #ArithWrap {
-        margin-top: 1rem;
+        margin-top: 0.5%;
     }
     
     #ArithLevel {

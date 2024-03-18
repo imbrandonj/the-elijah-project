@@ -1,24 +1,28 @@
 import './SetComplete.css';
 
 // imported modules:
-import { getLevels } from '@root/modules/levelManager';
+import { useView } from '@root/components/ViewContext.jsx';
+import { getLevels } from '@root/modules/levelManager.js';
 
 // imported svg:
 import bronze from '@root/assets/svgs/bronze.svg';
-import rocket from '@root/assets/svgs/rocket-launch.svg';
 
 import { useState, useEffect } from 'react';
 
 export default function SetComplete({
-  level,
-  newLevel,
+  newLevel, // fn that increments level; sets state: setLevel(level + 1), setBegin(false), setLevelUpEvent(false)
   levelScore,
   planet,
   planetImg,
 }) {
+  const { level, setView } = useView();
   const [totalScore, setTotalScore] = useState(0);
 
   const set = level / 5;
+
+  const returnHome = () => {
+    setView('Dashboard');
+  };
 
   useEffect(() => {
     const levels = getLevels(planet);
@@ -45,7 +49,7 @@ export default function SetComplete({
             Exercise Set Score: <span>{totalScore}</span>
           </li>
           <li>
-            Score Awarded:
+            Set Award:
             <span>
               <img src={bronze} height="80" />
             </span>
@@ -53,7 +57,7 @@ export default function SetComplete({
         </ul>
       </div>
       <div className="btnRowBundle">
-        <button className="" onClick={newLevel}>
+        <button className="" onClick={returnHome}>
           Return to Base
         </button>
         <button onClick={newLevel}>Continue to Next Set</button>
