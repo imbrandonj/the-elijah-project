@@ -7,6 +7,7 @@ import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
 
 // imported levels:
 import PerspLevel1 from './levels/PerspLevel1.jsx';
+import PerspLevel2 from './levels/PerspLevel2.jsx';
 
 // voice: en-US-Neural2-D
 // imported mp3 audio for `LevelEntry` component:
@@ -59,6 +60,24 @@ export default function Perspective() {
               planet="Persp"
               h2Text="Perspective Level 1"
               text="PerspEntry1"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 2 ? (
+          begin ? (
+            <PerspLevel2
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={imgEntry1}
+              planet="Persp"
+              h2Text="Perspective Level 2"
+              text="PerspEntry2"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />

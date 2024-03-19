@@ -26,21 +26,23 @@ import greenSquare from '@root/assets/svgs/greenSquare.svg';
 import redSquare from '@root/assets/svgs/redSquare.svg';
 
 /*
-  Perspective Level 1
+  Perspective Level 2
 
-  Level 1 displays 2 shape images. 
+  Level 2 displays 4 shape images. 
   The audio will give the player instructions, such as (left red triangle)
 
   `setLevelEvent` prop (state) is passed from Perspective view
     - if true, renders a <LevelUp /> component to display from Perspective view
 */
-export default function PerspLevel1({
+export default function PerspLevel2({
   setLevelUpEvent,
   levelScore,
   setLevelScore,
 }) {
-  const [leftObject, setLeftObject] = useState(); // is left object the answer?
-  const [rightObject, setRightObject] = useState(); // is right object the answer?
+  const [leftObject1, setLeftObject1] = useState(); // is top left object the answer?
+  const [leftObject2, setLeftObject2] = useState(); // is bottom left object the answer?
+  const [rightObject1, setRightObject1] = useState(); // is top right object the answer?
+  const [rightObject2, setRightObject2] = useState(); // is bottom right object the answer?
   const [audio, setAudio] = useState(''); // string to import audio from getAudio(str: audio)
   const [correctTally, setCorrectTally] = useState(0); // correct tally
 
@@ -71,25 +73,67 @@ export default function PerspLevel1({
   const leftKeys = Object.keys(leftObjects);
   const rightKeys = Object.keys(rightObjects);
 
+  // image objects, boolean: is correct answer?
+  const objects = {
+    0: false, // top left
+    1: false, // top right
+    2: false, // bottom left
+    3: false, // bottom right
+  };
+
   console.log('render!');
   useEffect(() => {
-    // logic behind if the left or right object is the clickable answer:
-    let bool = randomNum(1) < 1;
-    setLeftObject(bool); // if bool is true, left object is correct
-    setRightObject(!bool); // if bool is false, right object is correct
+    // select random object (1-4, see above `objects`) to be the correct image
+    const correctObject = randomNum(3);
+    objects[correctObject] = true;
+    setLeftObject1(objects[0]);
+    setRightObject1(objects[1]);
+    setLeftObject2(objects[2]);
+    setRightObject2(objects[3]);
 
-    // obtain 2 random values to decide left object and right object
-    let lRandom = randomNum(leftKeys.length - 1);
-    let rRandom = randomNum(rightKeys.length - 1);
+    // obtain 4 random values to decide left objects and right objects
+    let lRandom1 = randomNum(leftKeys.length - 1); // object 1
+    let lRandom2 = randomNum(leftKeys.length - 1); // object 3
+    let rRandom1 = randomNum(rightKeys.length - 1); // object 2
+    let rRandom2 = randomNum(rightKeys.length - 1); // object 4
 
-    // the object to click (correct answer):
-    let answerKey = bool ? leftKeys[lRandom] : rightKeys[rRandom];
+    while (lRandom1 === lRandom2) {
+      lRandom1 = randomNum(leftKeys.length - 1);
+    }
+
+    while (rRandom1 === rRandom2) {
+      rRandom1 = randomNum(rightKeys.length - 1);
+    }
+
+    let answerKey;
+    for (let obj of Object.keys(objects)) {
+      if (objects[obj]) {
+        switch (obj) {
+          case '0':
+            answerKey = Object.keys(leftObjects)[lRandom1];
+            break;
+          case '1':
+            answerKey = Object.keys(rightObjects)[rRandom1];
+            break;
+          case '2':
+            answerKey = Object.keys(leftObjects)[lRandom2];
+            break;
+          case '3':
+            answerKey = Object.keys(rightObjects)[rRandom2];
+            break;
+        }
+      }
+    }
 
     // set the img src:
-    const leftImg = document.getElementById('leftImg');
-    const rightImg = document.getElementById('rightImg');
-    leftImg.src = Object.values(leftObjects)[lRandom];
-    rightImg.src = Object.values(rightObjects)[rRandom];
+    const leftImg1 = document.getElementById('leftImg1');
+    const leftImg2 = document.getElementById('leftImg2');
+    const rightImg1 = document.getElementById('rightImg1');
+    const rightImg2 = document.getElementById('rightImg2');
+    leftImg1.src = Object.values(leftObjects)[lRandom1];
+    leftImg2.src = Object.values(leftObjects)[lRandom2];
+    rightImg1.src = Object.values(rightObjects)[rRandom1];
+    rightImg2.src = Object.values(rightObjects)[rRandom2];
 
     // retrieve and play audio mp3
     setAudio(answerKey); // audio must be saved in state due to the playButton() fn
@@ -132,14 +176,26 @@ export default function PerspLevel1({
         </button>
         <div className="leftRight">
           <img
-            id="leftImg"
-            onClick={() => answerEvent(leftObject)}
-            height={200}
+            id="leftImg1"
+            onClick={() => answerEvent(leftObject1)}
+            height={120}
           />
           <img
-            id="rightImg"
-            onClick={() => answerEvent(rightObject)}
-            height={200}
+            id="rightImg1"
+            onClick={() => answerEvent(rightObject1)}
+            height={120}
+          />
+        </div>
+        <div className="leftRight">
+          <img
+            id="leftImg2"
+            onClick={() => answerEvent(leftObject2)}
+            height={120}
+          />
+          <img
+            id="rightImg2"
+            onClick={() => answerEvent(rightObject2)}
+            height={120}
           />
         </div>
       </div>
