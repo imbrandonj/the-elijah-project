@@ -3,7 +3,6 @@ function getLevels(planet) {
 
   if (levels === null || levels === undefined) {
     // beginning The Elijah Project, no levels completed:
-    /* redundant as far as I know -> localStorage.setItem(planet, JSON.stringify({}));  */
     return 0;
   } else {
     return levels;

@@ -1,11 +1,12 @@
 // imported components:
 import { useView } from '@root/components/ViewContext.jsx';
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
+import SetButton from '@root/components/SetButton/SetButton.jsx';
 
 // imported modules:
 import { getLevels } from '@root/modules/levelManager.js';
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // imported svgs:
 import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
@@ -19,9 +20,31 @@ import Perspective from '@root/assets/svgs/perspective.svg';
 */
 export default function Mission({ missionSelect }) {
   const { setView, setLevel } = useView();
+  const [setScores, setSetScores] = useState();
+  const [firstVisit, setFirstVisit] = useState(true);
 
   useEffect(() => {
-    getLevels(missionSelect); // get completed levels for the selected planet
+    // get completed levels for the selected planet
+    const finishedLevels = getLevels(missionSelect); // this is an object with level (key) and score (value)
+    const levelKeys = Object.keys(finishedLevels);
+    console.log(levelKeys);
+    console.log(finishedLevels);
+
+    // obtain scores for each set
+    const scoreTotals = [];
+    for (let i = 0; i < levelKeys.length; i += 5) {
+      if (levelKeys.length > i + 5) {
+        let scores = Object.values(finishedLevels).slice(i, i + 5); // a set is 5 levels
+        const sum = scores.reduce((accumulator, i) => accumulator + i, 0);
+        scoreTotals.push(sum);
+      }
+    }
+
+    setSetScores(scoreTotals);
+
+    if (scoreTotals.length > 1) {
+      setFirstVisit(false);
+    }
   }, []);
 
   // Begin Level:
@@ -59,7 +82,27 @@ export default function Mission({ missionSelect }) {
           </p>
         </div>
       ) : null}
-      <BeginButton text="begin here" onclick={() => begin(1)} />
+      <ul className="levelSection">
+        {firstVisit ? (
+          <BeginButton text={'begin here'} onclick={() => begin(1)} />
+        ) : (
+          setScores.map((score, i) => (
+            <li key={score}>
+              <SetButton
+                set={i + 1}
+                score={score}
+                onclick={() => begin(i + 1)}
+              />
+            </li>
+          ))
+        )}
+        {firstVisit ? null : (
+          <BeginButton
+            text={`Begin Set ${setScores.length + 1}`}
+            onclick={() => begin(setScores.length * 5 + 1)}
+          />
+        )}
+      </ul>
     </div>
   );
 }

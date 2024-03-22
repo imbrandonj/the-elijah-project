@@ -156,6 +156,15 @@
     letter-spacing: 0.02rem;
 }
 
+.levelSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.levelSection li {
+    list-style: none;
+}
 
 /*
     Media Queries
