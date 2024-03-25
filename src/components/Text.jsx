@@ -91,7 +91,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Let's continue spelling words.// As we continue spelling, each level will have different words to spell.// This level will focus on people and body parts.// "
+              'Alpha-Literacy set 2.// As you continue spelling, each level/ will have different types of words to spell.// This level will focus on people and body parts.'
             }
             rate={50}
           />
@@ -123,7 +123,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Welcome to Arith! // This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add 20 objects."
+              "Welcome to Arith! // This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add the objects 20 times."
             }
             rate={50}
           />
@@ -199,7 +199,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Welcome to Arith Exercise Set 2. // Let's begin working on subtraction. // Subtraction is when you take away one number or amount from another number. // When you see a - sign, / then you know you are subtracting."
+              "Welcome to Arith Exercise Set 2. // You'll begin working on subtraction. // Subtraction is when you take away/ one number or amount from another number. // When you see a - sign, / then you know you are subtracting."
             }
             rate={50}
           />
@@ -213,7 +213,9 @@ export default function Text({ text }) {
       return (
         <div id="typing">
           <Typing
-            words={'Subtraction from 6 to 10 minus 0 through 5'}
+            words={
+              "That was simple subtraction –/ you could use 1 hand 🖐️ and 5 fingers to count.// This level will have you doing subtraction/ that requires 2 hands 🖐️🖐️ and 10 fingers.// Or if you're good,/ you don't have to use your fingers to count."
+            }
             rate={50}
           />
           <p>
@@ -226,7 +228,9 @@ export default function Text({ text }) {
       return (
         <div id="typing">
           <Typing
-            words={'Typing and answering a subtraction operation.'}
+            words={
+              'Remember typing numbers of an operation?// I told you what to type into the boxes/ and then you solved it.// Level 8 will have you typing / numbers of a subtraction operation.'
+            }
             rate={50}
           />
           <p>
@@ -239,7 +243,9 @@ export default function Text({ text }) {
       return (
         <div id="typing">
           <Typing
-            words={'Three numbers in a subtraction operation.'}
+            words={
+              "It's time for you to subtract / two numbers from a larger one. // Notice that when you are subtracting/ with three numbers, there are 2 - signs. // These are called subtraction operators. /"
+            }
             rate={50}
           />
           <p>
@@ -251,7 +257,12 @@ export default function Text({ text }) {
     case 'ArithEntry10':
       return (
         <div id="typing">
-          <Typing words={'Challenge level for exercise set 2!'} rate={50} />
+          <Typing
+            words={
+              'Arith Level 10:/ Challenge level for exercise set 2.// Demonstrate your subtraction abilities./ Achieve a minimum score of 600 to pass.'
+            }
+            rate={50}
+          />
           <p>
             Click the <span className="italic small-caps">begin!</span> button
             to start.
@@ -294,6 +305,21 @@ export default function Text({ text }) {
           <Typing
             words={
               "Hello and welcome to Perspective! // Here, you will practice / your left from right & your up from down. // You'll solve puzzles and mysteries of the universe. // Let's start with shapes – left and right. / I will guide you in telling you which shape to click."
+            }
+            rate={55}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
+    case 'PerspEntry2':
+      return (
+        <div id="typing">
+          <Typing
+            words={
+              'I think you understand the game.// You did well with two shapes.// How will you do with four?'
             }
             rate={55}
           />

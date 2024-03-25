@@ -12,6 +12,7 @@ import PerspLevel2 from './levels/PerspLevel2.jsx';
 // voice: en-US-Neural2-D
 // imported mp3 audio for `LevelEntry` component:
 import audioEntry1 from '@root/assets/mp3/PerspEntry1.mp3';
+import audioEntry2 from '@root/assets/mp3/PerspEntry2.mp3';
 
 // imported img for `LevelEntry` component:
 import imgEntry1 from '@root/assets/svgs/shapes.svg';
@@ -73,7 +74,7 @@ export default function Perspective() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry2}
               img={imgEntry1}
               planet="Persp"
               h2Text="Perspective Level 2"

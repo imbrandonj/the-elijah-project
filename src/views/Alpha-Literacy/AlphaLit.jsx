@@ -21,6 +21,8 @@ import audioEntry2 from '@root/assets/mp3/AlphaEntry2.mp3';
 import audioEntry3 from '@root/assets/mp3/AlphaEntry3.mp3';
 import audioEntry4 from '@root/assets/mp3/AlphaEntry4.mp3';
 import audioEntry5 from '@root/assets/mp3/AlphaEntry5.mp3';
+import audioEntry6 from '@root/assets/mp3/AlphaEntry6.mp3';
+import audioEntry7 from '@root/assets/mp3/AlphaEntry7.mp3';
 
 // imported img for `LevelEntry` component:
 import astroUSA from '@root/assets/svgs/astro-usa.svg';
@@ -159,7 +161,7 @@ export default function AlphaLit() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry6}
               img={astroUSA}
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 6"
@@ -177,7 +179,7 @@ export default function AlphaLit() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry7}
               img={astroUSA}
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 7"

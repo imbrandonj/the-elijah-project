@@ -19,6 +19,7 @@ import ArithLevel10 from './levels/ArithLevel10.jsx';
 import ArithLevel11 from './levels/ArithLevel11.jsx';
 import ArithLevel12 from './levels/ArithLevel12.jsx';
 import ArithLevel13 from './levels/ArithLevel13.jsx';
+import ArithLevel14 from './levels/ArithLevel14.jsx';
 
 // voice: English (UK) Neil
 // imported mp3 audio for `LevelEntry` component:
@@ -28,6 +29,10 @@ import audioEntry3 from '@root/assets/mp3/ArithEntry3.mp3';
 import audioEntry4 from '@root/assets/mp3/ArithEntry4.mp3';
 import audioEntry5 from '@root/assets/mp3/ArithEntry5.mp3';
 import audioEntry6 from '@root/assets/mp3/ArithEntry6.mp3';
+import audioEntry7 from '@root/assets/mp3/ArithEntry7.mp3';
+import audioEntry8 from '@root/assets/mp3/ArithEntry8.mp3';
+import audioEntry9 from '@root/assets/mp3/ArithEntry9.mp3';
+import audioEntry10 from '@root/assets/mp3/ArithEntry10.mp3';
 
 // imported img for `LevelEntry` component:
 import imgEntry1 from '@root/assets/svgs/1234.svg';
@@ -183,7 +188,7 @@ export default function Arith() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry7}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 7"
@@ -201,7 +206,7 @@ export default function Arith() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry8}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 8"
@@ -219,7 +224,7 @@ export default function Arith() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry9}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 9"
@@ -237,7 +242,7 @@ export default function Arith() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry10}
               img={imgEntry1}
               planet="Arith"
               h2Text="Arith Level 10"
@@ -296,6 +301,24 @@ export default function Arith() {
               planet="Arith"
               h2Text="Arith Level 13"
               text="ArithEntry13"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 14 ? (
+          begin ? (
+            <ArithLevel14
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={imgEntry1}
+              planet="Arith"
+              h2Text="Arith Level 14"
+              text="ArithEntry14"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
