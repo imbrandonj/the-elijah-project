@@ -6,11 +6,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
-    width: 72%;
+    margin: 2% 0;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
-    padding: 6rem 0;
+    padding: 10rem;
 }
 
 #planetComplete h2 {
@@ -43,7 +42,6 @@
 
 @media (max-width: 2000px) {
     #planetComplete {
-        margin-top: 1rem;
         width: 80%;
         padding: 4rem 0;
     }

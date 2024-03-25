@@ -27,13 +27,13 @@ export default function Mission({ missionSelect }) {
     // get completed levels for the selected planet
     const finishedLevels = getLevels(missionSelect); // this is an object with level (key) and score (value)
     const levelKeys = Object.keys(finishedLevels);
-    console.log(levelKeys);
     console.log(finishedLevels);
 
     // obtain scores for each set
     const scoreTotals = [];
     for (let i = 0; i < levelKeys.length; i += 5) {
-      if (levelKeys.length > i + 5) {
+      // only create a set button if the entire set is complete (5 levels: i + 4)
+      if (levelKeys.length >= i + 4) {
         let scores = Object.values(finishedLevels).slice(i, i + 5); // a set is 5 levels
         const sum = scores.reduce((accumulator, i) => accumulator + i, 0);
         scoreTotals.push(sum);
@@ -42,7 +42,7 @@ export default function Mission({ missionSelect }) {
 
     setSetScores(scoreTotals);
 
-    if (scoreTotals.length > 1) {
+    if (scoreTotals.length > 0) {
       setFirstVisit(false);
     }
   }, []);

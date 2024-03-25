@@ -17,7 +17,8 @@ export default function About() {
           developer of <br /> The Elijah Project.
         </h2>
         <p id="aboutParagraph">
-          I developed this educational web app for my 4 year old son, Elijah.
+          I developed this educational web app for my (then) 4 year old son,
+          Elijah.
           <br />
           <br />
           My son wasn't in daycare or any early Pre-K programs. <br />
