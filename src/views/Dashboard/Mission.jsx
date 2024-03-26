@@ -33,7 +33,7 @@ export default function Mission({ missionSelect }) {
     const scoreTotals = [];
     for (let i = 0; i < levelKeys.length; i += 5) {
       // only create a set button if the entire set is complete (5 levels: i + 4)
-      if (levelKeys.length >= i + 4) {
+      if (levelKeys.length >= i + 5) {
         let scores = Object.values(finishedLevels).slice(i, i + 5); // a set is 5 levels
         const sum = scores.reduce((accumulator, i) => accumulator + i, 0);
         scoreTotals.push(sum);
