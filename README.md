@@ -49,16 +49,21 @@ The Elijah Project is an educational-exercise, single page web application. Made
   - `modules/` 
     - reusable vanilla JS modules
 
-`app.jsx`, the entry to the application, calls the appropriate view via useContext ViewProvider.  
-The view is rendered from `app.jsx`, rather than being rendered from a nested path.
+`app.jsx`, the entry to the application, checks for adequate viewport width and then calls `MainMenu.jsx`  
+
+## Views  
+The website has a handful of views (Dashboard, Arith, Alpha-Lit, Perspective).  
+
+`MainMenu.jsx` calls the appropriate view via React's useContext state management.  
+The view is rendered from here, rather than being nested in a deep path within the application.  
 
 `MainMenu.jsx` is the first application view.  
-Once the user presses the start button, they are directed to `Dashboard.jsx`  
-From here, the user selects via `DashEntry.jsx` an action ( launch mission is the only available action at this time ).  
-From 'launch mission', the user will be presented with `MissionSelect.jsx` which allows them to select their `Mission.jsx`  
+Once the user presses the start button, they are directed to a new view - `Dashboard.jsx`  
+From here, the user selects via `DashEntry.jsx` an action ( launch mission, profile, sign out ).  
+From 'launch mission', the user will be presented with `MissionSelect.jsx` which allows them to select their planet (educational subject).  
 
 `Mission.jsx` displays the mission location ( Arith, Alpha-Lit, Perspective, etc. )  
-and allows the user to set their desired level ( `setLevel` useState found in `app.jsx` )  
+and allows the user to set their desired level ( `setLevel` useState found in `ViewContext.jsx` )  
 
 The user is then displayed either `AlphaLit.jsx`, `Arith.jsx`, or `Perspective.jsx` and that planet becomes the view.  
 Each planet has a `levels` folder with a set of levels.  
