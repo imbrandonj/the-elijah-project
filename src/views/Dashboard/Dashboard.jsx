@@ -1,5 +1,4 @@
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
 import DashEntry from './DashEntry.jsx';
 import SelectMission from './SelectMission.jsx';
 import Mission from './Mission.jsx';

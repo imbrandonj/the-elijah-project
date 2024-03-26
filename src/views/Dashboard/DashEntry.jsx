@@ -4,7 +4,7 @@ import { EffectCoverflow, Keyboard } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
-import { useView } from '@root/components/ViewContext.jsx'; // global state
+import { useView } from '@root/contexts/ViewContext.jsx'; // global state
 
 // imported svgs:
 import RocketLaunch from '@root/assets/svgs/rocket-launch.svg';

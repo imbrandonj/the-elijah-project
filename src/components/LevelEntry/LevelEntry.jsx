@@ -5,6 +5,11 @@ import arithImg from '@root/assets/svgs/arith.svg';
 import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
 import perspImg from '@root/assets/svgs/perspective.svg';
 
+// imported useContext:
+import { useAudio } from '@root/contexts/AudioContext';
+
+import { useEffect } from 'react';
+
 import './LevelEntry.css';
 
 /*
@@ -20,10 +25,17 @@ export default function LevelEntry({
   text,
   setBegin,
 }) {
-  const audio = new Audio(voice);
+  const { playAudio, stopAudio } = useAudio(); // Audio useContext
+
+  // audio must be played during the commit phase, not render phase
+  useEffect(() => {
+    playAudio(voice);
+
+    return () => stopAudio(); // clean up audio fn when component unmounts or re-renders
+  }, []);
 
   const beginButton = () => {
-    audio.pause();
+    stopAudio();
     setBegin(true);
   };
 
@@ -37,9 +49,6 @@ export default function LevelEntry({
       ? perspImg
       : null;
 
-  console.log(planet);
-
-  audio.play();
   // display explanation:
   return (
     <div id="LevelEntry">

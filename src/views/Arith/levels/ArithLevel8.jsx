@@ -3,6 +3,7 @@ import LevelHeader from '@root/components/LevelHeader/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import { useAudio } from '@root/contexts/AudioContext.jsx';
 
 // imported internal modules:
 import { getAudio } from './arithAudio.js';
@@ -31,6 +32,8 @@ export default function ArithLevel8({
   levelScore,
   setLevelScore,
 }) {
+  const { playAudio, stopAudio } = useAudio(); // audio global state context
+
   // select 2 random numbers as operands, operand1 max = 10, operand2 max = operand1 - 1
   const [operand1, setOperand1] = useState(randomNum(9) + 1);
   const [operand2, setOperand2] = useState(randomNum(operand1 - 1));
@@ -49,16 +52,14 @@ export default function ArithLevel8({
   // audio plays on component render
   // and `operand1` input box becomes focus
   useEffect(() => {
-    const mp3 = new Audio(audio);
-    mp3.play(); // play on problem load
+    playAudio(audio); // play on problem load
     document.getElementById('operand1').focus();
+
+    return () => stopAudio(); // clean up audio fn when component unmounts or re-renders
   }, [correctTally]);
 
   const playButton = () => {
-    const mp3 = new Audio(audio);
-    console.log('test from play button');
-    console.log(audio);
-    mp3.play();
+    playAudio(audio);
   };
 
   function answerEvent() {

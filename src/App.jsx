@@ -1,7 +1,8 @@
 // imported initial view:
 import MainMenu from './views/Menu/MainMenu.jsx';
 
-import { ViewProvider } from '@root/components/ViewContext.jsx'; // context, global state
+import { ViewProvider } from '@root/contexts/ViewContext.jsx'; // global state for views and levels
+import { AudioProvider } from '@root/contexts/AudioContext.jsx'; // for audio global state
 
 // external imports:
 import { createRoot } from 'react-dom/client';
@@ -34,7 +35,9 @@ const App = () => {
     // display view:
     return (
       <ViewProvider>
-        <MainMenu />
+        <AudioProvider>
+          <MainMenu />
+        </AudioProvider>
       </ViewProvider>
     );
   } else {

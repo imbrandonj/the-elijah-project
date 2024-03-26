@@ -3,6 +3,7 @@ import LevelHeader from '@root/components/LevelHeader/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import { useAudio } from '@root/contexts/AudioContext.jsx';
 
 // imported internal modules:
 import { getAudio } from './perspAudio.js';
@@ -39,6 +40,7 @@ export default function PerspLevel1({
   levelScore,
   setLevelScore,
 }) {
+  const { playAudio, stopAudio } = useAudio(); // audio global state context
   const [leftObject, setLeftObject] = useState(); // is left object the answer?
   const [rightObject, setRightObject] = useState(); // is right object the answer?
   const [audio, setAudio] = useState(''); // string to import audio from getAudio(str: audio)
@@ -93,14 +95,14 @@ export default function PerspLevel1({
 
     // retrieve and play audio mp3
     setAudio(answerKey); // audio must be saved in state due to the playButton() fn
-    const mp3 = new Audio(getAudio(answerKey));
-    mp3.play(); // play on problem load
+    playAudio(getAudio(answerKey));
+
+    return () => stopAudio(); // clean up audio fn when component unmounts or re-renders
   }, [correctTally]);
 
   // retrieve and play audio mp3
   const playButton = () => {
-    const mp3 = new Audio(getAudio(audio));
-    mp3.play();
+    playAudio(getAudio(audio));
   };
 
   // checks if the clickable object is correct (`object` arg is a boolean)

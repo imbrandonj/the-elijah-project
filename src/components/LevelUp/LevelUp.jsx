@@ -1,7 +1,7 @@
 import './LevelUp.css'; // component styles
 
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import SetComplete from '@root/components/SetComplete/SetComplete.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 

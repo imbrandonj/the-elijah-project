@@ -3,6 +3,7 @@ import LevelHeader from '@root/components/LevelHeader/LevelHeader.jsx';
 import Footbox from '@root/components/Footbox/Footbox.jsx';
 import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import { useAudio } from '@root/contexts/AudioContext.jsx';
 
 // imported internal modules:
 import { getAudio } from './arithAudio.js';
@@ -32,6 +33,7 @@ export default function ArithLevel11({
   levelScore,
   setLevelScore,
 }) {
+  const { playAudio, stopAudio } = useAudio(); // audio global state context
   const [operand1, setOperand1] = useState(0); // defaults to 0 before knowing if operation is 'add' or 'sub'
   const [operand2, setOperand2] = useState(0); // defaults to 0 before knowing if operation is 'add' or 'sub'
   const [answer, setAnswer] = useState(0); // defaults to 0 before knowing if operation is 'add' or 'sub'
@@ -73,17 +75,16 @@ export default function ArithLevel11({
     setAudio(operationType + num1 + num2); // audio must be saved in state due to the playButton() fn
 
     // retrieve and play audio mp3
-    const mp3 = new Audio(getAudio(operationType + num1 + num2));
-    mp3.play();
-    console.log(audio, 'from this fn');
+    playAudio(getAudio(operationType + num1 + num2));
 
     document.getElementById('operand1').focus(); // focus on the input box
+
+    return () => stopAudio(); // clean up audio fn when component unmounts or re-renders
   }, [correctTally]);
 
   // audio play button:
   const playButton = () => {
-    const mp3 = new Audio(getAudio(audio));
-    mp3.play();
+    playAudio(getAudio(audio));
   };
 
   // check answer event:

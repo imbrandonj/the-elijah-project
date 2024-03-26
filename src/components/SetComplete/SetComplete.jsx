@@ -1,7 +1,7 @@
 import './SetComplete.css';
 
 // imported modules:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import { getLevels } from '@root/modules/levelManager.js';
 
 // imported svg:

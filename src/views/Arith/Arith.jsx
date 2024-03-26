@@ -1,5 +1,5 @@
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';

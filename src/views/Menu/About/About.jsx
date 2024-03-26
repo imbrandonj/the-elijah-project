@@ -1,5 +1,5 @@
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton';
 
 import './About.css'; // component styles

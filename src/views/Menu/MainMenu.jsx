@@ -8,7 +8,7 @@ import AlphaLit from '../Alpha-Literacy/AlphaLit.jsx';
 import Perspective from '../Perspective/Perspective.jsx';
 
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton';
 

@@ -1,5 +1,5 @@
 // imported components:
-import { useView } from '@root/components/ViewContext.jsx';
+import { useView } from '@root/contexts/ViewContext.jsx';
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import SetButton from '@root/components/SetButton/SetButton.jsx';
 
