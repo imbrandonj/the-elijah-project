@@ -91,7 +91,7 @@ export default function Mission({ missionSelect }) {
               <SetButton
                 set={i + 1}
                 score={score}
-                onclick={() => begin(i === 0 ? i : i * 5 + 1)} // each set begins a level in increments of 5: 1, 6, 11, 16, etc.
+                onclick={() => begin(i === 0 ? i + 1 : i * 5 + 1)} // each set begins a level in increments of 5: 1, 6, 11, 16, etc.
               />
             </li>
           ))
