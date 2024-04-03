@@ -15,6 +15,8 @@ import perspImg from '@root/assets/svgs/perspective.svg';
 import astroFlag from '@root/assets/svgs/astro-flag2.svg';
 import objective from '@root/assets/svgs/objective.svg';
 
+import { useState, useEffect } from 'react';
+
 export default function LevelUp({
   planet, // 'Arith' or 'Alpha-Literacy' or 'Perspective'
   levelScore, // score obtained during level (state)
@@ -23,9 +25,12 @@ export default function LevelUp({
   setBegin, // begin level (state)
 }) {
   const { level, setLevel } = useView();
+  const [time, setTime] = useState(0);
 
   // time to complete level
-  const time = localStorage.getItem('time');
+  useEffect(() => {
+    setTime(parseInt(localStorage.getItem('time')));
+  }, []);
 
   // planet display in h2:
   const planetImg =

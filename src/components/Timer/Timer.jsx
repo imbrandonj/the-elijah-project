@@ -1,7 +1,7 @@
 import './Timer.css'; // component styles
 
 // imported hooks:
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 /*
   Timer component
@@ -11,22 +11,23 @@ import { useState, useEffect } from 'react';
 */
 export default function Timer() {
   const [seconds, setSeconds] = useState(0);
+  const secondsRef = useRef(seconds); // needed for useEffect unmounting
 
   // update the state `seconds` every second
   useEffect(() => {
     // interval ID
     const interval = setInterval(() => {
       setSeconds(seconds => seconds + 1);
+      secondsRef.current = secondsRef.current + 1;
     }, 1000);
 
     // clean up interval
     return () => {
       clearInterval(interval);
+      // store time data in local storage
+      localStorage.setItem('time', secondsRef.current.toString());
     };
   }, []);
-
-  // store time data in local storage
-  localStorage.setItem('time', seconds.toString());
 
   // format time into minutes:seconds
   const formatTime = time => {
