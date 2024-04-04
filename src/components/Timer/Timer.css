@@ -24,8 +24,13 @@
     background-color: rgba(0, 0, 0, 0.269);
 }
 
+#PerspLevel > #timerWrapper > #timer {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.269);
+}
 
-@media (max-width: 2000px) {
+
+@media (max-width: 1950px) {
     #timer {
         font-size: 2rem;
     }

@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    padding: 2rem 0;
+    padding: 2rem 6rem;
     border-radius: 1rem;
 }
 
 #LevelEntry .para-img {
     display: flex;
     align-items: center;
+    width: 100%;
     min-height: 51em;
     gap: 10rem;
     margin: 2rem;
@@ -61,11 +61,19 @@
     font-size: 2.2rem;
 }
 
+/************
 
-@media (max-width: 2000px) {
+    Media Queries
+
+*************/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
 
     #LevelEntry {
-        padding: 0rem;
+        padding: 1rem 4rem;
     }
 
     #LevelEntry .para-img {
@@ -90,12 +98,50 @@
     }
     
     #LevelEntry h2 {
-        margin: 2rem;
+        margin-bottom: 1.5rem;
         font-size: 2.6rem;
     }
 
     #LevelEntry span {
         font-size: 2rem;
     }
- 
+}
+
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
+    #LevelEntry {
+        padding: 0 2rem;
+    }
+
+    #LevelEntry .para-img {
+        min-height: 35em;
+        gap: 4rem;
+        margin: 0.5rem;
+    }
+
+    #LevelEntry .para-img img {
+        margin: 1rem;
+    }
+    
+    #typing {
+        min-width: 50rem;
+        max-width: 50rem;
+    }
+
+    #typing p {
+        line-height: 1.75rem;
+        letter-spacing: 0.05rem;
+        font-size: 1.55rem;
+    }
+    
+    #LevelEntry h2 {
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+    }
+
+    #LevelEntry span {
+        font-size: 1.75rem;
+    }
 }

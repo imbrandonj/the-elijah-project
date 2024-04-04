@@ -92,8 +92,44 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 2000px) {
+/******
 
+    Media Queries
+    
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
+
+    #ArithWrap {
+        margin-top: 0.5%;
+    }
+    
+    #ArithLevel {
+        padding: 2rem 0;
+    }
+    
+    /* Used for inline question paragraph and answer input box*/
+    #mathQABundle {
+        margin: 1rem 0;
+    }
+    
+    #mathQ {
+        font-size: 4.5rem;
+    }
+    
+    #mathAns {
+        font-size: 4.2rem;
+        width: 10rem;
+    }
+}
+
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
     #ArithWrap {
         margin-top: 0.5%;
     }

@@ -18,14 +18,14 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    padding: 2rem;
+    padding: 2rem 2rem 4rem;
     background-color: rgba(26, 45, 79, 0.95);
     border-radius: 1rem;
 }
 
 #litProb {
     text-align: center;
-    margin: 1.5rem; /* footbox.css contains a margin that overrides bottom margin here */
+    margin: 1.5rem;
 }
 
 #litProb p {
@@ -92,11 +92,87 @@
     background-color: var(--buttonBlue);
 }
 
-@media (max-width: 2000px) {
+/******
+
+    Media Queries
     
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
+    #litProb {
+        margin: 0rem;
+    }
+
+    #litProb p {
+        font-size: 2.25rem;
+    }
+    
+    #litAns {
+        font-size: 2.6rem;
+        width: 15rem;
+        margin: 0 0 1rem;
+        letter-spacing: 0.15rem;
+    }
+    
+    .letterQ {
+        font-size: 5rem;
+        line-height: 8rem;
+    }
+    
+    .emojiQ {
+        font-size: 6rem;
+        line-height: 2rem;
+    }
+
+    .wordQ {
+        font-size: 3rem;
+    }
+    
+    #spell {
+        line-height: 8rem;
+    }
+    
+    .medEmoji {
+        font-size: 5.5rem;
+        line-height: 2.5rem;
+    }
+    
+    .emojiFont {
+        font-size: 3.1rem;
+        letter-spacing: 0.4rem;
+        line-height: 5.5rem;
+    }
+
+    #litLevel .objective {
+        margin: 1rem 0;
+        padding: 0.4rem 0.8rem 0;
+        font-size: 1.4rem;
+        letter-spacing: 0.1rem;
+
+    }
+    
+    #litLevel .objective img {
+        margin: 0.5rem 0.5rem 0.8rem;
+    }
+    
+    #litLevel .objective span {
+        margin: 0.5rem;
+        padding-bottom: 0.25rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
     #litLevel {
-        padding: 1rem 0;
-        width: 88%;
+        width: 90%;
+        padding: 1rem 1rem 2rem;
     }
 
     #litProb {

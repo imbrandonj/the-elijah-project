@@ -4,13 +4,10 @@
 #mainMenu {
     display: flex;
     justify-content: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 12%;
 } 
 
-.menu-wrapper{
+.menu-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +29,7 @@
 }
 
 #mainMenu .popup {
-    width: 175%;
+    width: 55%;
 }
 
 
@@ -60,18 +57,34 @@
     font-weight: 600;
 }
 
-@media (max-width: 2000px) {
+/******
+
+    Media Queries
+    
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
+    #mainMenu {
+        margin-top: 10%;
+    }
+
     #mainMenu .popup {
-        width: 160%;
+        width: 60%;
+    }
+}
+
+/**
+    Small Screen
+**/
+@media (max-width: 1450px) {
+    #mainMenu {
+        margin-top: 7%;
     }
 
-    #mainMenu h1 {
-        font-size: 3rem;
-        margin-bottom: 3.5rem;
-        letter-spacing: 0.5rem;
-    }
-
-    #mainMenu .redirect-button {
-        font-size: 1.7rem;
+    #mainMenu .popup {
+        width: 75%;
     }
 }

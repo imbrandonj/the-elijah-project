@@ -67,25 +67,58 @@
     background-color: rgb(166, 222, 194);
 }
 
-#PerspLevel #timer {
-    color: var(--buttonBlue);
-    background-color: rgba(0, 0, 0, 0.269);
-}
-
 #PerspLevel .Tipbox {
     margin: 0.5rem;
     background-color: rgb(166, 222, 194);
 }
 
 
-@media (max-width: 2000px) {
+/******
+
+    Media Queries
     
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
+    #PerspLevel {
+        width: 85%;
+        padding: 1rem 0;
+    }
+
+    #PerspLevel .shapeOverlay {
+        padding: 3rem 0 6rem;
+    }
+
+    #PerspLevel .shapeOverlay img {
+        height: 10rem;
+    }
+
+    #PerspLevel .speaker {
+        font-size: 3.5rem;
+    }
+}
+
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
     #PerspLevel {
         width: 90%;
         padding: 1rem 0;
     }
 
     #PerspLevel .shapeOverlay {
-        padding: 3rem 0 6rem;
+        padding: 2rem 0 4rem;
+    }
+
+    #PerspLevel .shapeOverlay img {
+        height: 9rem;
+    }
+
+    #PerspLevel .speaker {
+        font-size: 3.25rem;
     }
 }

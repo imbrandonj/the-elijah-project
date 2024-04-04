@@ -3,9 +3,9 @@
 */
 
 #aboutMenu {
-    margin-top: 9rem;
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 #aboutWrapper {
@@ -38,13 +38,22 @@
     letter-spacing: 0.15rem;
 }
 
-@media (max-width: 2000px) {
+/******
+
+    Media Queries
+    
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
     #aboutMenu {
-        margin-top: 3rem;
+        margin-top: 3%;
     }
     
     #aboutWrapper {
-        padding: 3rem 9rem;
+        padding: 2rem 6rem;
     }
 
     #aboutMenu h2 {
@@ -54,11 +63,37 @@
     
     #aboutParagraph {
         font-size: 1.5rem;
-        line-height: 1.75rem;
+        line-height: 1.8rem;
     }
     
     .signature {
         font-size: 1.75rem;
     }
+}
 
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
+    #aboutMenu {
+        margin-top: 2%;
+    }
+    
+    #aboutWrapper {
+        padding: 1rem 3rem;
+    }
+
+    #aboutMenu h2 {
+        font-size: 1.55rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    #aboutParagraph {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    
+    .signature {
+        font-size: 1.5rem;
+    }
 }

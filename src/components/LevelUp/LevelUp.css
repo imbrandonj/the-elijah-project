@@ -3,7 +3,7 @@
 */
 
 #levelUp {
-    margin-top: 2rem;
+    margin-top: 1.5%;
     width: 72%;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
@@ -31,7 +31,6 @@
     font-size: 3rem;
     letter-spacing: 0.25rem;
 }
-
 
 #levelUp ul {
     margin: 3.5rem 0;
@@ -73,9 +72,18 @@
     color: var(--popupGreen);
 }
 
-@media (max-width: 2000px) {
+/******
+
+    Media Queries
+    
+******/
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 1950px) {
     #levelUp {
-        margin-top: 0rem;
+        margin-top: 1%;
     }
     
     #levelUpWrapper {
@@ -118,5 +126,50 @@
     .score span {
         font-size: 2.6rem;
     }
+}
+
+/**
+    Small Screen
+**/
+@media screen and (max-width: 1450px) {
+    #levelUp {
+        margin-top: 0rem;
+    }
     
+    #levelUpWrapper {
+        padding: 2rem 0;
+    }
+    
+    #levelUp h2 {
+        font-size: 3.2rem;
+        gap: 2.4rem;
+    }
+    
+    #levelUp h3 {
+        font-size: 2rem;
+        letter-spacing: 0.15rem;
+    }
+
+    #levelUp ul {
+        font-size: 1.75rem;
+        margin: 2.25rem;
+    }
+    
+    #levelUp ul li {
+        margin: 0.5rem;
+    }
+
+    #levelUp li span {
+        font-size: 2.25rem;
+    }
+    
+    .score {
+        gap: 1.5rem;
+        padding: 2rem 0 0;
+        font-size: 2.5rem;
+    }
+
+    .score img {
+        height: 1.75em;
+    }
 }

@@ -6,8 +6,9 @@ import { useState, useEffect, useRef } from 'react';
 /*
   Timer component
 
-  A timer that intervals seconds &
-  displays time in min:seconds
+  A timer that intervals seconds,
+  stores the seconds in local storage, 
+  & displays time in min:seconds
 */
 export default function Timer() {
   const [seconds, setSeconds] = useState(0);
