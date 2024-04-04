@@ -62,7 +62,7 @@ export default function Arith() {
   return (
     <div>
       <RocketHeader />
-      <div id="ArithWrap">
+      <div id="ArithWrap" className="flex justify-center">
         {levelUpEvent ? (
           <LevelUp
             planet="Arith"

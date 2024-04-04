@@ -34,12 +34,12 @@ export default function SetComplete({
 
   return (
     <div id="setComplete">
-      <h3>
+      <h3 className="flex align-center small-caps italic">
         <img src={planetImg} height={70} />
         {planet} exercise set {set} finished
       </h3>
-      <div className="setWrap">
-        <h2>challenge complete</h2>
+      <div className="setWrap flex-col align-center">
+        <h2 className="small-caps">challenge complete</h2>
 
         <ul>
           <li>
@@ -56,12 +56,14 @@ export default function SetComplete({
           </li>
         </ul>
       </div>
-      <div className="btnRowBundle">
-        <button className="" onClick={returnHome}>
+      <div className="btnRowBundle flex justify-evenly">
+        <button className="small-caps" onClick={returnHome}>
           Return to Base
         </button>
-        <button onClick={newLevel}>Continue to Next Set</button>
-        <button className="parent">
+        <button className="small-caps" onClick={newLevel}>
+          Continue to Next Set
+        </button>
+        <button className="parent small-caps">
           <span className="erase">Reset Score</span>
         </button>
       </div>

@@ -124,12 +124,12 @@ export default function ArithLevel11({
   }
 
   return (
-    <div id="ArithLevel">
+    <div id="ArithLevel" className="flex-col align-center">
       <LevelHeader text="Type numbers of an operation" score={levelScore} />
       <button className="speaker" onClick={playButton}>
         🔊
       </button>
-      <div id="mathQABundle2">
+      <div id="mathQABundle2" className="flex justify-center">
         <p id="mathQ">
           <input
             id="operand1"

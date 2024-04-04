@@ -38,7 +38,7 @@ export default function Perspective() {
     <div>
       <RocketHeader />
 
-      <div id="PerspWrap">
+      <div id="PerspWrap" className="flex-col align-center">
         {levelUpEvent ? (
           <LevelUp
             planet="Persp"

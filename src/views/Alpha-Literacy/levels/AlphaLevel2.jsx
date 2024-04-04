@@ -41,7 +41,7 @@ export default function AlphaLevel2({
   }, []);
 
   return (
-    <div id="litLevel">
+    <div id="litLevel" className="flex-col align-center">
       <LevelHeader text="Type and enter 20 letters" score={levelScore} />
       <div id="litProb">
         <p>

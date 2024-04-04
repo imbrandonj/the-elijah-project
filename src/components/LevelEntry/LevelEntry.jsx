@@ -51,11 +51,11 @@ export default function LevelEntry({
 
   // display explanation:
   return (
-    <div id="LevelEntry">
-      <h2>
+    <div id="LevelEntry" className="flex-col align-center">
+      <h2 className="flex align-center self-start small-caps">
         <img src={planetImg} height={88} /> {h2Text}
       </h2>
-      <div className="para-img">
+      <div className="para-img flex align-center">
         <Text text={text} />
         <img src={img} height={250} />
       </div>

@@ -16,7 +16,11 @@ export default function Footbox({ correct }) {
       footbox[i] = <span key={i} className="emptyFootbox"></span>;
     }
   }
-  return <div id="footbox">{footbox}</div>;
+  return (
+    <div id="footbox" className="flex justify-center">
+      {footbox}
+    </div>
+  );
 }
 
 // How this works:

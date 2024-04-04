@@ -47,25 +47,31 @@ export default function DashEntry({ setDashSelect }) {
         modules={[EffectCoverflow, Keyboard]}
       >
         <SwiperSlide>
-          <button onClick={redirectBegin} className="dashSwiperBtn">
+          <button
+            onClick={redirectBegin}
+            className="dashSwiperBtn flex flex-col align-center"
+          >
             <img src={RocketLaunch} height={160} />
             Launch Mission
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button className="dashSwiperBtn">
+          <button className="dashSwiperBtn flex flex-col align-center">
             <img src={PlanetFlag} height={160} />
             Player Statistics
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button className="dashSwiperBtn">
+          <button className="dashSwiperBtn flex flex-col align-center">
             <img src={FloatAstro} height={120} />
             Profile Configuration
           </button>
         </SwiperSlide>
         <SwiperSlide>
-          <button className="dashSwiperBtn" onClick={redirectHome}>
+          <button
+            className="dashSwiperBtn flex flex-col align-center"
+            onClick={redirectHome}
+          >
             <img src={Stars} height={140} />
             Sign Out
           </button>

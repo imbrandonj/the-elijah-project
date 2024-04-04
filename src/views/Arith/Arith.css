@@ -3,9 +3,7 @@
 */
 
 #ArithWrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
+    margin-top: 0.5%;
 }
 
 #ArithWrap #LevelEntry {
@@ -14,10 +12,8 @@
 }
 
 #ArithLevel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 80%;
+    margin-top: 1%;
     padding: 4rem 0;
     background-color:rgba(44, 16, 28, 0.95);
     border-radius: 1rem;
@@ -25,15 +21,11 @@
 
 /* Used for inline question paragraph and answer input box */
 #mathQABundle {
-    display: flex;
-    justify-content: center;
     margin: 2rem 0;
 }
 
 /* Used for inline question paragraph and answer input box where space is shared with a button (Arith Level 3) */
 #mathQABundle2 {
-    display: flex;
-    justify-content: center;
     margin-bottom: 1rem;
 }
 
@@ -102,12 +94,8 @@
     Medium Screen
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
-
-    #ArithWrap {
-        margin-top: 0.5%;
-    }
-    
     #ArithLevel {
+        margin-top: 0.5%;
         padding: 2rem 0;
     }
     
@@ -130,11 +118,8 @@
     Small Screen
 **/
 @media screen and (max-width: 1450px) {
-    #ArithWrap {
-        margin-top: 0.5%;
-    }
-    
     #ArithLevel {
+        margin-top: 0.5%;
         width: 90%;
         padding: 1rem 0;
     }

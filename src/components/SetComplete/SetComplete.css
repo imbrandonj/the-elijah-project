@@ -8,15 +8,11 @@
 }
 
 #setComplete h3 {
-    display: flex;
-    align-items: center;
     width: 60%;
     margin-bottom: 2rem;
     padding-left: 0.5rem;
     gap: 1rem;
     color: var(--buttonBlue);
-    font-style: italic;
-    font-variant: small-caps;
     font-size: 2.3rem;
     letter-spacing: 0.1rem;
     background-color: var(--blackOverlay);
@@ -24,16 +20,12 @@
 }
 
 #setComplete .setWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 3rem;
 }
 
 #setComplete h2 {
     margin: 2rem;
     font-size: 4rem;
-    font-variant: small-caps;
     letter-spacing: 0.1rem;
     color: black;
 }
@@ -62,8 +54,6 @@
 }
 
 .btnRowBundle {
-    display: flex;
-    justify-content: space-evenly;
     padding: 3rem;
 }
 
@@ -73,7 +63,6 @@
     padding: 2rem 0;
     font-size: 2.2rem;
     font-family: var(--mono);
-    font-variant: small-caps;
     letter-spacing: 0.1rem;
     color: var(--buttonBlue);
     background-color: var(--blackOverlay);

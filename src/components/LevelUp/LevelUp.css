@@ -11,15 +11,10 @@
 
 #levelUpWrapper {
     padding: 6rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #levelUp h2 {
     margin: 1rem;
-    display: flex;
-    align-items: center;
     gap: 3rem;
     font-size: 4rem;
     font-variant: small-caps;
@@ -50,8 +45,6 @@
 }
 
 .score {
-    display: flex;
-    align-items: center;
     gap: 1.75rem;
     padding: 3rem 0 0;
     font-size: 3rem;

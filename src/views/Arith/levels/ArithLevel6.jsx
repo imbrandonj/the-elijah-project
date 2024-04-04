@@ -41,12 +41,12 @@ export default function ArithLevel6({
   }, []);
 
   return (
-    <div id="ArithLevel">
+    <div id="ArithLevel" className="flex-col align-center">
       <LevelHeader
         text="Subtract one number from the other."
         score={levelScore}
       />
-      <div id="mathQABundle">
+      <div id="mathQABundle" className="flex justify-center">
         <p id="mathQ">{problem.question}</p>
         <input
           id="mathAns"

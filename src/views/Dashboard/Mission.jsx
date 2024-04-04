@@ -54,9 +54,9 @@ export default function Mission({ missionSelect }) {
   };
 
   return (
-    <div id="mission">
+    <div id="mission" className="flex align-center justify-evenly">
       {missionSelect === 'Alpha-Literacy' ? (
-        <div className="planet alphaLitColor">
+        <div className="planet flex-col alphaLitColor">
           <img src={AlphaLiteracy} height={200} />
           <h2>Alpha-Literacy</h2>
           <p>
@@ -64,7 +64,7 @@ export default function Mission({ missionSelect }) {
           </p>
         </div>
       ) : missionSelect === 'Arith' ? (
-        <div className="planet arithColor">
+        <div className="planet flex-col arithColor">
           <img src={Arith} height={220} />
           <h2>Arith</h2>
           <p>
@@ -73,7 +73,7 @@ export default function Mission({ missionSelect }) {
           </p>
         </div>
       ) : missionSelect === 'Perspective' ? (
-        <div className="planet perspectiveColor">
+        <div className="planet flex-col perspectiveColor">
           <img src={Perspective} height={200} />
           <h2>Perspective</h2>
           <p>
@@ -82,7 +82,7 @@ export default function Mission({ missionSelect }) {
           </p>
         </div>
       ) : null}
-      <ul className="levelSection">
+      <ul className="levelSection flex-col">
         {firstVisit ? (
           <BeginButton text={'begin here'} onclick={() => begin(1)} />
         ) : (

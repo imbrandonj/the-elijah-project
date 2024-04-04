@@ -41,9 +41,9 @@ export default function ArithLevel1({
   }, []);
 
   return (
-    <div id="ArithLevel">
+    <div id="ArithLevel" className="flex-col align-center">
       <LevelHeader text="Count and add the objects" score={levelScore} />
-      <div id="mathQABundle">
+      <div id="mathQABundle" className="flex justify-center">
         <p id="mathQ">{problem.question}</p>
         <input
           id="mathAns"

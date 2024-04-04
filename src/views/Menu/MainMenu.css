@@ -2,15 +2,10 @@
     MainMenu component styles
 */
 #mainMenu {
-    display: flex;
-    justify-content: center;
     margin-top: 12%;
 } 
 
-.menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#menuWrapper {
     padding: 5rem 8rem;
     border-radius: 1rem;
     background-color: var(--blackWrap);

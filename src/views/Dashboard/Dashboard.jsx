@@ -23,7 +23,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div id="Dashboard">
+    <div id="Dashboard" className="flex justify-center">
       {missionSelect.length > 0 ? (
         <RocketButton
           text="go back"
@@ -33,8 +33,8 @@ export default function Dashboard() {
         />
       ) : null}
 
-      <div id="dashboardWrap">
-        <h1>the Elijah project</h1>
+      <div id="dashboardWrap" className="flex-col align-center">
+        <h1 className="self-start">the Elijah project</h1>
 
         {dashSelect === 'entry' ? (
           <DashEntry setDashSelect={setDashSelect} />

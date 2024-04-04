@@ -93,8 +93,8 @@ export default function LevelUp({
     // regular level completed:
     return (
       <div id="levelUp">
-        <div id="levelUpWrapper">
-          <h2>
+        <div id="levelUpWrapper" className="flex-col align-center">
+          <h2 className="flex align-center">
             {planet} level up
             <img src={planetImg} height={88} />
           </h2>
@@ -109,7 +109,7 @@ export default function LevelUp({
             <li>
               Time Bonus: <span>{timeBonus}</span>
             </li>
-            <li className="score">
+            <li className="score flex align-center">
               {' '}
               <img src={astroFlag} height={95} />
               Score Total: <span className="green">{playerScore}</span>
@@ -123,8 +123,8 @@ export default function LevelUp({
     // level failed:
     return (
       <div id="levelUp">
-        <div id="levelUpWrapper">
-          <h2 className="red">Challenge Failed.</h2>
+        <div id="levelUpWrapper" className="flex-col align-center">
+          <h2 className="red flex align-center">Challenge Failed.</h2>
           <h3>Level {level} Incomplete</h3>
           <ul>
             <li>
@@ -136,7 +136,7 @@ export default function LevelUp({
             <li>
               Time Bonus: <span>{timeBonus}</span>
             </li>
-            <li className="score">
+            <li className="score flex align-center">
               <img src={objective} height={60} />
               Score Total: <span className="red">{playerScore}</span>, Score
               Needed: <span className="green">{minScore}</span>

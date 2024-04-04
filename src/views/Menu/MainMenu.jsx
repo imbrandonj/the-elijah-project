@@ -57,8 +57,8 @@ export default function MainMenu() {
 
   if (view === 'MainMenu') {
     return (
-      <div id="mainMenu">
-        <div className="menu-wrapper">
+      <div id="mainMenu" className="flex justify-center">
+        <div id="menuWrapper" className="flex-col align-center">
           <h1>The Elijah Project</h1>
           <RedirectButton onclick={start} text={'Start'} />
           <RedirectButton onclick={about} text={'About'} />

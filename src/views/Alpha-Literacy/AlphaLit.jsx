@@ -53,7 +53,7 @@ export default function AlphaLit() {
   return (
     <div>
       <RocketHeader />
-      <div id="litPath">
+      <div id="litPath" className="flex-col align-center">
         {levelUpEvent ? (
           <LevelUp
             planet="AlphaLit"

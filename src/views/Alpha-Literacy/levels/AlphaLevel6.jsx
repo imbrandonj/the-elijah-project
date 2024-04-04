@@ -41,7 +41,7 @@ export default function AlphaLevel6({
   }, []);
 
   return (
-    <div id="litLevel">
+    <div id="litLevel" className="flex-col align-center">
       <LevelHeader
         text="Spell 20 short words (people / body parts)"
         score={levelScore}

@@ -47,6 +47,35 @@ h1, h2, h3, h4 {
     Global Classes:
 */
 
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
 .italic {
     font-style: italic;
 }

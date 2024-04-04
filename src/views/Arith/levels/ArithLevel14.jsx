@@ -43,9 +43,9 @@ export default function ArithLevel14({
   }, []);
 
   return (
-    <div id="ArithLevel">
+    <div id="ArithLevel" className="flex-col align-center">
       <LevelHeader text="." score={levelScore} />
-      <div id="mathQABundle">
+      <div id="mathQABundle" className="flex justify-center">
         <p id="mathQ">{problem.question}</p>
         <input
           id="mathAns"

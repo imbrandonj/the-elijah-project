@@ -9,9 +9,9 @@ export default function About() {
   const backBtn = () => setView('MainMenu'); // passed to RocketButton component `onclick` prop
 
   return (
-    <div id="aboutMenu">
+    <div id="aboutMenu" className="flex justify-center">
       <div id="aboutWrapper">
-        <h2>
+        <h2 className="self-start">
           Hello 👋 <br />
           my name is Brandon, <br />
           developer of <br /> The Elijah Project.

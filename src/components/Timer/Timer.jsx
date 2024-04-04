@@ -40,7 +40,7 @@ export default function Timer() {
   // display Timer
   return (
     <div id="timerWrapper">
-      <p id="timer">{formatTime(seconds)}</p>
+      <p className="timer">{formatTime(seconds)}</p>
     </div>
   );
 }
