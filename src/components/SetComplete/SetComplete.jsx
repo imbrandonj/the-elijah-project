@@ -2,6 +2,7 @@ import './SetComplete.css';
 
 // imported components:
 import RedirectButton from '../RedirectButton/RedirectButton';
+import EraseButton from '../EraseButton/EraseButton';
 import { useView } from '@root/contexts/ViewContext.jsx';
 
 // imported modules:
@@ -63,16 +64,21 @@ export default function SetComplete({
         <RedirectButton
           text="Return to Base"
           onclick={returnHome}
+          color="black"
           css={'bkg-blk-overlay clr-btn-blue small-caps'}
         />
         <RedirectButton
           text="Continue to Next Set"
           onclick={newLevel}
+          color="black"
           css={'bkg-blk-overlay clr-btn-blue small-caps'}
         />
-        <button className="parent bkg-blk-overlay small-caps">
-          <span className="erase">Reset Score</span>
-        </button>
+        <EraseButton
+          text="Reset Score"
+          onclick={null}
+          color="black"
+          css={'small-caps'}
+        />
       </div>
     </div>
   );

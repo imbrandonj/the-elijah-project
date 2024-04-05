@@ -1,15 +1,15 @@
-.redirect-button {
+.erase-button {
     font-family: var(--mono);
     border-radius: 0.4rem;
     border: none;
 }
 
-.hover-blue:hover {
+.eraser-blue:hover {
     background-color: var(--buttonBlue);
-    color: black;
+    color: var(--red);
 }
 
-.hover-black:hover {
+.eraser-black:hover {
     background-color: var(--blackOverlay);
-    color: var(--lightBlue);
+    color: var(--pink);
 }

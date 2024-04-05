@@ -4,6 +4,7 @@ import './LevelUp.css'; // component styles
 import { useView } from '@root/contexts/ViewContext.jsx';
 import SetComplete from '@root/components/SetComplete/SetComplete.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
+import EraseButton from '@root/components/EraseButton/EraseButton';
 
 // imported modules:
 import { storeLevel } from '@root/modules/levelManager.js';
@@ -115,11 +116,18 @@ export default function LevelUp({
               Score Total: <span className="green">{playerScore}</span>
             </li>
           </ul>
-          <RedirectButton
-            text={'Continue to next level'}
-            onclick={newLevel}
-            css={'bkg-btn-blue'}
-          />
+          <div className="flex justify-evenly">
+            <RedirectButton
+              text={'Continue to next level'}
+              onclick={newLevel}
+              css={'bkg-btn-blue'}
+            />
+            <EraseButton
+              text={'Reset Score & Try Again'}
+              onclick={null}
+              css={'bkg-btn-blue red'}
+            />
+          </div>
         </div>
       </div>
     );

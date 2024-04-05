@@ -57,14 +57,10 @@
     letter-spacing: 0.15rem;
 }
 
-#levelUp .redirect-button {
+#levelUp .redirect-button, #levelUp .erase-button {
+    flex-basis: 30%;
     font-size: 1.45rem;
     padding: 1rem;
-}
-
-#levelUp .redirect-button:hover {
-    background-color: var(--blackOverlay);
-    color: var(--lightBlue);
 }
 
 /******

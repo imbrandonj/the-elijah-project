@@ -10,7 +10,8 @@
     --lightBlue: rgb(201, 234, 255);
     --buttonBlue: rgba(204, 238, 255, 0.6);
     --popupGreen: rgb(76, 136, 113);
-    --red: rgb(119, 47, 47)
+    --red: rgb(119, 47, 47);
+    --pink: rgb(210, 122, 122);
 }
 
 /* border box model: https://css-tricks.com/box-sizing/ */
@@ -107,6 +108,10 @@ h1, h2, h3, h4 {
 
 .green {
     color: var(--popupGreen);
+}
+
+.pink {
+    color: rgb(210, 122, 122);
 }
 
 /*
