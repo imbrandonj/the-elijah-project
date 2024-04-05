@@ -31,22 +31,7 @@
     cursor: pointer;
   }
 
-  .popup button {
-    margin-top: 2rem;
-    width: 22%;
-    padding: 1rem;
-    font-size: 2.2rem;
-    font-family: var(--mono);
-    font-variant: small-caps;
-    letter-spacing: 0.1rem;
-    color: var(--buttonBlue);
-    background-color: rgba(0, 0, 0, 0.502);
-    border: none;
-    border-radius: 0.25rem;
-  }
-
-  .popup button:hover {
-    /* background-color: rgba(240, 248, 255, 0.379); */
+  .popup .redirect-button:hover {
     background-color: var(--buttonBlue);
     color: black;
   }
@@ -63,13 +48,6 @@
       font-size: 1.75rem;
       line-height: 2.5rem;
     }
-
-    .popup button {
-      margin-top: 2rem;
-      width: 22%;
-      padding: 1rem;
-      font-size: 2rem;
-    }
   }
 
   /**
@@ -83,12 +61,5 @@
     .popup-content {
       font-size: 1.75rem;
       line-height: 2.5rem;
-    }
-
-    .popup button {
-      margin-top: 1rem;
-      width: 22%;
-      padding: 1rem;
-      font-size: 1.85rem;
     }
   }

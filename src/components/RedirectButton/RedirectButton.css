@@ -1,15 +1,5 @@
 .redirect-button {
-    width: 12rem;
-    min-height: 4.2rem;
-    padding: 0.75rem;
-    font-family: Monospace;
-    font-size: 1.42rem;
+    font-family: var(--mono);
     border-radius: 0.4rem;
     border: none;
-    background-color: var(--buttonBlue);
-}
-
-.redirect-button:hover {
-    color: rgb(201, 234, 255);
-    background-color: rgba(0, 0, 0, 0.269);
 }

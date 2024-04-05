@@ -1,8 +1,8 @@
 import './RedirectButton.css';
 
-export default function RedirectButton({ text, onclick }) {
+export default function RedirectButton({ text, onclick, css }) {
   return (
-    <button className="redirect-button" onClick={onclick}>
+    <button className={`redirect-button ${css}`} onClick={onclick}>
       {text}
     </button>
   );

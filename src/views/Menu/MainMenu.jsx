@@ -59,10 +59,14 @@ export default function MainMenu() {
     return (
       <div id="mainMenu" className="flex justify-center">
         <div id="menuWrapper" className="flex-col align-center">
-          <h1>The Elijah Project</h1>
-          <RedirectButton onclick={start} text={'Start'} />
-          <RedirectButton onclick={about} text={'About'} />
-          <RedirectButton onclick={null} text={'Profile'} />
+          <h1 className="small-caps">The Elijah Project</h1>
+          <RedirectButton onclick={start} text={'Start'} css={'bkg-btn-blue'} />
+          <RedirectButton onclick={about} text={'About'} css={'bkg-btn-blue'} />
+          <RedirectButton
+            onclick={null}
+            text={'Profile'}
+            css={'bkg-btn-blue'}
+          />
         </div>
 
         {showPopup && (

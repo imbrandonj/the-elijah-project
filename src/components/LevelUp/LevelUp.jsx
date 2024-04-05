@@ -115,7 +115,11 @@ export default function LevelUp({
               Score Total: <span className="green">{playerScore}</span>
             </li>
           </ul>
-          <RedirectButton onclick={newLevel} text={'Continue to next level'} />
+          <RedirectButton
+            text={'Continue to next level'}
+            onclick={newLevel}
+            css={'bkg-btn-blue'}
+          />
         </div>
       </div>
     );
@@ -142,7 +146,7 @@ export default function LevelUp({
               Needed: <span className="green">{minScore}</span>
             </li>
           </ul>
-          <RedirectButton onclick={retry} text={'Retry'} />
+          <RedirectButton text={'Retry'} onclick={retry} css={'bkg-btn-blue'} />
         </div>
       </div>
     );

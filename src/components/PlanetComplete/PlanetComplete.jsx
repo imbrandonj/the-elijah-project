@@ -40,8 +40,8 @@ export default function PlanetComplete({
   };
 
   return (
-    <div id="planetComplete">
-      <h2>
+    <div id="planetComplete" className="flex-col align-center">
+      <h2 className="flex align-center small-caps">
         <img src={planetImg} height={90} />
         planet {path} completed!
       </h2>
@@ -52,10 +52,13 @@ export default function PlanetComplete({
         Elijah likes to play around with a text box when he's finished, so
         here's a text box to play with: <br /> <br />
       </p>
-      <div className="flex-row-10">
+      <div className="flex align-center justify-evenly">
         <textarea />
-        <button onClick={handleReturn} className="dashSwiperBtn">
-          {/* reused class from MissionSelect.jsx */}
+        <button
+          onClick={handleReturn}
+          /* reused class (dashSwiperBtn) from SelectMission.jsx */
+          className="dashSwiperBtn flex flex-col align-center"
+        >
           <img src={RocketHome} height={140} />
           Return to Base
         </button>

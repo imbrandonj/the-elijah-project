@@ -57,12 +57,14 @@
     letter-spacing: 0.15rem;
 }
 
-.red {
-    color: rgb(119, 47, 47);
+#levelUp .redirect-button {
+    font-size: 1.45rem;
+    padding: 1rem;
 }
 
-.green {
-    color: var(--popupGreen);
+#levelUp .redirect-button:hover {
+    background-color: var(--blackOverlay);
+    color: var(--lightBlue);
 }
 
 /******

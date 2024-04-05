@@ -53,21 +53,17 @@
     font-weight: bold;
 }
 
-.btnRowBundle {
-    padding: 3rem;
-}
-
-.btnRowBundle button {
-    margin: 1rem;
-    flex-basis: 25%;
+#setComplete button {
+    margin: 3rem 1rem;
+    flex-basis: 22%;
     padding: 2rem 0;
     font-size: 2.2rem;
-    font-family: var(--mono);
     letter-spacing: 0.1rem;
-    color: var(--buttonBlue);
-    background-color: var(--blackOverlay);
-    border: none;
-    border-radius: 0.25rem;
+}
+
+#setComplete button:hover {
+    background-color: var(--buttonBlue);
+    color: black;
 }
 
 .erase {
@@ -75,13 +71,7 @@
 }
 
 .parent:hover .erase {
-    color:rgb(143, 6, 6);
-}
-
-#setComplete button:hover {
-    /* background-color: rgba(240, 248, 255, 0.379); */
-    background-color: var(--buttonBlue);
-    color: black;
+    color: var(--red);
 }
 
 @media (max-width: 2000px) {

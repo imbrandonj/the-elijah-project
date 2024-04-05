@@ -1,7 +1,10 @@
 import './SetComplete.css';
 
-// imported modules:
+// imported components:
+import RedirectButton from '../RedirectButton/RedirectButton';
 import { useView } from '@root/contexts/ViewContext.jsx';
+
+// imported modules:
 import { getLevels } from '@root/modules/levelManager.js';
 
 // imported svg:
@@ -56,14 +59,18 @@ export default function SetComplete({
           </li>
         </ul>
       </div>
-      <div className="btnRowBundle flex justify-evenly">
-        <button className="small-caps" onClick={returnHome}>
-          Return to Base
-        </button>
-        <button className="small-caps" onClick={newLevel}>
-          Continue to Next Set
-        </button>
-        <button className="parent small-caps">
+      <div className="flex justify-evenly">
+        <RedirectButton
+          text="Return to Base"
+          onclick={returnHome}
+          css={'bkg-blk-overlay clr-btn-blue small-caps'}
+        />
+        <RedirectButton
+          text="Continue to Next Set"
+          onclick={newLevel}
+          css={'bkg-blk-overlay clr-btn-blue small-caps'}
+        />
+        <button className="parent bkg-blk-overlay small-caps">
           <span className="erase">Reset Score</span>
         </button>
       </div>

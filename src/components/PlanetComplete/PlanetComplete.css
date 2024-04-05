@@ -3,9 +3,6 @@
 */
 
 #planetComplete {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 2% 0;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
@@ -13,12 +10,9 @@
 }
 
 #planetComplete h2 {
-    display: flex;
-    align-items: center;
     gap: 3rem;
     margin: 1rem 0 3rem;
     font-size: 4rem;
-    font-variant: small-caps;
     letter-spacing: 0.1rem;
 }
 
@@ -29,14 +23,22 @@
     line-height: 2.5rem;
 }
 
+#planetComplete div {
+    gap: 10rem;
+}
+
 #planetComplete textarea {
-    width: 42%;
+    flex-basis: 50%;
     height: 14rem;
     padding: 1.5rem 1rem;
     font-size: 1.75rem;
     letter-spacing: 0.075rem;
     resize: none;
     border-radius: 0.5rem;
+}
+
+#planetComplete button {
+    flex-basis: 50%;
 }
 
 

@@ -10,6 +10,7 @@
     --lightBlue: rgb(201, 234, 255);
     --buttonBlue: rgba(204, 238, 255, 0.6);
     --popupGreen: rgb(76, 136, 113);
+    --red: rgb(119, 47, 47)
 }
 
 /* border box model: https://css-tricks.com/box-sizing/ */
@@ -76,6 +77,18 @@ h1, h2, h3, h4 {
     align-self: flex-start;
 }
 
+.bkg-btn-blue {
+    background-color: var(--buttonBlue);
+}
+
+.bkg-blk-overlay {
+    background-color: var(--blackOverlay);
+}
+
+.clr-btn-blue {
+    color: var(--buttonBlue);
+}
+
 .italic {
     font-style: italic;
 }
@@ -88,10 +101,12 @@ h1, h2, h3, h4 {
     margin-left: 2rem;
 }
 
-.flex-row-10 {
-    display: flex;
-    align-items: center;
-    gap: 10rem;
+.red {
+    color: rgb(119, 47, 47);
+}
+
+.green {
+    color: var(--popupGreen);
 }
 
 /*

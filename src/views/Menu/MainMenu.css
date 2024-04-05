@@ -11,22 +11,35 @@
     background-color: var(--blackWrap);
 }
 
-#mainMenu h1 {
+#menuWrapper h1 {
     font-size: 3.2rem;
     margin-bottom: 4rem;
     letter-spacing: 0.5rem;
-    font-variant: small-caps;
 }
 
-#mainMenu .redirect-button {
+#menuWrapper .redirect-button {
     margin: 1.2rem;
+    width: 12rem;
+    padding: 1.1rem 0;
     font-size: 1.8rem;
+}
+
+#menuWrapper .redirect-button:hover {
+    color: var(--lightBlue);
+    background-color: var(--blackOverlay)
 }
 
 #mainMenu .popup {
     width: 55%;
 }
 
+#mainMenu .popup .redirect-button {
+    margin-top: 2rem;
+    width: 16rem;
+    padding: 1rem 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+  }
 
 /*
     Narrow Screen viewport event
@@ -69,6 +82,13 @@
     #mainMenu .popup {
         width: 60%;
     }
+
+    #mainMenu .popup .redirect-button {
+        margin-top: 2rem;
+        width: 12rem;
+        padding: 1rem;
+        font-size: 2rem;
+      }
 }
 
 /**
@@ -82,4 +102,11 @@
     #mainMenu .popup {
         width: 75%;
     }
+
+    #mainMenu .popup .redirect-button {
+        margin-top: 1rem;
+        width: 12rem;
+        padding: 1rem;
+        font-size: 1.85rem;
+      }
 }

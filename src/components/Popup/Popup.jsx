@@ -1,4 +1,6 @@
-import './Popup.css'; // Import your popup styles
+import RedirectButton from '../RedirectButton/RedirectButton';
+
+import './Popup.css';
 
 const Popup = ({ closePopup, para1, para2, buttonText }) => {
   return (
@@ -9,7 +11,11 @@ const Popup = ({ closePopup, para1, para2, buttonText }) => {
         </span>
         <p>{para1}</p>
         <p>{para2}</p>
-        <button onClick={closePopup}>{buttonText}</button>
+        <RedirectButton
+          onclick={closePopup}
+          text={buttonText}
+          css={'bkg-blk-overlay clr-btn-blue small-caps'}
+        />
       </div>
     </div>
   );
