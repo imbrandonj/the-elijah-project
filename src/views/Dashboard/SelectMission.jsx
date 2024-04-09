@@ -52,7 +52,7 @@ export default function SelectMission({ setMissionSelect, setDashSelect }) {
         <SwiperSlide>
           <button
             onClick={alphaSelect}
-            className="dashSwiperBtn flex flex-col align-center alphaLitColor"
+            className="dashSwiperBtn flex-col align-center alphaLitColor"
           >
             <img src={AlphaLiteracy} height={160} />
             Alpha-Literacy
@@ -62,7 +62,7 @@ export default function SelectMission({ setMissionSelect, setDashSelect }) {
           <button
             id="arith"
             onClick={arithSelect}
-            className="dashSwiperBtn flex flex-col align-center arithColor"
+            className="dashSwiperBtn flex-col align-center arithColor"
           >
             <img src={Arith} height={160} />
             Arith
@@ -71,7 +71,7 @@ export default function SelectMission({ setMissionSelect, setDashSelect }) {
         <SwiperSlide>
           <button
             onClick={perspectiveSelect}
-            className="dashSwiperBtn flex flex-col align-center perspectiveColor"
+            className="dashSwiperBtn flex-col align-center perspectiveColor"
           >
             <img src={Perspective} height={160} />
             Perspective
@@ -80,7 +80,7 @@ export default function SelectMission({ setMissionSelect, setDashSelect }) {
         <SwiperSlide>
           <button
             onClick={handleReturn}
-            className="dashSwiperBtn flex flex-col align-center`"
+            className="dashSwiperBtn flex-col align-center"
           >
             <img src={RocketHome} height={140} />
             Return to Base
