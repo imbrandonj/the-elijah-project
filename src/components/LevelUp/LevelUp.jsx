@@ -136,7 +136,7 @@ export default function LevelUp({
     return (
       <div id="levelUp">
         <div id="levelUpWrapper" className="flex-col align-center">
-          <h2 className="red flex align-center">Challenge Failed.</h2>
+          <h2 className="red flex align-center">Level Failed.</h2>
           <h3>Level {level} Incomplete</h3>
           <ul>
             <li>
