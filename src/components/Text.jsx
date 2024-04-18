@@ -105,7 +105,12 @@ export default function Text({ text }) {
     case 'AlphaEntry7':
       return (
         <div id="typing">
-          <Typing words={'Separate cats and dogs!!'} rate={50} />
+          <Typing
+            words={
+              'I have a new problem for you to solve.// There is a mix of cats and dogs./ I need a speller to separate them.// When you see a cat, type "cat"/ and when you see a dog, type "dog"'
+            }
+            rate={50}
+          />
           <p>
             When you're ready, click the{' '}
             <span className="italic small-caps">Begin!</span> button <br />
