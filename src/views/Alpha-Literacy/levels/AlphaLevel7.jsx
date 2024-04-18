@@ -5,14 +5,12 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { specialChars } from '../AlphaProblems.js';
 import tallyUp from '@root/modules/tallyUp.js';
-import generateProblem from '@root/modules/generateProblem';
 
 import '../AlphaLit.css';
 
 // imported hooks:
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 /*
   Alpha-Literacy Level 7
@@ -25,68 +23,106 @@ export default function AlphaLevel7({
   levelScore,
   setLevelScore,
 }) {
-  const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
+  const [emojiStr, setEmojiStr] = useState([
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+    '🐈',
+    '🐕',
+  ]);
+  const [dogStr, setDogStr] = useState('');
+  const [catStr, setCatStr] = useState('');
+  const [word, setWord] = useState('');
 
-  const problemSet = specialChars; // imported problems for this level
-
-  // `problem` object sets `question` & `answer` properties
-  const [problem, setProblem] = useState(
-    () => generateProblem(problemSet, problemHistory, false) // generate a unique problem
-  );
+  const hashKey = { '🐈': 'cat', '🐕': 'dog' };
 
   // focuses on input box with each render
   useEffect(() => {
     document.getElementById('litAns').focus();
   }, []);
 
+  const answerEvent = userAnswer => {
+    // correct answer event:
+    if (userAnswer === hashKey[emojiStr[0]]) {
+      // module answerEvent.js
+      tallyUp(
+        20, // `totalQuestions`
+        correctTally, // total correct tally (state)
+        setCorrectTally, // to set total correct tally (set state)
+        setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
+      );
+
+      setLevelScore(levelScore + 20);
+
+      // update each string after answering
+      let newEmojiStr = emojiStr.slice(1); // pop the front of the stack
+      if (emojiStr[0] === '🐕') {
+        setDogStr(prevDogStr => [...prevDogStr, emojiStr[0]]);
+      } else {
+        setCatStr(prevCatStr => [...prevCatStr, emojiStr[0]]);
+      }
+      setEmojiStr(newEmojiStr);
+
+      // setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
+    } else if (levelScore >= 10) {
+      setLevelScore(levelScore - 10);
+    }
+  };
+
   return (
     <div id="litLevel" className="flex-col align-center">
-      <LevelHeader
-        text="Type and enter 20 special characters"
-        score={levelScore}
-      />
-      <div id="litProb">
-        <p>
-          Enter the special character:
-          <br />
-          <span className="letterQ">{problem.question}</span>
-        </p>
-        <input
-          id="litAns"
-          type="text"
-          onKeyDown={event => {
-            // listen for enter keydown
-            if (event.key === 'Enter') {
+      <LevelHeader text="Separate the cats & dogs!" score={levelScore} />
+      <div id="emojiLevel" className="flex align-center justify-evenly">
+        <p className="emojiBundle">{emojiStr}</p>
+        <div id="litProb">
+          <p>
+            <span className="emojiQ">{emojiStr[0]}</span>
+            <br />
+            <br />
+            <span className="wordQ">{hashKey[emojiStr[0]]}</span>
+          </p>
+          <input
+            id="litAns"
+            type="text"
+            onKeyDown={event => {
               // set the value of the user's answer
               let inputValue = event.target.value;
 
-              event.target.value = ''; // clears the input box
+              // listen for enter keydown
+              if (event.key === 'Enter') {
+                // case insensitive
+                inputValue = inputValue.toLowerCase();
 
-              // correct answer event:
-              if (inputValue === problem.answer) {
-                // module tallyUp.js
-                tallyUp(
-                  20, // `totalQuestions`
-                  correctTally, // total correct tally (state)
-                  setCorrectTally, // to set total correct tally (set state)
-                  setLevelUpEvent // to set a level up event and display `LevelUp` component on rerender (set state)
-                );
-
-                setLevelScore(levelScore + 20);
-
-                // generate a new problem after processing the current one
-                setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
-              } else if (levelScore >= 10) {
-                setLevelScore(levelScore - 10);
+                answerEvent(inputValue);
+                event.target.value = ''; // clears the input box
               }
-            }
-          }}
-        />
+            }}
+          />
+        </div>
+        <div className="flex-col">
+          <p className="emojiBundle">{catStr}</p>
+          <p className="emojiBundle">{dogStr}</p>
+        </div>
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: A lot of these require using the shift key. Have your parent show you the shift key." />
+      <Tipbox text="Tip: Practice saying the word and speaking each letter as you type them." />
     </div>
   );
 }

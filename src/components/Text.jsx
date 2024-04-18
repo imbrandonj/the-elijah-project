@@ -105,6 +105,17 @@ export default function Text({ text }) {
     case 'AlphaEntry7':
       return (
         <div id="typing">
+          <Typing words={'Separate cats and dogs!!'} rate={50} />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to start.
+          </p>
+        </div>
+      );
+    case 'AlphaEntry8':
+      return (
+        <div id="typing">
           <Typing
             words={
               'This level is a bit different.// You are going to identify and type special characters, such as commas, periods, and exclamation points.// This will test and develop your navigational skills of the keyboard.'

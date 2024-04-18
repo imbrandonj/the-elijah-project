@@ -13,6 +13,7 @@ import AlphaLevel4 from './levels/AlphaLevel4.jsx';
 import AlphaLevel5 from './levels/AlphaLevel5.jsx';
 import AlphaLevel6 from './levels/AlphaLevel6.jsx';
 import AlphaLevel7 from './levels/AlphaLevel7.jsx';
+import AlphaLevel8 from './levels/AlphaLevel8.jsx';
 
 // voice: en-US-Studio-O
 // imported mp3 audio for `LevelEntry` component:
@@ -22,7 +23,7 @@ import audioEntry3 from '@root/assets/mp3/AlphaEntry3.mp3';
 import audioEntry4 from '@root/assets/mp3/AlphaEntry4.mp3';
 import audioEntry5 from '@root/assets/mp3/AlphaEntry5.mp3';
 import audioEntry6 from '@root/assets/mp3/AlphaEntry6.mp3';
-import audioEntry7 from '@root/assets/mp3/AlphaEntry7.mp3';
+import audioEntry8 from '@root/assets/mp3/AlphaEntry8.mp3';
 
 // imported img for `LevelEntry` component:
 import astroUSA from '@root/assets/svgs/astro-usa.svg';
@@ -179,11 +180,29 @@ export default function AlphaLit() {
             />
           ) : (
             <LevelEntry
-              voice={audioEntry7}
+              voice={null}
               img={astroUSA}
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 7"
               text="AlphaEntry7"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 8 ? (
+          begin ? (
+            <AlphaLevel8
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={audioEntry8}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 8"
+              text="AlphaEntry8"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />

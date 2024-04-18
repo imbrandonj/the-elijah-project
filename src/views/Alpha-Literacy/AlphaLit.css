@@ -20,7 +20,7 @@
 
 #litProb {
     text-align: center;
-    margin: 1.5rem;
+    margin: 2.5rem;
 }
 
 #litProb p {
@@ -62,20 +62,25 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#emojiLevel {
+    width: 100%;
+}
+
+.emojiBundle {
+    width: 18rem;
+    min-height: 5rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: 3px solid black;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
 #spell {
     line-height: 6rem;
 }
 
-
-.medEmoji {
-    font-size: 7rem;
-    line-height: 9rem;
-}
-
-.emojiFont {
-    font-size: 3.5rem;
-    letter-spacing: 0.4rem;
-}
 
 #litLevel .filledFootbox {
     background-color: rgba(255, 255, 255, 0.75);
@@ -102,8 +107,8 @@
         padding: 2rem;
     }
     
-    #litProb {
-        margin: 0rem;
+    #litProb, #emojiLevel {
+        margin: 0.5rem;
     }
 
     #litProb p {
