@@ -107,6 +107,7 @@ export default function ArithLevel3({
             id="operand1"
             className="operandBox"
             type="text"
+            autoComplete="off"
             value={userOperand1}
             onChange={event => {
               if (isNaN(parseInt(event.target.value))) setUserOperand1('');
@@ -122,6 +123,7 @@ export default function ArithLevel3({
             id="operand2"
             className="operandBox"
             type="text"
+            autoComplete="off"
             value={userOperand2}
             onChange={event => {
               if (isNaN(parseInt(event.target.value))) setUserOperand2('');
@@ -137,6 +139,7 @@ export default function ArithLevel3({
         <input
           id="mathAns"
           type="text"
+          autoComplete="off"
           value={userSum}
           onChange={event => {
             if (isNaN(parseInt(event.target.value))) setUserSum('');

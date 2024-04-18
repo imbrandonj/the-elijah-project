@@ -56,6 +56,7 @@ export default function AlphaLevel6({
         <input
           id="litAns"
           type="text"
+          autoComplete="off"
           onKeyDown={event => {
             // set the value of the user's answer
             let inputValue = event.target.value;

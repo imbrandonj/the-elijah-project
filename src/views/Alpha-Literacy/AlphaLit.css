@@ -67,13 +67,13 @@
 }
 
 .emojiBundle {
-    width: 18rem;
-    min-height: 5rem;
+    width: 20rem;
+    min-height: 10rem;
     padding: 1rem;
     margin: 1rem;
     border: 3px solid black;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.25rem;
     letter-spacing: 0.2rem;
 }
 
@@ -139,16 +139,10 @@
     #spell {
         line-height: 8rem;
     }
-    
-    .medEmoji {
-        font-size: 5.5rem;
-        line-height: 2.5rem;
-    }
-    
-    .emojiFont {
-        font-size: 3.1rem;
-        letter-spacing: 0.4rem;
-        line-height: 5.5rem;
+        
+    .emojiBundle {
+        min-height: 8rem;
+        font-size: 2rem;
     }
 
     #litLevel .objective {
@@ -156,7 +150,6 @@
         padding: 0.4rem 0.8rem 0;
         font-size: 1.4rem;
         letter-spacing: 0.1rem;
-
     }
     
     #litLevel .objective img {
@@ -213,16 +206,10 @@
     #spell {
         line-height: 8rem;
     }
-    
-    .medEmoji {
-        font-size: 5.5rem;
-        line-height: 2.5rem;
-    }
-    
-    .emojiFont {
-        font-size: 3.1rem;
-        letter-spacing: 0.4rem;
-        line-height: 5.5rem;
+        
+    .emojiBundle {
+        width: 18rem;
+        font-size: 2rem;
     }
 
     #litLevel .objective {

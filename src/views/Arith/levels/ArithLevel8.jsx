@@ -113,6 +113,7 @@ export default function ArithLevel8({
             id="operand1"
             className="operandBox"
             type="text"
+            autoComplete="off"
             value={userOperand1}
             onChange={event => {
               if (isNaN(parseInt(event.target.value))) setUserOperand1('');

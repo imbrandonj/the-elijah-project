@@ -48,7 +48,6 @@ export default function AlphaLevel7({
   ]);
   const [dogStr, setDogStr] = useState('');
   const [catStr, setCatStr] = useState('');
-  const [word, setWord] = useState('');
 
   const hashKey = { '🐈': 'cat', '🐕': 'dog' };
 
@@ -89,7 +88,9 @@ export default function AlphaLevel7({
     <div id="litLevel" className="flex-col align-center">
       <LevelHeader text="Separate the cats & dogs!" score={levelScore} />
       <div id="emojiLevel" className="flex align-center justify-evenly">
-        <p className="emojiBundle">{emojiStr}</p>
+        <p className="emojiBundle flex align-center justify-center">
+          {emojiStr}
+        </p>
         <div id="litProb">
           <p>
             <span className="emojiQ">{emojiStr[0]}</span>
@@ -100,6 +101,7 @@ export default function AlphaLevel7({
           <input
             id="litAns"
             type="text"
+            autoComplete="off"
             onKeyDown={event => {
               // set the value of the user's answer
               let inputValue = event.target.value;
@@ -116,8 +118,12 @@ export default function AlphaLevel7({
           />
         </div>
         <div className="flex-col">
-          <p className="emojiBundle">{catStr}</p>
-          <p className="emojiBundle">{dogStr}</p>
+          <p className="emojiBundle flex align-center justify-center">
+            {catStr}
+          </p>
+          <p className="emojiBundle flex align-center justify-center">
+            {dogStr}
+          </p>
         </div>
       </div>
       <Footbox correct={correctTally} />

@@ -55,6 +55,7 @@ export default function AlphaLevel8({
         <input
           id="litAns"
           type="text"
+          autoComplete="off"
           onKeyDown={event => {
             // listen for enter keydown
             if (event.key === 'Enter') {

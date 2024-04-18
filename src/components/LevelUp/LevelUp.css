@@ -74,7 +74,7 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #levelUp {
-        margin-top: 1%;
+        margin-top: 0%;
     }
     
     #levelUpWrapper {
@@ -124,7 +124,7 @@
 **/
 @media screen and (max-width: 1450px) {
     #levelUp {
-        margin-top: 0rem;
+        margin-top: 0%;
     }
     
     #levelUpWrapper {

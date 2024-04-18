@@ -50,6 +50,7 @@ export default function ArithLevel12({
         <input
           id="mathAns"
           type="text"
+          autoComplete="off"
           onKeyDown={event => {
             // listen for enter keydown
             if (event.key === 'Enter') {

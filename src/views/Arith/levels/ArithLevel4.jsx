@@ -48,6 +48,7 @@ export default function ArithLevel4({
         <input
           id="mathAns"
           type="text"
+          autoComplete="off"
           onKeyDown={event => {
             // listen for enter keydown
             if (event.key === 'Enter') {

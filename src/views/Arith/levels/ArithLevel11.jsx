@@ -135,6 +135,7 @@ export default function ArithLevel11({
             id="operand1"
             className="operandBox"
             type="text"
+            autoComplete="off"
             value={userOperand1}
             onChange={event => {
               if (isNaN(parseInt(event.target.value))) setUserOperand1('');
@@ -149,6 +150,7 @@ export default function ArithLevel11({
             id="operationBox"
             className="operationBox"
             type="text"
+            autoComplete="off"
             value={userOperation}
             onChange={event => {
               setUserOperation(event.target.value);
@@ -161,6 +163,7 @@ export default function ArithLevel11({
             id="operand2"
             className="operandBox"
             type="text"
+            autoComplete="off"
             value={userOperand2}
             onChange={event => {
               if (isNaN(parseInt(event.target.value))) setUserOperand2('');
@@ -176,6 +179,7 @@ export default function ArithLevel11({
         <input
           id="mathAns"
           type="text"
+          autoComplete="off"
           value={userAnswer}
           onChange={event => {
             if (isNaN(parseInt(event.target.value))) setUserAnswer('');
