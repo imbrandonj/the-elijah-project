@@ -1,7 +1,8 @@
 {
   "name": "elijah_project",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Elijah Project",
+  "author": "Brandon Jenkins",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
@@ -12,7 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^2.1.0",
