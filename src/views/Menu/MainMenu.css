@@ -17,16 +17,44 @@
     letter-spacing: 0.5rem;
 }
 
-#menuWrapper .redirect-button {
+#menuWrapper .redirect-button, #menuWrapper form button {
     margin: 1.2rem;
     width: 12rem;
     padding: 1.1rem 0;
     font-size: 1.8rem;
 }
 
-#menuWrapper .redirect-button:hover {
+#menuWrapper form button {
+    margin: 2rem 0 0;
+    font-family: var(--mono);
+    border-radius: 0.4rem;
+    border: none;
+    color: black;
+    background-color: var(--buttonBlue);
+}
+
+#menuWrapper .redirect-button:hover, #menuWrapper form button:hover {
     color: var(--lightBlue);
-    background-color: var(--blackOverlay)
+    background-color: var(--blackOverlay);
+}
+
+#menuWrapper form label {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#menuWrapper form input {
+    padding: 1rem;
+    margin: 0.5rem;
+    font-family: var(--mono);
+    font-size: 1.25rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    border: none;
+}
+
+#menuWrapper form div {
+    gap: 2rem;
 }
 
 #mainMenu .popup {
