@@ -15,6 +15,7 @@ import { useState, useEffect } from 'react';
 
 export default function SetComplete({
   newLevel, // fn that increments level; sets state: setLevel(level + 1), setBegin(false), setLevelUpEvent(false)
+  retry, // retry fn allows user to retry challenge level
   levelScore,
   planet,
   planetImg,
@@ -28,6 +29,7 @@ export default function SetComplete({
     setView('Dashboard');
   };
 
+  // obtain set score:
   useEffect(() => {
     const levels = getLevels(planet);
     const tallyTotal = Object.values(levels).reduce((total, score) => {
@@ -74,8 +76,8 @@ export default function SetComplete({
           css={'bkg-blk-overlay clr-btn-blue small-caps'}
         />
         <EraseButton
-          text="Reset Score"
-          onclick={null}
+          text="Retry Challenge"
+          onclick={retry}
           color="black"
           css={'small-caps'}
         />
