@@ -55,6 +55,9 @@ export default function LevelUp({
 
   // continue button click event
   const newLevel = () => {
+    // set score in local storage:
+    storeLevel(planet, level, playerScore); // imported module
+
     setLevelScore(0);
     setLevel(level + 1);
     setLevelUpEvent(false);
@@ -72,9 +75,6 @@ export default function LevelUp({
   // calculate score:
   const timeBonus = 300 - time;
   const playerScore = levelScore + timeBonus;
-
-  // set score in local storage:
-  storeLevel(planet, level, playerScore); // imported module
 
   // every fifth level is a challenge with a minScore of 600
   const minScore = level % 5 === 0 ? 600 : 0;
@@ -124,7 +124,7 @@ export default function LevelUp({
             />
             <EraseButton
               text={'Reset Score & Try Again'}
-              onclick={null}
+              onclick={retry}
               css={'bkg-btn-blue red'}
             />
           </div>
