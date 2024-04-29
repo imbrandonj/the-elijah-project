@@ -134,6 +134,39 @@ export default function Text({ text }) {
           </p>
         </div>
       );
+    case 'AlphaEntry9':
+      return (
+        <div id="typing">
+          <Typing words={'9'} rate={50} />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to start.
+          </p>
+        </div>
+      );
+    case 'AlphaEntry10':
+      return (
+        <div id="typing">
+          <Typing words={'10'} rate={50} />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to start.
+          </p>
+        </div>
+      );
+    case 'AlphaEntry11':
+      return (
+        <div id="typing">
+          <Typing words={'11'} rate={50} />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to start.
+          </p>
+        </div>
+      );
     case 'ArithEntry1':
       return (
         <div id="typing">

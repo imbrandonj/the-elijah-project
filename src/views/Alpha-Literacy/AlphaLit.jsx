@@ -14,6 +14,9 @@ import AlphaLevel5 from './levels/AlphaLevel5.jsx';
 import AlphaLevel6 from './levels/AlphaLevel6.jsx';
 import AlphaLevel7 from './levels/AlphaLevel7.jsx';
 import AlphaLevel8 from './levels/AlphaLevel8.jsx';
+import AlphaLevel9 from './levels/AlphaLevel9.jsx';
+import AlphaLevel10 from './levels/AlphaLevel10.jsx';
+import AlphaLevel11 from './levels/AlphaLevel11.jsx';
 
 // voice: en-US-Studio-O
 // imported mp3 audio for `LevelEntry` component:
@@ -204,6 +207,60 @@ export default function AlphaLit() {
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 8"
               text="AlphaEntry8"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 9 ? (
+          begin ? (
+            <AlphaLevel9
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 9"
+              text="AlphaEntry9"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 10 ? (
+          begin ? (
+            <AlphaLevel10
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 10"
+              text="AlphaEntry10"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 11 ? (
+          begin ? (
+            <AlphaLevel11
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={null}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 11"
+              text="AlphaEntry11"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />
