@@ -73,7 +73,7 @@ export default function MainMenu() {
           <Popup
             closePopup={closePopup}
             para1={
-              'Hello. Thanks for visiting the app. You will find some functionalities missing, i.e., profile and profile configuration. Originally, the application was to utilize a database and backend. I am currently migrating The Elijah Project to a desktop application utilizing Electron.js.'
+              'Hello. Thanks for visiting the app. You will find some functionalities missing, i.e., profile and profile configuration. These features are currently being developed and will be available soon. This will be a large update with user customization.'
             }
             para2={
               'This is an ongoing solo project; as such, you will find varying degrees of depth. I am adding content often. Enjoy your visit and feel free to email me at imbrandonj42@gmail.com'
