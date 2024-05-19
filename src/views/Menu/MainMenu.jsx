@@ -9,11 +9,11 @@ import Perspective from '../Perspective/Perspective.jsx';
 
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
-import LogIn from './LogIn.jsx';
+import Login from './Login.jsx';
 import SignUp from './SignUp.jsx';
+import FreePlay from './FreePlay.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
-import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
 // imported hooks:
 import { useState } from 'react';
@@ -25,7 +25,7 @@ import { useState } from 'react';
       -MainMenu controls all view displays via the useContext global state
   
     - This menu page that has 4 paths:
-      1) log in, which calls <LogIn /> component
+      1) login, which calls <Login /> component
       2) sign up, which calls <SignUp /> component
       3) about, which calls <About /> component
       4) entry to all other views
@@ -34,6 +34,7 @@ export default function MainMenu() {
   const { view, setView } = useView();
   const [logIn, setLogIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
+  const [freePlay, setFreePlay] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -56,6 +57,10 @@ export default function MainMenu() {
     setSignUp(true);
   };
 
+  const freeplay = () => {
+    setFreePlay(true);
+  };
+
   const about = () => {
     setView('About');
   };
@@ -71,14 +76,16 @@ export default function MainMenu() {
         <div id="menuWrapper" className="flex-col align-center">
           <h1 className="small-caps">The Elijah Project</h1>
           {logIn ? (
-            <LogIn setLogIn={setLogIn} />
+            <Login setLogIn={setLogIn} />
           ) : signUp ? (
             <SignUp setSignUp={setSignUp} />
+          ) : freePlay ? (
+            <FreePlay setFreePlay={setFreePlay} />
           ) : (
             <div className="flex-col align-center">
               <RedirectButton
                 onclick={login}
-                text={'Log In'}
+                text={'Login'}
                 css={'bkg-btn-blue'}
               />
               <RedirectButton
@@ -86,11 +93,18 @@ export default function MainMenu() {
                 text={'Sign Up'}
                 css={'bkg-btn-blue'}
               />
-              <RedirectButton
-                onclick={about}
-                text={'About'}
-                css={'bkg-btn-blue'}
-              />
+              <div>
+                <RedirectButton
+                  onclick={freeplay}
+                  text={'Free Play'}
+                  css={'bkg-btn-blue'}
+                />
+                <RedirectButton
+                  onclick={about}
+                  text={'About'}
+                  css={'bkg-btn-blue'}
+                />
+              </div>
             </div>
           )}
         </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 /*
-    LogIn.jsx
+    Login.jsx
 */
-export default function LogIn({ setLogIn }) {
+export default function Login({ setLogIn }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,7 +27,7 @@ export default function LogIn({ setLogIn }) {
         onChange={({ target }) => setPassword(target.value)}
       />
       <div className="flex">
-        <button type="submit">Log In</button>
+        <button type="submit">Login</button>
         <button onClick={() => setLogIn(false)}>Go Back</button>
       </div>
     </form>
