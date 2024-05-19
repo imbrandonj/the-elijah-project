@@ -2,19 +2,49 @@
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 9%;
+    margin-top: 10vh;
 } 
 
 #menuWrapper {
-    padding: 5rem 8rem;
+    height: 80vh;
+    width: 80vw;
+    gap: 4rem;
     border-radius: 1rem;
     background-color: var(--blackWrap);
 }
 
 #menuWrapper h1 {
-    font-size: 3.2rem;
-    margin-bottom: 4rem;
-    letter-spacing: 0.5rem;
+    width: 20vw;
+    font-size: 4.2rem;
+    margin-bottom: 4.2rem;
+    letter-spacing: 0.7rem;
+    text-align: center;
+    text-shadow: 
+    8px 18px 42px var(--lightBlue),
+    12px 25px 88px var(--buttonBlue);
+}
+
+#menuWrapper #menuSelection {
+    width: 42vw;
+    height: 48vh;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--lightBlue);
+}
+
+#menuWrapper .menuBundle > div {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.rocket {
+    animation: flyRight 10s linear infinite;
+}
+
+.rocket span {
+    font-size: 40px;
+    transform:rotate(45deg);
+    animation: rocketHorizontalWiggleRight 0.6s ease-in-out infinite;
 }
 
 #menuWrapper .redirect-button, #menuWrapper form button {
@@ -40,7 +70,7 @@
 
 #menuWrapper form label {
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 #menuWrapper form input {
@@ -49,6 +79,7 @@
     font-family: var(--mono);
     font-size: 1.25rem;
     text-align: center;
+    background-color: var(--buttonBlue);
     border-radius: 0.4rem;
     border: none;
 }
@@ -114,7 +145,13 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #mainMenu {
-        margin-top: 7%;
+        margin-top: 5%;
+    }
+
+    #menuWrapper {
+        width: 88vw;
+        padding: 8rem 6rem;
+        gap: 8rem;
     }
 
     #mainMenu .popup {
@@ -140,7 +177,13 @@
 **/
 @media (max-width: 1450px) {
     #mainMenu {
-        margin-top: 5%;
+        margin-top: 3%;
+    }
+
+    #menuWrapper {
+        width: 90vw;
+        padding: 6rem 3rem;
+        gap: 3rem;
     }
 
     #mainMenu .popup {

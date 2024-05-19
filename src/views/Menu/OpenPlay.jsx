@@ -6,9 +6,9 @@ export default function OpenPlay({ setOpenPlay }) {
   const { setView } = useView();
 
   return (
-    <>
+    <div className="flex-col align-center">
       <p id="openPlay">
-        Free Play allows the user to play The Elijah Project without having to
+        Open Play allows the user to play The Elijah Project without having to
         create a user profile.
         <br />
         <br />
@@ -28,6 +28,6 @@ export default function OpenPlay({ setOpenPlay }) {
         />
         <RedirectButton onclick={() => setOpenPlay(false)} text={'Go Back'} />
       </div>
-    </>
+    </div>
   );
 }

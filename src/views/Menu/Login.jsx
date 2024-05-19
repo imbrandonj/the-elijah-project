@@ -27,7 +27,7 @@ export default function Login({ setLogIn }) {
         onChange={({ target }) => setPassword(target.value)}
       />
       <div className="flex">
-        <button type="submit">Login</button>
+        <button type="submit">Log In</button>
         <button onClick={() => setLogIn(false)}>Go Back</button>
       </div>
     </form>

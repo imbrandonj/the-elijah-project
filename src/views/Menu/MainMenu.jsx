@@ -52,39 +52,51 @@ export default function MainMenu() {
   if (view === 'MainMenu') {
     return (
       <div id="mainMenu" className="flex justify-center">
-        <div id="menuWrapper" className="flex-col align-center">
-          <h1 className="small-caps">The Elijah Project</h1>
-          {logIn ? (
-            <Login setLogIn={setLogIn} />
-          ) : signUp ? (
-            <SignUp setSignUp={setSignUp} />
-          ) : openPlay ? (
-            <OpenPlay setOpenPlay={setOpenPlay} />
-          ) : (
-            <div className="flex-col align-center">
-              <RedirectButton
-                onclick={() => setLogIn(true)}
-                text={'Login'}
-                css={'bkg-btn-blue'}
-              />
-              <RedirectButton
-                onclick={() => setSignUp(true)}
-                text={'Sign Up'}
-                css={'bkg-btn-blue'}
-              />
-
-              <RedirectButton
-                onclick={() => setOpenPlay(true)}
-                text={'Open Play'}
-                css={'bkg-btn-blue'}
-              />
-              <RedirectButton
-                onclick={() => setView('About')}
-                text={'About'}
-                css={'bkg-btn-blue'}
-              />
-            </div>
-          )}
+        <div id="menuWrapper" className="flex justify-center align-center">
+          <h1 className="flex justify-center small-caps">
+            the
+            <br /> Elijah
+            <br /> Project
+          </h1>
+          <div id="menuSelection" className="flex justify-center align-center">
+            {logIn ? (
+              <Login setLogIn={setLogIn} />
+            ) : signUp ? (
+              <SignUp setSignUp={setSignUp} />
+            ) : openPlay ? (
+              <OpenPlay setOpenPlay={setOpenPlay} />
+            ) : (
+              <div className="menuBundle">
+                <div>
+                  <RedirectButton
+                    onclick={() => setLogIn(true)}
+                    text={'Login'}
+                    css={'bkg-btn-blue'}
+                  />
+                  <RedirectButton
+                    onclick={() => setSignUp(true)}
+                    text={'Sign Up'}
+                    css={'bkg-btn-blue'}
+                  />
+                </div>
+                <div>
+                  <RedirectButton
+                    onclick={() => setOpenPlay(true)}
+                    text={'Open Play'}
+                    css={'bkg-btn-blue'}
+                  />
+                  <RedirectButton
+                    onclick={() => setView('About')}
+                    text={'About'}
+                    css={'bkg-btn-blue'}
+                  />
+                </div>
+                <div className="rocket">
+                  <span>🚀</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         {showPopup && (
           <Popup
