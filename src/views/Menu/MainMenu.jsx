@@ -11,7 +11,7 @@ import Perspective from '../Perspective/Perspective.jsx';
 import { useView } from '@root/contexts/ViewContext.jsx';
 import Login from './Login.jsx';
 import SignUp from './SignUp.jsx';
-import FreePlay from './FreePlay.jsx';
+import OpenPlay from './OpenPlay.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
@@ -34,7 +34,7 @@ export default function MainMenu() {
   const { view, setView } = useView();
   const [logIn, setLogIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
-  const [freePlay, setFreePlay] = useState(false);
+  const [openPlay, setOpenPlay] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -49,27 +49,6 @@ export default function MainMenu() {
 
   console.log('main menu render');
 
-  const login = () => {
-    setLogIn(true);
-  };
-
-  const signup = () => {
-    setSignUp(true);
-  };
-
-  const freeplay = () => {
-    setFreePlay(true);
-  };
-
-  const about = () => {
-    setView('About');
-  };
-
-  const closePopup = () => {
-    // passed to the Popup component
-    setShowPopup(false);
-  };
-
   if (view === 'MainMenu') {
     return (
       <div id="mainMenu" className="flex justify-center">
@@ -79,38 +58,37 @@ export default function MainMenu() {
             <Login setLogIn={setLogIn} />
           ) : signUp ? (
             <SignUp setSignUp={setSignUp} />
-          ) : freePlay ? (
-            <FreePlay setFreePlay={setFreePlay} />
+          ) : openPlay ? (
+            <OpenPlay setOpenPlay={setOpenPlay} />
           ) : (
             <div className="flex-col align-center">
               <RedirectButton
-                onclick={login}
+                onclick={() => setLogIn(true)}
                 text={'Login'}
                 css={'bkg-btn-blue'}
               />
               <RedirectButton
-                onclick={signup}
+                onclick={() => setSignUp(true)}
                 text={'Sign Up'}
                 css={'bkg-btn-blue'}
               />
-              <div>
-                <RedirectButton
-                  onclick={freeplay}
-                  text={'Free Play'}
-                  css={'bkg-btn-blue'}
-                />
-                <RedirectButton
-                  onclick={about}
-                  text={'About'}
-                  css={'bkg-btn-blue'}
-                />
-              </div>
+
+              <RedirectButton
+                onclick={() => setOpenPlay(true)}
+                text={'Open Play'}
+                css={'bkg-btn-blue'}
+              />
+              <RedirectButton
+                onclick={() => setView('About')}
+                text={'About'}
+                css={'bkg-btn-blue'}
+              />
             </div>
           )}
         </div>
         {showPopup && (
           <Popup
-            closePopup={closePopup}
+            closePopup={() => setShowPopup(false)}
             para1={
               'Hello. Thanks for visiting the app. You will find some functionalities missing, i.e., profile and profile configuration. Originally, the application was to utilize a database and backend. I am currently migrating The Elijah Project to a desktop application utilizing Electron.js.'
             }
