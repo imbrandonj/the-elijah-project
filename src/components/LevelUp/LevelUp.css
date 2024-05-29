@@ -63,6 +63,17 @@
     padding: 1rem;
 }
 
+#levelUp .popup {
+  height: 40vh;
+  width: 50vw;
+}
+
+#levelUp .popup .redirect-button {
+    margin: 3rem 0 1.5rem;
+    width: 18rem;
+    font-size: 2rem;
+}
+
 /******
 
     Media Queries
@@ -117,6 +128,15 @@
     .score span {
         font-size: 2.6rem;
     }
+
+    #levelUp .popup {
+        height: 45vh;
+    }
+      
+    #levelUp .popup .redirect-button {
+        width: 22rem;
+        font-size: 1.75rem;
+    }
 }
 
 /**
@@ -162,5 +182,14 @@
 
     .score img {
         height: 1.75em;
+    }
+
+    #levelUp .popup {
+        width: 60vw;
+    }
+      
+    #levelUp .popup .redirect-button {
+        width: 20rem;
+        font-size: 1.5rem;
     }
 }

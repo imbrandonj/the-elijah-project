@@ -4,7 +4,8 @@ import './LevelUp.css'; // component styles
 import { useView } from '@root/contexts/ViewContext.jsx';
 import SetComplete from '@root/components/SetComplete/SetComplete.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
-import EraseButton from '@root/components/EraseButton/EraseButton';
+import EraseButton from '@root/components/EraseButton/EraseButton.jsx';
+import Popup from '@root/components/Popup/Popup.jsx';
 
 // imported modules:
 import { storeLevel } from '@root/modules/levelManager.js';
@@ -27,6 +28,7 @@ export default function LevelUp({
 }) {
   const { level, setLevel } = useView();
   const [time, setTime] = useState(0);
+  const [popup, setPopup] = useState(false);
 
   // time to complete level
   useEffect(() => {
@@ -98,6 +100,15 @@ export default function LevelUp({
     // regular level completed:
     return (
       <div id="levelUp">
+        {popup ? (
+          <Popup
+            buttonAction={retry}
+            closePopup={() => setPopup(false)}
+            para2={'Do you want to reset your score and try again?'}
+            buttonText={'Yes, Retry'}
+            buttonText2={'No, do not reset'}
+          />
+        ) : null}
         <div id="levelUpWrapper" className="flex-col align-center">
           <h2 className="flex align-center">
             {planet} level up
@@ -128,7 +139,7 @@ export default function LevelUp({
             />
             <EraseButton
               text={'Reset Score & Try Again'}
-              onclick={retry}
+              onclick={() => setPopup(true)}
               css={'bkg-btn-blue red'}
             />
           </div>

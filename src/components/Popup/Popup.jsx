@@ -2,7 +2,14 @@ import RedirectButton from '../RedirectButton/RedirectButton';
 
 import './Popup.css';
 
-const Popup = ({ closePopup, para1, para2, buttonText }) => {
+const Popup = ({
+  buttonAction,
+  closePopup,
+  para1,
+  para2,
+  buttonText,
+  buttonText2,
+}) => {
   return (
     <div className="popup">
       <div className="popup-content">
@@ -11,11 +18,20 @@ const Popup = ({ closePopup, para1, para2, buttonText }) => {
         </span>
         <p>{para1}</p>
         <p>{para2}</p>
-        <RedirectButton
-          onclick={closePopup}
-          text={buttonText}
-          css={'bkg-blk-overlay clr-btn-blue small-caps'}
-        />
+        <div className="flex justify-evenly">
+          <RedirectButton
+            onclick={buttonAction}
+            text={buttonText}
+            css={'bkg-blk-overlay clr-btn-blue small-caps'}
+          />
+          {buttonText2 !== null ? (
+            <RedirectButton
+              onclick={closePopup}
+              text={buttonText2}
+              css={'bkg-blk-overlay clr-btn-blue small-caps'}
+            />
+          ) : null}
+        </div>
       </div>
     </div>
   );
