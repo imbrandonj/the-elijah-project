@@ -1,6 +1,6 @@
 # the-elijah-project
 
-Live: https://elijah-project.vercel.app/
+Live: https://elijah-project.com
 
 The Elijah Project is an educational-exercise, single page web application. Made with React.js.
 
