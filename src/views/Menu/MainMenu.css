@@ -15,7 +15,7 @@
 
 #menuWrapper h1 {
     width: 20vw;
-    font-size: 4.2rem;
+    font-size: 6rem;
     margin-bottom: 4.2rem;
     letter-spacing: 0.7rem;
     text-align: center;
@@ -26,9 +26,13 @@
 
 #menuWrapper #menuSelection {
     width: 42vw;
-    height: 48vh;
+    height: 42vh;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--lightBlue);
+}
+
+#menuWrapper .menuBundle {
+    margin-top: 2rem;
 }
 
 #menuWrapper .menuBundle > div {
@@ -154,6 +158,10 @@
         gap: 8rem;
     }
 
+    #menuWrapper .menuBundle {
+        margin-top: 1rem;
+    }
+
     #mainMenu .popup {
         width: 60%;
     }
@@ -184,6 +192,10 @@
         width: 90vw;
         padding: 6rem 3rem;
         gap: 3rem;
+    }
+
+    #menuWrapper .menuBundle {
+        margin-top: 0;
     }
 
     #mainMenu .popup {
