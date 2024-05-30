@@ -378,6 +378,31 @@ export default function Text({ text }) {
           </p>
         </div>
       );
+    case 'PerspEntry3':
+      return (
+        <div id="typing">
+          <Typing
+            words={
+              "Lets work on left and right one more time.// You'll see two identical images.// I'll tell you to click either/ the left image or the right image."
+            }
+            rate={55}
+          />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
+    case 'PerspEntry4':
+      return (
+        <div id="typing">
+          <Typing words={'Level 4'} rate={55} />
+          <p>
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.
+          </p>
+        </div>
+      );
     default:
       return null;
   }
