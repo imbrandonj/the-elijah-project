@@ -8,7 +8,7 @@
 #menuWrapper {
     height: 80vh;
     width: 80vw;
-    gap: 4rem;
+    gap: 2vw;
     border-radius: 1rem;
     background-color: var(--blackWrap);
 }
@@ -26,7 +26,7 @@
 
 #menuWrapper #menuSelection {
     width: 42vw;
-    height: 42vh;
+    height: 44vh;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--lightBlue);
 }
@@ -51,10 +51,55 @@
     animation: rocketHorizontalWiggleRight 0.6s ease-in-out infinite;
 }
 
+#menuWrapper #login {
+    gap: 1rem;
+}
+
+#menuWrapper #login div, #menuWrapper #signup {
+    gap: 3rem;
+}
+
+#menuWrapper #signup div {
+    height: 30vh;
+    width: 20vw;
+    gap: 2rem;
+}
+
+#menuWrapper form label, #menuWrapper form input {
+    letter-spacing: 0.05rem;
+}
+
+#menuWrapper form label {
+    font-size: 1.7rem;
+
+}
+
+#menuWrapper #signup label {
+    display: flex;
+    align-items: center;
+    height: 4vh;
+}
+
+#menuWrapper #login input {
+    margin-bottom: 1rem;
+}
+
+#menuWrapper form input {
+    height: 4vh;
+    width: 14vw;
+    padding: 1rem;
+    font-size: 1.45rem;
+    font-family: var(--mono);
+    text-align: center;
+    background-color: var(--buttonBlue);
+    border-radius: 0.4rem;
+    border: none;
+}
+
 #menuWrapper .redirect-button, #menuWrapper form button {
     margin: 1.2rem;
-    width: 12rem;
-    padding: 1.1rem 0;
+    width: 16rem;
+    padding: 1.2rem 0;
     font-size: 1.8rem;
 }
 
@@ -70,27 +115,6 @@
 #menuWrapper .redirect-button:hover, #menuWrapper form button:hover {
     color: var(--lightBlue);
     background-color: var(--blackOverlay);
-}
-
-#menuWrapper form label {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-}
-
-#menuWrapper form input {
-    padding: 1rem;
-    margin: 0.5rem;
-    font-family: var(--mono);
-    font-size: 1.25rem;
-    text-align: center;
-    background-color: var(--buttonBlue);
-    border-radius: 0.4rem;
-    border: none;
-}
-
-#menuWrapper form div {
-    margin-top: 2rem;
-    gap: 2rem;
 }
 
 #openPlay {
@@ -149,21 +173,34 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #mainMenu {
-        margin-top: 5%;
+        margin-top: 8vh;
     }
 
     #menuWrapper {
+        height: 84vh;
         width: 88vw;
-        padding: 8rem 6rem;
-        gap: 8rem;
+        gap: 4vw;
     }
 
-    #menuWrapper .menuBundle {
-        margin-top: 1rem;
+    #menuWrapper #menuSelection {
+        height: 54vh;
+        width: 48vw;
     }
 
     #mainMenu .popup {
         width: 60%;
+    }
+
+    #menuWrapper #signup div {
+        height: 40vh;
+    }
+
+    #menuWrapper #signup label, #menuWrapper form input {
+        height: 5vh;
+    }
+
+    #menuWrapper form input {
+        width: 20vw;
     }
 
     #mainMenu .popup .redirect-button {
@@ -190,16 +227,33 @@
 
     #menuWrapper {
         width: 90vw;
-        padding: 6rem 3rem;
-        gap: 3rem;
     }
 
-    #menuWrapper .menuBundle {
-        margin-top: 0;
+    #menuWrapper h1 {
+        width: 24vw;
+        font-size: 5rem;
+    }
+
+    #menuWrapper #menuSelection {
+        height: 52vh;
+        width: 55vw;
     }
 
     #mainMenu .popup {
         width: 75%;
+    }
+
+    #menuWrapper #signup div {
+        height: 40vh;
+    }
+
+    #menuWrapper #signup label, #menuWrapper form input {
+        height: 5vh;
+    }
+
+    #menuWrapper form input {
+        width: 22vw;
+        font-size: 1.25rem;
     }
 
     #mainMenu .popup .redirect-button {

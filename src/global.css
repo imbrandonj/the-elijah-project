@@ -70,12 +70,28 @@ h1, h2, h3, h4 {
     justify-content: space-around;
 }
 
+.justify-start {
+    justify-content: flex-start;
+}
+
 .align-center {
     align-items: center;
 }
 
+.align-end {
+    align-items: end;
+}
+
 .self-start {
     align-self: flex-start;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-end {
+    align-self: flex-end;
 }
 
 .bkg-btn-blue {

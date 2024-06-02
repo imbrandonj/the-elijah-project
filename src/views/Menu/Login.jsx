@@ -4,20 +4,20 @@ import { useState } from 'react';
     Login.jsx
 */
 export default function Login({ setLogIn }) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = event => {
     event.preventDefault();
   };
   return (
-    <form className="flex-col align-center" onSubmit={handleLogin}>
-      <label for="username">Username:</label>
+    <form id="login" className="flex-col align-center" onSubmit={handleLogin}>
+      <label for="email">Email:</label>
       <input
-        name="username"
+        name="email"
         type="text"
-        value={username}
-        onChange={({ target }) => setUsername(target.value)}
+        value={email}
+        onChange={({ target }) => setEmail(target.value)}
       />
       <label for="password">Password:</label>
       <input
