@@ -12,16 +12,16 @@ export default function Login({ setLogIn }) {
   };
   return (
     <form id="login" className="flex-col align-center" onSubmit={handleLogin}>
-      <label for="email">Email:</label>
+      <label htmlFor="email">Email:</label>
       <input
-        name="email"
-        type="text"
+        id="email"
+        type="email"
         value={email}
         onChange={({ target }) => setEmail(target.value)}
       />
-      <label for="password">Password:</label>
+      <label htmlFor="password">Password:</label>
       <input
-        name="password"
+        id="password"
         type="text"
         value={password}
         onChange={({ target }) => setPassword(target.value)}

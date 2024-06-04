@@ -15,28 +15,28 @@ export default function SignUp({ setSignUp }) {
   return (
     <form id="signup" className="flex" onSubmit={handleLogin}>
       <div className="flex-col align-end justify-center">
-        <label for="email">Enter an Email:</label>
-        <label for="password">Set a Password:</label>
-        <label for="playername">Player Name:</label>
+        <label htmlFor="email">Enter an Email:</label>
+        <label htmlFor="password">Set a Password:</label>
+        <label htmlFor="playername">Player Name:</label>
         <button type="submit">Create Player</button>
       </div>
       <div className="flex-col justify-center">
         <input
-          name="email"
+          id="email"
           type="email"
           value={email}
           onChange={({ target }) => setEmail(target.value)}
         />
 
         <input
-          name="password"
+          id="password"
           type="text"
           value={password}
           onChange={({ target }) => setPassword(target.value)}
         />
 
         <input
-          name="playername"
+          id="playername"
           type="text"
           value={playername}
           onChange={({ target }) => setPlayername(target.value)}

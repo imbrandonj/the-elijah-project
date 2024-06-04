@@ -24,25 +24,14 @@
 
 #PerspLevel .shapeOverlay {
     width: 80%;
+    height: 42vh;
     margin-top: 1rem;
-    padding: 4rem 0 8rem;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 0.5rem;
 }
 
-#PerspLevel .shapeOverlay img:hover {
-    cursor: pointer;
-}
-
-#PerspLevel .shapeOverlay .emojiImg {
-    font-size: 6rem;
-    margin: 1rem 0;
-    background: none;
-    border: none;
-}
-
 #PerspLevel .shapeOverlay .speaker {
-    margin-bottom: 2.5rem;
+    margin: 4vh 0 3vh;
     padding: 0.5rem 1rem;
     font-size: 4rem;
     background-color: rgba(0, 0, 0, 0);
@@ -53,8 +42,29 @@
 #PerspLevel .leftRight {
     display: flex;
     justify-content: space-evenly;
+    width: 80%;
 }
 
+#PerspLevel .shapeOverlay .emojiImg {
+    font-size: 6rem;
+    margin: 1rem;
+    background: none;
+    border: none;
+}
+
+#PerspLevel .shapeOverlay li {
+    list-style: none;
+    font-size: 6rem;
+}
+
+#PerspLevel .shapeOverlay hr {
+    width: 50vw;
+    margin-top: 1rem;
+}
+
+#PerspLevel .shapeOverlay img:hover {
+    cursor: pointer;
+}
 
 #PerspLevel .filledFootbox {
     background-color: rgb(166, 222, 194);
@@ -82,21 +92,36 @@
     }
 
     #PerspLevel .shapeOverlay {
-        padding: 3rem 0 6rem;
-    }
-
-    #PerspLevel .shapeOverlay img {
-        height: 10rem;
-    }
-
-    #PerspLevel .shapeOverlay .emojiImg {
-        font-size: 5rem;
-        margin: 0.5rem 0;
+        height: 48vh;
     }
 
     #PerspLevel .shapeOverlay .speaker {
-        font-size: 3.5rem;
+        margin: 3vh 0 2vh;
+        font-size: 3rem;
     }
+
+    #PerspLevel .shapeOverlay .oneSet {
+        margin: 3vh 0;
+    }
+
+    #PerspLevel .shapeOverlay .oneSet img {
+        height: 12rem;
+    }
+
+    #PerspLevel .shapeOverlay .twoSets img {
+        height: 8rem;
+        margin-bottom: 1rem;
+    }
+
+    #PerspLevel .shapeOverlay .oneSet .emojiImg {
+        font-size: 6rem;
+        margin-top: 2vh;
+    }
+
+    #PerspLevel .shapeOverlay .twoSets .emojiImg {
+        font-size: 5rem;
+    }
+
 }
 
 /**

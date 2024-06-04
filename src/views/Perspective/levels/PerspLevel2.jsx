@@ -172,32 +172,32 @@ export default function PerspLevel2({
         text="Click on the shape given by the audio"
         score={levelScore}
       />
-      <div className="shapeOverlay flex-col">
+      <div className="shapeOverlay flex-col align-center">
         <button className="speaker" onClick={playButton}>
           🔊
         </button>
-        <div className="leftRight">
+        <div className="leftRight twoSets">
           <img
             id="leftImg1"
             onClick={() => answerEvent(leftObject1)}
-            height={120}
+            height={140}
           />
           <img
             id="rightImg1"
             onClick={() => answerEvent(rightObject1)}
-            height={120}
+            height={140}
           />
         </div>
-        <div className="leftRight">
+        <div className="leftRight twoSets">
           <img
             id="leftImg2"
             onClick={() => answerEvent(leftObject2)}
-            height={120}
+            height={140}
           />
           <img
             id="rightImg2"
             onClick={() => answerEvent(rightObject2)}
-            height={120}
+            height={140}
           />
         </div>
       </div>

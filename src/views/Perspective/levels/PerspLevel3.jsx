@@ -126,11 +126,11 @@ export default function PerspLevel3({
         text="Click on the shape given by the audio"
         score={levelScore}
       />
-      <div className="shapeOverlay flex-col">
+      <div className="shapeOverlay flex-col align-center">
         <button className="speaker" onClick={playButton}>
           🔊
         </button>
-        <div className="leftRight">
+        <div className="leftRight oneSet">
           <button className="emojiImg" onClick={() => answerEvent(isLeft)}>
             {emoji}
           </button>
