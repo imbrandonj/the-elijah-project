@@ -36,7 +36,6 @@ export default function MainMenu() {
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
-  const [popup, setPopup] = useState(true);
 
   // list of views in The Elijah Project:
   const views = {
@@ -98,41 +97,19 @@ export default function MainMenu() {
               </div>
             )}
           </div>
-        <div id="menuWrapper" className="flex-col align-center">
-          <h1 className="small-caps">The Elijah Project</h1>
-          <RedirectButton
-            onclick={() => setView('Dashboard')}
-            text={'Start'}
-            css={'bkg-btn-blue'}
-          />
-          <RedirectButton
-            onclick={() => setView('About')}
-            text={'About'}
-            css={'bkg-btn-blue'}
-          />
-          <RedirectButton
-            onclick={null}
-            text={'Profile'}
-            css={'bkg-btn-blue'}
-          />
         </div>
         {showPopup && (
-
-        {popup ? (
           <Popup
             closePopup={() => setShowPopup(false)}
-            buttonAction={() => setPopup(false)}
-            closePopup={() => setPopup(false)}
             para1={
-              'Hello. Thanks for visiting the app. You will find some functionalities missing, i.e., profile and profile configuration. These features are currently being developed and will be available soon. This will be a large update with user customization.'
+              'Hello. Thanks for visiting the app. You will find some functionalities missing, i.e., profile and profile configuration. Originally, the application was to utilize a database and backend. I am currently migrating The Elijah Project to a desktop application utilizing Electron.js.'
             }
             para2={
               'This is an ongoing solo project; as such, you will find varying degrees of depth. I am adding content often. Enjoy your visit and feel free to email me at imbrandonj42@gmail.com'
             }
             buttonText={'continue to The Elijah Project'}
-            buttonText2={null}
           />
-        ) : null}
+        )}
       </div>
     );
   } else {
