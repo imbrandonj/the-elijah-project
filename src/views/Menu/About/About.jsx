@@ -55,7 +55,6 @@ export default function About() {
         position="below"
         movement="horizontalRight"
         onclick={backBtn}
-        view={'MainMenu'}
       />
     </div>
   );

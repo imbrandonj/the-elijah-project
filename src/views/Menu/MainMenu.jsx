@@ -9,8 +9,11 @@ import Perspective from '../Perspective/Perspective.jsx';
 
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
+import Login from './Login.jsx';
+import SignUp from './SignUp.jsx';
+import OpenPlay from './OpenPlay.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
-import RedirectButton from '@root/components/RedirectButton/RedirectButton';
+import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
 // imported hooks:
 import { useState } from 'react';
@@ -21,13 +24,18 @@ import { useState } from 'react';
     - MainMenu is the initial view displayed
       -MainMenu controls all view displays via the useContext global state
   
-    - This menu page that has 3 paths:
-      1) start, which calls <Dashboard /> view
-      2) about, which calls <About /> view
-      3) profile, which is not yet complete
+    - This menu page that has 4 paths:
+      1) login, which calls <Login /> component
+      2) sign up, which calls <SignUp /> component
+      3) about, which calls <About /> component
+      4) entry to all other views
 */
 export default function MainMenu() {
   const { view, setView } = useView();
+  const [logIn, setLogIn] = useState(false);
+  const [signUp, setSignUp] = useState(false);
+  const [openPlay, setOpenPlay] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const [popup, setPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -45,6 +53,51 @@ export default function MainMenu() {
   if (view === 'MainMenu') {
     return (
       <div id="mainMenu" className="flex justify-center">
+        <div id="menuWrapper" className="flex justify-center align-center">
+          <h1 className="flex justify-center small-caps">
+            the
+            <br /> Elijah
+            <br /> Project
+          </h1>
+          <div id="menuSelection" className="flex justify-center align-center">
+            {logIn ? (
+              <Login setLogIn={setLogIn} />
+            ) : signUp ? (
+              <SignUp setSignUp={setSignUp} />
+            ) : openPlay ? (
+              <OpenPlay setOpenPlay={setOpenPlay} />
+            ) : (
+              <div className="menuBundle">
+                <div>
+                  <RedirectButton
+                    onclick={() => setLogIn(true)}
+                    text={'Login'}
+                    css={'bkg-btn-blue'}
+                  />
+                  <RedirectButton
+                    onclick={() => setSignUp(true)}
+                    text={'Sign Up'}
+                    css={'bkg-btn-blue'}
+                  />
+                </div>
+                <div>
+                  <RedirectButton
+                    onclick={() => setOpenPlay(true)}
+                    text={'Open Play'}
+                    css={'bkg-btn-blue'}
+                  />
+                  <RedirectButton
+                    onclick={() => setView('About')}
+                    text={'About'}
+                    css={'bkg-btn-blue'}
+                  />
+                </div>
+                <div className="rocket">
+                  <span>🚀</span>
+                </div>
+              </div>
+            )}
+          </div>
         <div id="menuWrapper" className="flex-col align-center">
           <h1 className="small-caps">The Elijah Project</h1>
           <RedirectButton
@@ -63,9 +116,11 @@ export default function MainMenu() {
             css={'bkg-btn-blue'}
           />
         </div>
+        {showPopup && (
 
         {popup ? (
           <Popup
+            closePopup={() => setShowPopup(false)}
             buttonAction={() => setPopup(false)}
             closePopup={() => setPopup(false)}
             para1={
