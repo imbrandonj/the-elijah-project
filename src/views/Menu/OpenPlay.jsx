@@ -9,7 +9,7 @@ export default function OpenPlay({ setOpenPlay }) {
     <div className="flex-col align-center">
       <p id="openPlay">
         Open Play allows the user to play The Elijah Project without having to
-        create a user profile.
+        create a player profile.
         <br />
         <br />
         This disables profile customization and level remembrance. Each time you
