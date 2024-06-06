@@ -132,15 +132,15 @@ export default function LevelUp({
             </li>
           </ul>
           <div className="flex justify-evenly">
-            <RedirectButton
-              text={'Continue to next level'}
-              onclick={newLevel}
-              css={'bkg-btn-blue'}
-            />
             <EraseButton
               text={'Reset Score & Try Again'}
               onclick={() => setPopup(true)}
               css={'bkg-btn-blue red'}
+            />
+            <RedirectButton
+              text={'Continue to next level'}
+              onclick={newLevel}
+              css={'bkg-btn-blue'}
             />
           </div>
         </div>

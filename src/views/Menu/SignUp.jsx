@@ -18,7 +18,7 @@ export default function SignUp({ setSignUp }) {
         <label htmlFor="email">Enter an Email:</label>
         <label htmlFor="password">Set a Password:</label>
         <label htmlFor="playername">Player Name:</label>
-        <button type="submit">Create Player</button>
+        <button onClick={() => setSignUp(false)}>Go Back</button>
       </div>
       <div className="flex-col justify-center">
         <input
@@ -41,7 +41,7 @@ export default function SignUp({ setSignUp }) {
           value={playername}
           onChange={({ target }) => setPlayername(target.value)}
         />
-        <button onClick={() => setSignUp(false)}>Go Back</button>
+        <button type="submit">Create Player</button>
       </div>
     </form>
   );

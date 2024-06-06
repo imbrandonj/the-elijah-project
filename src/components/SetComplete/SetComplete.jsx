@@ -63,6 +63,12 @@ export default function SetComplete({
         </ul>
       </div>
       <div className="flex justify-evenly">
+        <EraseButton
+          text="Retry Challenge"
+          onclick={retry}
+          color="black"
+          css={'small-caps'}
+        />
         <RedirectButton
           text="Return to Base"
           onclick={returnHome}
@@ -74,12 +80,6 @@ export default function SetComplete({
           onclick={newLevel}
           color="black"
           css={'bkg-blk-overlay clr-btn-blue small-caps'}
-        />
-        <EraseButton
-          text="Retry Challenge"
-          onclick={retry}
-          color="black"
-          css={'small-caps'}
         />
       </div>
     </div>

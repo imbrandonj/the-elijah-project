@@ -19,6 +19,7 @@ export default function OpenPlay({ setOpenPlay }) {
         <em>Note: creating a profile is completely free ($).</em>
       </p>
       <div>
+        <RedirectButton onclick={() => setOpenPlay(false)} text={'Go Back'} />
         <RedirectButton
           onclick={() => {
             setOpenPlay(false);
@@ -26,7 +27,6 @@ export default function OpenPlay({ setOpenPlay }) {
           }}
           text={'Continue'}
         />
-        <RedirectButton onclick={() => setOpenPlay(false)} text={'Go Back'} />
       </div>
     </div>
   );
