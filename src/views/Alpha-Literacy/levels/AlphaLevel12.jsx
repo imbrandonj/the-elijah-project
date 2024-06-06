@@ -5,7 +5,7 @@ import Timer from '@root/components/Timer/Timer.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 
 // imported internal modules:
-import { colors } from '../AlphaProblems.js';
+import { specialChars } from '../AlphaProblems.js';
 import tallyUp from '@root/modules/tallyUp.js';
 import generateProblem from '@root/modules/generateProblem';
 
@@ -15,12 +15,12 @@ import '../AlphaLit.css';
 import { useState, useEffect, useRef } from 'react';
 
 /*
-  Alpha-Literacy Level 8
+  Alpha-Literacy Level 12
 
   `setLevelEvent` prop (state) is passed from AlphaLit view
     - if true, renders a <LevelUp /> component to display from AlphaLit view
 */
-export default function AlphaLevel8({
+export default function AlphaLevel12({
   setLevelUpEvent,
   levelScore,
   setLevelScore,
@@ -28,11 +28,11 @@ export default function AlphaLevel8({
   const problemHistory = useRef([]); // to store problem history
   const [correctTally, setCorrectTally] = useState(0); // correct tally
 
-  const problemSet = colors; // imported problems for this level
+  const problemSet = specialChars; // imported problems for this level
 
   // `problem` object sets `question` & `answer` properties
   const [problem, setProblem] = useState(
-    () => generateProblem(problemSet, problemHistory, true) // generate a unique problem
+    () => generateProblem(problemSet, problemHistory, false) // generate a unique problem
   );
 
   // focuses on input box with each render
@@ -43,34 +43,30 @@ export default function AlphaLevel8({
   return (
     <div id="litLevel" className="flex-col align-center">
       <LevelHeader
-        text="Spell the colors of different shapes"
+        text="Type and enter 20 special characters"
         score={levelScore}
       />
       <div id="litProb">
         <p>
-          <span className="emojiQ">{problem.question}</span>
+          Enter the special character:
           <br />
-          <br />
-          <span className="wordQ">{problem.answer}</span>
+          <span className="letterQ">{problem.question}</span>
         </p>
         <input
           id="litAns"
           type="text"
           autoComplete="off"
           onKeyDown={event => {
-            // set the value of the user's answer
-            let inputValue = event.target.value;
-
             // listen for enter keydown
             if (event.key === 'Enter') {
-              // case insensitive
-              inputValue = inputValue.toLowerCase();
+              // set the value of the user's answer
+              let inputValue = event.target.value;
 
               event.target.value = ''; // clears the input box
 
               // correct answer event:
               if (inputValue === problem.answer) {
-                // module answerEvent.js
+                // module tallyUp.js
                 tallyUp(
                   20, // `totalQuestions`
                   correctTally, // total correct tally (state)
@@ -81,7 +77,7 @@ export default function AlphaLevel8({
                 setLevelScore(levelScore + 20);
 
                 // generate a new problem after processing the current one
-                setProblem(generateProblem(problemSet, problemHistory, true)); // generate a unique problem
+                setProblem(generateProblem(problemSet, problemHistory, false)); // generate a unique problem
               } else if (levelScore >= 10) {
                 setLevelScore(levelScore - 10);
               }
@@ -91,7 +87,7 @@ export default function AlphaLevel8({
       </div>
       <Footbox correct={correctTally} />
       <Timer />
-      <Tipbox text="Tip: Practice saying each color as you spell them." />
+      <Tipbox text="Tip: A lot of these require using the shift key. Have your parent show you the shift key." />
     </div>
   );
 }

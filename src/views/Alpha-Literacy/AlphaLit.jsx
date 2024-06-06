@@ -17,6 +17,7 @@ import AlphaLevel8 from './levels/AlphaLevel8.jsx';
 import AlphaLevel9 from './levels/AlphaLevel9.jsx';
 import AlphaLevel10 from './levels/AlphaLevel10.jsx';
 import AlphaLevel11 from './levels/AlphaLevel11.jsx';
+import AlphaLevel12 from './levels/AlphaLevel12.jsx';
 
 // voice: en-US-Studio-O
 // imported mp3 audio for `LevelEntry` component:
@@ -28,6 +29,9 @@ import audioEntry5 from '@root/assets/mp3/AlphaEntry5.mp3';
 import audioEntry6 from '@root/assets/mp3/AlphaEntry6.mp3';
 import audioEntry7 from '@root/assets/mp3/AlphaEntry7.mp3';
 import audioEntry8 from '@root/assets/mp3/AlphaEntry8.mp3';
+import audioEntry9 from '@root/assets/mp3/AlphaEntry9.mp3';
+import audioEntry10 from '@root/assets/mp3/AlphaEntry10.mp3';
+import audioEntry12 from '@root/assets/mp3/AlphaEntry12.mp3';
 
 // imported img for `LevelEntry` component:
 import astroUSA from '@root/assets/svgs/astro-usa.svg';
@@ -220,7 +224,7 @@ export default function AlphaLit() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry9}
               img={astroUSA}
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 9"
@@ -238,7 +242,7 @@ export default function AlphaLit() {
             />
           ) : (
             <LevelEntry
-              voice={null}
+              voice={audioEntry10}
               img={astroUSA}
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 10"
@@ -261,6 +265,24 @@ export default function AlphaLit() {
               planet="AlphaLit"
               h2Text="Alpha-Literacy Level 11"
               text="AlphaEntry11"
+              setBegin={setBegin}
+              setLevelUpEvent={setLevelUpEvent}
+            />
+          )
+        ) : level === 12 ? (
+          begin ? (
+            <AlphaLevel12
+              setLevelUpEvent={setLevelUpEvent}
+              levelScore={levelScore}
+              setLevelScore={setLevelScore}
+            />
+          ) : (
+            <LevelEntry
+              voice={audioEntry12}
+              img={astroUSA}
+              planet="AlphaLit"
+              h2Text="Alpha-Literacy Level 12"
+              text="AlphaEntry12"
               setBegin={setBegin}
               setLevelUpEvent={setLevelUpEvent}
             />

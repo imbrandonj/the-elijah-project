@@ -25,31 +25,31 @@ export default function AlphaLevel11({
 }) {
   const [correctTally, setCorrectTally] = useState(0); // correct tally
   const [emojiStr, setEmojiStr] = useState([
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
-    '🐖',
-    '🐄',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
+    '🐎',
+    '🐐',
   ]);
-  const [pigStr, setPigStr] = useState('');
-  const [cowStr, setCowStr] = useState('');
+  const [horseStr, setHorseStr] = useState('');
+  const [goatStr, setGoatStr] = useState('');
 
-  const hashKey = { '🐖': 'pig', '🐄': 'cow' };
+  const hashKey = { '🐎': 'horse', '🐐': 'goat' };
 
   // focuses on input box with each render
   useEffect(() => {
@@ -71,10 +71,10 @@ export default function AlphaLevel11({
 
       // update each string after answering
       let newEmojiStr = emojiStr.slice(1); // pop the front of the stack
-      if (emojiStr[0] === '🐖') {
-        setPigStr(prevPigStr => [...prevPigStr, emojiStr[0]]);
+      if (emojiStr[0] === '🐎') {
+        setHorseStr(prevHorseStr => [...prevHorseStr, emojiStr[0]]);
       } else {
-        setCowStr(prevCowStr => [...prevCowStr, emojiStr[0]]);
+        setGoatStr(prevGoatStr => [...prevGoatStr, emojiStr[0]]);
       }
       setEmojiStr(newEmojiStr);
 
@@ -119,10 +119,10 @@ export default function AlphaLevel11({
         </div>
         <div className="flex-col">
           <p className="emojiBundle flex align-center justify-center">
-            {cowStr}
+            {horseStr}
           </p>
           <p className="emojiBundle flex align-center justify-center">
-            {pigStr}
+            {goatStr}
           </p>
         </div>
       </div>

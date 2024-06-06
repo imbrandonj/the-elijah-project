@@ -11,7 +11,7 @@ export default function RocketHeader() {
 
   const redirect = () => {
     stopAudio();
-    setView('MainMenu');
+    setView('Dashboard');
   };
 
   return (

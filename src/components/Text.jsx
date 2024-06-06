@@ -123,7 +123,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              'This level is a bit different.// You are going to identify and type special characters, such as commas, periods, and exclamation points.// This will test and develop your navigational skills of the keyboard.'
+              'Level 8 will display shapes.// The shapes will consist of different colors.// Spell the color for each shape.'
             }
             rate={50}
           />
@@ -137,7 +137,12 @@ export default function Text({ text }) {
     case 'AlphaEntry9':
       return (
         <div id="typing">
-          <Typing words={'9'} rate={50} />
+          <Typing
+            words={
+              'Two levels ago, you did a great job/ helping me separate the cats and dogs.// Can you help me separate my cows and pigs?'
+            }
+            rate={50}
+          />
           <p>
             When you're ready, click the{' '}
             <span className="italic small-caps">Begin!</span> button <br />
@@ -148,7 +153,28 @@ export default function Text({ text }) {
     case 'AlphaEntry10':
       return (
         <div id="typing">
-          <Typing words={'10'} rate={50} />
+          <Typing
+            words={
+              "You've arrived at Alpha-Literacy level 10,/ exercise set 2 challenge level.// By now, you should be navigating the keyboard/ much quicker than before.// Show me your skills at identifying letters./ Be careful, these are case-sensitive!"
+            }
+            rate={50}
+          />
+          <p>
+            When you're ready, click the{' '}
+            <span className="italic small-caps">Begin!</span> button <br />
+            to begin the challenge.
+          </p>
+        </div>
+      );
+    case 'AlphaEntry11':
+      return (
+        <div id="typing">
+          <Typing
+            words={
+              "Hello, speller!// Welcome to Alpha-Literacy exercise set 3.// I'm glad you're back, these animals keep mixing./ Can you help me separate the horses and goats?"
+            }
+            rate={50}
+          />
           <p>
             When you're ready, click the{' '}
             <span className="italic small-caps">Begin!</span> button <br />
@@ -156,10 +182,15 @@ export default function Text({ text }) {
           </p>
         </div>
       );
-    case 'AlphaEntry11':
+    case 'AlphaEntry12':
       return (
         <div id="typing">
-          <Typing words={'11'} rate={50} />
+          <Typing
+            words={
+              'This level is a bit different.// You are going to identify and type special characters, such as commas, periods, and exclamation points.// This will test and develop your navigational skills of the keyboard.'
+            }
+            rate={50}
+          />
           <p>
             When you're ready, click the{' '}
             <span className="italic small-caps">Begin!</span> button <br />
