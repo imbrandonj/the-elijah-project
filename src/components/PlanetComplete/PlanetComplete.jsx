@@ -40,15 +40,14 @@ export default function PlanetComplete({
   };
 
   return (
-    <div id="planetComplete" className="flex-col align-center">
+    <div id="planetComplete" className="flex-col align-center justify-evenly">
       <h2 className="flex align-center small-caps">
         <img src={planetImg} height={90} />
         planet {path} completed!
       </h2>
       <p>
         Congratulations, you have completed all of the levels for planet {path}.
-      </p>
-      <p>
+        <br /> <br />
         Elijah likes to play around with a text box when he's finished, so
         here's a text box to play with: <br /> <br />
       </p>

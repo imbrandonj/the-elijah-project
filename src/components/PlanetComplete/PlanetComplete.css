@@ -3,24 +3,22 @@
 */
 
 #planetComplete {
-    margin: 2% 0;
+    margin: 1vh;
+    height: 75vh;
+    width: 75vw;
     background-color: rgba(0, 0, 0, 0.95);
     border-radius: 1rem;
-    padding: 10rem;
 }
 
 #planetComplete h2 {
     gap: 3rem;
-    margin: 1rem 0 3rem;
     font-size: 4rem;
     letter-spacing: 0.1rem;
 }
 
 #planetComplete p {
-    margin: 2rem;
     font-size: 1.75rem;
     text-align: center;
-    line-height: 2.5rem;
 }
 
 #planetComplete div {
@@ -28,8 +26,8 @@
 }
 
 #planetComplete textarea {
-    flex-basis: 50%;
-    height: 14rem;
+    height: 25vh;
+    width: 25vw;
     padding: 1.5rem 1rem;
     font-size: 1.75rem;
     letter-spacing: 0.075rem;
@@ -37,29 +35,27 @@
     border-radius: 0.5rem;
 }
 
-#planetComplete button {
-    flex-basis: 50%;
-}
-
-
 @media (max-width: 2000px) {
-    #planetComplete {
-        width: 80%;
-        padding: 4rem 0;
-    }
     
     #planetComplete h2 {
-        gap: 2.5rem;
-        font-size: 3.5rem;
+        gap: 2rem;
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
     }
     
     #planetComplete p {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.55rem;
+    }
+    
+    #planetComplete div {
+        gap: 8rem;
     }
     
     #planetComplete textarea {
+        height: 30vh;
+        width: 30vw;
+        padding: 1rem;
         font-size: 1.5rem;
-        letter-spacing: 0.075rem;
+        letter-spacing: 0.05rem;
     }
 }

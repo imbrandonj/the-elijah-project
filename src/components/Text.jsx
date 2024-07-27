@@ -171,7 +171,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Hello, speller!// Welcome to Alpha-Literacy exercise set 3.// I'm glad you're back, these animals keep mixing./ Can you help me separate the horses and goats?"
+              "Welcome to Alpha-Literacy exercise set 3.// I'm glad you're back, these animals keep mixing./ Can you help me separate the horses and goats?"
             }
             rate={50}
           />

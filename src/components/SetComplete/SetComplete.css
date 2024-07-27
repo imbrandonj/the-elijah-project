@@ -1,7 +1,8 @@
 #setComplete {
-    margin: 1%;
-    width: 80%;
-    padding: 2rem;
+    margin-top: 3vh;
+    width: 75vw;
+    height: 75vh;
+    padding: 2vh 0;
     background-color: rgb(76, 136, 113, .95);
     border: 1px solid black;
     border-radius: 0.5rem;
@@ -9,31 +10,23 @@
 
 #setComplete h3 {
     width: 60%;
-    margin-bottom: 2rem;
-    padding-left: 0.5rem;
+    margin-bottom: 2vh;
+    padding-left: 2vw;
     gap: 1rem;
     color: var(--buttonBlue);
-    font-size: 2.3rem;
+    font-size: 2.6rem;
     letter-spacing: 0.1rem;
     background-color: var(--blackOverlay);
     border-radius: 0.25rem 4rem 4rem 0.25rem;
 }
 
-#setComplete .setWrap {
-    padding: 3rem;
-}
-
 #setComplete h2 {
-    margin: 2rem;
+    margin-bottom: 1vh;
     font-size: 4rem;
     letter-spacing: 0.1rem;
     color: black;
 }
 
-
-#setComplete ul {
-    margin: 3rem;
-}
 
 #setComplete li {
     display: flex;
@@ -54,53 +47,48 @@
 }
 
 #setComplete button {
-    margin: 3rem 1rem;
-    flex-basis: 25%;
-    padding: 2rem 1rem;
+    margin: 3vh 2vw 6vh;
+    width: 16vw;
+    padding: 2rem 0;
     font-size: 2.2rem;
     letter-spacing: 0.1rem;
 }
 
 @media (max-width: 2000px) {
     #setComplete {
-        margin: 0.5%;
-    }
-
-    #setComplete .setWrap {
-        padding: 1.5rem;
-    }
-
-    #setComplete h3 {
-        font-size: 2rem;
-    }
-
-    #setComplete h2 {
-        font-size: 3.5rem;
-    }
-
-    #setComplete ul {
-        margin: 2rem;
-    }
-
-    #setComplete li {
-        gap: 6rem;
-        margin: 1rem;
-        height: 1.6em;
-        list-style: none;
-        font-size: 2rem;
-        color: black;
+        margin-top: 3vh;
+        width: 75vw;
+        height: 75vh;
+        padding: 2vh 0;
     }
     
-    #setComplete li span {
-        font-size: 2.25rem;
+    #setComplete h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
     }
 
     #setComplete img {
         height: 4rem;
     }
-
-    #setComplete button {
+    
+    #setComplete h2 {
+        font-size: 3.6rem;
+    }
+    
+    
+    #setComplete li {
+        gap: 5rem;
+        height: 1.8em;
         font-size: 2rem;
-        padding: 1rem;
+    }
+    
+    #setComplete li span {
+        font-size: 2.2rem;
+    }
+    
+    #setComplete button {
+        margin: 2vh 2vw 6vh;
+        padding: 1.5rem 0;
+        font-size: 1.75rem;
     }
 }

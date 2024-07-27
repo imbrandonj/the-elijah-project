@@ -70,6 +70,10 @@ h1, h2, h3, h4 {
     justify-content: space-around;
 }
 
+.justify-between {
+    justify-content: space-between;
+}
+
 .justify-start {
     justify-content: flex-start;
 }

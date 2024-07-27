@@ -39,10 +39,10 @@ export default function SetComplete({
   }, []);
 
   return (
-    <div id="setComplete">
+    <div id="setComplete" className="flex-col justify-between">
       <h3 className="flex align-center small-caps italic">
-        <img src={planetImg} height={70} />
-        {planet} exercise set {set} finished
+        <img src={planetImg} height={80} />
+        {planet} exercise set {set} complete
       </h3>
       <div className="setWrap flex-col align-center">
         <h2 className="small-caps">challenge complete</h2>
