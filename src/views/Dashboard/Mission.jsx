@@ -78,7 +78,7 @@ export default function Mission({ missionSelect }) {
           <h2>Perspective</h2>
           <p>
             Dive into the crevices of your brain to provide your cordial
-            perspective of right --or wrong.
+            perspective of right — or wrong.
           </p>
         </div>
       ) : null}

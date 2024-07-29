@@ -15,9 +15,9 @@ export default function SignUp({ setSignUp }) {
   return (
     <form id="signup" className="flex" onSubmit={handleLogin}>
       <div className="flex-col align-end justify-center">
-        <label htmlFor="email">Enter an Email:</label>
-        <label htmlFor="password">Set a Password:</label>
-        <label htmlFor="playername">Player Name:</label>
+        <label htmlFor="email">Account Email:</label>
+        <label htmlFor="password">Set Password:</label>
+        <label htmlFor="playername">Verify Password:</label>
         <button onClick={() => setSignUp(false)}>Go Back</button>
       </div>
       <div className="flex-col justify-center">
@@ -41,7 +41,7 @@ export default function SignUp({ setSignUp }) {
           value={playername}
           onChange={({ target }) => setPlayername(target.value)}
         />
-        <button type="submit">Create Player</button>
+        <button type="submit">Create Account</button>
       </div>
     </form>
   );

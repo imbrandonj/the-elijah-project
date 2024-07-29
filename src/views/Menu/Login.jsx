@@ -3,12 +3,15 @@ import { useState } from 'react';
 /*
     Login.jsx
 */
-export default function Login({ setLogIn }) {
+export default function Login({ setLogIn, setSelectPlayer }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = event => {
     event.preventDefault();
+
+    setSelectPlayer(true);
+    setLogIn(false);
   };
   return (
     <form id="login" className="flex-col align-center" onSubmit={handleLogin}>

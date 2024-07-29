@@ -12,6 +12,7 @@ import { useView } from '@root/contexts/ViewContext.jsx';
 import Login from './Login.jsx';
 import SignUp from './SignUp.jsx';
 import OpenPlay from './OpenPlay.jsx';
+import SelectPlayer from './SelectPlayer.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
@@ -32,9 +33,10 @@ import { useState } from 'react';
 */
 export default function MainMenu() {
   const { view, setView } = useView();
-  const [logIn, setLogIn] = useState(false);
-  const [signUp, setSignUp] = useState(false);
-  const [openPlay, setOpenPlay] = useState(false);
+  const [logIn, setLogIn] = useState(false); // shows the login menu when true
+  const [signUp, setSignUp] = useState(false); // shows the sign up menu when true
+  const [openPlay, setOpenPlay] = useState(false); // shows the open play menu when true
+  const [selectPlayer, setSelectPlayer] = useState(false); // shows the select player menu when true
   const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -60,11 +62,13 @@ export default function MainMenu() {
           </h1>
           <div id="menuSelection" className="flex justify-center align-center">
             {logIn ? (
-              <Login setLogIn={setLogIn} />
+              <Login setLogIn={setLogIn} setSelectPlayer={setSelectPlayer} />
             ) : signUp ? (
-              <SignUp setSignUp={setSignUp} />
+              <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
+            ) : selectPlayer ? (
+              <SelectPlayer setSelectPlayer={setSelectPlayer} />
             ) : (
               <div className="menuBundle">
                 <div>
