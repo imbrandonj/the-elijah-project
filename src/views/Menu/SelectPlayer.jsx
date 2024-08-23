@@ -12,7 +12,6 @@ import astro from '@root/assets/svgs/astronaut.svg';
 export default function SelectPlayer({ setSelectPlayer }) {
   const { setView } = useView();
   const [newPlayer, setNewPlayer] = useState(false);
-  const [playerName, setPlayerName] = useState('');
 
   return (
     <div className="flex-col align-center">
@@ -42,6 +41,13 @@ export default function SelectPlayer({ setSelectPlayer }) {
             create a<br />
             new player
             <img src={astro} height={60} />
+          </button>
+          <button
+            className="flex-col justify-center align-center playerSelectBtn small-caps"
+            onClick={() => setSelectPlayer(false)}
+          >
+            go <br />
+            back
           </button>
         </div>
       )}
