@@ -102,9 +102,7 @@ export default function MainMenu() {
           <Popup
             closePopup={() => setShowPopup(false)}
             buttonAction={() => setShowPopup(false)}
-            para1={
-              'Hello and thanks for visiting the app. You will find some functionalities missing, i.e., user login and authentication. These will be updated soon. To play The Elijah Project, select the Open Play button in the main menu.'
-            }
+            para1={`Hello and thanks for visiting the app. You will find some functionalities missing, i.e., user login and authentication. These are currently being updated. To play The Elijah Project, select the Open Play button in the main menu.`}
             para2={
               'This is an ongoing solo project; as such, you will find varying degrees of depth. I am adding content often. Enjoy your visit and feel free to email me at imbrandonj42@gmail.com'
             }
