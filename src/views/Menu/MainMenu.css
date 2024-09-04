@@ -26,19 +26,19 @@
 
 #menuWrapper #menuSelection {
     width: 42vw;
-    height: 44vh;
+    height: 60vh;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--lightBlue);
 }
 
 #menuWrapper .menuBundle {
-    margin-top: 2rem;
+    margin-top: 5vh;
 }
 
 #menuWrapper .menuBundle > div {
     display: flex;
     gap: 2rem;
-    padding: 1.5rem;
+    padding: 2.8vh;
 }
 
 #menuWrapper #login, #menuWrapper #newPlayer {
@@ -49,28 +49,26 @@
     gap: 3rem;
 }
 
+#menuWrapper #signup h2 {
+    margin: 2vh 0;
+    letter-spacing: 0.1rem;
+}
+
 #menuWrapper form label, #menuWrapper form input {
     display: flex;
+    align-items: center;
     justify-content: center;
     letter-spacing: 0.05rem;
-    width: 15vw;
 }
 
 #menuWrapper form label {
-    font-size: 1.7rem;
-}
-
-#menuWrapper #signup label, #menuWrapper #newPlayer label {
-    display: flex;
-    align-items: center;
     height: 4vh;
-}
-
-#menuWrapper #login input, #menuWrapper #newPlayer input {
-    margin-bottom: 1rem;
+    font-size: 1.7rem;
+    width: 14vw;
 }
 
 #menuWrapper form input {
+    width: 16vw;
     height: 4vh;
     padding: 1rem;
     font-size: 1.45rem;
@@ -81,15 +79,30 @@
     border: none;
 }
 
-#menuWrapper #newPlayer {
-    margin-top: 1vh;
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
+/* positions eye icon inside the input field */
+.password-toggle {
+    position: absolute;
+    right: 15px; 
+    cursor: pointer;
+  }
+
 #menuWrapper .redirect-button, #menuWrapper form button {
-    margin: 1.5rem 2rem;
+    margin: 0 2rem;
     width: 16rem;
     padding: 1.2rem 0;
     font-size: 1.8rem;
+}
+
+#menuWrapper .form-message {
+    height: 1.42vh;
+    font-size: 1.42vh;
+    letter-spacing: 0.05rem;
 }
 
 #menuWrapper form button, .playerSelectBtn {
@@ -116,6 +129,10 @@
 #menuWrapper .redirect-button:hover, #menuWrapper form button:hover, .playerSelectBtn:hover {
     color: var(--lightBlue);
     background-color: var(--blackOverlay);
+}
+
+#menuWrapper #newPlayer {
+    margin-top: 1vh;
 }
 
 #menuSelection hr {
@@ -146,10 +163,11 @@
 
 .rocket {
     animation: flyRight 10s linear infinite;
+    margin: 2vh 0;
 }
 
 .rocket span {
-    font-size: 40px;
+    font-size: 42px;
     transform:rotate(45deg);
     animation: rocketHorizontalWiggleRight 0.6s ease-in-out infinite;
 }

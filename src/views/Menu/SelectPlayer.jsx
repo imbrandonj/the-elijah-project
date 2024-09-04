@@ -14,7 +14,7 @@ export default function SelectPlayer({ setSelectPlayer }) {
   const [newPlayer, setNewPlayer] = useState(false);
 
   return (
-    <div className="flex-col align-center">
+    <div id="selectPlayer" className="flex-col align-center">
       {newPlayer ? <h2>Create a new Player:</h2> : <h2>Select Player:</h2>}
       <hr />
       {newPlayer ? (

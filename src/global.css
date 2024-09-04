@@ -98,6 +98,10 @@ h1, h2, h3, h4 {
     align-self: flex-end;
 }
 
+.center-text {
+    text-align: center; 
+}
+
 .bkg-btn-blue {
     background-color: var(--buttonBlue);
 }

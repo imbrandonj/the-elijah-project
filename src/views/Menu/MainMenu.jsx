@@ -33,10 +33,10 @@ import { useState } from 'react';
 */
 export default function MainMenu() {
   const { view, setView } = useView();
-  const [logIn, setLogIn] = useState(false); // shows the login menu when true
-  const [signUp, setSignUp] = useState(false); // shows the sign up menu when true
-  const [openPlay, setOpenPlay] = useState(false); // shows the open play menu when true
-  const [selectPlayer, setSelectPlayer] = useState(false); // shows the select player menu when true
+  const [logIn, setLogIn] = useState(false);
+  const [signUp, setSignUp] = useState(false);
+  const [openPlay, setOpenPlay] = useState(false);
+  const [selectPlayer, setSelectPlayer] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -64,7 +64,7 @@ export default function MainMenu() {
             {logIn ? (
               <Login setLogIn={setLogIn} setSelectPlayer={setSelectPlayer} />
             ) : signUp ? (
-              <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
+              <SignUp setSignUp={setSignUp} />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
             ) : selectPlayer ? (
