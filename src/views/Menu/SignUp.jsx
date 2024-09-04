@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { auth } from '@root/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 /*
     SignUp.jsx
@@ -17,9 +19,16 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
       return;
     }
 
-    setSelectPlayer(true); // transition to player selection
-    setSignUp(false); // hide the sign up form
-    setError(error.message);
+    // Firebase authentication
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+
+      // on success, transition to SelectPlayer.jsx
+      setSelectPlayer(true);
+      setSignUp(false);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -31,6 +40,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
           type="email"
           value={email}
           onChange={({ target }) => setEmail(target.value)}
+          required
         />
       </div>
       <div className="flex justify-center">
@@ -40,6 +50,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
           type="password"
           value={password}
           onChange={({ target }) => setPassword(target.value)}
+          required
         />
       </div>
       <div className="flex justify-center">
@@ -49,6 +60,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
           type="password"
           value={verifyPass}
           onChange={({ target }) => setVerifyPass(target.value)}
+          required
         />
       </div>
       <div className="flex justify-center">{error && <span>{error}</span>}</div>
