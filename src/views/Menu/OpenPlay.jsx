@@ -6,16 +6,16 @@ export default function OpenPlay({ setOpenPlay }) {
   const { setView } = useView();
 
   return (
-    <div className="flex-col align-center">
-      <p id="openPlay">
+    <div id="openPlay" className="flex-col align-center">
+      <p>
         Open Play allows the user to play The Elijah Project without having to
         create a player profile.
-        <br />
-        <br />
+      </p>
+      <p>
         This disables profile customization and level remembrance. Each time you
         exit The Elijah Project, your progress for each planet will be reset.
-        <br />
-        <br />
+      </p>
+      <p>
         <em>Note: creating a profile is completely free ($).</em>
       </p>
       <div>

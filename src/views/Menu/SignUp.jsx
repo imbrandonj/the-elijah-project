@@ -8,7 +8,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 /*
     SignUp.jsx
 */
-export default function SignUp({ setSignUp, setSelectPlayer }) {
+export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [verifyPass, setVerifyPass] = useState('');
@@ -43,6 +43,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
       await createUserWithEmailAndPassword(auth, email, password);
 
       // on success, transition to SelectPlayer.jsx
+      setNewAccount(true);
       setSelectPlayer(true);
       setSignUp(false);
     } catch (err) {

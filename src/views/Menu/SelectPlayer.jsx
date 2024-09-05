@@ -9,9 +9,9 @@ import astro from '@root/assets/svgs/astronaut.svg';
 /*
     SelectPlayer.jsx
 */
-export default function SelectPlayer({ setSelectPlayer }) {
+export default function SelectPlayer({ setSelectPlayer, newAccount }) {
   const { setView } = useView();
-  const [newPlayer, setNewPlayer] = useState(false);
+  const [newPlayer, setNewPlayer] = useState(newAccount);
 
   return (
     <div id="selectPlayer" className="flex-col align-center">
@@ -21,6 +21,7 @@ export default function SelectPlayer({ setSelectPlayer }) {
         <CreateNewPlayer
           setNewPlayer={setNewPlayer}
           setSelectPlayer={setSelectPlayer}
+          newAccount={newAccount}
         />
       ) : (
         <div className="flex justify-center">

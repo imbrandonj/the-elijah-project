@@ -3,7 +3,11 @@ import { useView } from '@root/contexts/ViewContext.jsx';
 
 import { useState } from 'react';
 
-export default function CreateNewPlayer({ setNewPlayer, setSelectPlayer }) {
+export default function CreateNewPlayer({
+  setNewPlayer,
+  setSelectPlayer,
+  newAccount,
+}) {
   const { setView } = useView();
   const [playerName, setPlayerName] = useState('');
 
@@ -27,7 +31,9 @@ export default function CreateNewPlayer({ setNewPlayer, setSelectPlayer }) {
         onChange={({ target }) => setPlayerName(target.value)}
       />
       <div className="flex">
-        <button onClick={() => setNewPlayer(false)}>Go Back</button>
+        {!newAccount ? (
+          <button onClick={() => setNewPlayer(false)}>Go Back</button>
+        ) : null}
         <button type="submit">Confirm</button>
       </div>
     </form>
