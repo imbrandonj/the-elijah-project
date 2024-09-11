@@ -3,7 +3,7 @@
 */
 
 #Dashboard {
-    margin-top: 7.5%;
+    margin-top: 11vh;
 }
 
 #dashboardWrap {
@@ -16,7 +16,7 @@
 */
 
 #Dashboard h1 {
-    margin: 1.5rem 3rem;
+    margin: 2vh 2vw;
     font-size: 3.2rem;
     letter-spacing: 0.4rem;
     font-variant: small-caps;
@@ -34,17 +34,25 @@
 */
 
 #dashSwiper {
-    width: 60rem;
-    margin: 2rem 20rem 6rem;
+    width: 70vw;
+    padding: 8rem;
 }
 
 #dashSwiper h2 {
-    width: 18rem;
-    height: 14rem;
-    padding: 4rem 0;
     font-size: 2rem;
     font-weight: 200;
     letter-spacing: 0.2rem;
+}
+
+#dashSwiper hr {
+    width: 40vw;
+    margin: 2.5vh 0 7.5vh; 
+    border-color: var(--buttonBlue);
+}
+
+#swiperWrapper {
+    width: 40vw;
+    position: relative;
 }
 
 /* default Swiper style from React */
@@ -53,9 +61,28 @@
     justify-content: center;
 }
 
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    color: var(--buttonBlue);
+    padding: 2rem 1.5rem;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: var(--lightBlue); 
+}
+
+.swiper-button-next {
+    right: -3vw;
+  }
+  
+.swiper-button-prev {
+    left: -3vw;
+}
+
 .dashSwiperBtn {
-    width: 22rem;
-    padding: 1rem;
+    width: 10em;
+    height: 6em;
+    padding: 1.2em;
     font-family: Monospace;
     font-size: 2rem;
     border-radius: 0.4rem;
@@ -68,7 +95,7 @@
 }
 
 .dashSwiperBtn > img {
-    margin-bottom: 1rem;
+    margin-bottom: .5em;
 }
 
 /*
@@ -156,23 +183,33 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #Dashboard {
-        margin-top: 4%;
+        margin-top: 9vh;
     }
 
     #dashSwiper {
-        width: 60rem;
-        margin: 2rem 16rem 4rem;
+        padding: 4rem;
     }
 
-    #dashSwiper button {
-        font-size: 1.55rem;
-    }
-    
     #dashSwiper h2 {
-        width: 16rem;
-        height: 12rem;
-        padding: 3.6rem 0;
         font-size: 1.75rem;
+    }
+
+    #swiperWrapper {
+        width: 45vw;
+    }
+
+    .dashSwiperBtn {
+        font-size: 1.55rem;
+        width: 11em;
+        height: 7em;
+    }
+
+    .swiper-button-next {
+        right: -3.5vw;
+      }
+      
+    .swiper-button-prev {
+        left: -3.5vw;
     }
 
     #mission {
@@ -208,15 +245,12 @@
 **/
 @media (max-width: 1450px) {
     #Dashboard {
-        margin-top: 3%;
-    }
-
-    #Dashboard h1 {
-        margin: 1rem 3rem;
+        margin-top: 6vh;
     }
 
     #dashSwiper {
-        margin: 1rem 9rem 3rem;
+        width: 80vw;
+        padding: 4rem;
     }
 
     #dashSwiper button {
@@ -224,20 +258,35 @@
     }
     
     #dashSwiper h2 {
-        width: 15rem;
-        height: 10rem;
-        padding: 3rem 0;
         font-size: 1.55rem;
     }
 
+    #swiperWrapper {
+        width: 60vw;
+    }
+
+    .dashSwiperBtn {
+        width: 10em;
+        height: 7em;
+    }
+
+    .swiper-button-next {
+        right: -4vw;
+      }
+      
+    .swiper-button-prev {
+        left: -4vw;
+    }
+
     #mission {
-        gap: 10rem;
+        gap: 8rem;
         margin: 1rem 2rem;
-        padding: 0 6rem;
+        padding: 0 4rem;
     }
 
     .planet {
         padding: 0.5rem;
+        margin: 0.5rem;
     }
     
     .planet h2 {
