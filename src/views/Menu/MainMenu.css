@@ -6,7 +6,7 @@
 } 
 
 #menuWrapper {
-    height: 82vh;
+    height: 80vh;
     width: 80vw;
     gap: 2vw;
     border-radius: 1rem;
@@ -26,7 +26,7 @@
 
 #menuWrapper #menuSelection {
     width: 42vw;
-    height: 60vh;
+    height: 56vh;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--lightBlue);
 }
@@ -37,21 +37,18 @@
 
 #menuWrapper .menuBundle > div {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     padding: 2.8vh;
 }
 
-#menuWrapper #login, #menuWrapper #newPlayer {
+#menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer {
     gap: 1rem;
 }
 
-#menuWrapper #signup {
-    gap: 3rem;
-}
-
-#menuWrapper #signup h2 {
-    margin: 2vh 0;
-    letter-spacing: 0.1rem;
+#menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
+    font-size: 2.2rem;
+    letter-spacing: 0.12rem;
+    font-weight: 400;
 }
 
 #menuWrapper form label, #menuWrapper form input {
@@ -61,10 +58,14 @@
     letter-spacing: 0.05rem;
 }
 
+#menuWrapper #login label {
+    align-items: end;
+}
+
 #menuWrapper form label {
     height: 4vh;
-    font-size: 1.7rem;
     width: 14vw;
+    font-size: 1.7rem;
 }
 
 #menuWrapper form input {
@@ -77,6 +78,14 @@
     background-color: var(--buttonBlue);
     border-radius: 0.4rem;
     border: none;
+}
+
+#menuWrapper #signup label {
+    margin: 1vh 0;
+}
+
+#menuWrapper #signup input {
+    margin: 1vh 0;
 }
 
 .input-wrapper {
@@ -92,25 +101,33 @@
     cursor: pointer;
   }
 
+#menuWrapper .form-message {
+    height: 1.42vh;
+    font-size: 1.42vh;
+    letter-spacing: 0.05rem;
+    margin: 0.5vh 0;
+}
+
 #menuWrapper .redirect-button, #menuWrapper form button {
-    margin: 0 2rem;
     width: 16rem;
     padding: 1.2rem 0;
     font-size: 1.8rem;
 }
 
-#menuWrapper .form-message {
-    height: 1.42vh;
-    font-size: 1.42vh;
-    letter-spacing: 0.05rem;
+#menuWrapper #login button, #menuWrapper #newPlayer button {
+    margin: 3rem;
+}
+
+#menuWrapper #signup button, #menuWrapper #openPlay button {
+    margin: 1rem 3rem;
 }
 
 #menuWrapper form button, .playerSelectBtn {
-    font-family: var(--mono);
     border-radius: 0.4rem;
     border: none;
     color: black;
     background-color: var(--buttonBlue);
+    font-family: var(--mono);
 }
 
 .playerSelectBtn {
@@ -120,7 +137,7 @@
     gap: 2rem;
 }
 
-.playerSelectBtn, h2 {
+.playerSelectBtn {
     font-size: 2.2rem;
     letter-spacing: 0.042rem;
     font-weight: 400;
@@ -135,15 +152,26 @@
     margin-top: 1vh;
 }
 
+#menuWrapper #newPlayer img {
+    border: 1px solid var(--lightBlue);
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: var(--buttonBlue);
+}
+
 #menuSelection hr {
     width: 100%;
+    margin: 0.5vh 0 3vh;
+}
+
+#menuSelection #selectPlayer hr {
     margin: 2vh 0;
 }
 
 #openPlay {
     width: 35vw;
     font-size: 1.75rem;
-    line-height: 2.2rem;
+    line-height: 2.42rem;
     letter-spacing: 0.05rem;
     text-align: center;
 }

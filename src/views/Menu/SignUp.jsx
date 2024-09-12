@@ -42,10 +42,14 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
 
+      setError('Success!');
+
       // on success, transition to SelectPlayer.jsx
-      setNewAccount(true);
-      setSelectPlayer(true);
-      setSignUp(false);
+      setTimeout(() => {
+        setNewAccount(true);
+        setSelectPlayer(true);
+        setSignUp(false);
+      }, 1420);
     } catch (err) {
       if (err.message === 'Firebase: Error (auth/email-already-in-use).') {
         setError('Account already in use.');
@@ -58,6 +62,7 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
   return (
     <form id="signup" className="flex-col" onSubmit={handleSignUp}>
       <h2 className="center-text">Account Creation</h2>
+      <hr />
       <div className="flex justify-center">
         <label htmlFor="email">Account Email:</label>
         <input
@@ -103,9 +108,11 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
           />
         </div>
       </div>
-      <div className="flex justify-center">
-        {<span className="form-message">{error ? error : null}</span>}
-      </div>
+      {
+        <span className="form-message flex align-end justify-center">
+          {error ? error : null}
+        </span>
+      }
       <div className="flex justify-center">
         <button onClick={() => setSignUp(false)}>Go Back</button>
         <button type="submit">Create Account</button>

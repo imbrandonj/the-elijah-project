@@ -15,6 +15,8 @@ export default function Login({ setLogIn, setSelectPlayer }) {
   };
   return (
     <form id="login" className="flex-col align-center" onSubmit={handleLogin}>
+      <h2 className="center-text">Login</h2>
+      <hr />
       <label htmlFor="email">Email:</label>
       <input
         id="email"
@@ -29,7 +31,7 @@ export default function Login({ setLogIn, setSelectPlayer }) {
         value={password}
         onChange={({ target }) => setPassword(target.value)}
       />
-      <div className="flex">
+      <div className="">
         <button onClick={() => setLogIn(false)}>Go Back</button>
         <button type="submit">Log In</button>
       </div>

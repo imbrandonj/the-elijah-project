@@ -3,6 +3,8 @@ import { useView } from '@root/contexts/ViewContext.jsx';
 
 import { useState } from 'react';
 
+import astro from '@root/assets/svgs/astronaut.svg';
+
 export default function CreateNewPlayer({
   setNewPlayer,
   setSelectPlayer,
@@ -23,6 +25,7 @@ export default function CreateNewPlayer({
       className="flex-col align-center"
       onSubmit={handleNewPlayer}
     >
+      <img src={astro} height={140} />
       <label htmlFor="playerName">Player Name:</label>
       <input
         id="playerName"

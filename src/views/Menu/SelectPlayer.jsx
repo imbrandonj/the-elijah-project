@@ -15,7 +15,7 @@ export default function SelectPlayer({ setSelectPlayer, newAccount }) {
 
   return (
     <div id="selectPlayer" className="flex-col align-center">
-      {newPlayer ? <h2>Create a new Player:</h2> : <h2>Select Player:</h2>}
+      {newPlayer ? <h2>Create a New Player</h2> : <h2>Select Player</h2>}
       <hr />
       {newPlayer ? (
         <CreateNewPlayer
