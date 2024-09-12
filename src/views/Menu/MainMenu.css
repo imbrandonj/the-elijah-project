@@ -118,8 +118,12 @@
     margin: 3rem;
 }
 
-#menuWrapper #signup button, #menuWrapper #openPlay button {
+#menuWrapper #signup button {
     margin: 1rem 3rem;
+}
+
+#menuWrapper #openPlay button {
+    margin: 0rem 3rem 1rem;
 }
 
 #menuWrapper form button, .playerSelectBtn {
