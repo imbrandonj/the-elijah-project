@@ -2,6 +2,7 @@
 import MainMenu from './views/Menu/MainMenu.jsx';
 
 import { ViewProvider } from '@root/contexts/ViewContext.jsx'; // global state for views and levels
+import { PlayerProvider } from '@root/contexts/PlayerContext.jsx'; // player data
 import { AudioProvider } from '@root/contexts/AudioContext.jsx'; // for audio global state
 
 // external imports:
@@ -35,9 +36,11 @@ const App = () => {
     // display view:
     return (
       <ViewProvider>
-        <AudioProvider>
-          <MainMenu />
-        </AudioProvider>
+        <PlayerProvider>
+          <AudioProvider>
+            <MainMenu />
+          </AudioProvider>
+        </PlayerProvider>
       </ViewProvider>
     );
   } else {

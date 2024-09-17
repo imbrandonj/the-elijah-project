@@ -37,8 +37,8 @@ export default function MainMenu() {
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
   const [selectPlayer, setSelectPlayer] = useState(false);
-  const [newAccount, setNewAccount] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [emptyPlayers, setEmptyPlayers] = useState(false); // are there players in the account?
+  // const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
   const views = {
@@ -68,14 +68,15 @@ export default function MainMenu() {
               <SignUp
                 setSignUp={setSignUp}
                 setSelectPlayer={setSelectPlayer}
-                setNewAccount={setNewAccount}
+                setEmptyPlayers={setEmptyPlayers}
               />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
             ) : selectPlayer ? (
               <SelectPlayer
                 setSelectPlayer={setSelectPlayer}
-                newAccount={newAccount}
+                emptyPlayers={emptyPlayers}
+                setEmptyPlayers={setEmptyPlayers}
               />
             ) : (
               <div className="menuBundle">
@@ -110,7 +111,7 @@ export default function MainMenu() {
             )}
           </div>
         </div>
-        {showPopup && (
+        {/* {showPopup && (
           <Popup
             closePopup={() => setShowPopup(false)}
             buttonAction={() => setShowPopup(false)}
@@ -121,7 +122,7 @@ export default function MainMenu() {
             buttonText={'continue to The Elijah Project'}
             buttonText2={null}
           />
-        )}
+        )} */}
       </div>
     );
   } else {

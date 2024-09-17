@@ -115,7 +115,7 @@
 }
 
 #menuWrapper #login button, #menuWrapper #newPlayer button {
-    margin: 3rem;
+    margin: 2rem 3rem;
 }
 
 #menuWrapper #signup button {
@@ -164,12 +164,12 @@
 }
 
 #menuSelection hr {
-    width: 100%;
+    width: 40vh;
     margin: 0.5vh 0 3vh;
 }
 
-#menuSelection #selectPlayer hr {
-    margin: 2vh 0;
+#menuSelection #selectPlayer > hr {
+    margin: 2vh 0 3vh;
 }
 
 #openPlay {

@@ -1,19 +1,24 @@
-import eye from '@root/assets/svgs/eye.svg';
-import eyeShut from '@root/assets/svgs/eyeShut.svg';
-
 import { useState } from 'react';
 import { auth } from '@root/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+// local imports:
+import eye from '@root/assets/svgs/eye.svg';
+import eyeShut from '@root/assets/svgs/eyeShut.svg';
+
 /*
     SignUp.jsx
 */
-export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
+export default function SignUp({
+  setSignUp,
+  setSelectPlayer,
+  setEmptyPlayers,
+}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [verifyPass, setVerifyPass] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(null);
+  const [msg, setMsg] = useState(null); // form message
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -26,13 +31,13 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
     const passwordRegex = /^(?=.*[0-9])[A-Za-z\d]{6,}$/;
 
     if (password !== verifyPass) {
-      setError('Passwords do not match.');
+      setMsg('Passwords do not match.');
       return;
     }
 
     // regex password validation:
     if (!passwordRegex.test(password)) {
-      setError(
+      setMsg(
         'Password must be at least 6 characters and contain at least 1 number.'
       );
       return;
@@ -42,25 +47,25 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
 
-      setError('Success!');
+      setMsg('Success!');
 
       // on success, transition to SelectPlayer.jsx
       setTimeout(() => {
-        setNewAccount(true);
-        setSelectPlayer(true);
+        setEmptyPlayers(true); // defaults to CreateNewPlayer.jsx
+        setSelectPlayer(true); // player selection screen
         setSignUp(false);
       }, 1420);
     } catch (err) {
       if (err.message === 'Firebase: Error (auth/email-already-in-use).') {
-        setError('Account already in use.');
+        setMsg('Account already in use.');
       } else {
-        setError(err.message);
+        setMsg(err.message);
       }
     }
   };
 
   return (
-    <form id="signup" className="flex-col" onSubmit={handleSignUp}>
+    <form id="signup" className="flex-col align-center" onSubmit={handleSignUp}>
       <h2 className="center-text">Account Creation</h2>
       <hr />
       <div className="flex justify-center">
@@ -110,7 +115,7 @@ export default function SignUp({ setSignUp, setSelectPlayer, setNewAccount }) {
       </div>
       {
         <span className="form-message flex align-end justify-center">
-          {error ? error : null}
+          {msg ? msg : null}
         </span>
       }
       <div className="flex justify-center">
