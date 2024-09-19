@@ -32,7 +32,7 @@
 }
 
 #menuWrapper .menuBundle {
-    margin-top: 5vh;
+    margin-top: 6vh;
 }
 
 #menuWrapper .menuBundle > div {
@@ -105,7 +105,7 @@
     height: 1.42vh;
     font-size: 1.42vh;
     letter-spacing: 0.05rem;
-    margin: 0.5vh 0;
+    margin: 0.71vh 0 1vh;
 }
 
 #menuWrapper .redirect-button, #menuWrapper form button {
@@ -114,16 +114,12 @@
     font-size: 1.8rem;
 }
 
-#menuWrapper #login button, #menuWrapper #newPlayer button {
-    margin: 2rem 3rem;
-}
-
-#menuWrapper #signup button {
-    margin: 1rem 3rem;
+#menuWrapper #login button, #menuWrapper #signup button, #menuWrapper #newPlayer button {
+    margin: 1vh 3rem;
 }
 
 #menuWrapper #openPlay button {
-    margin: 0rem 3rem 1rem;
+    margin: 2.5vh 3rem 1vh;
 }
 
 #menuWrapper form button, .playerSelectBtn {
@@ -134,14 +130,19 @@
     font-family: var(--mono);
 }
 
-.playerSelectBtn {
-    margin: 2rem;
-    height: 16rem;
-    width: 14rem;
-    gap: 2rem;
+#selectPlayer .player-collection {
+    width: 40vw;
+    flex-wrap: wrap;
 }
 
-.playerSelectBtn {
+#selectPlayer .player-collection .playerSelectBtn {
+    margin: 1vh 2vh;
+    height: 14rem;
+    gap: 2rem;
+    flex-basis: 25%;
+}
+
+#selectPlayer .player-collection .playerSelectBtn {
     font-size: 2.2rem;
     letter-spacing: 0.042rem;
     font-weight: 400;
@@ -164,8 +165,9 @@
 }
 
 #menuSelection hr {
-    width: 40vh;
-    margin: 0.5vh 0 3vh;
+    width: 25vw;
+    margin: 0.5vh 0 2.5vh;
+    border: 1px solid var(--buttonBlue);
 }
 
 #menuSelection #selectPlayer > hr {
@@ -179,22 +181,6 @@
     letter-spacing: 0.05rem;
     text-align: center;
 }
-
-#openPlay div {
-    margin-top: 3vh;
-}
-
-#mainMenu .popup {
-    width: 55%;
-}
-
-#mainMenu .popup .redirect-button {
-    margin-top: 2rem;
-    width: 16rem;
-    padding: 1rem 2rem;
-    font-size: 2.2rem;
-    letter-spacing: 0.1rem;
-  }
 
 .rocket {
     animation: flyRight 10s linear infinite;
@@ -252,36 +238,86 @@
     }
 
     #menuWrapper #menuSelection {
-        height: 54vh;
         width: 48vw;
     }
-
-    #mainMenu .popup {
-        width: 60%;
+    
+    #menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer {
+        gap: 1rem;
     }
-
-    #menuWrapper #signup div {
-        height: 40vh;
-    }
-
-    #menuWrapper #signup label, #menuWrapper form input {
-        height: 5vh;
-    }
-
-    #menuWrapper form input {
-        width: 20vw;
-    }
-
-    #mainMenu .popup .redirect-button {
-        margin-top: 2rem;
-        width: 12rem;
-        padding: 1rem;
+    
+    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
         font-size: 2rem;
-      }
+    }
+    
+    #menuWrapper form label {
+        width: 15vw;
+        font-size: 1.55rem;
+    }
+    
+    #menuWrapper form input {
+        width: 18vw;
+        font-size: 1.25rem;
+    }
+    
+    #menuWrapper .form-message {
+        height: 1.66vh;
+        font-size: 1.66vh;
+    }
 
-      #openPlay {
+    #menuWrapper .menuBundle .redirect-button {
+        width: 15rem;
+        padding: 1.2rem 0;
+        font-size: 1.8rem;
+    }
+    
+    #menuWrapper .redirect-button, #menuWrapper form button {
+        width: 14rem;
+        padding: 1rem 0;
+        font-size: 1.55rem;
+    }
+
+    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button {
+        margin: 0.5vh 2rem 1vh;
+    }
+
+    #menuWrapper #openPlay button {
+        margin: 2.5vh 2rem 1vh;
+    }
+    
+    #selectPlayer .player-collection {
+        width: 40vw;
+    }
+    
+    #selectPlayer .player-collection .playerSelectBtn {
+        height: 10rem;
+        gap: 1rem;
+        flex-basis: 25%;
+    }
+    
+    #selectPlayer .player-collection .playerSelectBtn {
+        font-size: 2rem;
+    }
+    
+    #menuWrapper #newPlayer {
+        margin-top: 0vh;
+    }
+    
+    #menuWrapper #newPlayer img {
+        height: 12vh;
+        padding: 1.2rem;
+    }
+    
+    #menuSelection hr {
+        margin: 0vh 0 2vh;
+    }
+    
+    #menuSelection #selectPlayer > hr {
+        margin: 2vh 0 3vh;
+    }
+
+    #openPlay {
         font-size: 1.5rem;
-        line-height: 1.8rem;
+        line-height: 2rem;
         width: 40vw;
     }
 }
@@ -290,51 +326,95 @@
     Small Screen
 **/
 @media (max-width: 1450px) {
-    #mainMenu {
-        margin-top: 3%;
-    }
-
     #menuWrapper {
         width: 90vw;
     }
 
     #menuWrapper h1 {
         width: 24vw;
-        font-size: 5rem;
+        font-size: 4.2rem;
     }
 
     #menuWrapper #menuSelection {
-        height: 52vh;
         width: 55vw;
     }
 
-    #mainMenu .popup {
-        width: 75%;
+    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
+        font-size: 2rem;
     }
 
-    #menuWrapper #signup div {
-        height: 40vh;
-    }
-
-    #menuWrapper #signup label, #menuWrapper form input {
-        height: 5vh;
+    #menuWrapper form label {
+        width: 20vw;
+        font-size: 1.42rem;
     }
 
     #menuWrapper form input {
         width: 22vw;
-        font-size: 1.25rem;
+        font-size: 1.12rem;
     }
 
-    #mainMenu .popup .redirect-button {
-        margin-top: 1rem;
-        width: 12rem;
-        padding: 1rem;
-        font-size: 1.85rem;
-      }
+    #menuWrapper .form-message {
+        height: 1.72vh;
+        font-size: 1.72vh;
+    }
 
-      #openPlay {
+    #menuWrapper .menuBundle .redirect-button {
+        width: 15rem;
+        font-size: 1.65rem;
+    }
+    
+    #menuWrapper .redirect-button, #menuWrapper form button {
+        width: 12rem;
+        padding: 1rem 0;
+        font-size: 1.42rem;
+    }
+
+    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button {
+        margin: 0.5vh 1.5rem 1vh;
+    }
+
+    #menuWrapper #openPlay button {
+        margin: 2.5vh 1.5rem 1vh;
+    }
+
+    #selectPlayer .player-collection {
+        width: 50vw;
+    }
+    
+    #selectPlayer .player-collection .playerSelectBtn {
+        height: 8rem;
+        gap: 1rem;
+        flex-basis: 25%;
+    }
+    
+    #selectPlayer .player-collection .playerSelectBtn {
+        font-size: 1.8rem;
+    }
+
+    #selectPlayer .player-collection .playerSelectBtn img {
+        height: 6vh;
+    }
+    
+    #menuWrapper #newPlayer {
+        margin-top: 0vh;
+    }
+    
+    #menuWrapper #newPlayer img {
+        height: 12vh;
+        padding: 1.2rem;
+    }
+
+    #menuSelection hr {
+        margin: 0vh 0 2vh;
+    }
+    
+    #menuSelection #selectPlayer > hr {
+        margin: 1vh 0 3vh;
+    }
+
+    #openPlay {
         font-size: 1.3rem;
         line-height: 1.6rem;
-        width: 45vw;
+        width: 50vw;
     }
 }

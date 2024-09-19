@@ -28,7 +28,9 @@ export default function SelectPlayer({
       try {
         const playerData = await fetchPlayers();
         setPlayers(playerData);
+        console.log(playerData);
       } catch (err) {
+        console.log(err);
         setError('Failed to retrieve players.');
       }
     };
@@ -55,14 +57,25 @@ export default function SelectPlayer({
         <>
           <h2>Select Player</h2>
           <hr />
-          <button
-            className="flex-col justify-center align-center playerSelectBtn small-caps"
-            onClick={() => setCreatePlayer(true)}
-          >
-            create a<br />
-            new player
-            <img src={astro} height={60} alt="Create Player" />
-          </button>
+          <div className="flex justify-center player-collection">
+            {players.map(player => (
+              <button
+                key={player.playerName}
+                className="flex-col justify-center align-center playerSelectBtn small-caps"
+                onClick={() => handleSelectPlayer(player)}
+              >
+                <img src={astro} height={60} alt="Create Player" />
+                {player.playerName}
+              </button>
+            ))}
+            <button
+              className="flex-col justify-center align-center playerSelectBtn small-caps"
+              onClick={() => setCreatePlayer(true)}
+            >
+              create a<br />
+              new player
+            </button>
+          </div>
         </>
       )}
     </div>
