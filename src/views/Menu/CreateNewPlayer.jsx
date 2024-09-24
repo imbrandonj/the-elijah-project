@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { db, auth } from '@root/firebaseConfig';
-import { doc, setDoc } from 'firebase/firestore';
 
 // local imports:
 import { useView } from '@root/contexts/ViewContext.jsx';
+import { usePlayer } from '../../contexts/PlayerContext';
+import { createPlayer } from '@root/services/playersService.js';
 
 import astro from '@root/assets/svgs/astronaut.svg';
 
 export default function CreateNewPlayer({
   setCreatePlayer, // set use state (boolean)
   setSelectPlayer, // set use state (boolean)
-  emptyPlayers, // boolean use state
-  setEmptyPlayers, // set use state (boolean)
+  playerList, // array of the user's player profiles
 }) {
   const { setView } = useView();
+  const { setPlayerProfile } = usePlayer();
   const [playerName, setPlayerName] = useState('');
   const [msg, setMsg] = useState(null); // form message
 
@@ -25,28 +25,23 @@ export default function CreateNewPlayer({
       return;
     }
 
+    if (playerList.some(player => player.playerName === playerName)) {
+      setMsg('Player name already exists.');
+      return;
+    }
+
     try {
-      const user = auth.currentUser;
+      const newPlayer = await createPlayer(playerName);
 
-      const playerRef = doc(db, 'players', `${user.uid}-${playerName}`);
+      setPlayerProfile(newPlayer);
+      setMsg(`Welcome, ${playerName}!`);
 
-      // initial player data
-      await setDoc(playerRef, {
-        playerName: playerName,
-        userId: user.uid,
-        email: user.email,
-        progress: {
-          Arith: 0,
-          'Alpha-Literacy': 0,
-          Perspective: 0,
-        },
-      });
-
-      // redirect to Dashboard, reset Main Menu state
-      setView('Dashboard');
-      setCreatePlayer(false);
-      setSelectPlayer(false);
-      setEmptyPlayers(false);
+      // on success, redirect to Dashboard, reset Main Menu state
+      setTimeout(() => {
+        setView('Dashboard');
+        setCreatePlayer(false);
+        setSelectPlayer(false);
+      }, 1420);
     } catch (err) {
       setMsg('Failed to create player. Please try again.');
     }
@@ -74,7 +69,7 @@ export default function CreateNewPlayer({
         </span>
       }
       <div className="flex">
-        {!emptyPlayers ? (
+        {playerList.length > 0 ? (
           <button
             onClick={event => {
               event.preventDefault();

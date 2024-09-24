@@ -37,7 +37,6 @@ export default function MainMenu() {
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
   const [selectPlayer, setSelectPlayer] = useState(false);
-  const [emptyPlayers, setEmptyPlayers] = useState(false); // are there players in the account?
   // const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -65,19 +64,11 @@ export default function MainMenu() {
             {logIn ? (
               <Login setLogIn={setLogIn} setSelectPlayer={setSelectPlayer} />
             ) : signUp ? (
-              <SignUp
-                setSignUp={setSignUp}
-                setSelectPlayer={setSelectPlayer}
-                setEmptyPlayers={setEmptyPlayers}
-              />
+              <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
             ) : selectPlayer ? (
-              <SelectPlayer
-                setSelectPlayer={setSelectPlayer}
-                emptyPlayers={emptyPlayers}
-                setEmptyPlayers={setEmptyPlayers}
-              />
+              <SelectPlayer setSelectPlayer={setSelectPlayer} />
             ) : (
               <div className="menuBundle">
                 <div>

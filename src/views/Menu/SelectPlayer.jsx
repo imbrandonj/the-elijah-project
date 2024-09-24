@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// internal component & modules:
+// internal components & modules:
 import { useView } from '@root/contexts/ViewContext.jsx'; // global context
 import { usePlayer } from '@root/contexts/PlayerContext.jsx'; // global context
 import { fetchPlayers } from '@root/services/playersService.js';
@@ -13,13 +13,11 @@ import astro from '@root/assets/svgs/astronaut.svg';
 */
 export default function SelectPlayer({
   setSelectPlayer, // set use state
-  emptyPlayers, // boolean use state
-  setEmptyPlayers, // set use state
 }) {
   const { setPlayerProfile } = usePlayer(); // context
   const { setView } = useView(); // context
   const [players, setPlayers] = useState([]);
-  const [createPlayer, setCreatePlayer] = useState(emptyPlayers); // redirects to CreateNewPlayer.jsx when true
+  const [createPlayer, setCreatePlayer] = useState(false); // redirects to CreateNewPlayer.jsx when true
   const [error, setError] = useState('');
 
   // fetch player profiles
@@ -28,10 +26,8 @@ export default function SelectPlayer({
       try {
         const playerData = await fetchPlayers();
         setPlayers(playerData);
-        console.log(playerData);
       } catch (err) {
-        console.log(err);
-        setError('Failed to retrieve players.');
+        setError(err.message || 'Failed to retrieve players.');
       }
     };
 
@@ -46,12 +42,11 @@ export default function SelectPlayer({
 
   return (
     <div id="selectPlayer" className="flex-col align-center">
-      {createPlayer ? (
+      {createPlayer || players.length < 1 ? (
         <CreateNewPlayer
           setCreatePlayer={setCreatePlayer}
           setSelectPlayer={setSelectPlayer}
-          emptyPlayers={emptyPlayers}
-          setEmptyPlayers={setEmptyPlayers}
+          playerList={players}
         />
       ) : (
         <>
@@ -68,13 +63,15 @@ export default function SelectPlayer({
                 {player.playerName}
               </button>
             ))}
-            <button
-              className="flex-col justify-center align-center playerSelectBtn small-caps"
-              onClick={() => setCreatePlayer(true)}
-            >
-              create a<br />
-              new player
-            </button>
+            {players.length < 6 ? (
+              <button
+                className="flex-col justify-center align-center playerSelectBtn small-caps"
+                onClick={() => setCreatePlayer(true)}
+              >
+                create a<br />
+                new player
+              </button>
+            ) : null}
           </div>
         </>
       )}

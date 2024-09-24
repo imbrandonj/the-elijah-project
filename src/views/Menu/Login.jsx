@@ -15,19 +15,23 @@ export default function Login({ setLogIn, setSelectPlayer }) {
   const [showPassword, setShowPassword] = useState(false);
   const [msg, setMsg] = useState(null); // form message
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   const handleLogin = async event => {
     event.preventDefault();
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-      // on successful login, transition to SelectPlayer.jsx
-      setSelectPlayer(true);
-      setLogIn(false);
+      if (userCredential.user.emailVerified) {
+        // on successful login, transition to SelectPlayer.jsx
+        setSelectPlayer(true);
+        setLogIn(false);
+      } else {
+        setMsg('Email not verified. Verify your email before logging in.');
+      }
     } catch (err) {
       setMsg('Failed to log in. Please check your credentials.');
     }
@@ -38,6 +42,7 @@ export default function Login({ setLogIn, setSelectPlayer }) {
       <hr />
       <label htmlFor="email">Email:</label>
       <input
+        id="email"
         type="email"
         value={email}
         onChange={({ target }) => setEmail(target.value)}
@@ -46,6 +51,7 @@ export default function Login({ setLogIn, setSelectPlayer }) {
       <label htmlFor="password">Password:</label>
       <div className="input-wrapper">
         <input
+          id="password"
           type={showPassword ? 'text' : 'password'}
           value={password}
           onChange={({ target }) => setPassword(target.value)}
@@ -53,7 +59,7 @@ export default function Login({ setLogIn, setSelectPlayer }) {
         />
         <img
           className="password-toggle"
-          onClick={togglePasswordVisibility}
+          onClick={() => setShowPassword(prev => !prev)}
           style={{ cursor: 'pointer' }}
           src={showPassword ? eyeShut : eye}
           height={30}

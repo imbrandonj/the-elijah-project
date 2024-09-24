@@ -6,7 +6,6 @@ import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
 import './Dashboard.css';
-import '@root/components/RocketButton/RocketButton.css';
 
 import { useState } from 'react';
 
