@@ -1,3 +1,6 @@
+import { auth } from '@root/firebaseConfig.js';
+import { signOut } from 'firebase/auth'; // Firebase sign out function
+
 // Swiper imports for carousel
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Keyboard, Navigation } from 'swiper/modules';
@@ -21,11 +24,19 @@ import Stars from '@root/assets/svgs/stars.svg';
 */
 export default function DashEntry({ setDashSelect }) {
   const { setView } = useView();
-
   const redirectBegin = () => setDashSelect('launch');
   const redirectStats = () => setDashSelect('stats');
   const redirectConfig = () => setDashSelect('config');
   const redirectHome = () => setView('MainMenu');
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      redirectHome();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div id="dashSwiper" className="flex-col align-center">
       <h2>Select an action:</h2>
@@ -78,7 +89,7 @@ export default function DashEntry({ setDashSelect }) {
           <SwiperSlide>
             <button
               className="dashSwiperBtn flex-col align-center justify-center"
-              onClick={redirectHome}
+              onClick={handleSignOut}
             >
               <img src={Stars} height={160} />
               Sign Out

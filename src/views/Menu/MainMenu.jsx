@@ -12,6 +12,7 @@ import { useView } from '@root/contexts/ViewContext.jsx';
 import Login from './Login.jsx';
 import SignUp from './SignUp.jsx';
 import OpenPlay from './OpenPlay.jsx';
+import SelectPlayer from './SelectPlayer.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
@@ -35,7 +36,8 @@ export default function MainMenu() {
   const [logIn, setLogIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [selectPlayer, setSelectPlayer] = useState(false);
+  // const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
   const views = {
@@ -60,11 +62,13 @@ export default function MainMenu() {
           </h1>
           <div id="menuSelection" className="flex justify-center align-center">
             {logIn ? (
-              <Login setLogIn={setLogIn} />
+              <Login setLogIn={setLogIn} setSelectPlayer={setSelectPlayer} />
             ) : signUp ? (
-              <SignUp setSignUp={setSignUp} />
+              <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
+            ) : selectPlayer ? (
+              <SelectPlayer setSelectPlayer={setSelectPlayer} />
             ) : (
               <div className="menuBundle">
                 <div>
@@ -98,7 +102,7 @@ export default function MainMenu() {
             )}
           </div>
         </div>
-        {showPopup && (
+        {/* {showPopup && (
           <Popup
             closePopup={() => setShowPopup(false)}
             buttonAction={() => setShowPopup(false)}
@@ -109,7 +113,7 @@ export default function MainMenu() {
             buttonText={'continue to The Elijah Project'}
             buttonText2={null}
           />
-        )}
+        )} */}
       </div>
     );
   } else {
