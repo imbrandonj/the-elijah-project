@@ -41,11 +41,11 @@
     padding: 2.8vh;
 }
 
-#menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer {
+#menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer, #menuWrapper #openPlay, #menuWrapper #aboutMenu {
     gap: 1rem;
 }
 
-#menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
+#menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2, #menuWrapper #openPlay h2, #menuWrapper #aboutMenu h2  {
     font-size: 2.2rem;
     letter-spacing: 0.12rem;
     font-weight: 400;
@@ -114,12 +114,8 @@
     font-size: 1.8rem;
 }
 
-#menuWrapper #login button, #menuWrapper #signup button, #menuWrapper #newPlayer button {
+#menuWrapper #login button, #menuWrapper #signup button, #menuWrapper #newPlayer button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button  {
     margin: 1vh 3rem;
-}
-
-#menuWrapper #openPlay button {
-    margin: 2.5vh 3rem 1vh;
 }
 
 #menuWrapper form button, .playerSelectBtn {
@@ -174,12 +170,47 @@
     margin: 2vh 0 3vh;
 }
 
+#menuSelection #openPlay > hr, #menuWrapper #aboutMenu > hr {
+    margin-bottom: 0.5vh;
+}
+
 #openPlay {
     width: 35vw;
     font-size: 1.75rem;
     line-height: 2.42rem;
     letter-spacing: 0.05rem;
     text-align: center;
+}
+
+#aboutMenu {
+    width: 100%;
+    height: 50vh;
+}
+
+#aboutMenu p {
+    width: 30vw;
+    height: 25vh;
+    margin: 0 0 2vh;
+    font-size: 1.75rem;
+    line-height: 3rem;
+    letter-spacing: 0.05rem;
+}
+
+#aboutMenu .navBtn {
+    width: 5vw;
+    font-size: 7vh;
+}
+
+#aboutMenu .empty-space {
+    width: 5vw;
+}
+
+#aboutMenu .smallImg {
+    margin: 1rem 2rem;
+}
+
+figure {
+    margin: 0 0 2vh;
 }
 
 .rocket {
@@ -241,11 +272,7 @@
         width: 48vw;
     }
     
-    #menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer {
-        gap: 1rem;
-    }
-    
-    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
+    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2, #menuWrapper #openPlay h2, #menuWrapper #aboutMenu h2  {
         font-size: 2rem;
     }
     
@@ -276,12 +303,8 @@
         font-size: 1.55rem;
     }
 
-    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button {
+    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button {
         margin: 0.5vh 2rem 1vh;
-    }
-
-    #menuWrapper #openPlay button {
-        margin: 2.5vh 2rem 1vh;
     }
     
     #selectPlayer .player-collection {
@@ -315,10 +338,28 @@
         margin: 2vh 0 3vh;
     }
 
+    #menuSelection #openPlay > hr, #menuWrapper #aboutMenu > hr {
+        margin-bottom: 0;
+    }
+
     #openPlay {
         font-size: 1.5rem;
         line-height: 2rem;
         width: 40vw;
+    }
+
+    #aboutMenu p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        width: 40vw;
+    }
+
+    #aboutMenu .navBtn {
+        width: 4vw;
+    }
+
+    #aboutMenu .empty-space {
+        width: 4vw;
     }
 }
 
@@ -339,7 +380,7 @@
         width: 55vw;
     }
 
-    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2  {
+    #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2, #menuWrapper #openPlay h2, #menuWrapper #aboutMenu h2  {
         font-size: 2rem;
     }
 
@@ -369,12 +410,8 @@
         font-size: 1.42rem;
     }
 
-    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button {
+    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button  {
         margin: 0.5vh 1.5rem 1vh;
-    }
-
-    #menuWrapper #openPlay button {
-        margin: 2.5vh 1.5rem 1vh;
     }
 
     #selectPlayer .player-collection {
@@ -412,9 +449,19 @@
         margin: 1vh 0 3vh;
     }
 
+    #menuSelection #openPlay > hr, #menuWrapper #aboutMenu > hr {
+        margin-bottom: 0;
+    }
+
     #openPlay {
-        font-size: 1.3rem;
-        line-height: 1.6rem;
+        font-size: 1.42rem;
+        line-height: 1.75rem;
         width: 50vw;
+    }
+
+    #aboutMenu p {
+        font-size: 1.42rem;
+        line-height: 1.75rem;
+        width: 40vw;
     }
 }

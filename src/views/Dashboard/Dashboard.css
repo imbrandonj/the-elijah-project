@@ -50,7 +50,7 @@
     border-color: var(--buttonBlue);
 }
 
-#swiperWrapper {
+#dashSwiper #swiperWrapper {
     width: 40vw;
     position: relative;
 }
@@ -71,11 +71,11 @@
     color: var(--lightBlue); 
 }
 
-.swiper-button-next {
+#dashSwiper .swiper-button-next {
     right: -3vw;
   }
   
-.swiper-button-prev {
+#dashSwiper .swiper-button-prev {
     left: -3vw;
 }
 
@@ -194,21 +194,21 @@
         font-size: 1.75rem;
     }
 
-    #swiperWrapper {
+    #dashSwiper #swiperWrapper {
         width: 45vw;
     }
 
-    .dashSwiperBtn {
+    #dashSwiper .dashSwiperBtn {
         font-size: 1.55rem;
         width: 11em;
         height: 7em;
     }
 
-    .swiper-button-next {
+    #dashSwiper .swiper-button-next {
         right: -3.5vw;
       }
       
-    .swiper-button-prev {
+    #dashSwiper .swiper-button-prev {
         left: -3.5vw;
     }
 
@@ -261,20 +261,20 @@
         font-size: 1.55rem;
     }
 
-    #swiperWrapper {
+    #dashSwiper #swiperWrapper {
         width: 60vw;
     }
 
-    .dashSwiperBtn {
+    #dashSwiper .dashSwiperBtn {
         width: 10em;
         height: 7em;
     }
 
-    .swiper-button-next {
+    #dashSwiper .swiper-button-next {
         right: -4vw;
       }
       
-    .swiper-button-prev {
+    #dashSwiper .swiper-button-prev {
         left: -4vw;
     }
 

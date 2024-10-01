@@ -1,0 +1,10 @@
+.navBtn {
+    color: var(--buttonBlue);
+    background-color: transparent;
+    border: none;
+font-family: monospace;
+}
+
+.navBtn:hover {
+    color: var(--lightBlue);
+}

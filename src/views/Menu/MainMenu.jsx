@@ -1,7 +1,6 @@
 import './MainMenu.css'; // component styles
 
 // imported views:
-import About from './About/About.jsx';
 import Dashboard from '../Dashboard/Dashboard.jsx';
 import Arith from '../Arith/Arith.jsx';
 import AlphaLit from '../Alpha-Literacy/AlphaLit.jsx';
@@ -13,6 +12,7 @@ import Login from './Login.jsx';
 import SignUp from './SignUp.jsx';
 import OpenPlay from './OpenPlay.jsx';
 import SelectPlayer from './SelectPlayer.jsx';
+import About from './About.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
@@ -36,13 +36,13 @@ export default function MainMenu() {
   const [logIn, setLogIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
+  const [about, setAbout] = useState(false);
   const [selectPlayer, setSelectPlayer] = useState(false);
   // const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
   const views = {
     MainMenu: <MainMenu />,
-    About: <About />,
     Dashboard: <Dashboard />,
     Arith: <Arith />,
     Perspective: <Perspective />,
@@ -67,6 +67,8 @@ export default function MainMenu() {
               <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
             ) : openPlay ? (
               <OpenPlay setOpenPlay={setOpenPlay} />
+            ) : about ? (
+              <About setAbout={setAbout} />
             ) : selectPlayer ? (
               <SelectPlayer setSelectPlayer={setSelectPlayer} />
             ) : (
@@ -90,7 +92,7 @@ export default function MainMenu() {
                     css={'bkg-btn-blue'}
                   />
                   <RedirectButton
-                    onclick={() => setView('About')}
+                    onclick={() => setAbout(true)}
                     text={'About'}
                     css={'bkg-btn-blue'}
                   />
