@@ -12,10 +12,14 @@ import { useState } from 'react';
 /*
   Dashboard.jsx
 
+  planet argument redirects the user to the planet overview
+
 */
-export default function Dashboard() {
-  const [dashSelect, setDashSelect] = useState('entry'); // user selection from DashEntry ('')
-  const [missionSelect, setMissionSelect] = useState('');
+export default function Dashboard({ planet }) {
+  const [dashSelect, setDashSelect] = useState(planet ? 'launch' : 'entry'); // user selection from DashEntry ('')
+  const [missionSelect, setMissionSelect] = useState(planet ? planet : '');
+  console.log(planet ? planet : '');
+  console.log(dashSelect);
 
   const rocketClick = () => {
     setMissionSelect('');

@@ -66,8 +66,8 @@ export default function About({ setAbout }) {
               <img src={Arith} height={120} />
               <figcaption>Planet Arith</figcaption>
             </figure>
-            Introduces the player to basic arithmetic
-            <br /> and math operations.
+            Introduces the player to
+            <br /> basic arithmetic and math operations.
           </p>
         ) : page === 5 ? (
           <p className="flex-col align-center justify-start">
@@ -75,8 +75,8 @@ export default function About({ setAbout }) {
               <img src={Perspective} height={120} />
               <figcaption>Planet Perspective</figcaption>
             </figure>
-            Tests the player on various instruction following and pattern
-            recognition.
+            Tests the player on various instruction
+            <br /> following and pattern recognition.
           </p>
         ) : page === 6 ? (
           <p className="flex-col align-center justify-center">

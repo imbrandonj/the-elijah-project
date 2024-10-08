@@ -1,36 +1,13 @@
+/*
+    Specific planet colors belong to the planet css stylesheet
+*/
+
 #LevelEntry {
+    margin: 5vh 0 0 0;
+    width: 80vw;
+    min-height: 80vh;
     padding: 2rem 6rem;
     border-radius: 1rem;
-}
-
-#LevelEntry .para-img {
-    width: 100%;
-    min-height: 51em;
-    gap: 10rem;
-    margin: 2rem;
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 1rem;
-}
-
-#LevelEntry .para-img img {
-    margin: 2rem;
-    border-radius: 1em;
-    box-shadow: inset 1.5em -4em 1em var(--buttonBlue);
-}
-
-#typing {
-    display: flex;
-    flex-direction: column;
-    min-width: 70rem;
-    max-width: 70rem;
-}
-
-#typing p {
-    text-align: center;
-    line-height: 2.5rem;
-    letter-spacing: 0.15rem;
-    font-size: 2rem;
 }
 
 #LevelEntry h2 {
@@ -41,8 +18,45 @@
     letter-spacing: 0.2rem;
 }
 
+#LevelEntry > hr {
+    width: 50%;
+    margin: -1vh 0 1vh 0;
+    border: 1px solid black;
+}
+
+#LevelEntry .entry-row {
+    width: 100%;
+    justify-content: space-around;
+}
+
+#LevelEntry .entry-row hr {
+    border: 1px solid var(--blackOverlay);
+    box-shadow: 0px 5px 10px var(--blackWrap);
+}
+
+#LevelEntry .text-box {
+    min-height: 60vh;
+    width: 80%;
+    margin: 5vh 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#typing {
+    display: flex;
+    flex-direction: column;
+    min-width: 90%;
+    max-width: 90%;
+}
+
+#typing p {
+    text-align: center;
+    line-height: 2.5rem;
+    letter-spacing: 0.15rem;
+    font-size: 2rem;
+}
+
 #LevelEntry button {
-    margin: 2rem 0;
+    margin: 2vh 0 0;
 }
 
 /************
@@ -58,21 +72,6 @@
 
     #LevelEntry {
         padding: 1rem 4rem;
-    }
-
-    #LevelEntry .para-img {
-        min-height: 38em;
-        gap: 6rem;
-        margin: 0.5rem;
-    }
-
-    #LevelEntry .para-img img {
-        margin: 1rem;
-    }
-    
-    #typing {
-        min-width: 55rem;
-        max-width: 55rem;
     }
 
     #typing p {
@@ -97,21 +96,6 @@
 @media screen and (max-width: 1450px) {
     #LevelEntry {
         padding: 0 2rem;
-    }
-
-    #LevelEntry .para-img {
-        min-height: 35em;
-        gap: 4rem;
-        margin: 0.5rem;
-    }
-
-    #LevelEntry .para-img img {
-        margin: 1rem;
-    }
-    
-    #typing {
-        min-width: 50rem;
-        max-width: 50rem;
     }
 
     #typing p {

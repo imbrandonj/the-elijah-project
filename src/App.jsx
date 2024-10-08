@@ -35,13 +35,13 @@ const App = () => {
   if (adequateWidth) {
     // display view:
     return (
-      <ViewProvider>
-        <PlayerProvider>
+      <PlayerProvider>
+        <ViewProvider>
           <AudioProvider>
             <MainMenu />
           </AudioProvider>
-        </PlayerProvider>
-      </ViewProvider>
+        </ViewProvider>
+      </PlayerProvider>
     );
   } else {
     // inadequate viewport (shrunken screen):

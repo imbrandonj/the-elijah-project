@@ -1,6 +1,6 @@
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
-import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
+import Panel from '@root/components/Panel/Panel.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
@@ -60,273 +60,271 @@ export default function Arith() {
 
   // return component
   return (
-    <div>
-      <RocketHeader />
-      <div id="ArithWrap" className="flex justify-center">
-        {levelUpEvent ? (
-          <LevelUp
-            planet="Arith"
+    <div id="ArithWrap" className="flex justify-center">
+      <Panel />
+      {levelUpEvent ? (
+        <LevelUp
+          planet="Arith"
+          levelScore={levelScore}
+          setLevelScore={setLevelScore}
+          setLevelUpEvent={setLevelUpEvent}
+          setBegin={setBegin}
+        />
+      ) : level === 1 ? (
+        begin ? (
+          <ArithLevel1
+            setLevelUpEvent={setLevelUpEvent}
             levelScore={levelScore}
             setLevelScore={setLevelScore}
-            setLevelUpEvent={setLevelUpEvent}
-            setBegin={setBegin}
           />
-        ) : level === 1 ? (
-          begin ? (
-            <ArithLevel1
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry1}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 1"
-              text="ArithEntry1"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 2 ? (
-          begin ? (
-            <ArithLevel2
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry2}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 2"
-              text="ArithEntry2"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 3 ? (
-          begin ? (
-            <ArithLevel3
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry3}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 3"
-              text="ArithEntry3"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 4 ? (
-          begin ? (
-            <ArithLevel4
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry4}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 4"
-              text="ArithEntry4"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 5 ? (
-          begin ? (
-            <ArithLevel5
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry5}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 5"
-              text="ArithEntry5"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 6 ? (
-          begin ? (
-            <ArithLevel6
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry6}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 6"
-              text="ArithEntry6"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 7 ? (
-          begin ? (
-            <ArithLevel7
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry7}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 7"
-              text="ArithEntry7"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 8 ? (
-          begin ? (
-            <ArithLevel8
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry8}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 8"
-              text="ArithEntry8"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 9 ? (
-          begin ? (
-            <ArithLevel9
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry9}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 9"
-              text="ArithEntry9"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 10 ? (
-          begin ? (
-            <ArithLevel10
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry10}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 10"
-              text="ArithEntry10"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 11 ? (
-          begin ? (
-            <ArithLevel11
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={null}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 11"
-              text="ArithEntry11"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 12 ? (
-          begin ? (
-            <ArithLevel12
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={null}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 12"
-              text="ArithEntry12"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 13 ? (
-          begin ? (
-            <ArithLevel13
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={null}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 13"
-              text="ArithEntry13"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 14 ? (
-          begin ? (
-            <ArithLevel14
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={null}
-              img={imgEntry1}
-              planet="Arith"
-              h2Text="Arith Level 14"
-              text="ArithEntry14"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
         ) : (
-          <PlanetComplete path={'Arith'} />
-        )}
-      </div>
+          <LevelEntry
+            voice={audioEntry1}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 1"
+            text="ArithEntry1"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 2 ? (
+        begin ? (
+          <ArithLevel2
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry2}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 2"
+            text="ArithEntry2"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 3 ? (
+        begin ? (
+          <ArithLevel3
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry3}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 3"
+            text="ArithEntry3"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 4 ? (
+        begin ? (
+          <ArithLevel4
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry4}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 4"
+            text="ArithEntry4"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 5 ? (
+        begin ? (
+          <ArithLevel5
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry5}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 5"
+            text="ArithEntry5"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 6 ? (
+        begin ? (
+          <ArithLevel6
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry6}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 6"
+            text="ArithEntry6"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 7 ? (
+        begin ? (
+          <ArithLevel7
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry7}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 7"
+            text="ArithEntry7"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 8 ? (
+        begin ? (
+          <ArithLevel8
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry8}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 8"
+            text="ArithEntry8"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 9 ? (
+        begin ? (
+          <ArithLevel9
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry9}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 9"
+            text="ArithEntry9"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 10 ? (
+        begin ? (
+          <ArithLevel10
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry10}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 10"
+            text="ArithEntry10"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 11 ? (
+        begin ? (
+          <ArithLevel11
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={null}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 11"
+            text="ArithEntry11"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 12 ? (
+        begin ? (
+          <ArithLevel12
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={null}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 12"
+            text="ArithEntry12"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 13 ? (
+        begin ? (
+          <ArithLevel13
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={null}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 13"
+            text="ArithEntry13"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 14 ? (
+        begin ? (
+          <ArithLevel14
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={null}
+            img={imgEntry1}
+            planet="Arith"
+            h2Text="Arith Level 14"
+            text="ArithEntry14"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : (
+        <PlanetComplete path={'Arith'} />
+      )}
     </div>
   );
 }

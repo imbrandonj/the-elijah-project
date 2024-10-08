@@ -3,7 +3,6 @@
 */
 
 #PerspWrap {
-    margin: 0.5% 0;
 }
 
 #PerspWrap #LevelEntry {
@@ -16,41 +15,43 @@
 }
 
 #PerspLevel {
-    width: 80%;
-    padding: 3rem 0;
+    margin-top: 5vh;
+    width: 80vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0; /* TO DO: not active in Arith or Alpha */
     background-color: rgba(91, 149, 143, 0.95);
     border-radius: 1rem;
 }
 
 #PerspLevel .shapeOverlay {
     width: 80%;
-    height: 42vh;
+    height: 45vh;
     margin-top: 1rem;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 0.5rem;
 }
 
 #PerspLevel .shapeOverlay .speaker {
-    margin-top: 4vh;
+    margin: 3vh 0 4vh;
     padding: 0.5rem 1rem;
-    font-size: 4rem;
+    font-size: 5vh;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 0.5rem;
     border: none;
 }
 
-#PerspLevel .leftRight {
+#PerspLevel .shapeOverlay .leftRight {
     display: flex;
     justify-content: space-evenly;
     width: 80%;
 }
 
-#PerspLevel .shapeOverlay .oneSet {
-    margin-top: 3vh;
-}
-
-#PerspLevel .shapeOverlay .twoSets {
-    margin-top: 1vh;
+#PerspLevel .shapeOverlay .oneSet img {
+    height: 18vh;
 }
 
 #PerspLevel .shapeOverlay .emojiImg {
@@ -79,7 +80,7 @@
 }
 
 #PerspLevel .Tipbox {
-    margin: 0.5rem;
+    margin: 1vh 0 2vh;
     background-color: rgb(166, 222, 194);
 }
 
@@ -95,21 +96,7 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #PerspLevel {
-        width: 85%;
         padding: 1rem 0;
-    }
-
-    #PerspLevel .shapeOverlay {
-        height: 48vh;
-    }
-
-    #PerspLevel .shapeOverlay .speaker {
-        margin: 3vh 0 2vh;
-        font-size: 3rem;
-    }
-
-    #PerspLevel .shapeOverlay .oneSet img {
-        height: 12rem;
     }
 
     #PerspLevel .shapeOverlay .twoSets img {
@@ -136,25 +123,7 @@
 **/
 @media screen and (max-width: 1450px) {
     #PerspLevel {
-        width: 90%;
         padding: 1rem 0;
-    }
-
-    #PerspLevel .shapeOverlay {
-        height: 50vh;
-        margin-top: 0.5rem;
-    }
-
-    #PerspLevel .shapeOverlay .speaker {
-        font-size: 2.5rem;
-    }
-
-    #PerspLevel .shapeOverlay .oneSet {
-        margin: 3vh 0;
-    }
-
-    #PerspLevel .shapeOverlay .oneSet img {
-        height: 10rem;
     }
 
     #PerspLevel .shapeOverlay .twoSets img {

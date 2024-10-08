@@ -3,17 +3,24 @@
 */
 
 #litPath {
-    margin-top: 0.5%;
 }
 
 #litPath #LevelEntry {
     background-color: rgba(26, 45, 79, 0.95);
 }
 
+#litPath #LevelEntry hr {
+    border: 1px solid var(--buttonBlue);
+}
+
 #litLevel {
-    margin-top: 1%;
-    width: 80%;
-    padding: 2rem 2rem 4rem;
+    margin-top: 8vh;
+    width: 80vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(26, 45, 79, 0.95);
     border-radius: 1rem;
 }
@@ -82,14 +89,13 @@
     line-height: 6rem;
 }
 
-
 #litLevel .filledFootbox {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
 
 #litLevel .Tipbox {
-    margin: 1rem;
+    margin: 2vh 0;
     background-color: var(--buttonBlue);
 }
 
@@ -104,12 +110,7 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #litLevel {
-        margin-top: 0.5%;
-        padding: 2rem;
-    }
-    
-    #litProb, #emojiLevel {
-        margin: 0.5rem;
+        height: 82vh;
     }
 
     #litProb p {
@@ -135,32 +136,18 @@
     .wordQ {
         font-size: 3rem;
     }
-    
-    #spell {
-        line-height: 8rem;
+
+    #litProb, #emojiLevel {
+        margin: 0.5rem;
     }
-        
+
     .emojiBundle {
         min-height: 8rem;
         font-size: 2rem;
     }
-
-    #litLevel .objective {
-        margin: 1rem 0;
-        padding: 0.4rem 0.8rem 0;
-        font-size: 1.4rem;
-        letter-spacing: 0.1rem;
-    }
     
-    #litLevel .objective img {
-        margin: 0.5rem 0.5rem 0.8rem;
-    }
-    
-    #litLevel .objective span {
-        margin: 0.5rem;
-        padding-bottom: 0.25rem;
-        font-size: 1.8rem;
-        letter-spacing: 0.2rem;
+    #spell {
+        line-height: 8rem;
     }
 }
 
@@ -168,12 +155,6 @@
     Small Screen
 **/
 @media screen and (max-width: 1450px) {
-    #litLevel {
-        width: 90%;
-        margin-top: 0.5%;
-        padding: 1rem 1rem 2rem;
-    }
-
     #litProb {
         margin: 0rem;
     }
@@ -210,24 +191,5 @@
     .emojiBundle {
         width: 18rem;
         font-size: 2rem;
-    }
-
-    #litLevel .objective {
-        margin: 1rem 0;
-        padding: 0.4rem 0.8rem 0;
-        font-size: 1.4rem;
-        letter-spacing: 0.1rem;
-
-    }
-    
-    #litLevel .objective img {
-        margin: 0.5rem 0.5rem 0.8rem;
-    }
-    
-    #litLevel .objective span {
-        margin: 0.5rem;
-        padding-bottom: 0.25rem;
-        font-size: 1.8rem;
-        letter-spacing: 0.2rem;
     }
 }

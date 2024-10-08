@@ -41,7 +41,7 @@ export default function AlphaLevel8({
   }, []);
 
   return (
-    <div id="litLevel" className="flex-col align-center">
+    <div id="litLevel">
       <LevelHeader
         text="Spell the colors of different shapes"
         score={levelScore}

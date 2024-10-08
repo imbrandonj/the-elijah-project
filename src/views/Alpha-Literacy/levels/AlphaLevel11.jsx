@@ -85,7 +85,7 @@ export default function AlphaLevel11({
   };
 
   return (
-    <div id="litLevel" className="flex-col align-center">
+    <div id="litLevel">
       <LevelHeader text="Separate the cats & dogs!" score={levelScore} />
       <div id="emojiLevel" className="flex align-center justify-evenly">
         <p className="emojiBundle flex align-center justify-center">

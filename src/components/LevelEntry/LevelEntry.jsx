@@ -52,14 +52,20 @@ export default function LevelEntry({
   // display explanation:
   return (
     <div id="LevelEntry" className="flex-col align-center">
-      <h2 className="flex align-center self-start small-caps">
+      <h2 className="flex align-center small-caps">
         <img src={planetImg} height={88} /> {h2Text}
       </h2>
-      <div className="para-img flex align-center">
-        <Text text={text} />
-        <img src={img} height={250} />
+      <hr />
+      <div className="entry-row flex align-center">
+        <div className="text-box flex-col align-center justify-center">
+          <Text text={text} />
+          <BeginButton text={'begin!'} onclick={beginButton} />
+        </div>
+        {/* <div>
+          <img src={img} height={250} />
+          <hr />
+        </div> */}
       </div>
-      <BeginButton text={'begin!'} onclick={beginButton} />
     </div>
   );
 }

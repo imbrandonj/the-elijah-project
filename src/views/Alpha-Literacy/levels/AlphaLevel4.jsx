@@ -41,7 +41,7 @@ export default function AlphaLevel4({
   }, []);
 
   return (
-    <div id="litLevel" className="flex-col align-center">
+    <div id="litLevel">
       <LevelHeader text="Spell 20 short animal words" score={levelScore} />
       <div id="litProb">
         <p>

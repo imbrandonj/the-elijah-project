@@ -1,6 +1,6 @@
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
-import RocketHeader from '@root/components/RocketHeader/RocketHeader.jsx';
+import Panel from '@root/components/Panel/Panel.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
@@ -61,237 +61,235 @@ export default function AlphaLit() {
 
   // return component
   return (
-    <div>
-      <RocketHeader />
-      <div id="litPath" className="flex-col align-center">
-        {levelUpEvent ? (
-          <LevelUp
-            planet="AlphaLit"
+    <div id="litPath" className="flex justify-center">
+      <Panel />
+      {levelUpEvent ? (
+        <LevelUp
+          planet="AlphaLit"
+          levelScore={levelScore}
+          setLevelScore={setLevelScore}
+          setLevelUpEvent={setLevelUpEvent}
+          setBegin={setBegin}
+        />
+      ) : level === 1 ? (
+        begin ? (
+          <AlphaLevel1
+            setLevelUpEvent={setLevelUpEvent}
             levelScore={levelScore}
             setLevelScore={setLevelScore}
-            setLevelUpEvent={setLevelUpEvent}
-            setBegin={setBegin}
           />
-        ) : level === 1 ? (
-          begin ? (
-            <AlphaLevel1
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry1}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 1"
-              text="AlphaEntry1"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 2 ? (
-          begin ? (
-            <AlphaLevel2
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry2}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 2"
-              text="AlphaEntry2"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 3 ? (
-          begin ? (
-            <AlphaLevel3
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry3}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 3"
-              text="AlphaEntry3"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 4 ? (
-          begin ? (
-            <AlphaLevel4
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry4}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 4"
-              text="AlphaEntry4"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 5 ? (
-          begin ? (
-            <AlphaLevel5
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry5}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 5"
-              text="AlphaEntry5"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 6 ? (
-          begin ? (
-            <AlphaLevel6
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry6}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 6"
-              text="AlphaEntry6"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 7 ? (
-          begin ? (
-            <AlphaLevel7
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry7}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 7"
-              text="AlphaEntry7"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 8 ? (
-          begin ? (
-            <AlphaLevel8
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry8}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 8"
-              text="AlphaEntry8"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 9 ? (
-          begin ? (
-            <AlphaLevel9
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry9}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 9"
-              text="AlphaEntry9"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 10 ? (
-          begin ? (
-            <AlphaLevel10
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry10}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 10"
-              text="AlphaEntry10"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 11 ? (
-          begin ? (
-            <AlphaLevel11
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry11}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 11"
-              text="AlphaEntry11"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 12 ? (
-          begin ? (
-            <AlphaLevel12
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry12}
-              img={astroUSA}
-              planet="AlphaLit"
-              h2Text="Alpha-Literacy Level 12"
-              text="AlphaEntry12"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
         ) : (
-          <PlanetComplete path={'AlphaLit'} />
-        )}
-      </div>
+          <LevelEntry
+            voice={audioEntry1}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 1"
+            text="AlphaEntry1"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 2 ? (
+        begin ? (
+          <AlphaLevel2
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry2}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 2"
+            text="AlphaEntry2"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 3 ? (
+        begin ? (
+          <AlphaLevel3
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry3}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 3"
+            text="AlphaEntry3"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 4 ? (
+        begin ? (
+          <AlphaLevel4
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry4}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 4"
+            text="AlphaEntry4"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 5 ? (
+        begin ? (
+          <AlphaLevel5
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry5}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 5"
+            text="AlphaEntry5"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 6 ? (
+        begin ? (
+          <AlphaLevel6
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry6}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 6"
+            text="AlphaEntry6"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 7 ? (
+        begin ? (
+          <AlphaLevel7
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry7}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 7"
+            text="AlphaEntry7"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 8 ? (
+        begin ? (
+          <AlphaLevel8
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry8}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 8"
+            text="AlphaEntry8"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 9 ? (
+        begin ? (
+          <AlphaLevel9
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry9}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 9"
+            text="AlphaEntry9"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 10 ? (
+        begin ? (
+          <AlphaLevel10
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry10}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 10"
+            text="AlphaEntry10"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 11 ? (
+        begin ? (
+          <AlphaLevel11
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry11}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 11"
+            text="AlphaEntry11"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 12 ? (
+        begin ? (
+          <AlphaLevel12
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry12}
+            img={astroUSA}
+            planet="AlphaLit"
+            h2Text="Alpha-Literacy Level 12"
+            text="AlphaEntry12"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : (
+        <PlanetComplete path={'AlphaLit'} />
+      )}
     </div>
   );
 }

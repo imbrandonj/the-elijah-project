@@ -37,8 +37,9 @@ export default function DashEntry({ setDashSelect }) {
       console.log(err);
     }
   };
+
   return (
-    <div id="dashSwiper" className="flex-col align-center">
+    <div id="dashSwiper" className="flex-col justify-center align-center">
       <h2>Select an action:</h2>
       <hr />
       <div id="swiperWrapper">
@@ -82,8 +83,9 @@ export default function DashEntry({ setDashSelect }) {
           </SwiperSlide>
           <SwiperSlide>
             <button className="dashSwiperBtn flex-col align-center justify-center">
-              <img src={FloatAstro} height={120} />
-              Profile Configuration
+              <img className="astroImg" src={FloatAstro} height={140} />
+              Profile
+              <br /> Configuration
             </button>
           </SwiperSlide>
           <SwiperSlide>

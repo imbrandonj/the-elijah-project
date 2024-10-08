@@ -56,7 +56,7 @@ export default function PlanetComplete({
         <button
           onClick={handleReturn}
           /* reused class (dashSwiperBtn) from SelectMission.jsx */
-          className="dashSwiperBtn flex flex-col align-center"
+          className="dashSwiperBtn flex-col align-center justify-center"
         >
           <img src={RocketHome} height={140} />
           Return to Base

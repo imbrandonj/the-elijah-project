@@ -43,7 +43,7 @@ export default function ArithLevel12({
   }, []);
 
   return (
-    <div id="ArithLevel" className="flex-col align-center">
+    <div id="ArithLevel">
       <LevelHeader text="Add the two numbers together." score={levelScore} />
       <div id="mathQABundle" className="flex justify-center">
         <p id="mathQ">{problem.question}</p>

@@ -3,7 +3,6 @@
 */
 
 #ArithWrap {
-    margin-top: 0.5%;
 }
 
 #ArithWrap #LevelEntry {
@@ -12,9 +11,13 @@
 }
 
 #ArithLevel {
-    width: 80%;
-    margin-top: 1%;
-    padding: 4rem 0;
+    margin-top: 8vh;
+    width: 80vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color:rgba(44, 16, 28, 0.95);
     border-radius: 1rem;
 }
@@ -80,7 +83,7 @@
 
 
 #ArithWrap .Tipbox {
-    margin: 1rem;
+    margin: 1vh 0 2vh;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -95,7 +98,6 @@
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
     #ArithLevel {
-        margin-top: 0.5%;
         padding: 2rem 0;
     }
     
@@ -119,8 +121,6 @@
 **/
 @media screen and (max-width: 1450px) {
     #ArithLevel {
-        margin-top: 0.5%;
-        width: 90%;
         padding: 1rem 0;
     }
     

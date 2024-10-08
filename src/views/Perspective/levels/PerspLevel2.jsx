@@ -167,7 +167,7 @@ export default function PerspLevel2({
   }
 
   return (
-    <div id="PerspLevel" className="flex-col align-center">
+    <div id="PerspLevel">
       <LevelHeader
         text="Click on the shape given by the audio"
         score={levelScore}

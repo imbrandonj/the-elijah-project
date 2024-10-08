@@ -1,0 +1,128 @@
+/* 
+    Panel component styles
+*/
+
+#panel {
+    margin: 10vh 1vw 0 -5.5vw;
+    height: 20vh;
+    width: 10vw;
+    background-color: var(--buttonBlue);
+    color: black;
+    border: none;
+    border-radius: 0.75rem;
+}
+
+#panel .panel-content {
+    display: none;
+}
+
+#panel:hover {
+    height: 100%;
+    background-color: var(--blackWrap);
+    color: var(--lightBlue);
+
+    .panel-icon {
+        display: none;
+    }
+
+    .panel-content {
+        display: flex;
+        flex-direction: column;
+        padding: 1vh 0 2vh;
+    }
+}
+
+#panel .panel-icon {
+    gap: 0.5vh;
+}
+
+#panel .panel-icon span {
+    font-size: 2.75rem;
+    font-variant: small-caps;
+    letter-spacing: 0.25rem;
+}
+
+#panel .panel-icon hr {
+    border: 1px solid black;
+    width: 100%;
+}
+
+#panel .panel-icon img {
+    opacity: 90%;
+    transform: rotate(-135deg);
+}
+
+#panel h1 {
+    font-size: 2.5rem;
+    font-variant: small-caps;
+    letter-spacing: 0.75rem;
+    text-align: center;
+}
+
+#panel .panel-content hr {
+    border: 1px solid var(--buttonBlue);
+    width: 80%;
+    margin: 2vh 0;
+}
+#panel .panel-content ul {
+    padding: 0;
+    gap: 5vh;
+}
+
+#panel .panel-content li {
+    width: 10vw;
+    padding: 1vh 0;
+    font-size: 1.75rem;
+    list-style: none;
+    line-height: 3rem;
+    font-variant: small-caps;
+    letter-spacing: 0.15rem;
+}
+
+#panel .panel-content li:hover {
+    color: var(--buttonBlue);
+    cursor: pointer;
+}
+
+@media (max-width: 2000px) {
+    #panel .panel-icon span {
+        font-size: 2.15rem;
+    }
+    
+    #panel .panel-icon img {
+        height: 8vh;
+    }
+    
+    #panel h1 {
+        font-size: 2rem;
+        letter-spacing: 0.42rem;
+    }
+    
+    #panel .panel-content li {
+        font-size: 1.42rem;
+        line-height: 2rem;
+    }
+}
+
+/**
+    Small Screen
+**/
+@media (max-width: 1450px) {
+    #panel .panel-icon span {
+        font-size: 1.85rem;
+    }
+    
+    #panel .panel-icon img {
+        height: 6vh;
+    }
+    
+    #panel h1 {
+        font-size: 1.65rem;
+        letter-spacing: 0.42rem;
+    }
+    
+    #panel .panel-content li {
+        font-size: 1.3rem;
+        line-height: 1.85rem;
+    }
+}

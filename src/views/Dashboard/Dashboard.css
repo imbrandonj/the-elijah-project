@@ -3,7 +3,7 @@
 */
 
 #Dashboard {
-    margin-top: 11vh;
+    margin-top: 9vh;
 }
 
 #dashboardWrap {
@@ -28,6 +28,13 @@
     padding: 0.5rem 1rem;
     background-color: rgba(255, 202, 255, 0.6);
 } 
+.dashSwiperBtn img {
+    height: 14vh;
+}
+
+.dashSwiperBtn .astroImg {
+    height: 12vh;
+}
 
 /*
     Swiper.js carousel styles
@@ -35,7 +42,7 @@
 
 #dashSwiper {
     width: 70vw;
-    padding: 8rem;
+    min-height: 55vh;
 }
 
 #dashSwiper h2 {
@@ -72,17 +79,16 @@
 }
 
 #dashSwiper .swiper-button-next {
-    right: -3vw;
+    right: -4vw;
   }
   
 #dashSwiper .swiper-button-prev {
-    left: -3vw;
+    left: -4vw;
 }
 
 .dashSwiperBtn {
-    width: 10em;
-    height: 6em;
-    padding: 1.2em;
+    width: 15vw;
+    min-height: 22vh;
     font-family: Monospace;
     font-size: 2rem;
     border-radius: 0.4rem;
@@ -95,7 +101,7 @@
 }
 
 .dashSwiperBtn > img {
-    margin-bottom: .5em;
+    margin-bottom: 1vh;
 }
 
 /*
@@ -182,34 +188,15 @@
     Medium Screen
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
-    #Dashboard {
-        margin-top: 9vh;
-    }
-
     #dashSwiper {
-        padding: 4rem;
     }
 
     #dashSwiper h2 {
         font-size: 1.75rem;
     }
 
-    #dashSwiper #swiperWrapper {
-        width: 45vw;
-    }
-
-    #dashSwiper .dashSwiperBtn {
+    .dashSwiperBtn {
         font-size: 1.55rem;
-        width: 11em;
-        height: 7em;
-    }
-
-    #dashSwiper .swiper-button-next {
-        right: -3.5vw;
-      }
-      
-    #dashSwiper .swiper-button-prev {
-        left: -3.5vw;
     }
 
     #mission {
@@ -244,13 +231,8 @@
     Small Screen
 **/
 @media (max-width: 1450px) {
-    #Dashboard {
-        margin-top: 6vh;
-    }
-
     #dashSwiper {
         width: 80vw;
-        padding: 4rem;
     }
 
     #dashSwiper button {
@@ -262,20 +244,19 @@
     }
 
     #dashSwiper #swiperWrapper {
-        width: 60vw;
-    }
-
-    #dashSwiper .dashSwiperBtn {
-        width: 10em;
-        height: 7em;
+        width: 45vw;
     }
 
     #dashSwiper .swiper-button-next {
-        right: -4vw;
+        right: -6vw;
       }
       
     #dashSwiper .swiper-button-prev {
-        left: -4vw;
+        left: -6vw;
+    }
+
+    .dashSwiperBtn {
+        width: 16vw;
     }
 
     #mission {

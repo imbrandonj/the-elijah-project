@@ -99,7 +99,7 @@ export default function LevelUp({
       );
     // regular level completed:
     return (
-      <div id="levelUp">
+      <div id="levelUp" className="flex-col justify-center align-center">
         {popup ? (
           <Popup
             buttonAction={retry}
@@ -109,12 +109,12 @@ export default function LevelUp({
             buttonText2={'No, do not reset'}
           />
         ) : null}
-        <div id="levelUpWrapper" className="flex-col align-center">
+        <div id="levelUpWrapper">
           <h2 className="flex align-center">
             {planet} level up
             <img src={planetImg} height={88} />
           </h2>
-          <h3>Level {level} Completed</h3>
+          <h3 className="center-text">Level {level} Completed</h3>
           <ul>
             <li>
               Level Score: <span>{levelScore}</span>

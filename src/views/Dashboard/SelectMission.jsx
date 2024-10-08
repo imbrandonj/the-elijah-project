@@ -29,7 +29,7 @@ export default function SelectMission({ setMissionSelect, setDashSelect }) {
   const handleReturn = () => setDashSelect('entry');
 
   return (
-    <div id="dashSwiper" className="flex-col align-center">
+    <div id="dashSwiper" className="flex-col justify-center align-center">
       <h2>Select a planet for exploration:</h2>
       <hr />
       <div id="swiperWrapper">

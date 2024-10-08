@@ -41,7 +41,7 @@ export default function AlphaLevel12({
   }, []);
 
   return (
-    <div id="litLevel" className="flex-col align-center">
+    <div id="litLevel">
       <LevelHeader
         text="Type and enter 20 special characters"
         score={levelScore}

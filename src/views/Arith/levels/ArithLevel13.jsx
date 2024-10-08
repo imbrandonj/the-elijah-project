@@ -43,7 +43,7 @@ export default function ArithLevel13({
   }, []);
 
   return (
-    <div id="ArithLevel" className="flex-col align-center">
+    <div id="ArithLevel">
       <LevelHeader
         text="Subtract one number from the other."
         score={levelScore}

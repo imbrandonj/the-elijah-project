@@ -1,6 +1,6 @@
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
-import RocketHeader from '@root/components/RocketHeader/RocketHeader';
+import Panel from '@root/components/Panel/Panel.jsx';
 import LevelUp from '@root/components/LevelUp/LevelUp.jsx';
 import LevelEntry from '@root/components/LevelEntry/LevelEntry.jsx';
 import PlanetComplete from '@root/components/PlanetComplete/PlanetComplete.jsx';
@@ -39,94 +39,91 @@ export default function Perspective() {
 
   // return component
   return (
-    <div>
-      <RocketHeader />
-
-      <div id="PerspWrap" className="flex-col align-center">
-        {levelUpEvent ? (
-          <LevelUp
-            planet="Persp"
+    <div id="PerspWrap" className="flex justify-center">
+      <Panel />
+      {levelUpEvent ? (
+        <LevelUp
+          planet="Persp"
+          levelScore={levelScore}
+          setLevelScore={setLevelScore}
+          setLevelUpEvent={setLevelUpEvent}
+          setBegin={setBegin}
+        />
+      ) : level === 1 ? (
+        begin ? (
+          <PerspLevel1
+            setLevelUpEvent={setLevelUpEvent}
             levelScore={levelScore}
             setLevelScore={setLevelScore}
-            setLevelUpEvent={setLevelUpEvent}
-            setBegin={setBegin}
           />
-        ) : level === 1 ? (
-          begin ? (
-            <PerspLevel1
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry1}
-              img={imgEntry1}
-              planet="Persp"
-              h2Text="Perspective Level 1"
-              text="PerspEntry1"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 2 ? (
-          begin ? (
-            <PerspLevel2
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry2}
-              img={imgEntry1}
-              planet="Persp"
-              h2Text="Perspective Level 2"
-              text="PerspEntry2"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 3 ? (
-          begin ? (
-            <PerspLevel3
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry3}
-              img={imgEntry1}
-              planet="Persp"
-              h2Text="Perspective Level 3"
-              text="PerspEntry3"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
-        ) : level === 4 ? (
-          begin ? (
-            <PerspLevel4
-              setLevelUpEvent={setLevelUpEvent}
-              levelScore={levelScore}
-              setLevelScore={setLevelScore}
-            />
-          ) : (
-            <LevelEntry
-              voice={audioEntry4}
-              img={imgEntry1}
-              planet="Persp"
-              h2Text="Perspective Level 4"
-              text="PerspEntry4"
-              setBegin={setBegin}
-              setLevelUpEvent={setLevelUpEvent}
-            />
-          )
         ) : (
-          <PlanetComplete path={'Persp'} />
-        )}
-      </div>
+          <LevelEntry
+            voice={audioEntry1}
+            img={imgEntry1}
+            planet="Persp"
+            h2Text="Perspective Level 1"
+            text="PerspEntry1"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 2 ? (
+        begin ? (
+          <PerspLevel2
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry2}
+            img={imgEntry1}
+            planet="Persp"
+            h2Text="Perspective Level 2"
+            text="PerspEntry2"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 3 ? (
+        begin ? (
+          <PerspLevel3
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry3}
+            img={imgEntry1}
+            planet="Persp"
+            h2Text="Perspective Level 3"
+            text="PerspEntry3"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : level === 4 ? (
+        begin ? (
+          <PerspLevel4
+            setLevelUpEvent={setLevelUpEvent}
+            levelScore={levelScore}
+            setLevelScore={setLevelScore}
+          />
+        ) : (
+          <LevelEntry
+            voice={audioEntry4}
+            img={imgEntry1}
+            planet="Persp"
+            h2Text="Perspective Level 4"
+            text="PerspEntry4"
+            setBegin={setBegin}
+            setLevelUpEvent={setLevelUpEvent}
+          />
+        )
+      ) : (
+        <PlanetComplete path={'Persp'} />
+      )}
     </div>
   );
 }

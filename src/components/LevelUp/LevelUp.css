@@ -3,18 +3,18 @@
 */
 
 #levelUp {
-    margin-top: 1.5%;
-    width: 72%;
-    background-color: rgba(0, 0, 0, 0.95);
+    margin-top: 8vh;
+    width: 70vw;
+    min-height: 75vh;
+    background-color: var(--blackWrap);
     border-radius: 1rem;
 }
 
 #levelUpWrapper {
-    padding: 6rem 0;
 }
 
 #levelUp h2 {
-    margin: 1rem;
+    margin: 4vh 0 8vh;
     gap: 3rem;
     font-size: 4rem;
     font-variant: small-caps;
@@ -22,13 +22,12 @@
 }
 
 #levelUp h3 {
-    margin: 1rem;
     font-size: 3rem;
     letter-spacing: 0.25rem;
 }
 
 #levelUp ul {
-    margin: 3.5rem 0;
+    margin: 5vh 0;
     text-align: center;
     list-style: none;
     font-size: 2.2rem;
@@ -57,20 +56,27 @@
     letter-spacing: 0.15rem;
 }
 
-#levelUp .redirect-button, #levelUp .erase-button {
+#levelUp .redirect-button, #levelUp .erase-button { 
+    margin: 2vh 0 4vh;     
     flex-basis: 30%;
     font-size: 1.45rem;
     padding: 1rem;
 }
 
 #levelUp .popup {
-  height: 40vh;
-  width: 50vw;
+    margin-left: 2vw;
+    min-height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
 }
 
 #levelUp .popup .redirect-button {
-    margin: 3rem 0 1.5rem;
-    width: 18rem;
+    margin: 5vh 0;
+    width: 15vw;
+    min-height: 10vh;
     font-size: 2rem;
 }
 
@@ -84,14 +90,6 @@
     Medium Screen
 */
 @media screen and (min-width: 1450px) and (max-width: 1950px) {
-    #levelUp {
-        margin-top: 0%;
-    }
-    
-    #levelUpWrapper {
-        padding: 4rem 0;
-    }
-    
     #levelUp h2 {
         font-size: 3.2rem;
         gap: 2.4rem;
@@ -128,13 +126,8 @@
     .score span {
         font-size: 2.6rem;
     }
-
-    #levelUp .popup {
-        height: 45vh;
-    }
       
     #levelUp .popup .redirect-button {
-        width: 22rem;
         font-size: 1.75rem;
     }
 }
@@ -143,14 +136,6 @@
     Small Screen
 **/
 @media screen and (max-width: 1450px) {
-    #levelUp {
-        margin-top: 0%;
-    }
-    
-    #levelUpWrapper {
-        padding: 2rem 0;
-    }
-    
     #levelUp h2 {
         font-size: 3.2rem;
         gap: 2.4rem;
@@ -183,13 +168,8 @@
     .score img {
         height: 1.75em;
     }
-
-    #levelUp .popup {
-        width: 60vw;
-    }
       
     #levelUp .popup .redirect-button {
-        width: 20rem;
-        font-size: 1.5rem;
+        font-size: 1.42rem;
     }
 }

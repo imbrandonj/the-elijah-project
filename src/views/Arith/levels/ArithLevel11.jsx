@@ -124,7 +124,7 @@ export default function ArithLevel11({
   }
 
   return (
-    <div id="ArithLevel" className="flex-col align-center">
+    <div id="ArithLevel">
       <LevelHeader text="Type numbers of an operation" score={levelScore} />
       <button className="speaker" onClick={playButton}>
         🔊

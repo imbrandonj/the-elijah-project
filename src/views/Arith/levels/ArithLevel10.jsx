@@ -47,7 +47,7 @@ export default function ArithLevel10({
   }, []);
 
   return (
-    <div id="ArithLevel" className="flex-col align-center">
+    <div id="ArithLevel">
       <LevelHeader text="Complete the challenge!" score={levelScore} />
       <div id="mathQABundle" className="flex justify-center">
         <p id="mathQ">{problem.question}</p>

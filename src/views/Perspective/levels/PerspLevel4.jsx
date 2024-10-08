@@ -49,7 +49,7 @@ export default function PerspLevel4({
   }
 
   return (
-    <div id="PerspLevel" className="flex-col align-center">
+    <div id="PerspLevel">
       <LevelHeader text="Solve the pattern!" score={levelScore} />
       <div className="shapeOverlay flex-col justify-center">
         <ul className="flex align-center justify-center twoSets">

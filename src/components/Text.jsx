@@ -15,12 +15,13 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Welcome to planet Alpha-Literacy./ / Here, you will navigate the English alphabet. / Do you know your way around the keyboard yet? / Don't worry, you'll get plenty of practice./ / Prepare your fingers! /"
+              "Welcome to planet Alpha-Literacy./ / Here, you will navigate the English alphabet.// Do you know your way around the keyboard yet? / Don't worry, you'll get plenty of practice./ / Prepare your fingers! /"
             }
             rate={50}
           />
           <p>
-            Click the <span className="italic small-caps">Begin!</span> button.{' '}
+            Click the <span className="italic small-caps">begin!</span> button
+            to start.{' '}
           </p>
         </div>
       );
@@ -203,7 +204,7 @@ export default function Text({ text }) {
         <div id="typing">
           <Typing
             words={
-              "Welcome to Arith! // This is a place to build your math skills. / Do you know what math is? / / Let's begin with the easiest math. / Count and add the objects 20 times."
+              "Welcome to Arith! // This is a place to build your math skills. / Do you know what math is? // Let's begin with the easiest math. // Count and add the objects 20 times."
             }
             rate={50}
           />

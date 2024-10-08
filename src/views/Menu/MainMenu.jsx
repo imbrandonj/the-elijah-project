@@ -44,6 +44,9 @@ export default function MainMenu() {
   const views = {
     MainMenu: <MainMenu />,
     Dashboard: <Dashboard />,
+    DashArith: <Dashboard planet={'Arith'} />,
+    DashPerspective: <Dashboard planet={'Perspective'} />,
+    'DashAlpha-Literacy': <Dashboard planet={'Alpha-Literacy'} />,
     Arith: <Arith />,
     Perspective: <Perspective />,
     'Alpha-Literacy': <AlphaLit />,
