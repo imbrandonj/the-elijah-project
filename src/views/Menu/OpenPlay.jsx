@@ -11,7 +11,7 @@ export default function OpenPlay({ setOpenPlay }) {
       <hr />
       <p>
         Open Play allows the user to play The Elijah Project without having to
-        create a player profile.
+        create a player account.
         <br />
         <br />
         This disables profile customization and level remembrance. Each time you

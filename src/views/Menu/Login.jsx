@@ -3,6 +3,8 @@ import { auth } from '@root/firebaseConfig.js';
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Firebase sign in function
 
 // local imports:
+import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import Alertbox from '@root/components/Alertbox/Alertbox.jsx';
 import eye from '@root/assets/svgs/eye.svg';
 import eyeShut from '@root/assets/svgs/eyeShut.svg';
 
@@ -17,6 +19,23 @@ export default function Login({ setLogIn, setSelectPlayer }) {
 
   const handleLogin = async event => {
     event.preventDefault();
+
+    // password restrictions, at least 6 characters and contains at least 1 number
+    const passwordRegex = /^(?=.*\d).{6,}$/;
+
+    // email check
+    const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+
+    if (email.length < 1 || !emailRegex.test(email)) {
+      setMsg('Please enter a valid email address.');
+      return;
+    }
+
+    // regex password validation:
+    if (!passwordRegex.test(password)) {
+      setMsg('Please enter a valid password.');
+      return;
+    }
 
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -36,6 +55,7 @@ export default function Login({ setLogIn, setSelectPlayer }) {
       setMsg('Failed to log in. Please check your credentials.');
     }
   };
+
   return (
     <form id="login" className="flex-col align-center" onSubmit={handleLogin}>
       <h2 className="center-text">Login</h2>
@@ -43,10 +63,8 @@ export default function Login({ setLogIn, setSelectPlayer }) {
       <label htmlFor="email">Email:</label>
       <input
         id="email"
-        type="email"
         value={email}
         onChange={({ target }) => setEmail(target.value)}
-        required
       />
       <label htmlFor="password">Password:</label>
       <div className="input-wrapper">
@@ -55,7 +73,6 @@ export default function Login({ setLogIn, setSelectPlayer }) {
           type={showPassword ? 'text' : 'password'}
           value={password}
           onChange={({ target }) => setPassword(target.value)}
-          required
         />
         <img
           className="password-toggle"
@@ -65,15 +82,17 @@ export default function Login({ setLogIn, setSelectPlayer }) {
           height={30}
         />
       </div>
-      {
-        <span className="form-message flex align-end justify-center">
-          {msg ? msg : null}
-        </span>
-      }
       <div className="">
         <button onClick={() => setLogIn(false)}>Go Back</button>
         <button type="submit">Log In</button>
       </div>
+      {msg ? (
+        <Alertbox text={msg} />
+      ) : (
+        <Tipbox
+          text={'Note: Please verify your email address before logging in.'}
+        />
+      )}
     </form>
   );
 }

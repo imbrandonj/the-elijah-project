@@ -6,6 +6,8 @@ import {
 } from 'firebase/auth';
 
 // local imports:
+import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
+import Alertbox from '@root/components/Alertbox/Alertbox.jsx';
 import eye from '@root/assets/svgs/eye.svg';
 import eyeShut from '@root/assets/svgs/eyeShut.svg';
 
@@ -25,6 +27,14 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
     // password restrictions, at least 6 characters and contains at least 1 number
     const passwordRegex = /^(?=.*\d).{6,}$/;
 
+    // email check
+    const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+
+    if (email.length < 1 || !emailRegex.test(email)) {
+      setMsg('Please enter a valid email address.');
+      return;
+    }
+
     if (password !== verifyPass) {
       setMsg('Passwords do not match.');
       return;
@@ -32,9 +42,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
 
     // regex password validation:
     if (!passwordRegex.test(password)) {
-      setMsg(
-        'Password must be at least 6 characters and contain at least 1 number.'
-      );
+      setMsg('Password must contain at least 6 characters and 1 number.');
       return;
     }
 
@@ -60,6 +68,8 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
     } catch (err) {
       if (err.code === 'auth/email-already-in-use') {
         setMsg('Account already in use.');
+      } else if (err.code === 'auth/invalid-email') {
+        setMsg('Please enter a valid email address.');
       } else {
         setMsg(err.message);
       }
@@ -74,10 +84,8 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         <label htmlFor="email">Account Email:</label>
         <input
           id="email"
-          type="email"
           value={email}
           onChange={({ target }) => setEmail(target.value)}
-          required
         />
       </div>
       <div className="flex justify-center">
@@ -88,7 +96,6 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
             type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={({ target }) => setPassword(target.value)}
-            required
           />
           <img
             className="password-toggle"
@@ -107,7 +114,6 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
             type={showPassword ? 'text' : 'password'}
             value={verifyPass}
             onChange={({ target }) => setVerifyPass(target.value)}
-            required
           />
           <img
             className="password-toggle"
@@ -118,15 +124,19 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
           />
         </div>
       </div>
-      {
-        <span className="form-message flex align-end justify-center">
-          {msg ? msg : null}
-        </span>
-      }
       <div className="flex justify-center">
         <button onClick={() => setSignUp(false)}>Go Back</button>
         <button type="submit">Create Account</button>
       </div>
+      {msg ? (
+        <Alertbox text={msg} />
+      ) : (
+        <Tipbox
+          text={
+            'Your password should contain at least 6 characters and 1 number.'
+          }
+        />
+      )}
     </form>
   );
 }

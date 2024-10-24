@@ -2,7 +2,7 @@
     MainMenu component styles
 */
 #mainMenu {
-    margin-top: 9vh;
+    margin-top: 8vh;
 } 
 
 #menuWrapper {
@@ -115,7 +115,7 @@
 }
 
 #menuWrapper #login button, #menuWrapper #signup button, #menuWrapper #newPlayer button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button  {
-    margin: 1vh 3rem;
+    margin: 2vh 2vw;
 }
 
 #menuWrapper form button, .playerSelectBtn {
@@ -174,6 +174,18 @@
     margin-bottom: 0.5vh;
 }
 
+#menuSelection .Tipbox, #menuSelection .Alertbox {
+    margin-top: 1vh;
+}
+
+#menuSelection .Tipbox {
+    background-color: rgba(93, 145, 147, .98);
+}
+
+#menuSelection .Alertbox {
+    background-color: var(--red);
+}
+
 #openPlay {
     width: 35vw;
     font-size: 1.75rem;
@@ -183,17 +195,27 @@
 }
 
 #aboutMenu {
-    width: 100%;
     height: 50vh;
 }
 
-#aboutMenu p {
+#aboutMenu section {
     width: 30vw;
     height: 25vh;
-    margin: 0 0 2vh;
-    font-size: 1.75rem;
+    margin: 1vh 0;
+}
+
+#aboutMenu p, #aboutMenu figcaption {
     line-height: 3rem;
+    font-size: 1.75rem;
     letter-spacing: 0.05rem;
+}
+
+#aboutMenu span {
+    line-height: 3rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--blackWrap);
+    letter-spacing: 0.15rem;
+    cursor: text;
 }
 
 #aboutMenu .navBtn {
@@ -207,10 +229,6 @@
 
 #aboutMenu .smallImg {
     margin: 1rem 2rem;
-}
-
-figure {
-    margin: 0 0 2vh;
 }
 
 .rocket {
@@ -257,11 +275,7 @@ figure {
 /*
     Medium Screen
 */
-@media screen and (min-width: 1450px) and (max-width: 1950px) {
-    #mainMenu {
-        margin-top: 8vh;
-    }
-
+@media screen and (min-width: 1450px) and (max-width: 2000px) {
     #menuWrapper {
         height: 84vh;
         width: 88vw;
@@ -270,6 +284,7 @@ figure {
 
     #menuWrapper #menuSelection {
         width: 48vw;
+        height: 60vh;
     }
     
     #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2, #menuWrapper #openPlay h2, #menuWrapper #aboutMenu h2  {
@@ -301,10 +316,6 @@ figure {
         width: 14rem;
         padding: 1rem 0;
         font-size: 1.55rem;
-    }
-
-    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button {
-        margin: 0.5vh 2rem 1vh;
     }
     
     #selectPlayer .player-collection {
@@ -348,10 +359,14 @@ figure {
         width: 40vw;
     }
 
-    #aboutMenu p {
+    #aboutMenu section {
+        width: 40vw;
+        height: 30vh;
+    }
+
+    #aboutMenu p, #aboutMenu figcaption {
         font-size: 1.5rem;
         line-height: 2rem;
-        width: 40vw;
     }
 
     #aboutMenu .navBtn {
@@ -378,6 +393,7 @@ figure {
 
     #menuWrapper #menuSelection {
         width: 55vw;
+        height: 60vh;
     }
 
     #menuWrapper #signup h2, #menuWrapper #login h2, #menuWrapper #selectPlayer h2, #menuWrapper #openPlay h2, #menuWrapper #aboutMenu h2  {
@@ -408,10 +424,6 @@ figure {
         width: 12rem;
         padding: 1rem 0;
         font-size: 1.42rem;
-    }
-
-    #menuWrapper #login button, #menuWrapper #newPlayer button, #menuWrapper #signup button, #menuWrapper #openPlay button, #menuWrapper #aboutMenu .redirect-button  {
-        margin: 0.5vh 1.5rem 1vh;
     }
 
     #selectPlayer .player-collection {
@@ -459,9 +471,13 @@ figure {
         width: 50vw;
     }
 
-    #aboutMenu p {
+    #aboutMenu section {
+        width: 40vw;
+        height: 30vh;
+    }
+
+    #aboutMenu p, #aboutMenu figcaption {
         font-size: 1.42rem;
         line-height: 1.75rem;
-        width: 40vw;
     }
 }

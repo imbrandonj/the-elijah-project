@@ -24,8 +24,7 @@
 }
 
 #Dashboard .Tipbox {
-    margin: 3rem;
-    padding: 0.5rem 1rem;
+    margin-bottom: 5vh;
     background-color: rgba(255, 202, 255, 0.6);
 } 
 .dashSwiperBtn img {

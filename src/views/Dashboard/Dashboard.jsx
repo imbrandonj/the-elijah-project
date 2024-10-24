@@ -57,7 +57,7 @@ export default function Dashboard({ planet }) {
         ) : null}
 
         {missionSelect.length === 0 ? (
-          <Tipbox text="Navigate: Use the keyboard arrows or use the mouse to click, grab, and pull." />
+          <Tipbox text="Navigate: Use your keyboard arrows or use the mouse to click, grab, and pull." />
         ) : (
           <Tipbox text="User Experience: Turn the sound on. Each level begins with an audible explanation." />
         )}

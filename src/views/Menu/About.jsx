@@ -24,97 +24,113 @@ export default function About({ setAbout }) {
           <NavButton onclick={() => setPage(page - 1)} direction={'<'} />
         )}
         {page === 0 ? (
-          <p className="flex align-center justify-center">
-            Hello 👋 my name is Brandon, <br />
-            developer of The Elijah Project.
-            <br />
-            <br />
-            I created this website for my son Elijah.
-            <br />
-            And now for my baby daughter Emilia, too.
-          </p>
+          <section className="flex align-center justify-center">
+            <p>
+              Hello 👋 my name is Brandon, <br />
+              developer of The Elijah Project.
+              <br />
+              <br />
+              I created this website for my son Elijah.
+              <br />
+              And now for my baby daughter Emilia, too.
+            </p>
+          </section>
         ) : page === 1 ? (
-          <p className="flex align-center justify-center">
-            This is an educational
-            <br /> exercise-based web application.
-            <br /> <br />
-            You can practice your skills by
-            <br /> tackling challenges and conquering levels.
-          </p>
+          <section className="flex align-center justify-center">
+            <p>
+              This is an educational
+              <br /> exercise-based web application.
+              <br /> <br />
+              You can practice your skills by
+              <br /> tackling challenges and conquering levels.
+            </p>
+          </section>
         ) : page === 2 ? (
-          <p className="flex-col align-center justify-center">
-            The player can explore different planets.
+          <section className="flex-col align-center justify-center">
+            <p> The player can explore different planets.</p>
             <div>
               <img className="smallImg" src={AlphaLiteracy} height={100} />
               <img className="smallImg" src={Arith} height={100} />
               <img className="smallImg" src={Perspective} height={100} />
             </div>
-            Each planet has a unique set of exercises.
-          </p>
+            <p>Each planet has a unique set of exercises.</p>
+          </section>
         ) : page === 3 ? (
-          <p className="flex-col align-center justify-start">
+          <section className="flex-col align-center justify-start">
             <figure>
               <img src={AlphaLiteracy} height={120} />
               <figcaption>Planet Alpha-Literacy</figcaption>
             </figure>
-            Allows the player to navigate the keyboard,
-            <br /> practicing their letters and spelling.
-          </p>
+            <p>
+              Allows the player to navigate the keyboard,
+              <br /> practicing their letters and spelling.
+            </p>
+          </section>
         ) : page === 4 ? (
-          <p className="flex-col align-center justify-start">
+          <section className="flex-col align-center justify-start">
             <figure>
               <img src={Arith} height={120} />
               <figcaption>Planet Arith</figcaption>
             </figure>
-            Introduces the player to
-            <br /> basic arithmetic and math operations.
-          </p>
+            <p>
+              Introduces the player to
+              <br /> basic arithmetic and math operations.
+            </p>
+          </section>
         ) : page === 5 ? (
-          <p className="flex-col align-center justify-start">
+          <section className="flex-col align-center justify-start">
             <figure>
               <img src={Perspective} height={120} />
               <figcaption>Planet Perspective</figcaption>
             </figure>
-            Tests the player on various instruction
-            <br /> following and pattern recognition.
-          </p>
+            <p>
+              Tests the player on various instruction
+              <br /> following and pattern recognition.
+            </p>
+          </section>
         ) : page === 6 ? (
-          <p className="flex-col align-center justify-center">
+          <section className="flex-col align-center justify-center">
             <figure>
               <img src={Constellation} height={120} />
               <figcaption>?</figcaption>
             </figure>
-            ... and much, much more.
-          </p>
+            <p>... and much, much more.</p>
+          </section>
         ) : page === 7 ? (
-          <p className="flex align-center justify-center">
-            The user can create a unique profile,
-            <br />
-            storing their player progress.
-            <br />
-            <br />
-            You can collect badges, items,
-            <br />
-            and unlock various content.
-          </p>
+          <section className="flex align-center justify-center">
+            <p>
+              The user can create a unique profile,
+              <br />
+              storing their player progress.
+              <br />
+              <br />
+              You can collect badges, items,
+              <br />
+              and unlock various content.
+            </p>
+          </section>
         ) : page === 8 ? (
-          <p className="flex align-center justify-center">
-            Create an account by
-            <br /> signing up with your email. <br />
-            <br />
-            You can store up to 6 players per account.
-          </p>
+          <section className="flex align-center justify-center">
+            <p>
+              Create an account by
+              <br /> signing up with your email. <br />
+              <br />
+              You can store up to 6 players per account.
+            </p>
+          </section>
         ) : page === 9 ? (
-          <p className="flex align-center justify-center">
-            I update this website often.
-            <br />
-            New features will be frequently added.
-            <br />
-            <br />
-            Feel free to contact me at:
-            <br />
-            imbrandonj42@gmail.com
-          </p>
+          <section className="flex-col align-center justify-center">
+            <p>
+              I update this website often.
+              <br />
+              New features will be frequently added.
+              <br />
+              <br />
+              Feel free to contact me:
+              <br />
+              <span>imbrandonj42@gmail.com</span>
+            </p>
+          </section>
         ) : null}
         {page === 9 ? (
           <div className="empty-space"></div>
