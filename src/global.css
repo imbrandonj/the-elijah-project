@@ -45,6 +45,17 @@ h1, h2, h3, h4 {
     padding: 0;
 }
 
+/* hides the default toggle icon in Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+  }
+  
+/* hides toggle icon in WebKit-based browsers (Safari, Chrome) if they ever introduce a similar feature */
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
+  
+
 /*
     Global Classes:
 */
