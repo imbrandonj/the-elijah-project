@@ -125,7 +125,9 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         </div>
       </div>
       <div className="flex justify-center">
-        <button onClick={() => setSignUp(false)}>Go Back</button>
+        <button type="button" onClick={() => setSignUp(false)}>
+          Go Back
+        </button>
         <button type="submit">Create Account</button>
       </div>
       {msg ? (

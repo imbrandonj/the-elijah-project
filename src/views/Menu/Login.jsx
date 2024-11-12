@@ -83,7 +83,9 @@ export default function Login({ setLogIn, setSelectPlayer }) {
         />
       </div>
       <div className="">
-        <button onClick={() => setLogIn(false)}>Go Back</button>
+        <button type="button" onClick={() => setLogIn(false)}>
+          Go Back
+        </button>
         <button type="submit">Log In</button>
       </div>
       {msg ? (
