@@ -1,9 +1,11 @@
 // imported components:
 import { useView } from '@root/contexts/ViewContext.jsx';
+import { usePlayer } from '@root/contexts/PlayerContext';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
 export default function OpenPlay({ setOpenPlay }) {
   const { setView } = useView();
+  const { setPlayerProfile } = usePlayer();
 
   return (
     <div id="openPlay" className="flex-col align-center">
@@ -24,6 +26,7 @@ export default function OpenPlay({ setOpenPlay }) {
         <RedirectButton onclick={() => setOpenPlay(false)} text={'Go Back'} />
         <RedirectButton
           onclick={() => {
+            setPlayerProfile('openPlay'); // sets Open Play mode in player context
             setOpenPlay(false);
             setView('Dashboard');
           }}

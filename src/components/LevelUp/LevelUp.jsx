@@ -43,6 +43,11 @@ export default function LevelUp({
   const playerId = `${playerProfile.userId}-${playerProfile.playerName}`; // for storing purposes
 
   useEffect(() => {
+    if (playerProfile === 'openPlay') {
+      console.log('Open Play mode: skipping data storage.');
+      return;
+    }
+
     const recordScore =
       playerProfile.progress[String(planet)][String('level' + level)] || 0;
 
@@ -86,9 +91,11 @@ export default function LevelUp({
 
   // retry button click event
   const retry = () => {
-    // reset progress:
-    storeLevelProgress(playerId, planet, level, oldScore); // firestore
-    setPlayerProfileScore(planet, level, oldScore); // player context
+    if (playerProfile !== 'openPlay') {
+      // reset progress:
+      storeLevelProgress(playerId, planet, level, oldScore); // firestore
+      setPlayerProfileScore(planet, level, oldScore); // player context
+    }
 
     setLevelScore(0);
     setLevel(level);
@@ -122,7 +129,7 @@ export default function LevelUp({
           />
         ) : null}
         <div id="levelUpWrapper">
-          <h2 className="flex align-center">
+          <h2 className="flex align-center justify-center">
             {planet} level up
             <img src={planetImg} height={88} />
           </h2>
