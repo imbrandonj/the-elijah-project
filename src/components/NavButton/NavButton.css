@@ -2,7 +2,7 @@
     color: var(--buttonBlue);
     background-color: transparent;
     border: none;
-font-family: monospace;
+    font-family: monospace;
 }
 
 .navBtn:hover {

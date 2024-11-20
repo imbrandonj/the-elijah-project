@@ -2,6 +2,7 @@
 import DashEntry from './DashEntry.jsx';
 import SelectMission from './SelectMission.jsx';
 import Mission from './Mission.jsx';
+import Stats from './Stats/Stats.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
@@ -54,6 +55,8 @@ export default function Dashboard({ planet }) {
               setDashSelect={setDashSelect}
             />
           </div>
+        ) : dashSelect === 'stats' ? (
+          <Stats setDashSelect={setDashSelect} />
         ) : null}
 
         {missionSelect.length === 0 ? (

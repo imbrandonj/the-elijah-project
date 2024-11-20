@@ -1,0 +1,46 @@
+#Stats {
+    min-width: 60vw;
+    min-height: 50vh;
+}
+
+#Stats h2 {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+}
+
+#Stats hr {
+    width: 40vw;
+    margin: 2.5vh 0 7.5vh; 
+    border-color: var(--buttonBlue);
+}
+
+#Stats .redirect-button {
+    width: 16rem;
+    padding: 1.2rem 0;
+    font-size: 1.8rem;
+}
+
+/*
+    Medium Screen
+*/
+@media screen and (min-width: 1450px) and (max-width: 2000px) {
+    #Stats .redirect-button {
+        width: 14rem;
+        padding: 1rem 0;
+        font-size: 1.55rem;
+    }
+
+    #Stats h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/*
+    Narrow Screen
+*/
+@media (max-width: 1450px) {
+    #Stats h2 {
+        font-size: 1.55rem;
+    }
+}

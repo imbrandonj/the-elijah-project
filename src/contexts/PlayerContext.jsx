@@ -5,15 +5,24 @@ const PlayerContext = createContext();
 
 export const PlayerProvider = ({ children }) => {
   const [playerProfile, setPlayerProfile] = useState(null);
-  const [progress, setProgress] = useState({
-    Arith: {},
-    'Alpha-Literacy': {},
-    Perspective: {},
-  });
+
+  // function to update a single level score:
+  const setPlayerProfileScore = (planet, level, score) => {
+    setPlayerProfile(prevProfile => ({
+      ...prevProfile,
+      progress: {
+        ...prevProfile.progress,
+        [planet]: {
+          ...prevProfile.progress[planet],
+          [`level${level}`]: score,
+        },
+      },
+    }));
+  };
 
   return (
     <PlayerContext.Provider
-      value={{ playerProfile, setPlayerProfile, progress, setProgress }}
+      value={{ playerProfile, setPlayerProfile, setPlayerProfileScore }}
     >
       {children}
     </PlayerContext.Provider>

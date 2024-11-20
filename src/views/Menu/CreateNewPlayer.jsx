@@ -10,7 +10,7 @@ import astro from '@root/assets/svgs/astronaut.svg';
 export default function CreateNewPlayer({
   setCreatePlayer, // set use state (boolean)
   setSelectPlayer, // set use state (boolean)
-  playerList, // array of the user's player profiles
+  playerProfiles, // array of the user's player profiles
 }) {
   const { setView } = useView();
   const { setPlayerProfile } = usePlayer();
@@ -25,7 +25,7 @@ export default function CreateNewPlayer({
       return;
     }
 
-    if (playerList.some(player => player.playerName === playerName)) {
+    if (playerProfiles.some(player => player.playerName === playerName)) {
       setMsg('Player name already exists.');
       return;
     }
@@ -69,7 +69,7 @@ export default function CreateNewPlayer({
         </span>
       }
       <div className="flex">
-        {playerList.length > 0 ? (
+        {playerProfiles.length > 0 ? (
           <button
             onClick={event => {
               event.preventDefault();
@@ -80,7 +80,9 @@ export default function CreateNewPlayer({
             Go Back
           </button>
         ) : null}
-        <button type="submit">Confirm</button>
+        <button type="submit" className="playerSelectBtn">
+          Confirm
+        </button>
       </div>
     </form>
   );

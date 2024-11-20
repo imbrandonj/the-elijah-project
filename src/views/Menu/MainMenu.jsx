@@ -33,11 +33,14 @@ import { useState } from 'react';
 */
 export default function MainMenu() {
   const { view, setView } = useView();
+  // component renders in MainMenu, show if true:
   const [logIn, setLogIn] = useState(false);
   const [signUp, setSignUp] = useState(false);
   const [openPlay, setOpenPlay] = useState(false);
   const [about, setAbout] = useState(false);
   const [selectPlayer, setSelectPlayer] = useState(false);
+  // player profiles fetched from firebase:
+  const [playerProfiles, setPlayerProfiles] = useState([]);
   // const [showPopup, setShowPopup] = useState(true);
 
   // list of views in The Elijah Project:
@@ -65,7 +68,11 @@ export default function MainMenu() {
           </h1>
           <div id="menuSelection" className="flex justify-center align-center">
             {logIn ? (
-              <Login setLogIn={setLogIn} setSelectPlayer={setSelectPlayer} />
+              <Login
+                setLogIn={setLogIn}
+                setSelectPlayer={setSelectPlayer}
+                setPlayerProfiles={setPlayerProfiles}
+              />
             ) : signUp ? (
               <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
             ) : openPlay ? (
@@ -73,7 +80,10 @@ export default function MainMenu() {
             ) : about ? (
               <About setAbout={setAbout} />
             ) : selectPlayer ? (
-              <SelectPlayer setSelectPlayer={setSelectPlayer} />
+              <SelectPlayer
+                setSelectPlayer={setSelectPlayer}
+                playerProfiles={playerProfiles}
+              />
             ) : (
               <div className="menuBundle">
                 <div>

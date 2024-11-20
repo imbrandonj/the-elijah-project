@@ -12,27 +12,14 @@ import astro from '@root/assets/svgs/astronaut.svg';
     SelectPlayer.jsx
 */
 export default function SelectPlayer({
-  setSelectPlayer, // set use state
+  setSelectPlayer, // boolean, use state
+  playerProfiles, // fetched player profiles, use state array
 }) {
   const { setPlayerProfile } = usePlayer(); // context
   const { setView } = useView(); // context
-  const [players, setPlayers] = useState([]);
   const [createPlayer, setCreatePlayer] = useState(false); // redirects to CreateNewPlayer.jsx when true
-  const [error, setError] = useState('');
 
-  // fetch player profiles
-  useEffect(() => {
-    const fetchPlayerProfiles = async () => {
-      try {
-        const playerData = await fetchPlayers();
-        setPlayers(playerData);
-      } catch (err) {
-        setError(err.message || 'Failed to retrieve players.');
-      }
-    };
-
-    fetchPlayerProfiles();
-  }, []);
+  console.log(playerProfiles);
 
   const handleSelectPlayer = player => {
     setPlayerProfile(player); // set the selected player in context
@@ -42,18 +29,18 @@ export default function SelectPlayer({
 
   return (
     <div id="selectPlayer" className="flex-col align-center">
-      {createPlayer || players.length < 1 ? (
+      {createPlayer || playerProfiles.length < 1 ? (
         <CreateNewPlayer
           setCreatePlayer={setCreatePlayer}
           setSelectPlayer={setSelectPlayer}
-          playerList={players}
+          playerProfiles={playerProfiles}
         />
       ) : (
         <>
           <h2>Select Player</h2>
           <hr />
           <div className="flex justify-center player-collection">
-            {players.map(player => (
+            {playerProfiles.map(player => (
               <button
                 key={player.playerName}
                 className="flex-col justify-center align-center playerSelectBtn small-caps"
@@ -63,7 +50,7 @@ export default function SelectPlayer({
                 {player.playerName}
               </button>
             ))}
-            {players.length < 6 ? (
+            {playerProfiles.length < 6 ? (
               <button
                 className="flex-col justify-center align-center playerSelectBtn small-caps"
                 onClick={() => setCreatePlayer(true)}

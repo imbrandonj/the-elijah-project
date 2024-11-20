@@ -20,6 +20,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
   const [verifyPass, setVerifyPass] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [msg, setMsg] = useState(null); // form message
+  const [err, setErr] = useState(false); // if true, trigger alertbox
 
   const handleSignUp = async event => {
     event.preventDefault();
@@ -31,17 +32,20 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
     if (email.length < 1 || !emailRegex.test(email)) {
+      setErr(true);
       setMsg('Please enter a valid email address.');
       return;
     }
 
     if (password !== verifyPass) {
+      setErr(true);
       setMsg('Passwords do not match.');
       return;
     }
 
     // regex password validation:
     if (!passwordRegex.test(password)) {
+      setErr(true);
       setMsg('Password must contain at least 6 characters and 1 number.');
       return;
     }
@@ -58,6 +62,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
       // email verification
       await sendEmailVerification(userCredential.user);
 
+      setErr(false);
       setMsg('Success!');
 
       // on success, transition to SelectPlayer.jsx
@@ -67,10 +72,13 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
       }, 1420);
     } catch (err) {
       if (err.code === 'auth/email-already-in-use') {
+        setErr(true);
         setMsg('Account already in use.');
       } else if (err.code === 'auth/invalid-email') {
+        setErr(true);
         setMsg('Please enter a valid email address.');
       } else {
+        setErr(true);
         setMsg(err.message);
       }
     }
@@ -130,8 +138,10 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         </button>
         <button type="submit">Create Account</button>
       </div>
-      {msg ? (
+      {err ? (
         <Alertbox text={msg} />
+      ) : msg ? (
+        <Tipbox text={msg} />
       ) : (
         <Tipbox
           text={

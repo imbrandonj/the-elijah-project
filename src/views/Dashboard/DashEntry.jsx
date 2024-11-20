@@ -68,15 +68,18 @@ export default function DashEntry({ setDashSelect }) {
         >
           <SwiperSlide>
             <button
-              onClick={redirectBegin}
               className="dashSwiperBtn flex-col align-center justify-center"
+              onClick={redirectBegin}
             >
               <img src={RocketLaunch} height={160} />
               Launch Mission
             </button>
           </SwiperSlide>
           <SwiperSlide>
-            <button className="dashSwiperBtn flex-col align-center justify-center">
+            <button
+              className="dashSwiperBtn flex-col align-center justify-center"
+              // onClick={redirectStats}
+            >
               <img src={PlanetFlag} height={160} />
               Player Statistics
             </button>

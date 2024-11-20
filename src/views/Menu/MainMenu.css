@@ -41,6 +41,18 @@
     padding: 2.8vh;
 }
 
+#menuWrapper button {
+    border: none;
+    color: black;
+    background-color: var(--buttonBlue);
+    font-family: var(--mono);
+}
+
+#menuWrapper button:hover {
+    color: var(--lightBlue);
+    background-color: var(--blackOverlay);
+}
+
 #menuWrapper #login, #menuWrapper #signup, #menuWrapper #newPlayer, #menuWrapper #openPlay, #menuWrapper #aboutMenu {
     gap: 1rem;
 }
@@ -120,10 +132,6 @@
 
 #menuWrapper form button, .playerSelectBtn {
     border-radius: 0.4rem;
-    border: none;
-    color: black;
-    background-color: var(--buttonBlue);
-    font-family: var(--mono);
 }
 
 #selectPlayer .player-collection {
@@ -142,11 +150,6 @@
     font-size: 2.2rem;
     letter-spacing: 0.042rem;
     font-weight: 400;
-}
-
-#menuWrapper .redirect-button:hover, #menuWrapper form button:hover, .playerSelectBtn:hover {
-    color: var(--lightBlue);
-    background-color: var(--blackOverlay);
 }
 
 #menuWrapper #newPlayer {
@@ -221,6 +224,15 @@
 #aboutMenu .navBtn {
     width: 5vw;
     font-size: 7vh;
+    color: var(--buttonBlue);
+    background-color: transparent;
+    border: none;
+    font-family: monospace;
+}
+
+#aboutMenu .navBtn:hover {
+    background-color: transparent;
+    color: var(--lightBlue);
 }
 
 #aboutMenu .empty-space {
