@@ -9,7 +9,7 @@ import { useAudio } from '@root/contexts/AudioContext';
 import Rocket from '@root/assets/svgs/rocket.svg';
 
 // displays wiggling Rocket which redirects the user home
-export default function RocketHeader() {
+export default function Panel() {
   // change this to nav bar? perhaps an SVG icon animation
 
   const { view, setView } = useView();
