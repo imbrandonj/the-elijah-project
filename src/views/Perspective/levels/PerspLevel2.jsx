@@ -176,7 +176,7 @@ export default function PerspLevel2({
         <button className="speaker" onClick={playButton}>
           🔊
         </button>
-        <div className="leftRight twoSets">
+        <div className="leftRight twoRows">
           <img
             id="leftImg1"
             onClick={() => answerEvent(leftObject1)}
@@ -188,7 +188,7 @@ export default function PerspLevel2({
             height={140}
           />
         </div>
-        <div className="leftRight twoSets">
+        <div className="leftRight twoRows">
           <img
             id="leftImg2"
             onClick={() => answerEvent(leftObject2)}
