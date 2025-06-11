@@ -67,7 +67,7 @@ export default function MainMenu() {
 
   if (view === 'MainMenu') {
     return (
-      <div id="mainMenu" className="flex justify-center">
+      <div id="mainMenu" className="flex justify-center align-center">
         <div
           id="menuWrapper"
           className={`flex justify-center align-center ${

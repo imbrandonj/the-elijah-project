@@ -345,10 +345,17 @@
     Medium Screen
 */
 @media screen and (min-width: 1450px) and (max-width: 2000px) {
-    #menuWrapper {
+    #mainMenu {
+        margin-top: 8vh;
+    }
+    
+    #menuWrapper.post-splash {
         height: 84vh;
         width: 88vw;
-        gap: 4vw;
+    }
+
+    .miniImage {
+        height: 60vh;
     }
 
     #menuWrapper #menuSelection {
@@ -451,13 +458,12 @@
     Small Screen
 **/
 @media (max-width: 1450px) {
-    #menuWrapper {
+    #menuWrapper.post-splash {
         width: 90vw;
     }
 
-    #menuWrapper h1 {
-        width: 24vw;
-        font-size: 4.2rem;
+    .miniImage {
+        height: 60vh;
     }
 
     #menuWrapper #menuSelection {
