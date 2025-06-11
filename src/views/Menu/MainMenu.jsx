@@ -16,8 +16,10 @@ import About from './About.jsx';
 import Popup from '@root/components/Popup/Popup.jsx';
 import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 
+import tep from '@root/assets/img/tep2.webp';
+
 // imported hooks:
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 /*
   MainMenu.jsx
@@ -42,6 +44,7 @@ export default function MainMenu() {
   // player profiles fetched from firebase:
   const [playerProfiles, setPlayerProfiles] = useState([]);
   // const [showPopup, setShowPopup] = useState(true);
+  const [showSplash, setShowSplash] = useState(true);
 
   // list of views in The Elijah Project:
   const views = {
@@ -55,67 +58,87 @@ export default function MainMenu() {
     'Alpha-Literacy': <AlphaLit />,
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   console.log('main menu render');
 
   if (view === 'MainMenu') {
     return (
       <div id="mainMenu" className="flex justify-center">
-        <div id="menuWrapper" className="flex justify-center align-center">
-          <h1 className="flex justify-center small-caps">
-            the
-            <br /> Elijah
-            <br /> Project
-          </h1>
-          <div id="menuSelection" className="flex justify-center align-center">
-            {logIn ? (
-              <Login
-                setLogIn={setLogIn}
-                setSelectPlayer={setSelectPlayer}
-                setPlayerProfiles={setPlayerProfiles}
-              />
-            ) : signUp ? (
-              <SignUp setSignUp={setSignUp} setSelectPlayer={setSelectPlayer} />
-            ) : openPlay ? (
-              <OpenPlay setOpenPlay={setOpenPlay} />
-            ) : about ? (
-              <About setAbout={setAbout} />
-            ) : selectPlayer ? (
-              <SelectPlayer
-                setSelectPlayer={setSelectPlayer}
-                playerProfiles={playerProfiles}
-              />
-            ) : (
-              <div className="menuBundle">
-                <div>
-                  <RedirectButton
-                    onclick={() => setLogIn(true)}
-                    text={'Login'}
-                    css={'bkg-btn-blue'}
-                  />
-                  <RedirectButton
-                    onclick={() => setSignUp(true)}
-                    text={'Sign Up'}
-                    css={'bkg-btn-blue'}
-                  />
+        <div
+          id="menuWrapper"
+          className={`flex justify-center align-center ${
+            showSplash ? 'splash-active' : 'post-splash fadeIn'
+          } `}
+        >
+          <img
+            src={tep}
+            height={750}
+            id="menuImg"
+            className={showSplash ? 'fullImage' : 'miniImage'}
+          />
+
+          {!showSplash && (
+            <div
+              id="menuSelection"
+              className="flex justify-center align-center fadeIn"
+            >
+              {logIn ? (
+                <Login
+                  setLogIn={setLogIn}
+                  setSelectPlayer={setSelectPlayer}
+                  setPlayerProfiles={setPlayerProfiles}
+                />
+              ) : signUp ? (
+                <SignUp
+                  setSignUp={setSignUp}
+                  setSelectPlayer={setSelectPlayer}
+                />
+              ) : openPlay ? (
+                <OpenPlay setOpenPlay={setOpenPlay} />
+              ) : about ? (
+                <About setAbout={setAbout} />
+              ) : selectPlayer ? (
+                <SelectPlayer
+                  setSelectPlayer={setSelectPlayer}
+                  playerProfiles={playerProfiles}
+                />
+              ) : (
+                <div className="menuBundle">
+                  <div>
+                    <RedirectButton
+                      onclick={() => setLogIn(true)}
+                      text={'Login'}
+                      css={'bkg-btn-blue'}
+                    />
+                    <RedirectButton
+                      onclick={() => setSignUp(true)}
+                      text={'Sign Up'}
+                      css={'bkg-btn-blue'}
+                    />
+                  </div>
+                  <div>
+                    <RedirectButton
+                      onclick={() => setOpenPlay(true)}
+                      text={'Open Play'}
+                      css={'bkg-btn-blue'}
+                    />
+                    <RedirectButton
+                      onclick={() => setAbout(true)}
+                      text={'About'}
+                      css={'bkg-btn-blue'}
+                    />
+                  </div>
+                  <div className="rocket">
+                    <span>🚀</span>
+                  </div>
                 </div>
-                <div>
-                  <RedirectButton
-                    onclick={() => setOpenPlay(true)}
-                    text={'Open Play'}
-                    css={'bkg-btn-blue'}
-                  />
-                  <RedirectButton
-                    onclick={() => setAbout(true)}
-                    text={'About'}
-                    css={'bkg-btn-blue'}
-                  />
-                </div>
-                <div className="rocket">
-                  <span>🚀</span>
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
         {/* {showPopup && (
           <Popup
