@@ -33,7 +33,7 @@
     transition: all 3.5s ease-in-out;
     border: 1px solid var(--buttonBlue);
     border-right: none;
-    box-shadow: 40px 0 60px -20px rgba(128, 0, 128, 0.2);
+    box-shadow: 20px 0 100px -30px rgba(128, 0, 128, 0.2);
 }
 
 /* Transition wrapper styles */
@@ -84,7 +84,8 @@
 #menuWrapper #menuSelection {
     width: 42vw;
     height: 58vh;
-    background-color: rgba(255, 255, 255, 0.04);
+    /* background-color: rgba(255, 255, 255, 0.04); */
+    background: linear-gradient(to right, rgba(128, 0, 128, 0.042),rgba(255, 255, 255, 0.04));
     border: 1px solid var(--buttonBlue);
     border-left: none;
 }

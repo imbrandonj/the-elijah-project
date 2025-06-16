@@ -57,7 +57,7 @@ export default function Mission({ missionSelect }) {
     <div id="mission" className="flex align-center justify-evenly">
       {missionSelect === 'Alpha-Literacy' ? (
         <div className="planet flex-col align-center alphaLitColor">
-          <img src={AlphaLiteracy} width={200} />
+          <img src={AlphaLiteracy} height={200} />
           <h2>Alpha-Literacy</h2>
           <p>
             Navigate the keyboard and become a master of engineering letters.
@@ -65,7 +65,7 @@ export default function Mission({ missionSelect }) {
         </div>
       ) : missionSelect === 'Arith' ? (
         <div className="planet flex-col align-center arithColor">
-          <img src={Arith} width={200} />
+          <img src={Arith} height={200} />
           <h2>Arith</h2>
           <p>
             With numbers at your disposal, operate and express your way to
@@ -74,7 +74,7 @@ export default function Mission({ missionSelect }) {
         </div>
       ) : missionSelect === 'Perspective' ? (
         <div className="planet flex-col align-center perspectiveColor">
-          <img src={Perspective} width={200} />
+          <img src={Perspective} height={200} />
           <h2>Perspective</h2>
           <p>
             Dive into the crevices of your brain to provide your cordial

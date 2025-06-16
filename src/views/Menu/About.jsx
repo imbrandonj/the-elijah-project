@@ -6,7 +6,7 @@ import NavButton from '../../components/NavButton/NavButton';
 import Arith from '@root/assets/img/arith.webp';
 import Perspective from '@root/assets/img/perspective.webp';
 import AlphaLiteracy from '@root/assets/img/alpha-lit.webp';
-import Constellation from '@root/assets/svgs/constellation.svg';
+import Constellation from '@root/assets/img/constellation.webp';
 
 import { useState } from 'react';
 
@@ -91,7 +91,7 @@ export default function About({ setAbout }) {
         ) : page === 6 ? (
           <section className="flex-col align-center justify-center">
             <figure>
-              <img src={Constellation} height={120} />
+              <img src={Constellation} height={140} />
               <figcaption>?</figcaption>
             </figure>
             <p>... and much, much more.</p>
