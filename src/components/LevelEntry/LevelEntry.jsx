@@ -1,9 +1,9 @@
 // imported components:
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import Text from '@root/components/Text.jsx';
-import arithImg from '@root/assets/svgs/arith.svg';
-import alphaImg from '@root/assets/svgs/alpha-literacy.svg';
-import perspImg from '@root/assets/svgs/perspective.svg';
+import arithImg from '@root/assets/img/arith.webp';
+import alphaImg from '@root/assets/img/alpha-lit.webp';
+import perspImg from '@root/assets/img/perspective.webp';
 
 // imported useContext:
 import { useAudio } from '@root/contexts/AudioContext';
@@ -53,7 +53,7 @@ export default function LevelEntry({
   return (
     <div id="LevelEntry" className="flex-col align-center">
       <h2 className="flex align-center small-caps">
-        <img src={planetImg} height={88} /> {h2Text}
+        <img src={planetImg} height={100} /> {h2Text}
       </h2>
       <hr />
       <div className="entry-row flex align-center">

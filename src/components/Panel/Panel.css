@@ -3,7 +3,7 @@
 */
 
 #panel {
-    margin: 10vh 1vw 0 -5.5vw;
+    margin: 8vh 1vw 0 -5vw;
     height: 20vh;
     width: 10vw;
     background-color: var(--buttonBlue);
@@ -28,7 +28,6 @@
     .panel-content {
         display: flex;
         flex-direction: column;
-        padding: 1vh 0 2vh;
     }
 }
 
@@ -57,6 +56,7 @@
     font-variant: small-caps;
     letter-spacing: 0.75rem;
     text-align: center;
+    padding-top: 1vh;
 }
 
 #panel .panel-content hr {
@@ -66,22 +66,43 @@
 }
 #panel .panel-content ul {
     padding: 0;
-    gap: 5vh;
+    gap: 0vh;
+    margin: 0;
 }
 
 #panel .panel-content li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 10vw;
-    padding: 1vh 0;
+    padding: 1vh 0 2vh;
     font-size: 1.75rem;
     list-style: none;
     line-height: 3rem;
     font-variant: small-caps;
     letter-spacing: 0.15rem;
+    transition: letter-spacing 0.3s ease;
 }
 
 #panel .panel-content li:hover {
-    color: var(--buttonBlue);
     cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.05);
+    letter-spacing: 0.22rem;
+}
+
+#panel .panel-content li img {
+    height: 18vh;
+    display: block;
+    opacity: 60%;
+}
+
+#panel .panel-content li .image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#panel .panel-content li .text-wrapper {
+    position: absolute;
 }
 
 @media (max-width: 2000px) {

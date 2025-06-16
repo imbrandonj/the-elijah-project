@@ -7,6 +7,11 @@ import { useView } from '@root/contexts/ViewContext.jsx';
 import { useAudio } from '@root/contexts/AudioContext';
 
 import Rocket from '@root/assets/svgs/rocket.svg';
+import AlphaImg from '@root/assets/img/alpha-lit.webp';
+import PerspImg from '@root/assets/img/perspective.webp';
+import ArithImg from '@root/assets/img/arith.webp';
+import Spacepod from '@root/assets/img/spacepod.webp';
+import Astro from '@root/assets/img/astro_away.webp';
 
 // displays wiggling Rocket which redirects the user home
 export default function Panel() {
@@ -55,19 +60,44 @@ export default function Panel() {
         <nav>
           <ul className="flex-col justify-center align-center center-text">
             <li onClick={toPlanet}>
-              Return to
-              <br /> {view}
-              <br /> Overview
+              <div className="image-wrapper">
+                <img
+                  src={
+                    view === 'Arith'
+                      ? ArithImg
+                      : view === 'Alpha-Literacy'
+                      ? AlphaImg
+                      : view === 'Perspective'
+                      ? PerspImg
+                      : null
+                  }
+                  height={220}
+                />
+              </div>
+              <div className="text-wrapper">
+                Return to
+                <br /> {view}
+                <br /> Overview
+              </div>
             </li>
             <li onClick={toBase}>
-              Return
-              <br />
-              to
-              <br /> Base
+              <div className="image-wrapper">
+                <img src={Spacepod} height={220} />
+              </div>
+              <div className="text-wrapper">
+                Return
+                <br /> to
+                <br /> Base
+              </div>
             </li>
             <li onClick={handleSignOut}>
-              Sign
-              <br /> Out
+              <div className="image-wrapper">
+                <img src={Astro} height={220} />
+              </div>
+              <div className="text-wrapper">
+                Sign
+                <br /> Out
+              </div>
             </li>
           </ul>
         </nav>

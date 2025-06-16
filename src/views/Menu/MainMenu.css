@@ -33,6 +33,7 @@
     transition: all 3.5s ease-in-out;
     border: 1px solid var(--buttonBlue);
     border-right: none;
+    box-shadow: 40px 0 60px -20px rgba(128, 0, 128, 0.2);
 }
 
 /* Transition wrapper styles */
@@ -262,6 +263,10 @@
     width: 30vw;
     height: 25vh;
     margin: 1vh 0;
+}
+
+#aboutMenu figure {
+    margin: 0.5vh 0;
 }
 
 #aboutMenu p, #aboutMenu figcaption {

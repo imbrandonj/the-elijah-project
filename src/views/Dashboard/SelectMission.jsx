@@ -5,9 +5,9 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 // imported svgs:
-import Arith from '@root/assets/svgs/arith.svg';
-import Perspective from '@root/assets/svgs/perspective.svg';
-import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
+import Arith from '@root/assets/img/arith.webp';
+import Perspective from '@root/assets/img/perspective.webp';
+import AlphaLiteracy from '@root/assets/img/alpha-lit.webp';
 import RocketHome from '@root/assets/svgs/rocket-home.svg';
 
 /*

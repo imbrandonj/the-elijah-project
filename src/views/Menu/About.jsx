@@ -3,9 +3,9 @@ import RedirectButton from '@root/components/RedirectButton/RedirectButton.jsx';
 import NavButton from '../../components/NavButton/NavButton';
 
 // imported svgs:
-import Arith from '@root/assets/svgs/arith.svg';
-import Perspective from '@root/assets/svgs/perspective.svg';
-import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
+import Arith from '@root/assets/img/arith.webp';
+import Perspective from '@root/assets/img/perspective.webp';
+import AlphaLiteracy from '@root/assets/img/alpha-lit.webp';
 import Constellation from '@root/assets/svgs/constellation.svg';
 
 import { useState } from 'react';
@@ -49,16 +49,16 @@ export default function About({ setAbout }) {
           <section className="flex-col align-center justify-center">
             <p> The player can explore different planets.</p>
             <div>
-              <img className="smallImg" src={AlphaLiteracy} height={100} />
-              <img className="smallImg" src={Arith} height={100} />
-              <img className="smallImg" src={Perspective} height={100} />
+              <img className="smallImg" src={AlphaLiteracy} height={130} />
+              <img className="smallImg" src={Arith} height={130} />
+              <img className="smallImg" src={Perspective} height={130} />
             </div>
             <p>Each planet has a unique set of exercises.</p>
           </section>
         ) : page === 3 ? (
           <section className="flex-col align-center justify-start">
             <figure>
-              <img src={AlphaLiteracy} height={120} />
+              <img src={AlphaLiteracy} height={140} />
               <figcaption>Planet Alpha-Literacy</figcaption>
             </figure>
             <p>
@@ -69,7 +69,7 @@ export default function About({ setAbout }) {
         ) : page === 4 ? (
           <section className="flex-col align-center justify-start">
             <figure>
-              <img src={Arith} height={120} />
+              <img src={Arith} height={140} />
               <figcaption>Planet Arith</figcaption>
             </figure>
             <p>
@@ -80,7 +80,7 @@ export default function About({ setAbout }) {
         ) : page === 5 ? (
           <section className="flex-col align-center justify-start">
             <figure>
-              <img src={Perspective} height={120} />
+              <img src={Perspective} height={140} />
               <figcaption>Planet Perspective</figcaption>
             </figure>
             <p>

@@ -93,10 +93,12 @@
     border-radius: 0.4rem;
     border: none;
     background-color: var(--buttonBlue);
+    transition: letter-spacing 0.3s ease, background-color 0.3s ease;
 }
 
 .dashSwiperBtn:hover {
     background-color: var(--lightBlue);
+    letter-spacing: 0.1rem;
 }
 
 .dashSwiperBtn > img {
@@ -108,7 +110,7 @@
 */
 
 .arithColor {
-    background-color: rgba(255, 192, 203, 0.5);
+    background-color: rgba(255, 179, 121, 0.5);
 }
 
 .arithColor:hover {
@@ -151,6 +153,7 @@
     padding: 1rem;
     margin: 1rem;
     color: var(--blackWrap);
+    transition: background-color 0.3s ease;
 }
 
 .planet h2 {

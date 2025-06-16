@@ -9,9 +9,9 @@ import { getLevels } from '@root/modules/levelManager.js';
 import { useState, useEffect } from 'react';
 
 // imported svgs:
-import AlphaLiteracy from '@root/assets/svgs/alpha-literacy.svg';
-import Arith from '@root/assets/svgs/arith.svg';
-import Perspective from '@root/assets/svgs/perspective.svg';
+import AlphaLiteracy from '@root/assets/img/alpha-lit.webp';
+import Arith from '@root/assets/img/arith.webp';
+import Perspective from '@root/assets/img/perspective.webp';
 
 /*
   Mission.jsx
@@ -56,16 +56,16 @@ export default function Mission({ missionSelect }) {
   return (
     <div id="mission" className="flex align-center justify-evenly">
       {missionSelect === 'Alpha-Literacy' ? (
-        <div className="planet flex-col alphaLitColor">
-          <img src={AlphaLiteracy} height={200} />
+        <div className="planet flex-col align-center alphaLitColor">
+          <img src={AlphaLiteracy} width={200} />
           <h2>Alpha-Literacy</h2>
           <p>
             Navigate the keyboard and become a master of engineering letters.
           </p>
         </div>
       ) : missionSelect === 'Arith' ? (
-        <div className="planet flex-col arithColor">
-          <img src={Arith} height={220} />
+        <div className="planet flex-col align-center arithColor">
+          <img src={Arith} width={200} />
           <h2>Arith</h2>
           <p>
             With numbers at your disposal, operate and express your way to
@@ -73,8 +73,8 @@ export default function Mission({ missionSelect }) {
           </p>
         </div>
       ) : missionSelect === 'Perspective' ? (
-        <div className="planet flex-col perspectiveColor">
-          <img src={Perspective} height={200} />
+        <div className="planet flex-col align-center perspectiveColor">
+          <img src={Perspective} width={200} />
           <h2>Perspective</h2>
           <p>
             Dive into the crevices of your brain to provide your cordial
