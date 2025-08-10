@@ -93,6 +93,10 @@ input[type="password"]::-webkit-textfield-decoration-container {
     align-items: center;
 }
 
+.align-between {
+    align-content: space-between;
+}
+
 .align-start {
     align-items: start;
 }

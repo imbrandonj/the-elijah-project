@@ -1,17 +1,124 @@
 #Stats {
-    min-width: 60vw;
-    min-height: 50vh;
+    width: 70vw;
 }
 
 #Stats h2 {
+    margin-top: 5vh;
     font-size: 2rem;
     font-weight: 200;
     letter-spacing: 0.2rem;
 }
 
+#Stats .navBtn {
+    width: 5vw;
+    font-size: 7vh;
+    color: var(--buttonBlue);
+    background-color: transparent;
+    border: none;
+    font-family: monospace;
+}
+
+#Stats .navBtn:hover {
+    background-color: transparent;
+    color: var(--lightBlue);
+}
+
+#Stats ul {
+    width: 50vw;
+    padding: 2rem;
+    background-color: var(--buttonBlue);
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 45vh;
+}
+
+#Stats li {
+    list-style: none;
+    color: black;
+    font-size: 1.42rem; 
+}
+
+#Stats .profile li {
+    flex-basis: 50%;
+    list-style: none;
+    color: black;
+    font-size: 1.42rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+#Stats .profile li span{
+    font-size: 1.82rem;
+    letter-spacing: .1rem;
+}
+
+#Stats .profile .avatar {
+    flex-basis: 100%;
+}
+
+#Stats .profile .avatar img {
+    width: auto;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid var(--lightBlue);
+}
+
+ #Stats .profile hr {
+    width: 60%;
+    height: 2px;
+    background-color: black;
+    margin: 1rem 0 0.5rem;
+ }
+
+ #Stats .profile .erase-button {
+    font-size: 1.42rem;
+    letter-spacing: 0.05rem;
+    padding: 0 1.2rem;
+ }
+
+#Stats .planetStats {
+    flex-wrap: nowrap;
+}
+
+#Stats .planetStats div {
+    min-width: 40%;
+}
+
+#Stats figure {
+    padding-top: 5vh;
+}
+
+#Stats figure figcaption {
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
+    text-align: center;
+}
+
+#Stats figure figcaption span {
+    font-size: 2.42rem;
+}
+
+#Stats .statsTable {
+    width: 60%;
+}
+
+#Stats .statsTable li {
+    min-width: 30%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#Stats .statsTable hr {
+    border-color: black;
+    width: auto;
+    margin: 0 2rem;
+}
+
 #Stats hr {
     width: 40vw;
-    margin: 2.5vh 0 7.5vh; 
+    margin: 2.5vh 0; 
     border-color: var(--buttonBlue);
 }
 
@@ -19,6 +126,7 @@
     width: 16rem;
     padding: 1.2rem 0;
     font-size: 1.8rem;
+    margin: 2rem 4rem 3rem;
 }
 
 /*
