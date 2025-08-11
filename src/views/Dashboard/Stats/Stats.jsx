@@ -56,7 +56,11 @@ export default function Stats({ setDashSelect }) {
               <br />
               08/10/2025
             </li>
-            <EraseButton text={'Go to Configuration Page >>'} color={'black'} />
+            <EraseButton
+              text={'Go to Configuration Page >>'}
+              onclick={() => setDashSelect('config')}
+              color={'black'}
+            />
           </ul>
         ) : page === 1 ? (
           <ul className="flex planetStats">

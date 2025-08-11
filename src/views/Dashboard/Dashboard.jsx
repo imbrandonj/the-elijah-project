@@ -3,6 +3,7 @@ import DashEntry from './DashEntry.jsx';
 import SelectMission from './SelectMission.jsx';
 import Mission from './Mission.jsx';
 import Stats from './Stats/Stats.jsx';
+import UserConfig from './UserConfig/UserConfig.jsx';
 import Tipbox from '@root/components/Tipbox/Tipbox.jsx';
 import RocketButton from '@root/components/RocketButton/RocketButton.jsx';
 
@@ -57,9 +58,12 @@ export default function Dashboard({ planet }) {
           </div>
         ) : dashSelect === 'stats' ? (
           <Stats setDashSelect={setDashSelect} />
+        ) : dashSelect === 'config' ? (
+          <UserConfig setDashSelect={setDashSelect} />
         ) : null}
 
-        {dashSelect === 'stats' ? null : missionSelect.length === 0 ? (
+        {dashSelect === 'stats' ||
+        dashSelect === 'config' ? null : missionSelect.length === 0 ? (
           <Tipbox text="Navigate: Use your keyboard arrows or use the mouse to click, grab, and pull." />
         ) : (
           <Tipbox text="User Experience: Turn the sound on. Each level begins with an audible explanation." />

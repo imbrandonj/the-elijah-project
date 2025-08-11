@@ -142,6 +142,11 @@
     #Stats h2 {
         font-size: 1.75rem;
     }
+
+    #Stats .profile .erase-button {
+        font-size: 1.24rem;
+        padding: 0.6rem 1rem;
+    }
 }
 
 /*

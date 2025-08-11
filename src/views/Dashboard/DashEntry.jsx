@@ -85,7 +85,10 @@ export default function DashEntry({ setDashSelect }) {
             </button>
           </SwiperSlide>
           <SwiperSlide>
-            <button className="dashSwiperBtn flex-col align-center justify-center">
+            <button
+              className="dashSwiperBtn flex-col align-center justify-center"
+              // onClick={redirectConfig}
+            >
               <img className="astroImg" src={FloatAstro} height={140} />
               Profile
               <br /> Configuration
