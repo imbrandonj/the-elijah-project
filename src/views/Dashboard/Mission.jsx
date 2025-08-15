@@ -1,14 +1,14 @@
-// imported components:
+// contexts:
 import { useView } from '@root/contexts/ViewContext.jsx';
+import { usePlayer } from '@root/contexts/PlayerContext.jsx';
+
+// imported components:
 import BeginButton from '@root/components/BeginButton/BeginButton.jsx';
 import SetButton from '@root/components/SetButton/SetButton.jsx';
 
-// imported modules:
-import { getLevels } from '@root/modules/levelManager.js';
-
 import { useState, useEffect } from 'react';
 
-// imported svgs:
+// images:
 import AlphaLiteracy from '@root/assets/img/alpha-lit.webp';
 import Arith from '@root/assets/img/arith.webp';
 import Perspective from '@root/assets/img/perspective.webp';
@@ -20,22 +20,29 @@ import Perspective from '@root/assets/img/perspective.webp';
 */
 export default function Mission({ missionSelect }) {
   const { setView, setLevel } = useView();
+  const { playerProfile } = usePlayer();
   const [setScores, setSetScores] = useState();
   const [firstVisit, setFirstVisit] = useState(true);
 
   useEffect(() => {
-    // get completed levels for the selected planet
-    const finishedLevels = getLevels(missionSelect); // this is an object with level (key) and score (value)
-    const levelKeys = Object.keys(finishedLevels);
-    console.log(finishedLevels);
+    const progress = playerProfile?.progress?.[missionSelect];
+    if (!progress) return;
+
+    const levelEntries = Object.entries(progress); // [level: score]
+    const completedLevels = Object.fromEntries(
+      levelEntries.filter(([_, score]) => typeof score === 'number')
+    );
+
+    const levelKeys = Object.keys(completedLevels);
+    const scoreValues = Object.values(completedLevels);
 
     // obtain scores for each set
     const scoreTotals = [];
-    for (let i = 0; i < levelKeys.length; i += 5) {
+    for (let i = 0; i < scoreValues.length; i += 5) {
       // only create a set button if the entire set is complete (5 levels: i + 4)
-      if (levelKeys.length >= i + 5) {
-        let scores = Object.values(finishedLevels).slice(i, i + 5); // a set is 5 levels
-        const sum = scores.reduce((accumulator, i) => accumulator + i, 0);
+      if (scoreValues.length >= i + 5) {
+        const set = scoreValues.slice(i, i + 5); // a set is 5 levels
+        const sum = set.reduce((accumulator, value) => accumulator + value, 0);
         scoreTotals.push(sum);
       }
     }

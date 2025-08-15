@@ -4,9 +4,7 @@ import './SetComplete.css';
 import RedirectButton from '../RedirectButton/RedirectButton';
 import EraseButton from '../EraseButton/EraseButton';
 import { useView } from '@root/contexts/ViewContext.jsx';
-
-// imported modules:
-import { getLevels } from '@root/modules/levelManager.js';
+import { usePlayer } from '@root/contexts/PlayerContext.jsx';
 
 // imported svg:
 import bronze from '@root/assets/svgs/bronze.svg';
@@ -21,6 +19,7 @@ export default function SetComplete({
   planetImg,
 }) {
   const { level, setView } = useView();
+  const { playerProfile } = usePlayer();
   const [totalScore, setTotalScore] = useState(0);
 
   const set = level / 5;
@@ -31,7 +30,7 @@ export default function SetComplete({
 
   // obtain set score:
   useEffect(() => {
-    const levels = getLevels(planet);
+    const levels = playerProfile.progress[planet];
     const tallyTotal = Object.values(levels).reduce((total, score) => {
       return (total += score);
     }, 0);

@@ -13,7 +13,7 @@ export default function CreateNewPlayer({
   playerProfiles, // array of the user's player profiles
 }) {
   const { setView } = useView();
-  const { setPlayerProfile } = usePlayer();
+  const { initializeUser } = usePlayer();
   const [playerName, setPlayerName] = useState('');
   const [msg, setMsg] = useState(null); // form message
 
@@ -33,7 +33,7 @@ export default function CreateNewPlayer({
     try {
       const newPlayer = await createPlayer(playerName);
 
-      setPlayerProfile(newPlayer);
+      initializeUser(newPlayer);
       setMsg(`Welcome, ${playerName}!`);
 
       // on success, redirect to Dashboard, reset Main Menu state

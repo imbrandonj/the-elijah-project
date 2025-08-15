@@ -80,9 +80,17 @@ export const storeLevelProgress = async (playerId, planet, level, score) => {
   const playerRef = doc(db, 'players', playerId);
 
   try {
-    await updateDoc(playerRef, {
-      [`progress.${planet}.level${level}`]: score,
-    });
+    await setDoc(
+      playerRef,
+      {
+        progress: {
+          [planet]: {
+            [`level${level}`]: score,
+          },
+        },
+      },
+      { merge: true }
+    );
     console.log(`Level ${level} on ${planet} updated with score: ${score}`);
   } catch (error) {
     console.error('Error updating level progress:', error);

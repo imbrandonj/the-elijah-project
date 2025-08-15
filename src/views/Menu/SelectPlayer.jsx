@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 // internal components & modules:
 import { useView } from '@root/contexts/ViewContext.jsx'; // global context
 import { usePlayer } from '@root/contexts/PlayerContext.jsx'; // global context
-import { fetchPlayers } from '@root/services/playersService.js';
 import CreateNewPlayer from './CreateNewPlayer.jsx';
 
 import astro from '@root/assets/svgs/astronaut.svg';
@@ -15,14 +14,14 @@ export default function SelectPlayer({
   setSelectPlayer, // boolean, use state
   playerProfiles, // fetched player profiles, use state array
 }) {
-  const { setPlayerProfile } = usePlayer(); // context
+  const { initializeUser } = usePlayer(); // initialize player as saved or open play
   const { setView } = useView(); // context
   const [createPlayer, setCreatePlayer] = useState(false); // redirects to CreateNewPlayer.jsx when true
 
   console.log(playerProfiles);
 
   const handleSelectPlayer = player => {
-    setPlayerProfile(player); // set the selected player in context
+    initializeUser(player); // set the selected player in context
     setView('Dashboard');
     setSelectPlayer(false);
   };

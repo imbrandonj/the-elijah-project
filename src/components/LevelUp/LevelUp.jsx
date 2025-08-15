@@ -27,7 +27,7 @@ export default function LevelUp({
   setLevelUpEvent, // reset level event (state)
   setBegin, // begin level (state)
 }) {
-  const { playerProfile, setPlayerProfileScore } = usePlayer(); // context
+  const { playerProfile, userInstance, setPlayerProfile } = usePlayer(); // context
   const { level, setLevel } = useView(); // context
   const [oldScore, setOldScore] = useState(0);
   const [time, setTime] = useState(parseInt(localStorage.getItem('time')));
@@ -40,24 +40,22 @@ export default function LevelUp({
   // every fifth level is a challenge with a minScore of 600
   const minScore = level % 5 === 0 ? 600 : 0;
 
-  const playerId = `${playerProfile.userId}-${playerProfile.playerName}`; // for storing purposes
-
   useEffect(() => {
-    if (playerProfile === 'openPlay') {
+    if (!userInstance || playerProfile === 'openPlay') {
       console.log('Open Play mode: skipping data storage.');
       return;
     }
 
     const recordScore =
-      playerProfile.progress[String(planet)][String('level' + level)] || 0;
+      playerProfile.progress?.[planet]?.[`level${level}`] ?? 0;
 
     setOldScore(recordScore);
 
     if (playerScore > recordScore) {
-      storeLevelProgress(playerId, planet, level, playerScore); // firestore
+      userInstance.saveProgress({ planet, level, score: playerScore });
 
       // update playerProfile context with new high score:
-      setPlayerProfileScore(planet, level, playerScore);
+      setPlayerProfile(planet, level, playerScore);
     }
   }, []);
 
@@ -91,10 +89,10 @@ export default function LevelUp({
 
   // retry button click event
   const retry = () => {
-    if (playerProfile !== 'openPlay') {
+    if (userInstance && playerProfile !== 'openPlay') {
       // reset progress:
-      storeLevelProgress(playerId, planet, level, oldScore); // firestore
-      setPlayerProfileScore(planet, level, oldScore); // player context
+      userInstance.saveProgress({ planet, level, score: oldScore });
+      setPlayerProfile(userInstance);
     }
 
     setLevelScore(0);
