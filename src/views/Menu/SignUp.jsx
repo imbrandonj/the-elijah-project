@@ -31,7 +31,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
     // email check
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
-    if (email.length < 1 || !emailRegex.test(email)) {
+    if (!email.trim() || !emailRegex.test(email.trim())) {
       setErr(true);
       setMsg('Please enter a valid email address.');
       return;
@@ -55,7 +55,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
       // create new user
       const userCredential = await createUserWithEmailAndPassword(
         auth,
-        email,
+        email.trim(),
         password
       );
 
@@ -92,6 +92,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         <label htmlFor="email">Account Email:</label>
         <input
           id="email"
+          required
           value={email}
           onChange={({ target }) => setEmail(target.value)}
         />
@@ -101,6 +102,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         <div className="input-wrapper">
           <input
             id="password"
+            required
             type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={({ target }) => setPassword(target.value)}
@@ -119,6 +121,7 @@ export default function SignUp({ setSignUp, setSelectPlayer }) {
         <div className="input-wrapper">
           <input
             id="verifyPass"
+            required
             type={showPassword ? 'text' : 'password'}
             value={verifyPass}
             onChange={({ target }) => setVerifyPass(target.value)}

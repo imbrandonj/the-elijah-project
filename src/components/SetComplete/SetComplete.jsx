@@ -31,8 +31,10 @@ export default function SetComplete({
   // obtain set score:
   useEffect(() => {
     const levels = playerProfile.progress[planet];
-    const tallyTotal = Object.values(levels).reduce((total, score) => {
-      return (total += score);
+    const tallyTotal = Object.values(levels).reduce((total, data) => {
+      const score =
+        typeof data === 'object' && data !== null ? data.score : data;
+      return total + (typeof score === 'number' ? score : 0);
     }, 0);
     setTotalScore(tallyTotal);
   }, []);

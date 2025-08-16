@@ -78,7 +78,7 @@ export default function DashEntry({ setDashSelect }) {
           <SwiperSlide>
             <button
               className="dashSwiperBtn flex-col align-center justify-center"
-              // onClick={redirectStats}
+              onClick={redirectStats}
             >
               <img src={PlanetFlag} height={160} />
               Player Statistics
@@ -87,7 +87,7 @@ export default function DashEntry({ setDashSelect }) {
           <SwiperSlide>
             <button
               className="dashSwiperBtn flex-col align-center justify-center"
-              // onClick={redirectConfig}
+              onClick={redirectConfig}
             >
               <img className="astroImg" src={FloatAstro} height={140} />
               Profile

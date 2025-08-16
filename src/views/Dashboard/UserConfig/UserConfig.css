@@ -28,22 +28,27 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2vw;
     list-style: none;
     color: black;
     font-size: 1.42rem; 
-    line-height: 4rem;
 }
 
 #Config li span {
     font-size: 2rem;
     letter-spacing: .1rem;
+    padding: 1rem;
+}
+
+#Config li img {
+    margin: 0 1rem;
 }
 
  #Config .erase-button {
     font-size: 1.42rem;
     letter-spacing: 0.05rem;
     padding: 0.5rem 1.2rem;
+    margin: 1rem 2rem;
+    min-width: 16rem;
  }
 
 #Config .redirect-button {

@@ -8,7 +8,9 @@ import {
   getDocs,
   doc,
   setDoc,
+  deleteDoc,
   getDoc,
+  deleteField,
   updateDoc,
 } from 'firebase/firestore';
 
@@ -50,16 +52,11 @@ export const createPlayer = async playerName => {
     playerName: playerName,
     userId: user.uid,
     email: user.email,
+    dateCreated: new Date().toISOString(),
     progress: {
-      Arith: {
-        level1: 0,
-      },
-      'Alpha-Literacy': {
-        level1: 0,
-      },
-      Perspective: {
-        level1: 0,
-      },
+      Arith: {},
+      'Alpha-Literacy': {},
+      Perspective: {},
     },
   };
 
@@ -76,7 +73,13 @@ export const createPlayer = async playerName => {
  * @param {string} level
  * @param {number} score
  */
-export const storeLevelProgress = async (playerId, planet, level, score) => {
+export const storeLevelProgress = async (
+  playerId,
+  planet,
+  level,
+  score,
+  timestamp
+) => {
   const playerRef = doc(db, 'players', playerId);
 
   try {
@@ -85,14 +88,73 @@ export const storeLevelProgress = async (playerId, planet, level, score) => {
       {
         progress: {
           [planet]: {
-            [`level${level}`]: score,
+            [`level${level}`]: {
+              score,
+              timestamp,
+            },
           },
         },
       },
       { merge: true }
     );
-    console.log(`Level ${level} on ${planet} updated with score: ${score}`);
+    console.log(
+      `Level ${level} on ${planet} updated with score: ${score}, timestamp: ${timestamp}`
+    );
   } catch (error) {
     console.error('Error updating level progress:', error);
   }
 };
+
+/**
+ * Deletes player document in Firestore
+ * @param {*} playerId
+ */
+export async function deletePlayerDocument(playerId) {
+  const docRef = doc(db, 'players', playerId);
+  await deleteDoc(docRef);
+}
+
+/**
+ * Allows the user to rename their player name
+ * @param {*} oldPlayerId
+ * @param {*} newPlayerName
+ * @param {*} userId
+ * @returns
+ */
+export async function renamePlayer(oldPlayerId, newPlayerName, userId) {
+  const oldDocRef = doc(db, 'players', oldPlayerId);
+  const oldSnapshot = await getDoc(oldDocRef);
+
+  if (!oldSnapshot.exists()) {
+    throw new Error('Original player not found.');
+  }
+
+  const newPlayerId = `${userId}-${newPlayerName}`;
+  const newDocRef = doc(db, 'players', newPlayerId);
+
+  const newSnapshot = await getDoc(newDocRef);
+  if (newSnapshot.exists()) {
+    throw new Error('A player with this name already exists.');
+  }
+
+  const data = oldSnapshot.data();
+  data.playerName = newPlayerName; // update name in data before copying
+
+  await setDoc(newDocRef, data);
+  await deleteDoc(oldDocRef);
+
+  return newPlayerId;
+}
+
+/**
+ * Deletes progress for a planet
+ * @param {*} playerId
+ * @param {*} planet
+ */
+export async function deletePlanetProgress(playerId, planet) {
+  const docRef = doc(db, 'players', playerId);
+
+  await updateDoc(docRef, {
+    [`progress.${planet}`]: deleteField(),
+  });
+}

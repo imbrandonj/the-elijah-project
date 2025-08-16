@@ -8,11 +8,10 @@ export class SavedUser extends User {
     super(name, playerId);
     this.playerId = playerId;
     this.progress = progress;
-    this.dataPersistence = true;
   }
 
-  async saveProgress({ planet, level, score }) {
-    await storeLevelProgress(this.playerId, planet, level, score);
+  async saveProgress({ planet, level, score, timestamp }) {
+    await storeLevelProgress(this.playerId, planet, level, score, timestamp);
 
     if (!this.progress[planet]) {
       this.progress[planet] = {};

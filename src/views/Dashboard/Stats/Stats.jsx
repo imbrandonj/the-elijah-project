@@ -16,6 +16,59 @@ export default function Stats({ setDashSelect }) {
   const { playerProfile } = usePlayer(); // context
   console.log(playerProfile);
   const [page, setPage] = useState(0);
+  const [searchLevel, setSearchLevel] = useState('');
+
+  const levelsCompleted = Object.values(playerProfile?.progress || {}).reduce(
+    (acc, planetProgress) => acc + Object.keys(planetProgress).length,
+    0
+  );
+
+  const renderPlanetStats = planetName => {
+    const levels = playerProfile?.progress?.[planetName];
+
+    if (!levels || Object.keys(levels).length === 0) {
+      return (
+        <div>
+          <li className="center-text">No progress recorded.</li>
+        </div>
+      );
+    }
+
+    // entries by level number ascending
+    const entries = Object.entries(levels)
+      .sort(([aKey], [bKey]) => {
+        const aLevel = parseInt(aKey.replace('level', ''));
+        const bLevel = parseInt(bKey.replace('level', ''));
+        return aLevel - bLevel;
+      })
+      .filter(([levelKey]) => {
+        if (!searchLevel.trim()) return true;
+        return levelKey === `level${parseInt(searchLevel)}`;
+      });
+
+    if (entries.length === 0) {
+      return <li className="center-text">No matching level found</li>;
+    }
+
+    return entries.map(([levelKey, value]) => {
+      const score =
+        typeof value === 'object' && value !== null ? value.score : value;
+
+      const date =
+        typeof value === 'object' && value.timestamp
+          ? new Date(value.timestamp).toLocaleDateString()
+          : 'N/A';
+
+      return (
+        <div className="flex" key={levelKey}>
+          <li>{levelKey.replace('level', '')}</li>
+          <li>{score}</li>
+          <li>{date}</li>
+        </div>
+      );
+    });
+  };
+
   return (
     <div id="Stats" className="flex-col justify-center align-center">
       <h2>Player Statistics</h2>
@@ -40,21 +93,29 @@ export default function Stats({ setDashSelect }) {
 
             <li>
               Player Name:
-              <br /> <span className="small-caps">name</span>
+              <br />{' '}
+              <span className="small-caps">
+                {playerProfile?.playerName || 'N/A'}
+              </span>
             </li>
             <li>
               User Email:
-              <br /> <span className="small-caps">email@email.com</span>
+              <br />{' '}
+              <span className="small-caps">
+                {playerProfile?.email || 'N/A'}
+              </span>
             </li>
             <li>
               Levels Completed:
               <br />
-              24
+              {levelsCompleted}
             </li>
             <li>
               Date Created:
               <br />
-              08/10/2025
+              {playerProfile?.dateCreated
+                ? new Date(playerProfile.dateCreated).toLocaleDateString()
+                : 'N/A'}
             </li>
             <EraseButton
               text={'Go to Configuration Page >>'}
@@ -63,101 +124,89 @@ export default function Stats({ setDashSelect }) {
             />
           </ul>
         ) : page === 1 ? (
-          <ul className="flex planetStats">
-            <div>
-              <li>
-                <figure className="flex-col align-center justify-center">
-                  <img src={alphaLit} height={140}></img>
-                  <figcaption>
-                    <span>Alpha-Literacy</span>
-                    <br /> Statistics
-                  </figcaption>
-                </figure>
-              </li>
+          <section className="planetStats">
+            <div className="flex-col justify-center align-center">
+              <figure className="flex-col align-center justify-center">
+                <img src={alphaLit} height={140}></img>
+                <figcaption>
+                  <span>Alpha-Literacy</span>
+                  <br /> Statistics
+                </figcaption>
+              </figure>
+              <input
+                type="number"
+                placeholder="Search level..."
+                className="levelSearch"
+                value={searchLevel}
+                onChange={e => setSearchLevel(e.target.value)}
+              />
             </div>
-            <section className="statsTable">
+            <ul className="statsTable">
               <div className="flex">
                 <li>Level</li>
                 <li>High Score</li>
                 <li>Completion Date</li>
               </div>
               <hr />
-              <div className="flex">
-                <li>1</li>
-                <li>400</li>
-                <li>08/10/2025</li>
-              </div>
-              <div className="flex">
-                <li>2</li>
-                <li>1000</li>
-                <li>08/10/2025</li>
-              </div>
-            </section>
-          </ul>
+              {renderPlanetStats('Alpha-Literacy')}
+            </ul>
+          </section>
         ) : page === 2 ? (
-          <ul className="flex planetStats">
-            <div>
-              <li>
-                <figure className="flex-col align-center justify-center">
-                  <img src={arith} height={140}></img>
-                  <figcaption>
-                    <span>Arith</span>
-                    <br /> Statistics
-                  </figcaption>
-                </figure>
-              </li>
+          <section className="planetStats">
+            <div className="flex-col justify-center align-center">
+              <figure className="flex-col align-center justify-center">
+                <img src={arith} height={140}></img>
+                <figcaption>
+                  <span>Arith</span>
+                  <br /> Statistics
+                </figcaption>
+              </figure>
+              <input
+                type="number"
+                placeholder="Search level..."
+                className="levelSearch"
+                value={searchLevel}
+                onChange={e => setSearchLevel(e.target.value)}
+              />
             </div>
-            <section className="statsTable">
+            <ul className="statsTable">
               <div className="flex">
                 <li>Level</li>
                 <li>High Score</li>
                 <li>Completion Date</li>
               </div>
               <hr />
-              <div className="flex">
-                <li>1</li>
-                <li>400</li>
-                <li>08/10/2025</li>
-              </div>
-              <div className="flex">
-                <li>2</li>
-                <li>1000</li>
-                <li>08/10/2025</li>
-              </div>
-            </section>
-          </ul>
+              {renderPlanetStats('Arith')}
+            </ul>
+          </section>
         ) : page === 3 ? (
-          <ul className="flex planetStats">
-            <div>
-              <li>
-                <figure className="flex-col align-center justify-center">
-                  <img src={persp} height={140}></img>
-                  <figcaption>
-                    <span>Perspective</span>
-                    <br /> Statistics
-                  </figcaption>
-                </figure>
-              </li>
+          <section className="planetStats">
+            <div className="flex-col justify-center align-center">
+              <figure className="flex-col align-center justify-center">
+                <img src={persp} height={140}></img>
+                <figcaption>
+                  <span>Perspective</span>
+                  <br /> Statistics
+                </figcaption>
+              </figure>
+              <input
+                type="number"
+                placeholder="Search level..."
+                className="levelSearch"
+                value={searchLevel}
+                onChange={e => setSearchLevel(e.target.value)}
+              />
             </div>
-            <section className="statsTable">
+            <ul className="statsTable">
               <div className="flex">
                 <li>Level</li>
                 <li>High Score</li>
                 <li>Completion Date</li>
               </div>
               <hr />
-              <div className="flex">
-                <li>1</li>
-                <li>400</li>
-                <li>08/10/2025</li>
-              </div>
-              <div className="flex">
-                <li>2</li>
-                <li>1000</li>
-                <li>08/10/2025</li>
-              </div>
-            </section>
-          </ul>
+              {renderPlanetStats('Perspective')}
+            </ul>
+          </section>
         ) : null}
         <NavButton
           onclick={() => {

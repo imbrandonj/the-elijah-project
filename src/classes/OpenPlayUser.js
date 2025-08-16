@@ -8,7 +8,7 @@ export class OpenPlayUser extends User {
     this.dataPersistence = false;
   }
 
-  saveProgress({ planet, level, score }) {
+  async saveProgress({ planet, level, score }) {
     console.log(
       `Open play mode: Not saving score for ${planet}, level ${level}: ${score}`
     );

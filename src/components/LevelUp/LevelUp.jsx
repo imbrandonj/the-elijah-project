@@ -18,7 +18,6 @@ import astroFlag from '@root/assets/svgs/astro-flag2.svg';
 import objective from '@root/assets/svgs/objective.svg';
 
 import { useState, useEffect } from 'react';
-import { storeLevelProgress } from '../../services/playersService';
 
 export default function LevelUp({
   planet, // 'Arith' or 'Alpha-Literacy' or 'Perspective'
@@ -27,7 +26,7 @@ export default function LevelUp({
   setLevelUpEvent, // reset level event (state)
   setBegin, // begin level (state)
 }) {
-  const { playerProfile, userInstance, setPlayerProfile } = usePlayer(); // context
+  const { playerProfile, userInstance, saveScore } = usePlayer(); // context
   const { level, setLevel } = useView(); // context
   const [oldScore, setOldScore] = useState(0);
   const [time, setTime] = useState(parseInt(localStorage.getItem('time')));
@@ -52,10 +51,7 @@ export default function LevelUp({
     setOldScore(recordScore);
 
     if (playerScore > recordScore) {
-      userInstance.saveProgress({ planet, level, score: playerScore });
-
-      // update playerProfile context with new high score:
-      setPlayerProfile(planet, level, playerScore);
+      saveScore({ planet, level, score: playerScore });
     }
   }, []);
 
@@ -91,8 +87,7 @@ export default function LevelUp({
   const retry = () => {
     if (userInstance && playerProfile !== 'openPlay') {
       // reset progress:
-      userInstance.saveProgress({ planet, level, score: oldScore });
-      setPlayerProfile(userInstance);
+      saveScore({ planet, level, score: oldScore });
     }
 
     setLevelScore(0);

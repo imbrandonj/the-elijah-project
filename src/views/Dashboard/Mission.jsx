@@ -42,7 +42,11 @@ export default function Mission({ missionSelect }) {
       // only create a set button if the entire set is complete (5 levels: i + 4)
       if (scoreValues.length >= i + 5) {
         const set = scoreValues.slice(i, i + 5); // a set is 5 levels
-        const sum = set.reduce((accumulator, value) => accumulator + value, 0);
+        const sum = set.reduce((accumulator, data) => {
+          const score =
+            typeof data === 'object' && data !== null ? data.score : data;
+          return accumulator + (typeof score === 'number' ? score : 0);
+        }, 0);
         scoreTotals.push(sum);
       }
     }

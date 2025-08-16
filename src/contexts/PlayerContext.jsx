@@ -25,30 +25,39 @@ export const PlayerProvider = ({ children }) => {
     setPlayerProfile(profile);
   };
 
-  // update context
-  const setPlayerProfileScore = (planet, level, score) => {
+  /**
+   * Helper to update playerProfile context
+   * @param {} planet
+   * @param {*} level
+   * @param {*} score
+   */
+  const updateContext = (planet, level, score) => {
     setPlayerProfile(prevProfile => ({
       ...prevProfile,
       progress: {
         ...prevProfile.progress,
         [planet]: {
           ...prevProfile.progress[planet],
-          [`level${level}`]: score,
+          [`level${level}`]: {
+            score,
+            timestamp,
+          },
         },
       },
     }));
   };
 
   /**
-   * Save score for the current player (firebase & context)
+   * Main method for saving
+   * Saves score for the current player in firebase & in context
    * delegates to the userInstance's saveProgress method
    */
-  const saveScore = ({ planet, level, score }) => {
+  const saveScore = async ({ planet, level, score, timestamp }) => {
     if (!userInstance) return console.warn('No user instance set');
 
-    userInstance.saveProgress({ planet, level, score });
+    await userInstance.saveProgress({ planet, level, score, timestamp });
 
-    setPlayerProfileScore(planet, level, score);
+    updateContext(planet, level, score, timestamp);
   };
 
   return (
@@ -56,9 +65,9 @@ export const PlayerProvider = ({ children }) => {
       value={{
         playerProfile,
         setPlayerProfile,
-        setPlayerProfileScore,
         initializeUser,
         userInstance,
+        saveScore,
       }}
     >
       {children}
