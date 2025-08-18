@@ -31,7 +31,7 @@ export const PlayerProvider = ({ children }) => {
    * @param {*} level
    * @param {*} score
    */
-  const updateContext = (planet, level, score) => {
+  const updateContext = (planet, level, score, timestamp) => {
     setPlayerProfile(prevProfile => ({
       ...prevProfile,
       progress: {
@@ -52,8 +52,10 @@ export const PlayerProvider = ({ children }) => {
    * Saves score for the current player in firebase & in context
    * delegates to the userInstance's saveProgress method
    */
-  const saveScore = async ({ planet, level, score, timestamp }) => {
+  const saveScore = async ({ planet, level, score }) => {
     if (!userInstance) return console.warn('No user instance set');
+
+    const timestamp = new Date().toISOString();
 
     await userInstance.saveProgress({ planet, level, score, timestamp });
 
