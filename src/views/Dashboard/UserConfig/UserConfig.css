@@ -9,6 +9,13 @@
     letter-spacing: 0.2rem;
 }
 
+#Config h3 {
+    margin: 18vh;
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+}
+
 #Config hr {
     width: 40vw;
     margin: 2.5vh 0; 

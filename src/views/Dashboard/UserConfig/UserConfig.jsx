@@ -1,3 +1,6 @@
+// UserConfig.jsx
+
+import { SavedUser } from '@root/classes/SavedUser';
 import { usePlayer } from '@root/contexts/PlayerContext.jsx'; // global context
 import { useView } from '@root/contexts/ViewContext.jsx'; // global state
 import {
@@ -17,7 +20,8 @@ import { useState, useEffect } from 'react';
 import './UserConfig.css';
 
 export default function UserConfig({ setDashSelect }) {
-  const { playerProfile, setPlayerProfile, initializeUser } = usePlayer();
+  const { playerProfile, setPlayerProfile, initializeUser, userInstance } =
+    usePlayer();
   const { setView } = useView();
   const [playerName, setPlayerName] = useState('');
   const [editingName, setEditingName] = useState(false);
@@ -102,7 +106,7 @@ export default function UserConfig({ setDashSelect }) {
       const playerId = `${playerProfile.userId}-${playerProfile.playerName}`;
       await deletePlanetProgress(playerId, planetName);
 
-      // Wipe from local context
+      // wipe from local context
       const updated = {
         ...playerProfile,
         progress: {
@@ -131,7 +135,9 @@ export default function UserConfig({ setDashSelect }) {
     <div id="Config" className="flex-col justify-center align-center">
       <h2>Profile Configuration</h2>
       <hr />
-      {page === 1 ? (
+      {userInstance?.getType?.() !== 'SavedUser' ? (
+        <h3>You must be logged in to use this feature.</h3>
+      ) : page === 1 ? (
         <ul className="flex-col align-center">
           <li>
             Player Name:{' '}
