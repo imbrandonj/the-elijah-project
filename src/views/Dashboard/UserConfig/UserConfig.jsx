@@ -220,7 +220,7 @@ export default function UserConfig({ setDashSelect }) {
           </li>
         </ul>
       ) : page === 2 ? (
-        <div className="flex-col align-center">
+        <div className="flex-col align-center justify-center confirm-screen">
           <h2>{msg}</h2>
           {editingName ? (
             <input
@@ -231,7 +231,16 @@ export default function UserConfig({ setDashSelect }) {
           ) : null}
           <div>
             <EraseButton
-              text={'Confirm'}
+              text={'cancel'}
+              onclick={() => {
+                setPage(1);
+                setAction(null);
+                setEditingName(false);
+              }}
+              color={'black'}
+            />
+            <EraseButton
+              text={'confirm'}
               onclick={async () => {
                 if (editingName) {
                   await handleChangeName(newName);
@@ -241,15 +250,6 @@ export default function UserConfig({ setDashSelect }) {
                 setAction(null);
                 setEditingName(false);
                 setPage(1);
-              }}
-              color={'black'}
-            />
-            <EraseButton
-              text={'Cancel'}
-              onclick={() => {
-                setPage(1);
-                setAction(null);
-                setEditingName(false);
               }}
               color={'black'}
             />

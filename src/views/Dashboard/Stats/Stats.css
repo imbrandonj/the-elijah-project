@@ -34,7 +34,7 @@
 }
 
 #Stats ul {
-    height: 48vh;
+    min-height: 48vh;
     padding: 2rem;
     background-color: var(--buttonBlue);
     flex-wrap: wrap;
@@ -44,7 +44,6 @@
 #Stats li {
     list-style: none;
     color: black;
-    font-size: 1.42rem; 
 }
 
 #Stats .profile li {
@@ -54,9 +53,10 @@
     font-size: 1.42rem;
     text-align: center;
     line-height: 2rem;
+    margin: 1rem 0;
 }
 
-#Stats .profile li span{
+#Stats .profile li span {
     font-size: 1.82rem;
     letter-spacing: .1rem;
 }
@@ -66,6 +66,7 @@
 }
 
 #Stats .profile .avatar img {
+    height: 14vh;
     width: auto;
     padding: 2rem;
     border: 1px solid black;
@@ -84,7 +85,8 @@
  #Stats .profile .erase-button {
     font-size: 1.42rem;
     letter-spacing: 0.05rem;
-    padding: 0 1.2rem;
+    padding: 0.6rem 1.2rem;
+    margin: 3rem 0 1rem;
  }
 
 #Stats .planetStats {
@@ -123,6 +125,7 @@
 
 #Stats .statsTable li {
     min-width: 30%;
+    font-size: 1.42rem; 
     text-align: center;
     padding: 0.5rem;
 }
@@ -143,26 +146,52 @@
     width: 16rem;
     padding: 1.2rem 0;
     font-size: 1.8rem;
-    margin: 2rem 4rem 3rem;
+    margin: 2rem 0 3rem;
 }
 
 /*
     Medium Screen
 */
 @media screen and (min-width: 1450px) and (max-width: 2000px) {
-    #Stats .redirect-button {
-        width: 14rem;
-        padding: 1rem 0;
-        font-size: 1.55rem;
+    #Stats h2 {
+        margin-top: 4vh;
+        font-size: 1.75rem;
     }
 
-    #Stats h2 {
-        font-size: 1.75rem;
+    #Stats .profile .avatar img {
+        padding: 1.5rem;
+    }
+
+    #Stats figure figcaption {
+        font-size: 1.8rem;
+    }
+
+    #Stats figure figcaption span {
+        font-size: 2.24rem;
+    }
+
+    #Stats .profile li {
+        margin: 1rem 0;
+    }
+
+    #Stats .profile li span {
+        font-size: 1.6rem;
     }
 
     #Stats .profile .erase-button {
         font-size: 1.24rem;
-        padding: 0.6rem 1rem;
+        margin: 1.5rem 0 0;
+    }
+
+    #Stats .statsTable li {
+        font-size: 1.24rem;
+    }
+
+    #Stats .redirect-button {
+        width: 14rem;
+        padding: 1rem 0;
+        font-size: 1.55rem;
+        margin: 1.5rem 0 2rem;
     }
 }
 
@@ -171,6 +200,43 @@
 */
 @media (max-width: 1450px) {
     #Stats h2 {
+        margin-top: 2vh;
         font-size: 1.55rem;
+    }
+
+    #Stats .profile .avatar img {
+        padding: 1.5rem;
+    }
+
+    #Stats figure figcaption {
+        font-size: 1.6rem;
+    }
+
+    #Stats figure figcaption span {
+        font-size: 2rem;
+    }
+
+    #Stats .profile li {
+        margin: 0.8rem 0;
+    }
+
+    #Stats .profile li span {
+        font-size: 1.42rem;
+    }
+
+    #Stats .profile .erase-button {
+        font-size: 1.2rem;
+        margin: 1rem 0 0;
+    }
+
+    #Stats .statsTable li {
+        font-size: 1.16rem;
+    }
+
+    #Stats .redirect-button {
+        width: 14rem;
+        padding: 1rem 0;
+        font-size: 1.55rem;
+        margin: 1rem 0;
     }
 }
